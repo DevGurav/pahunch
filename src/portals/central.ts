@@ -24,8 +24,8 @@ export const depwd: Portal = {
   jurisdiction: 'Central',
   task: 'Find the Public Grievance page from the home page',
   steps: [{ kind: 'goto', url: 'https://depwd.gov.in/en/' }],
-  critical: [{ label: 'Public Grievance link', selector: 'a[href*="public-grievance"] >> visible=true', kind: 'link' }],
-  notes: 'The department responsible for accessibility policy. Its default home page is in Hindi; this task uses the English one.',
+  critical: [{ label: 'Public Grievance link', selector: 'a[href*="public-grievance"]', kind: 'link' }],
+  notes: 'The department responsible for accessibility policy. Its default home page is in Hindi; this task uses the English one. The Public Grievance link sits in a drop-down sub-menu that is closed when the page loads.',
 };
 
 export const cpgrams: Portal = {
@@ -137,7 +137,12 @@ export const ncs: Portal = {
   owner: 'Ministry of Labour and Employment',
   jurisdiction: 'Central',
   task: 'Reach the job search form',
-  steps: [{ kind: 'goto', url: 'https://www.ncs.gov.in/' }],
+  steps: [
+    { kind: 'goto', url: 'https://www.ncs.gov.in/' },
+    // A keyboard user would Tab to this Close button and press Enter.
+    { kind: 'click', selector: '#myModal button[aria-label="Close"]', why: 'Close the announcement dialog that opens on load' },
+  ],
+  notes: 'An announcement dialog opens on load and holds keyboard focus, as a modal should. The audit closes it first, as a user would.',
   critical: [
     { label: 'Jobs / skills / designation field', selector: 'input[placeholder="Enter jobs/skills/designation"]', kind: 'field' },
     { label: 'City field', selector: 'input[placeholder="Enter City"]', kind: 'field' },
