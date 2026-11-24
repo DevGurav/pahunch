@@ -5,6 +5,85 @@ verified, and what comes next.
 
 ---
 
+## 2026-11-24: Portal discovery
+
+### What was built
+
+- `src/browser/session.ts`: one Chromium context with the tool named in the user agent
+  (`… pahunch/0.1.0 (+https://github.com/DevGurav/pahunch)`), `en-IN` locale, IST timezone and a
+  1366×768 viewport, which is common on Indian laptops. `pace()` enforces the 5-second gap between
+  loads. `recordRobots()` fetches and matches robots.txt and never throws. `settle()` waits for
+  network idle but gives up after 10 s, because analytics beacons on some portals never go quiet.
+  The `__name` shim for tsx is added to every frame through an init script.
+- `npm run discover -- <url>`: prints every visible input and its label, buttons with where they
+  lead, CAPTCHA candidates, anything that looks like an audio option, links to login, apply and
+  contact pages, frames, Indic text count and PDF links. Full JSON and a screenshot go to `tmp/`.
+- `src/portals/`: fifteen task definitions, 12 central and 3 Maharashtra, plus a list of the
+  portals left out and why.
+
+### What discovery showed
+
+Looking at real pages before writing the checks changed the design in several places:
+
+- **Placeholders become names.** `<input placeholder="Enter UserName">` gets the accessible name
+  "Enter UserName" from the browser. MahaDBT's password field has the placeholder `********`, so a
+  screen reader announces the field's name as eight stars. The names check therefore flags names
+  that contain no letters or digits, not just empty ones.
+- **Clickable `div`s are common.** Passport Seva's Continue button is a `div` with `tabindex="0"`
+  and a click handler (the page is built with React Native Web). Tab can reach it, but the
+  accessibility snapshot shows plain text, `text: Continue`, with no role. That calls for a
+  separate `role-missing` rule, distinct from "unreachable".
+- **Audio options can exist and still be unusable.** On the Voters' Services portal the audio
+  CAPTCHA is an `<i aria-label="listen captcha">` icon. It isn't focusable, and an `aria-label` on
+  an element with no role is ignored, so the icon is absent from the accessibility tree. A sighted
+  mouse user sees an audio option; a blind keyboard user doesn't. The CAPTCHA check has to look
+  at whether the alternative can be reached and is exposed, not just whether it exists.
+- **`alt=""` hides the CAPTCHA entirely.** MahaDBT and RTI Online mark their CAPTCHA images as
+  decorative. The screen reader skips the image and lands on an unlabelled text box.
+- **A page can declare the wrong language.** The myAadhaar beta declares `lang="hi"` on an English
+  page, so every English word would be read with a Hindi voice. The lang check needs a rule for
+  the page-level mismatch as well as for unmarked Indic phrases.
+- **Pop-ups on load.** Passport Seva's home page opens an announcement modal that intercepts every
+  click, and the myAadhaar beta is dimmed by an overlay. Portal steps gained a `press Escape` kind,
+  and the keyboard check must tell a focus trap from focus correctly held inside an open dialog.
+- **Good practice exists.** eCourts and CPGRAMS both pair their image CAPTCHA with a real,
+  focusable audio control, and eCourts' CAPTCHA image has a descriptive `alt`. The audit has to be
+  able to say "this one is fine".
+
+### Portals left out
+
+Four portals refused the automated browser, and per [0005](decisions/0005-scanning-rules.md) they
+are recorded and left out rather than worked around: IRCTC (`ERR_HTTP2_PROTOCOL_ERROR`, twice),
+the EPFO member portal and PM-KISAN (both "The URL you requested has been blocked"), and the income
+tax e-filing login (no response in 60 s, twice). RTI Online, e-Shram and MSEDCL's bill page took
+their places. The list lives in `src/portals/index.ts` and will be shown on the report's methodology
+page.
+
+### Decisions and tradeoffs
+
+- **Critical controls use Playwright selectors, not plain CSS.** Several controls have no id, and
+  `:has-text()` or `>> visible=true` locate them robustly. Before the checks run, each resolved
+  element gets a `data-pahunch-critical` attribute so code running in the page can recognise it.
+  That attribute only exists in our browser's copy of the page.
+- **Voters' Services: two selectors use `aria-label` attributes.** It's the only stable hook on
+  that page. This doesn't bias the results, because the checks read the computed name and role from
+  the browser, not from the selector.
+- **Portals are grouped in two files** (`central.ts`, `maharashtra.ts`) instead of one file each.
+  Fifteen tiny files added navigation without adding clarity.
+
+### Verified
+
+- `npm run typecheck` clean. CI green on the first push (31 s).
+- Each portal's task page loaded once and its controls were confirmed by eye from the discover
+  output and screenshots.
+
+### Next
+
+Phase 2: the rule catalogue and the checks, each test-first against fixture pages that copy the
+patterns above.
+
+---
+
 ## 2026-11-24: Bootstrap
 
 ### Why this project

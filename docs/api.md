@@ -26,4 +26,4 @@ Builds the static report from the newest result for each portal. Defaults: `resu
 Serves the built report locally and runs the checks on every page. Exit code 1 if any page has a
 blocker or a serious or critical axe violation. CI runs this before publishing.
 
-*Status: `discover` lands in Phase 1, `audit` in Phase 3, `report` and `check:site` in Phase 4.*
+*Status: `discover` is available. `audit` lands in Phase 3, `report` and `check:site` in Phase 4.*

@@ -6,7 +6,7 @@ to disk, and builds a static report from those results.
 
 ## Data flow
 
-```
+```text
 src/portals/*.ts           what to load, the task steps, which controls the task needs
         │
         ▼
@@ -33,9 +33,9 @@ src/report/build.ts        site/ (static HTML), published by CI to GitHub Pages
 | `src/verdict.ts` | Findings and unchecked parts → one verdict | done |
 | `src/browser/robots.ts` | Records whether a task URL is disallowed (RFC 9309 matching) | done |
 | `src/rules.ts` | Single catalogue of rule ids: severity, WCAG, title, why, fix | planned (Phase 2) |
-| `src/browser/session.ts` | Launches Chromium, identifies the tool in the user agent, paces loads | planned (Phase 1) |
-| `src/portals/` | One definition per portal | planned (Phase 1) |
-| `src/cli/discover.ts` | Dumps forms, controls, CAPTCHA candidates and frames for a new portal | planned (Phase 1) |
+| `src/browser/session.ts` | Launches Chromium, names the tool in the user agent, paces loads, records robots.txt | done |
+| `src/portals/` | Task definitions (`central.ts`, `maharashtra.ts`) and the list of portals left out (`index.ts`) | done |
+| `src/cli/discover.ts` | Prints forms, labels, buttons, CAPTCHA and audio candidates, key links and frames for a page | done |
 | `src/checks/` | One check per file | planned (Phase 2) |
 | `src/audit.ts`, `src/cli/audit.ts` | Runs a portal's steps and checks, writes results | planned (Phase 3) |
 | `src/report/` | Static site from results | planned (Phase 4) |
@@ -57,10 +57,13 @@ src/report/build.ts        site/ (static HTML), published by CI to GitHub Pages
 ## Critical controls
 
 A task is defined by the controls a person must use to finish it, such as the Aadhaar number field,
-the CAPTCHA field and the Login button. Each one is located by a **CSS selector**, never by its
-accessible name, because a missing name is one of the things we are testing for. The keyboard and
-names checks report on each critical control. If a selector matches nothing, the portal definition
-is out of date and the task becomes inconclusive rather than clean.
+the CAPTCHA field and the Login button. Each one is located by a **Playwright selector** (CSS, plus
+`:has-text()`, `>> visible=true` and similar), never by its computed accessible name, because a
+missing name is one of the things we are testing for. Before the checks run, each resolved element
+is tagged with `data-pahunch-critical="<index>"` in our browser's copy of the page, so code running
+inside the page can recognise it. The keyboard and names checks report on each critical control.
+If a selector matches nothing, the portal definition is out of date and the task becomes
+inconclusive rather than clean.
 
 ## Frames
 

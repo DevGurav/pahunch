@@ -3,27 +3,26 @@
 State markers: **[done]**, **[in progress]**, **[not started]**. Update them in the same change that
 moves them.
 
-## Phase 0: Bootstrap [in progress]
+## Phase 0: Bootstrap [done]
 
 - [done] Scaffold: TypeScript on Node with tsx, Playwright, axe-core, pdf.js
 - [done] Verdict logic and robots.txt matcher, with tests
 - [done] Project documents and decision records 0001–0005
-- [in progress] CI: typecheck and tests on every push
-- [not started] Public repository on GitHub
+- [done] CI: typecheck and tests on every push
+- [done] Public repository: github.com/DevGurav/pahunch
 
-## Phase 1: Portal discovery [not started]
+## Phase 1: Portal discovery [done]
 
-- [not started] Browser session: pacing, user agent with the tool's name, robots.txt recorded
-- [not started] `npm run discover`: forms, controls, CAPTCHA candidates, frames, PDF links
-- [not started] Load each candidate portal's task page once and confirm the URL, the critical
-  controls, and whether automated browsing is blocked
-- [not started] `src/portals/*.ts` for every portal that can be checked
-
-Candidate portals (central): UDID / Swavlamban Card, Department of Empowerment of Persons with
-Disabilities, CPGRAMS, Passport Seva, myAadhaar, income tax e-filing, IRCTC, DigiLocker, National
-Scholarship Portal, the Voters' Service Portal, eCourts services, the EPFO member portal and the
-National Career Service. Maharashtra: Aaple Sarkar and MahaDBT. A portal that blocks automated
-browsing or has moved is replaced, and the reason goes in the build log.
+- [done] Browser session: pacing, user agent with the tool's name, robots.txt recorded
+- [done] `npm run discover`: forms, controls, CAPTCHA candidates, audio options, links, frames,
+  PDF links
+- [done] Each candidate's task page loaded once to confirm the URL, the critical controls and any
+  blocking
+- [done] 15 portals defined in `src/portals/`. Central: UDID, DEPwD, CPGRAMS, Passport Seva,
+  myAadhaar, DigiLocker, NSP, Voters' Services, eCourts, NCS, RTI Online, e-Shram. Maharashtra:
+  Aaple Sarkar, MahaDBT, MSEDCL.
+- [done] Left out because they block automated browsing: IRCTC, EPFO member portal, PM-KISAN,
+  income tax e-filing login
 
 ## Phase 2: Check engine [not started]
 
