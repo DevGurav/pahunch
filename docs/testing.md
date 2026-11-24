@@ -6,8 +6,9 @@
 | --- | --- | --- | --- |
 | Unit | Pure logic: verdict precedence, robots matching, transcript formatting, report escaping | `test/*.test.ts` | none |
 | Check integration | Each check runs in real Chromium against a fixture page served from `test/fixtures/` by a local server. Every check has a page with the problem and a clean page. | `test/checks/*.test.ts` | localhost only |
-| Report | The report builder turns a fake results folder into HTML; untrusted snippets come out escaped | `test/report.test.ts` | none |
-| Dogfood | The report site is checked by the tool itself: zero blockers and zero serious axe violations | `npm run check:site` | localhost only |
+| Audit runner | A whole portal audit against fixtures: a Blocked verdict and all five result files; a page that doesn't load, an HTTP error and a vanished control all come out inconclusive, never clean | `test/audit.test.ts` | localhost only |
+| Report | The report builder turns a fake result into HTML. Hostile snippets and names come out escaped, our marker attribute is stripped, Marathi is marked `lang="mr"` | `test/report.test.ts` | none |
+| Dogfood | The report site is checked by the tool itself: no blockers and no barriers, including serious or critical axe violations | `npm run check:site` | localhost only |
 
 Live portals are **not** tested in CI ([0003](decisions/0003-no-live-scans-in-ci.md)). An audit run
 is an operation, not a test. Its output is checked by hand before results are committed

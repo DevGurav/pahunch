@@ -39,17 +39,27 @@ Each check was built test-first against a fixture with the problem and a clean o
 - [done] transcript: "what a screen reader would hear", from the aria snapshot
 - [done] Learning notes 2–4: CAPTCHAs, `lang`, what automated checks can't see
 
-## Phase 3: Run the audit [not started]
+## Phase 3: Run the audit [done]
 
-- [not started] Audit runner and CLI
-- [not started] Run every portal; check the evidence for each Blocked verdict by hand
-- [not started] Commit dated results
+- [done] Audit runner and CLI (a fresh browser per portal, a fresh page per audit)
+- [done] All 15 portals run. Every Blocked verdict checked against the saved HTML. The review fixed
+  three detector gaps and two portal definitions (build log, "First audit")
+- [done] Dated results committed: `results/2026-11-24/`
 
-## Phase 4: Report site [not started]
+## Phase 4: Report site [done]
 
-- [not started] Scorecard, one page per portal, methodology and limits, where to send the findings
-- [not started] The report passes its own checks (`npm run check:site`) in CI
-- [not started] Published on GitHub Pages
+- [done] Scorecard, one page per portal, methodology and limits, where to send the findings
+- [done] The report passes its own checks (`npm run check:site`) in CI
+- [done] Published on GitHub Pages: devgurav.github.io/pahunch
+
+## Later [not started]
+
+- [not started] Keyboard walk: press Enter on a disclosure button (`aria-expanded="false"`) when the
+  menu it controls holds a critical control. That would settle cases like DEPwD instead of leaving
+  them inconclusive.
+- [not started] Re-run every few months and show what changed since the last run
+- [not started] Logged-out tasks beyond the first page (e.g. the passport registration form), still
+  without submitting anything
 
 ## Phase 5 (optional): Real screen-reader runs [not started]
 

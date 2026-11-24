@@ -74,10 +74,25 @@ Each check also returns raw evidence, which `result.json` stores next to its fin
 `inconclusive[]`, such as a keyboard walk stuck in an open dialog. Any entry makes the task at best
 inconclusive.
 
-## `result.json`
+## `result.json` (schema 1)
 
-*Draft. The full shape is fixed in Phase 3 together with the audit runner, and this page will be
-updated in the same change.* It will hold the portal metadata, start and end times, the tool,
-browser and axe-core versions, the robots.txt record, the per-check findings, the
-critical-control table (found, keyboard-reachable, accessible name, role), any reasons the task was
-inconclusive, and the verdict.
+Defined as `PortalResult` in `src/audit.ts`.
+
+| Field | Notes |
+| --- | --- |
+| `schema` | `1`. Bump it if a field changes meaning. |
+| `portal` | `id`, `name`, `owner`, `jurisdiction`, `task`, `notes`, copied from the definition at run time |
+| `startedAt`, `finishedAt` | ISO 8601, UTC |
+| `tool` | pahunch version, full user agent, Chromium version, axe-core version |
+| `pages[]` | Each page the steps loaded: requested URL, final URL after redirects, HTTP status, title |
+| `robots` | robots.txt URL, status, and whether the first task URL was disallowed. Recorded, not obeyed ([0005](decisions/0005-scanning-rules.md)) |
+| `critical[]` | One row per critical control: `label`, `kind`, `selector`, `found`, `frameUrl`, plus `role`, `name`, `disabled` from the names check and `reached`, `focusVisible` from the keyboard check |
+| `verdict` | `blocked`, `inconclusive`, `barriers` or `no-blockers-found` |
+| `inconclusiveReasons[]` | Why part of the task couldn't be checked |
+| `findings[]` | Every `Finding`, from every check |
+| `counts` | Findings by severity |
+| `evidence` | Per-check evidence (see above). axe is summarised here; the full output is in `axe.json` |
+| `errors[]` | Checks that crashed. Each also adds an inconclusive reason |
+
+The steps stop at the first failure (page not loading, HTTP 4xx or 5xx, a block page, a failed
+click). The result is then written with whatever was gathered, and the verdict is inconclusive.

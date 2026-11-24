@@ -8,7 +8,25 @@ the UDID disability card portal. For each portal it takes one task people actual
 as reaching the login form or searching a record, and asks one question: *would someone using a
 screen reader be stopped from finishing it?*
 
-Status: **in development.** No published results yet. See [docs/roadmap.md](docs/roadmap.md).
+**Report: [devgurav.github.io/pahunch](https://devgurav.github.io/pahunch/)** · First audit run on
+24 November 2026 · [Roadmap](docs/roadmap.md)
+
+## What the first audit found
+
+| Verdict | Portals |
+| --- | --- |
+| **Blocked** | Aaple Sarkar, e-Shram, MahaDBT, MSEDCL (Mahavitaran) |
+| **Inconclusive** | Department of Empowerment of Persons with Disabilities |
+| **Barriers found** | myAadhaar, CPGRAMS, DigiLocker, National Career Service, National Scholarship Portal, Passport Seva, RTI Online, UDID, Voters' Services |
+| **No blockers found by automated checks** | eCourts services |
+
+- All four Blocked portals ask for an image (or canvas) CAPTCHA with no audio or other
+  non-visual option. That includes **all three Maharashtra portals**. Every other central portal
+  with a CAPTCHA offers an audio option that the keyboard can reach.
+- On 6 of the 15, a control the task needs has no usable accessible name. A screen reader says
+  "edit" and nothing more.
+- Four portals (IRCTC, the EPFO member portal, PM-KISAN and the income tax e-filing login) refused
+  the automated browser and were left out rather than worked around.
 
 ## Why this matters
 

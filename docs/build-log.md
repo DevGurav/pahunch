@@ -5,6 +5,111 @@ verified, and what comes next.
 
 ---
 
+## 2026-11-24: Report site
+
+### What was built
+
+- `src/report/`: a static site with no JavaScript at all, built from the newest result for each
+  portal. It has a scorecard (`index.html`), one page per portal, a methodology page, and a "send
+  the findings" page. Full transcripts are published as text files.
+- Every page sends `Content-Security-Policy: default-src 'none'; style-src 'self'; …`, so even an
+  escaping bug couldn't run script. Everything taken from a scanned page goes through one `esc()`
+  helper, and `test/report.test.ts` feeds it a `<script>` snippet and a hostile accessible name.
+- Indic text inside the report is wrapped in `<span lang="…">`, using `mr` for Maharashtra portals
+  and `hi` otherwise, so the report doesn't make the mistake it reports.
+- `npm run check:site` serves the built site locally and runs pahunch's own names, lang, axe and
+  keyboard checks on all 18 pages, with the skip link and main navigation as critical controls. CI
+  fails on any blocker or barrier, including serious or critical axe violations, then deploys to
+  GitHub Pages.
+
+### Decisions and tradeoffs
+
+- **No screenshots on the site.** They're kept in `results/` as evidence, but putting government
+  pages, emblems included, on our own pages would look like borrowed authority (decision 0005, rule
+  8). The element's HTML and the transcript carry the evidence instead.
+- **Plain template literals instead of a framework.** Eighteen pages don't need one, and with one
+  escaping helper the safety rule is easy to see.
+- **Layout fixes after looking at it.** Screenshots at 1280 px and 390 px showed dates wrapping
+  mid-value and counts separated from their badges on phones. Both fixed.
+
+### Verified
+
+- `npm run check:site`: all 18 pages pass. `npm test`: 69/69.
+
+---
+
+## 2026-11-24: First audit
+
+### What was built
+
+- `src/audit.ts`: runs a portal's steps on a **fresh page**, tags the critical controls, saves the
+  screenshot and DOM, then runs names → captcha → lang → transcript → axe → keyboard → pdf and decides
+  the verdict. It never throws. A page that doesn't load, an HTTP error, a block page, a failed
+  step, a vanished control or a crashed check all become inconclusive reasons. `npm run audit` gives
+  each portal its own browser.
+- Tests cover the failure paths, which must come out inconclusive and never clean.
+
+### Review of the first run, and what it changed
+
+The first full run gave 4 Blocked, 2 Inconclusive, 8 Barriers found, 1 clean. Per the runbook,
+every Blocked verdict and every surprise was checked against the saved `page.html.gz`:
+
+- **The four Blocked verdicts held up.** e-Shram, a PNG CAPTCHA with `alt="Captcha"`; the only
+  "listen" on that page is a separate consent-form feature. Aaple Sarkar, an image plus a "Try
+  another" link; its CAPTCHA field is also `readonly` until focused and blocks paste. MahaDBT, an image
+  with **no `alt` at all** (not an empty one, as discovery suggested) and a Refresh link. MSEDCL, a
+  `<canvas>` CAPTCHA. In all four, a search of the saved HTML for audio, speak, volume, listen or
+  sound found only Modernizr classes and service names.
+- **MSEDCL isn't a text CAPTCHA.** Discovery took `span#lblCaptcha` for a text challenge, but it is
+  only the Marathi label "कॅप्चा*". The check was right to flag the canvas. To stop a label like that
+  ever passing as a readable challenge, text challenges that only say "captcha" are now ignored.
+- **Voters' Services: the CAPTCHA image wasn't recognised.** It sits three levels below
+  `div.captcha-div` next to a `<p>Captcha Code</p>` caption, and the detector looked only two levels
+  up. It now looks four levels up and at a short caption beside the image.
+- **Voters' Services: discovery was wrong about the audio icon.** The saved page shows
+  `<i role="button" tabindex="0" aria-label="listen captcha">`, which is focusable and exposed. The
+  check correctly reports a reachable audio option. The discovery entry below, learning note 2 and
+  the context of decision 0006 had described it as unfocusable. The note was fixed, and 0006 got a
+  dated correction (decision records aren't rewritten).
+- **DEPwD: the Public Grievance link lives in a closed sub-menu.** Tab alone never reaches links in
+  closed menus. Whether that means a barrier depends on how the menu opens. A menu that opens only on
+  hover is now reported as a barrier. A menu behind a disclosure button (`aria-expanded`,
+  `aria-controls`) is inconclusive, because the walk doesn't press Enter. The names check no longer
+  calls a link in a closed menu "hidden from screen readers". DEPwD's menu has a disclosure toggle,
+  so it is inconclusive, for an honest reason.
+- **NCS: an announcement dialog holds focus on load**, correctly, as a modal should. The task now
+  starts by closing it, as a keyboard user would.
+- **Shared-page leftovers.** In tests, a failed navigation bled into the next audit. Each audit now
+  gets its own page.
+- **myAadhaar serves two sites from one address.** The same URL sometimes redirects to
+  `myaadhaarbeta.uidai.gov.in` (declares `lang="hi"` on an English page) and sometimes serves the
+  regular site (declares `lang="en"`, but its language list uses display names such as
+  `lang="हिंदी"` instead of language codes). The portal note now says so. The committed result is
+  from the beta.
+
+### Final results (second full run, same code for every portal)
+
+| Verdict | Portals |
+| --- | --- |
+| Blocked | Aaple Sarkar, e-Shram, MahaDBT, MSEDCL |
+| Inconclusive | DEPwD |
+| Barriers found | myAadhaar, CPGRAMS, DigiLocker, NCS, NSP, Passport Seva, RTI Online, UDID, Voters' Services |
+| No blockers found by automated checks | eCourts |
+
+- **All three Maharashtra portals are Blocked** by an image or canvas CAPTCHA with no audio option,
+  and so is e-Shram. Every other central portal with a CAPTCHA (CPGRAMS, eCourts, RTI Online,
+  Voters' Services) offers a reachable audio option.
+- **Unnamed task controls on 6 of 15** (Aaple Sarkar, MahaDBT, MSEDCL, NSP, Passport Seva, RTI
+  Online). Unmarked Indic text or a wrong page language on 4. Scanned PDFs linked from the task page
+  on 2 (Aaple Sarkar, UDID).
+- Most runs took 3–40 s, mostly the pacing and the keyboard walk.
+
+### Next
+
+The report site, then publishing.
+
+---
+
 ## 2026-11-24: Check engine
 
 ### What was built

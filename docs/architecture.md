@@ -39,9 +39,9 @@ src/report/build.ts        site/ (static HTML), published by CI to GitHub Pages
 | `src/portals/` | Task definitions (`central.ts`, `maharashtra.ts`) and the list of portals left out (`index.ts`) | done |
 | `src/cli/discover.ts` | Prints forms, labels, buttons, CAPTCHA and audio candidates, key links and frames for a page | done |
 | `src/checks/` | `captcha`, `names`, `lang`, `keyboard`, `pdf`, `axe`, `transcript`, one per file | done |
-| `src/audit.ts`, `src/cli/audit.ts` | Runs a portal's steps and checks, writes results | planned (Phase 3) |
-| `src/report/` | Static site from results | planned (Phase 4) |
-| `src/cli/check-site.ts` | Runs the same checks against the report site itself | planned (Phase 4) |
+| `src/audit.ts`, `src/cli/audit.ts` | Runs a portal's steps and checks on a fresh page, writes results | done |
+| `src/report/` | Static site from results: `load`, `build`, `html` (escaping, layout), `style.css`, `serve` | done |
+| `src/cli/check-site.ts` | Runs the same checks against the report site itself | done |
 
 ## Key invariants
 
