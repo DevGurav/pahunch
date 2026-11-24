@@ -1,0 +1,30 @@
+{
+  "name": "pahunch",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Automated accessibility checks of Indian government citizen-service portals, focused on what blocks screen-reader users.",
+  "type": "module",
+  "license": "MIT",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "audit": "tsx src/cli/audit.ts",
+    "discover": "tsx src/cli/discover.ts",
+    "report": "tsx src/cli/report.ts",
+    "check:site": "tsx src/cli/check-site.ts",
+    "test": "tsx --test \"test/**/*.test.ts\"",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@axe-core/playwright": "^4.14.0",
+    "pdfjs-dist": "^6.5.438",
+    "playwright": "^1.65.1",
+    "tsx": "^4.23.15"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.6",
+    "pdf-lib": "^1.17.1",
+    "typescript": "^7.0.2"
+  }
+}

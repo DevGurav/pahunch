@@ -1,0 +1,21 @@
+# dependencies
+node_modules/
+
+# generated report site (built in CI from results/)
+site/
+
+# scratch output from `npm run discover` and local experiments
+tmp/
+
+# Playwright test-runner leftovers, if anyone runs it directly
+test-results/
+playwright-report/
+
+# local environment
+.env
+.env.*
+*.log
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
