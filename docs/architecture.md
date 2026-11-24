@@ -32,11 +32,13 @@ src/report/build.ts        site/ (static HTML), published by CI to GitHub Pages
 | `src/types.ts` | `Finding`, `Severity`, `Verdict` | done |
 | `src/verdict.ts` | Findings and unchecked parts → one verdict | done |
 | `src/browser/robots.ts` | Records whether a task URL is disallowed (RFC 9309 matching) | done |
-| `src/rules.ts` | Single catalogue of rule ids: severity, WCAG, title, why, fix | planned (Phase 2) |
+| `src/rules.ts` | Single catalogue of rule ids: severity, WCAG, title, why, fix | done |
+| `src/checks/critical.ts` | Resolves critical controls in every frame and tags them `data-pahunch-critical` | done |
+| `src/checks/aria.ts` | Parses Playwright's aria snapshot lines | done |
 | `src/browser/session.ts` | Launches Chromium, names the tool in the user agent, paces loads, records robots.txt | done |
 | `src/portals/` | Task definitions (`central.ts`, `maharashtra.ts`) and the list of portals left out (`index.ts`) | done |
 | `src/cli/discover.ts` | Prints forms, labels, buttons, CAPTCHA and audio candidates, key links and frames for a page | done |
-| `src/checks/` | One check per file | planned (Phase 2) |
+| `src/checks/` | `captcha`, `names`, `lang`, `keyboard`, `pdf`, `axe`, `transcript`, one per file | done |
 | `src/audit.ts`, `src/cli/audit.ts` | Runs a portal's steps and checks, writes results | planned (Phase 3) |
 | `src/report/` | Static site from results | planned (Phase 4) |
 | `src/cli/check-site.ts` | Runs the same checks against the report site itself | planned (Phase 4) |

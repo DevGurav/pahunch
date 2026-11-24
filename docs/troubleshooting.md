@@ -17,6 +17,12 @@ Check from a normal browser on the same network first. If it works there but not
 site is blocking automated browsing. Record it in the build log and leave the portal out. Don't
 change the user agent or use other tricks to get past it ([0005](decisions/0005-scanning-rules.md)).
 
+## A test's `before()` runs before the harness is ready
+
+`useHarness()` registers its own top-level `before()`. Another top-level `before()` in the same file
+is not guaranteed to wait for it, so `h.server` or `h.session` can still be undefined. Do per-test
+setup inside the test itself (see `serveGeneratedPdfs()` in `test/checks/pdf.test.ts`).
+
 ## npm swallows the arguments
 
 Arguments must come after `--`: `npm run audit -- --portal passport`. In PowerShell, quote any

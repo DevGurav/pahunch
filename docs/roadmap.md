@@ -24,18 +24,20 @@ moves them.
 - [done] Left out because they block automated browsing: IRCTC, EPFO member portal, PM-KISAN,
   income tax e-filing login
 
-## Phase 2: Check engine [not started]
+## Phase 2: Check engine [done]
 
-Each check is built test-first against a fixture with the problem and a clean one.
+Each check was built test-first against a fixture with the problem and a clean one. 55 tests.
 
-- [not started] Rule catalogue (`src/rules.ts`)
-- [not started] captcha: image-only CAPTCHA with no audio alternative
-- [not started] names: critical controls with no accessible name or no role
-- [not started] lang: Indic text with no matching `lang`
-- [not started] keyboard: critical controls the Tab key can't reach, traps, invisible focus
-- [not started] pdf: scanned PDFs with no text layer; untagged PDFs
-- [not started] axe: WCAG 2.1 A/AA rules
-- [not started] transcript: "what a screen reader would hear", from the accessibility tree
+- [done] Rule catalogue (`src/rules.ts`) and blocker criteria ([0006](decisions/0006-what-counts-as-a-blocker.md))
+- [done] Critical controls tagged across frames
+- [done] captcha: image-only CAPTCHA, an audio option that can't be reached, third-party and text CAPTCHAs, task path or not
+- [done] names: critical controls with no usable name or no role
+- [done] lang: unmarked Indic text; a page declaring the wrong language
+- [done] keyboard: controls the Tab key can't reach, traps (distinguished from modal dialogs), invisible focus
+- [done] pdf: scanned PDFs with no text; untagged PDFs
+- [done] axe: WCAG 2.1 A/AA rules
+- [done] transcript: "what a screen reader would hear", from the aria snapshot
+- [done] Learning notes 2–4: CAPTCHAs, `lang`, what automated checks can't see
 
 ## Phase 3: Run the audit [not started]
 

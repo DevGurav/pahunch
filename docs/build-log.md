@@ -5,6 +5,77 @@ verified, and what comes next.
 
 ---
 
+## 2026-11-24: Check engine
+
+### What was built
+
+Seven checks in `src/checks/`, each written test-first against fixture pages that copy patterns
+seen on real portals during discovery, plus the rule catalogue (`src/rules.ts`) that holds every
+rule's severity, WCAG reference and plain-language "why" and "fix".
+
+- **critical.ts**: resolves each portal's critical controls in every frame and tags them
+  `data-pahunch-critical="<i>"`, so code running in the page can recognise them.
+- **captcha.ts**: finds image and canvas CAPTCHAs (ignoring the speaker and refresh icons beside
+  them), the field each goes with, and any audio option. For the audio option it records two
+  separate facts: *focusable* (Tab reaches it) and *exposed* (it is, or sits inside, a button or
+  link). It also tells third-party widgets and text CAPTCHAs apart, and decides whether the CAPTCHA
+  is on the task path.
+- **names.ts**: reads each critical control's role and name from Playwright's aria snapshot.
+  Flags hidden controls, controls with the wrong role (the clickable `div`), and names with no
+  letters or digits in them (the `********` placeholder).
+- **lang.ts**: counts Indic characters a screen reader would read and how many sit under no Indic
+  `lang`. Also flags a page that declares an Indic language but is written in English.
+- **keyboard.ts**: presses Tab through the page, follows focus into iframes, records where it goes,
+  and judges reachability, traps and focus visibility for the critical controls.
+- **pdf.ts**: fetches up to five linked PDFs (HEAD first, to check size), reads the text of the first
+  five pages with pdf.js, and checks the tagged flag.
+- **axe.ts**: axe-core with the WCAG 2.1 A/AA tags. "Incomplete" results are kept but never counted.
+- **transcript.ts**: turns the aria snapshot into roughly what NVDA would say ("Login, button",
+  "edit, no name").
+
+### Problems and how they were solved
+
+- **How to tell "went all the way round" from "stuck in a loop".** A probe showed that in headless
+  Chromium, after the last element focus leaves the document (`document.hasFocus()` becomes
+  false), then wraps to the first element. So a cycle that passes through that "end" state and comes
+  back to its first stop is complete. A cycle that returns without passing through it is a trap,
+  unless focus is inside `[aria-modal="true"]` or `dialog[open]`, where holding focus is correct.
+  That case makes the task inconclusive instead. A sliding window of the last 40 stops catches
+  loops that don't include the first stop.
+- **Focus visibility without screenshots.** Before the walk, the check stores a style signature
+  (outline, box-shadow, border, background, colour, text decoration) for every focusable element and
+  its parent. During the walk, a focused element counts as visibly focused if it has a non-zero
+  outline, or if its signature or its parent's has changed. This handles the `outline: none` pages
+  and accepts `box-shadow` focus styles.
+- **pdfjs-dist 6 removed `isEvalSupported`.** The security doc relied on turning it off to close
+  the CVE-2024-4367 path. In version 6 that eval-based font path no longer exists, so the option is
+  gone. `destroy()` also moved to the loading task. Code and `docs/security.md` were updated to match.
+- **Hook ordering in `node:test`.** A second top-level `before()` didn't wait for the harness's
+  own, so per-test setup now happens inside the tests. Noted in troubleshooting.
+
+### Decisions
+
+- **Blocker criteria narrowed and sharpened** ([0006](decisions/0006-what-counts-as-a-blocker.md)).
+  An unlabelled field is a barrier, not a blocker, because the visible text next to it usually gives
+  the answer and the claim has to survive pushback. An audio option that is neither focusable nor
+  exposed counts as no option at all, so it is a blocker on the task path.
+- **Audio CAPTCHA controls are owned by the captcha check.** The names and keyboard checks keep
+  them as evidence only, so one problem isn't counted three times.
+- **Indic text threshold of 30 characters.** Below it (typically a lone "हिन्दी" link) the finding
+  is info. Above it, real content is being misread.
+
+### Verified
+
+- `npm test`: 55/55. `npm run typecheck`: clean.
+
+### Next
+
+Phase 3: the audit runner (`src/audit.ts` and `npm run audit`), which runs a portal's steps, every
+check and the verdict, and writes `results/<date>/<portal>/`. Then run all fifteen portals and
+review every Blocked verdict by hand against the saved HTML.
+
+---
+
 ## 2026-11-24: Portal discovery
 
 ### What was built
