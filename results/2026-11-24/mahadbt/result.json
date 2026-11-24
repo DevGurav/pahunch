@@ -1,0 +1,927 @@
+{
+  "schema": 1,
+  "portal": {
+    "id": "mahadbt",
+    "name": "MahaDBT (scholarships and benefits)",
+    "owner": "Government of Maharashtra",
+    "jurisdiction": "Maharashtra",
+    "task": "Reach the applicant login form"
+  },
+  "startedAt": "2026-11-24T13:37:34.285Z",
+  "finishedAt": "2026-11-24T13:38:00.228Z",
+  "tool": {
+    "name": "pahunch",
+    "version": "0.1.0",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/159.0.8154.6 Safari/537.36 pahunch/0.1.0 (+https://github.com/DevGurav/pahunch)",
+    "browser": "chromium 159.0.8154.6",
+    "axe": "4.14.1"
+  },
+  "pages": [
+    {
+      "requested": "https://mahadbt.maharashtra.gov.in/Login/Login",
+      "finalUrl": "https://mahadbt.maharashtra.gov.in/Login/Login",
+      "status": 200,
+      "title": ""
+    }
+  ],
+  "robots": {
+    "robotsUrl": "https://mahadbt.maharashtra.gov.in/robots.txt",
+    "status": 404,
+    "disallowed": false
+  },
+  "critical": [
+    {
+      "index": 0,
+      "label": "Username field",
+      "kind": "field",
+      "selector": "#UserName",
+      "found": true,
+      "role": "textbox",
+      "name": "Enter UserName",
+      "disabled": false,
+      "reached": true,
+      "focusVisible": true
+    },
+    {
+      "index": 1,
+      "label": "Password field",
+      "kind": "field",
+      "selector": "#Password",
+      "found": true,
+      "role": "textbox",
+      "name": "********",
+      "disabled": false,
+      "reached": true,
+      "focusVisible": true
+    },
+    {
+      "index": 2,
+      "label": "CAPTCHA field",
+      "kind": "captcha-field",
+      "selector": "#CaptchaInputText",
+      "found": true,
+      "role": "textbox",
+      "name": "",
+      "disabled": false,
+      "reached": true,
+      "focusVisible": true
+    },
+    {
+      "index": 3,
+      "label": "Login button",
+      "kind": "button",
+      "selector": "#btnLogin",
+      "found": true,
+      "role": "button",
+      "name": "Login Here",
+      "disabled": false,
+      "reached": true,
+      "focusVisible": true
+    }
+  ],
+  "verdict": "blocked",
+  "inconclusiveReasons": [],
+  "findings": [
+    {
+      "check": "names",
+      "rule": "name-missing",
+      "severity": "barrier",
+      "wcag": [
+        "4.1.2",
+        "1.3.1"
+      ],
+      "summary": "\"Password field\" is announced as \"********, edit\". The name has no words in it.",
+      "target": "Password field",
+      "snippet": "<input autocompletetype=\"Disabled\" autocomplete=\"off\" class=\"form-control\" id=\"Password\" maxlength=\"100\" name=\"Password\" onblur=\"if(this.value=='')this.value='********';\" oncopy=\"return false\" oncut=\"return false\" onfocus=\"if(this.value=='********')this.value='';\" onpaste=\"return false\" placeholder="
+    },
+    {
+      "check": "names",
+      "rule": "name-missing",
+      "severity": "barrier",
+      "wcag": [
+        "4.1.2",
+        "1.3.1"
+      ],
+      "summary": "\"CAPTCHA field\" is announced only as \"edit\", with no name.",
+      "target": "CAPTCHA field",
+      "snippet": "<input autocomplete=\"off\" autocorrect=\"off\" data-val=\"true\" data-val-required=\"Is required field.\" id=\"CaptchaInputText\" name=\"CaptchaInputText\" type=\"text\" value=\"\" data-pahunch-critical=\"2\" style=\"\">"
+    },
+    {
+      "check": "captcha",
+      "rule": "captcha-image-only",
+      "severity": "blocker",
+      "wcag": [
+        "1.1.1"
+      ],
+      "summary": "The task needs this image CAPTCHA, and there is no audio or other non-visual option.",
+      "target": "img#CaptchaImage",
+      "snippet": "<img id=\"CaptchaImage\" src=\"/DefaultCaptcha/Generate?t=7680777f79c0447fa3df0da6b362fc3c\">",
+      "details": {
+        "imageAlt": null,
+        "input": "input#CaptchaInputText"
+      }
+    },
+    {
+      "check": "lang",
+      "rule": "lang-indic-unmarked",
+      "severity": "info",
+      "wcag": [
+        "3.1.2"
+      ],
+      "summary": "5 characters of Indic text are not marked with an Indic language; the page declares no language.",
+      "target": "a",
+      "snippet": "मराठी",
+      "details": {
+        "htmlLang": "",
+        "indicUnmarked": 5,
+        "indicTotal": 5,
+        "samples": [
+          {
+            "text": "मराठी",
+            "lang": "(none)",
+            "where": "a"
+          }
+        ]
+      }
+    },
+    {
+      "check": "axe",
+      "rule": "axe/aria-hidden-focus",
+      "severity": "barrier",
+      "wcag": [
+        "4.1.2"
+      ],
+      "summary": "ARIA hidden element must not be focusable or contain focusable elements (2 elements).",
+      "target": ".navMenu-paddle-left",
+      "snippet": "<button class=\"navMenu-paddle-left icon-chevronleft\" aria-hidden=\"true\"></button>",
+      "details": {
+        "impact": "serious",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/aria-hidden-focus?application=playwright",
+        "nodes": [
+          {
+            "target": ".navMenu-paddle-left",
+            "html": "<button class=\"navMenu-paddle-left icon-chevronleft\" aria-hidden=\"true\"></button>",
+            "failureSummary": "Fix all of the following:\n  Focusable content should be disabled, be removed from the DOM, or not be hidden with aria-hidden"
+          },
+          {
+            "target": ".navMenu-paddle-right",
+            "html": "<button class=\"navMenu-paddle-right icon-chevronright\" aria-hidden=\"true\"></button>",
+            "failureSummary": "Fix all of the following:\n  Focusable content should be disabled, be removed from the DOM, or not be hidden with aria-hidden"
+          }
+        ]
+      }
+    },
+    {
+      "check": "axe",
+      "rule": "axe/color-contrast",
+      "severity": "barrier",
+      "wcag": [
+        "1.4.3"
+      ],
+      "summary": "Elements must meet minimum color contrast ratio thresholds (9 elements).",
+      "target": ".navMenu-item:nth-child(2) > .isDisabled[data-toggle=\"\"]",
+      "snippet": "<a data-toggle=\"\" class=\"isDisabled\"> <img src=\"/Images/nav-icons/prematric.png\" alt=\"\"> Pre Matric <br>Scholarship </a>",
+      "details": {
+        "impact": "serious",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/color-contrast?application=playwright",
+        "nodes": [
+          {
+            "target": ".navMenu-item:nth-child(2) > .isDisabled[data-toggle=\"\"]",
+            "html": "<a data-toggle=\"\" class=\"isDisabled\"> <img src=\"/Images/nav-icons/prematric.png\" alt=\"\"> Pre Matric <br>Scholarship </a>",
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.97 (foreground color: #909fb5, background color: #213e6b, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "target": ".navMenu-item:nth-child(3) > .isDisabled[data-toggle=\"\"]",
+            "html": "<a data-toggle=\"\" class=\"isDisabled\"> <img src=\"/Images/nav-icons/senior-citizen.png\" alt=\"\"> Pension <br>Schemes </a>",
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.97 (foreground color: #909fb5, background color: #213e6b, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "target": ".navMenu-item:nth-child(4) > .isDisabled[data-toggle=\"\"]",
+            "html": "<a data-toggle=\"\" class=\"isDisabled\"> <img src=\"/Images/farmer02.png\" alt=\"\"> Farmer <br>Schemes </a>",
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.97 (foreground color: #909fb5, background color: #213e6b, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "target": ".navMenu-item:nth-child(5) > .isDisabled[data-toggle=\"\"]",
+            "html": "<a data-toggle=\"\" class=\"isDisabled\"> <img src=\"/Images/nav-icons/labor.png\" alt=\"\"> Labour <br>Schemes </a>",
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.97 (foreground color: #909fb5, background color: #213e6b, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "target": ".navMenu-item:nth-child(6) > .isDisabled[data-toggle=\"\"]",
+            "html": "<a data-toggle=\"\" class=\"isDisabled\"> <img src=\"/Images/nav-icons/sas.png\" alt=\"\"> Special Assistance <br>Schemes </a>",
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.97 (foreground color: #909fb5, background color: #213e6b, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+          }
+        ]
+      }
+    },
+    {
+      "check": "axe",
+      "rule": "axe/document-title",
+      "severity": "barrier",
+      "wcag": [
+        "2.4.2"
+      ],
+      "summary": "Documents must have <title> element to aid in navigation (1 element).",
+      "target": "html",
+      "snippet": "<html class=\" js flexbox canvas c...\" style=\"\">",
+      "details": {
+        "impact": "serious",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/document-title?application=playwright",
+        "nodes": [
+          {
+            "target": "html",
+            "html": "<html class=\" js flexbox canvas c...\" style=\"\">",
+            "failureSummary": "Fix any of the following:\n  Document does not have a non-empty <title> element"
+          }
+        ]
+      }
+    },
+    {
+      "check": "axe",
+      "rule": "axe/html-has-lang",
+      "severity": "barrier",
+      "wcag": [
+        "3.1.1"
+      ],
+      "summary": "<html> element must have a lang attribute (1 element).",
+      "target": "html",
+      "snippet": "<html class=\" js flexbox canvas c...\" style=\"\">",
+      "details": {
+        "impact": "serious",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/html-has-lang?application=playwright",
+        "nodes": [
+          {
+            "target": "html",
+            "html": "<html class=\" js flexbox canvas c...\" style=\"\">",
+            "failureSummary": "Fix any of the following:\n  The <html> element does not have a lang attribute"
+          }
+        ]
+      }
+    },
+    {
+      "check": "axe",
+      "rule": "axe/image-alt",
+      "severity": "barrier",
+      "wcag": [
+        "1.1.1"
+      ],
+      "summary": "Images must have alternative text (3 elements).",
+      "target": "#CaptchaImage",
+      "snippet": "<img id=\"CaptchaImage\" src=\"/DefaultCaptcha/Generate?t=7680777f79c0447fa3df0da6b362fc3c\">",
+      "details": {
+        "impact": "critical",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/image-alt?application=playwright",
+        "nodes": [
+          {
+            "target": "#CaptchaImage",
+            "html": "<img id=\"CaptchaImage\" src=\"/DefaultCaptcha/Generate?t=7680777f79c0447fa3df0da6b362fc3c\">",
+            "failureSummary": "Fix any of the following:\n  Element does not have an alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+          },
+          {
+            "target": ".col-md-6.col-xs-12 > .mit-logo[src$=\"Maha_IT_logo.png\"][width=\"60\"]",
+            "html": "<img src=\"/Images/Maha_IT_logo.png\" class=\"mit-logo\" width=\"60\" height=\"60\">",
+            "failureSummary": "Fix any of the following:\n  Element does not have an alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+          },
+          {
+            "target": "a[href$=\"mahait.org/\"] > .mit-logo[src$=\"Maha_IT_logo.png\"][width=\"60\"]",
+            "html": "<img src=\"/Images/Maha_IT_logo.png\" class=\"mit-logo\" width=\"60\" height=\"60\">",
+            "failureSummary": "Fix any of the following:\n  Element does not have an alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+          }
+        ]
+      }
+    },
+    {
+      "check": "axe",
+      "rule": "axe/label",
+      "severity": "barrier",
+      "wcag": [
+        "4.1.2"
+      ],
+      "summary": "Form elements must have labels (1 element).",
+      "target": "#CaptchaInputText",
+      "snippet": "<input autocomplete=\"off\" autocorrect=\"off\" data-val=\"true\" data-val-required=\"Is required field.\" id=\"CaptchaInputText\" name=\"CaptchaInputText\" type=\"text\" value=\"\" data-pahunch-critical=\"2\" style=\"\">",
+      "details": {
+        "impact": "critical",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/label?application=playwright",
+        "nodes": [
+          {
+            "target": "#CaptchaInputText",
+            "html": "<input autocomplete=\"off\" autocorrect=\"off\" data-val=\"true\" data-val-required=\"Is required field.\" id=\"CaptchaInputText\" name=\"CaptchaInputText\" type=\"text\" value=\"\" data-pahunch-critical=\"2\" style=\"\">",
+            "failureSummary": "Fix any of the following:\n  Element does not have an implicit (wrapped) <label>\n  Element does not have an explicit <label>\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element has no placeholder attribute\n  Element's default semantics were"
+          }
+        ]
+      }
+    },
+    {
+      "check": "axe",
+      "rule": "axe/landmark-one-main",
+      "severity": "info",
+      "wcag": [],
+      "summary": "Document should have one main landmark (1 element).",
+      "target": "html",
+      "snippet": "<html class=\" js flexbox canvas c...\" style=\"\">",
+      "details": {
+        "impact": "moderate",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/landmark-one-main?application=playwright",
+        "nodes": [
+          {
+            "target": "html",
+            "html": "<html class=\" js flexbox canvas c...\" style=\"\">",
+            "failureSummary": "Fix all of the following:\n  Document does not have a main landmark"
+          }
+        ]
+      }
+    },
+    {
+      "check": "axe",
+      "rule": "axe/link-name",
+      "severity": "barrier",
+      "wcag": [
+        "2.4.4",
+        "4.1.2"
+      ],
+      "summary": "Links must have discernible text (1 element).",
+      "target": "a[href$=\"mahait.org/\"]",
+      "snippet": "<a href=\"https://mahait.org/\" target=\"_blank\"><img src=\"/Images/Maha_IT_logo.png\" class=\"mit-logo\" width=\"60\" height=\"60\"></a>",
+      "details": {
+        "impact": "serious",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/link-name?application=playwright",
+        "nodes": [
+          {
+            "target": "a[href$=\"mahait.org/\"]",
+            "html": "<a href=\"https://mahait.org/\" target=\"_blank\"><img src=\"/Images/Maha_IT_logo.png\" class=\"mit-logo\" width=\"60\" height=\"60\"></a>",
+            "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+          }
+        ]
+      }
+    },
+    {
+      "check": "axe",
+      "rule": "axe/marquee",
+      "severity": "barrier",
+      "wcag": [
+        "2.2.2"
+      ],
+      "summary": "<marquee> elements are deprecated and must not be used (1 element).",
+      "target": "marquee",
+      "snippet": "<marquee style=\"border: 1px solid red;font-weight: bold;color: red;padding: 2px 5px;\">",
+      "details": {
+        "impact": "serious",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/marquee?application=playwright",
+        "nodes": [
+          {
+            "target": "marquee",
+            "html": "<marquee style=\"border: 1px solid red;font-weight: bold;color: red;padding: 2px 5px;\">",
+            "failureSummary": "Fix all of the following:\n  Element is visible"
+          }
+        ]
+      }
+    },
+    {
+      "check": "axe",
+      "rule": "axe/meta-viewport",
+      "severity": "info",
+      "wcag": [
+        "1.4.4"
+      ],
+      "summary": "Zooming and scaling must not be disabled (1 element).",
+      "target": "#viewport",
+      "snippet": "<meta name=\"viewport\" id=\"viewport\" content=\"width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1\">",
+      "details": {
+        "impact": "moderate",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/meta-viewport?application=playwright",
+        "nodes": [
+          {
+            "target": "#viewport",
+            "html": "<meta name=\"viewport\" id=\"viewport\" content=\"width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1\">",
+            "failureSummary": "Fix any of the following:\n  maximum-scale=1 on <meta> tag disables zooming on mobile devices"
+          }
+        ]
+      }
+    },
+    {
+      "check": "axe",
+      "rule": "axe/region",
+      "severity": "info",
+      "wcag": [],
+      "summary": "All page content should be contained by landmarks (24 elements).",
+      "target": ".m0",
+      "snippet": "<div class=\"row m0 topHeader\">",
+      "details": {
+        "impact": "moderate",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/region?application=playwright",
+        "nodes": [
+          {
+            "target": ".m0",
+            "html": "<div class=\"row m0 topHeader\">",
+            "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+          },
+          {
+            "target": ".header",
+            "html": "<div class=\"header\">",
+            "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+          },
+          {
+            "target": ".navbar-nav",
+            "html": "<ul class=\"nav navbar-nav\">",
+            "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+          },
+          {
+            "target": ".dropdown-toggle",
+            "html": "<a href=\"#\" data-toggle=\"dropdown\" class=\"dropdown-toggle\"> <img src=\"/Images/nav-icons/scholarship.png\" alt=\"\"> Post Matric <br>Scholarship </a>",
+            "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+          },
+          {
+            "target": ".navMenu-item:nth-child(2)",
+            "html": "<li class=\"navMenu-item\"> <a data-toggle=\"\" class=\"isDisabled\"> <img src=\"/Images/nav-icons/prematric.png\" alt=\"\"> Pre Matric <br>Scholarship </a> </li>",
+            "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+          }
+        ]
+      }
+    },
+    {
+      "check": "pdf",
+      "rule": "pdf-untagged",
+      "severity": "info",
+      "wcag": [
+        "1.3.1"
+      ],
+      "summary": "The PDF has text but no tags.",
+      "target": "https://mahadbt.maharashtra.gov.in/PDF/AS-DBT-Help.pdf",
+      "details": {
+        "pages": 43
+      }
+    },
+    {
+      "check": "pdf",
+      "rule": "pdf-untagged",
+      "severity": "info",
+      "wcag": [
+        "1.3.1"
+      ],
+      "summary": "The PDF has text but no tags.",
+      "target": "https://mahadbt.maharashtra.gov.in/PDF/DBTGuidelines.pdf",
+      "details": {
+        "pages": 4
+      }
+    },
+    {
+      "check": "pdf",
+      "rule": "pdf-untagged",
+      "severity": "info",
+      "wcag": [
+        "1.3.1"
+      ],
+      "summary": "The PDF has text but no tags.",
+      "target": "https://mahadbt.maharashtra.gov.in/PDF/RTGU.pdf",
+      "details": {
+        "pages": 2
+      }
+    },
+    {
+      "check": "pdf",
+      "rule": "pdf-untagged",
+      "severity": "info",
+      "wcag": [
+        "1.3.1"
+      ],
+      "summary": "The PDF has text but no tags.",
+      "target": "https://mahadbt.maharashtra.gov.in/PDF/SEBC_GR.pdf",
+      "details": {
+        "pages": 3
+      }
+    },
+    {
+      "check": "pdf",
+      "rule": "pdf-untagged",
+      "severity": "info",
+      "wcag": [
+        "1.3.1"
+      ],
+      "summary": "The PDF has text but no tags.",
+      "target": "https://mahadbt.maharashtra.gov.in/PDF/Aaple%20Sarkar%20DBT%20Portal%20Help%20file.pdf",
+      "details": {
+        "pages": 50
+      }
+    }
+  ],
+  "counts": {
+    "blocker": 1,
+    "barrier": 10,
+    "info": 9
+  },
+  "evidence": {
+    "names": {
+      "controls": [
+        {
+          "index": 0,
+          "label": "Username field",
+          "kind": "field",
+          "role": "textbox",
+          "name": "Enter UserName",
+          "disabled": false,
+          "hidden": false,
+          "visible": true,
+          "snapshot": "- textbox \"Enter UserName\""
+        },
+        {
+          "index": 1,
+          "label": "Password field",
+          "kind": "field",
+          "role": "textbox",
+          "name": "********",
+          "disabled": false,
+          "hidden": false,
+          "visible": true,
+          "snapshot": "- textbox \"********\""
+        },
+        {
+          "index": 2,
+          "label": "CAPTCHA field",
+          "kind": "captcha-field",
+          "role": "textbox",
+          "name": "",
+          "disabled": false,
+          "hidden": false,
+          "visible": true,
+          "snapshot": "- textbox"
+        },
+        {
+          "index": 3,
+          "label": "Login button",
+          "kind": "button",
+          "role": "button",
+          "name": "Login Here",
+          "disabled": false,
+          "hidden": false,
+          "visible": true,
+          "snapshot": "- button \"Login Here\""
+        }
+      ]
+    },
+    "captcha": {
+      "groups": [
+        {
+          "kind": "image",
+          "onPath": true,
+          "imageAlt": null,
+          "target": "img#CaptchaImage",
+          "inputTarget": "input#CaptchaInputText",
+          "audio": null,
+          "snippet": "<img id=\"CaptchaImage\" src=\"/DefaultCaptcha/Generate?t=7680777f79c0447fa3df0da6b362fc3c\">"
+        }
+      ]
+    },
+    "lang": {
+      "frames": [
+        {
+          "htmlLang": "",
+          "indicTotal": 5,
+          "indicUnmarked": 5,
+          "latinAtRoot": 0,
+          "indicAtRoot": 0,
+          "samples": [
+            {
+              "text": "मराठी",
+              "lang": "(none)",
+              "where": "a"
+            }
+          ]
+        }
+      ]
+    },
+    "axe": {
+      "version": "4.14.1",
+      "violations": 11,
+      "incomplete": 1,
+      "passes": 29
+    },
+    "keyboard": {
+      "presses": 48,
+      "completedCycle": true,
+      "stopsSeen": 46,
+      "inModal": false,
+      "trap": null,
+      "controls": [
+        {
+          "index": 0,
+          "label": "Username field",
+          "reached": true,
+          "focusVisible": true,
+          "firstStep": 23
+        },
+        {
+          "index": 1,
+          "label": "Password field",
+          "reached": true,
+          "focusVisible": true,
+          "firstStep": 24
+        },
+        {
+          "index": 2,
+          "label": "CAPTCHA field",
+          "reached": true,
+          "focusVisible": true,
+          "firstStep": 26
+        },
+        {
+          "index": 3,
+          "label": "Login button",
+          "reached": true,
+          "focusVisible": true,
+          "firstStep": 27
+        }
+      ],
+      "sequence": [
+        {
+          "step": 1,
+          "desc": "a \"Skip To Main Content\"",
+          "focusVisible": true
+        },
+        {
+          "step": 2,
+          "desc": "a \"Skip To Navigation\"",
+          "focusVisible": true
+        },
+        {
+          "step": 3,
+          "desc": "a#HrefLink1 \"Post Matric Home\"",
+          "focusVisible": true
+        },
+        {
+          "step": 4,
+          "desc": "a \"A+\"",
+          "focusVisible": true
+        },
+        {
+          "step": 5,
+          "desc": "a \"A=\"",
+          "focusVisible": true
+        },
+        {
+          "step": 6,
+          "desc": "a \"A-\"",
+          "focusVisible": true
+        },
+        {
+          "step": 7,
+          "desc": "a \"मराठी\"",
+          "focusVisible": true
+        },
+        {
+          "step": 8,
+          "desc": "a",
+          "focusVisible": true
+        },
+        {
+          "step": 9,
+          "desc": "a",
+          "focusVisible": true
+        },
+        {
+          "step": 10,
+          "desc": "a \"How to Apply Online ?\"",
+          "focusVisible": true
+        },
+        {
+          "step": 11,
+          "desc": "a \"Post Matric Scholarship\"",
+          "focusVisible": false
+        },
+        {
+          "step": 12,
+          "desc": "button",
+          "focusVisible": false
+        },
+        {
+          "step": 13,
+          "desc": "button",
+          "focusVisible": false
+        },
+        {
+          "step": 14,
+          "desc": "a \"Guidelines for Aadhaar linking to bank a\"",
+          "focusVisible": true
+        },
+        {
+          "step": 15,
+          "desc": "a \"Guidelines on Undisbursement Benefit\"",
+          "focusVisible": true
+        },
+        {
+          "step": 16,
+          "desc": "a \"Guidelines for Courses Not Visible, Miss\"",
+          "focusVisible": true
+        },
+        {
+          "step": 17,
+          "desc": "a \"Guidelines On “'Right to Give Up'”\"",
+          "focusVisible": true
+        },
+        {
+          "step": 18,
+          "desc": "a \"Guidelines and Rules\"",
+          "focusVisible": true
+        },
+        {
+          "step": 19,
+          "desc": "a \"Download Colleges list\"",
+          "focusVisible": true
+        },
+        {
+          "step": 20,
+          "desc": "a \"Right To Give Up GR\"",
+          "focusVisible": true
+        },
+        {
+          "step": 21,
+          "desc": "a \"Guidelines for SEBC Eligibility\"",
+          "focusVisible": true
+        },
+        {
+          "step": 22,
+          "desc": "a \"Click here for Help\"",
+          "focusVisible": true
+        },
+        {
+          "step": 23,
+          "desc": "input#UserName \"Enter UserName\"",
+          "focusVisible": true,
+          "critical": 0
+        },
+        {
+          "step": 24,
+          "desc": "input#Password \"********\"",
+          "focusVisible": true,
+          "critical": 1
+        },
+        {
+          "step": 25,
+          "desc": "a#e5e8ec90abce4062ae0b39eb4484ec69 \"Refresh\"",
+          "focusVisible": true
+        },
+        {
+          "step": 26,
+          "desc": "input#CaptchaInputText",
+          "focusVisible": true,
+          "critical": 2
+        },
+        {
+          "step": 27,
+          "desc": "button#btnLogin \"Login Here\"",
+          "focusVisible": true,
+          "critical": 3
+        },
+        {
+          "step": 28,
+          "desc": "a#btnForgot \"Forgot Password\"",
+          "focusVisible": true
+        },
+        {
+          "step": 29,
+          "desc": "a#btnForgot \"Forgot Username\"",
+          "focusVisible": true
+        },
+        {
+          "step": 30,
+          "desc": "a \"New Applicant Registration\"",
+          "focusVisible": true
+        },
+        {
+          "step": 31,
+          "desc": "a \"Applicant Login\"",
+          "focusVisible": true
+        },
+        {
+          "step": 32,
+          "desc": "a \"Track Your Application\"",
+          "focusVisible": true
+        },
+        {
+          "step": 33,
+          "desc": "a \"Find Eligible Schemes\"",
+          "focusVisible": true
+        },
+        {
+          "step": 34,
+          "desc": "a \"Institute / Dept / DDO Login\"",
+          "focusVisible": true
+        },
+        {
+          "step": 35,
+          "desc": "a \"Grievance / Suggestions\"",
+          "focusVisible": true
+        },
+        {
+          "step": 36,
+          "desc": "a \"Help file for Online Application Process\"",
+          "focusVisible": true
+        },
+        {
+          "step": 37,
+          "desc": "a \"Pop Up Blocker Guidance\"",
+          "focusVisible": true
+        },
+        {
+          "step": 38,
+          "desc": "a \"Forgot Password\"",
+          "focusVisible": true
+        },
+        {
+          "step": 39,
+          "desc": "a \"Forgot Username\"",
+          "focusVisible": true
+        },
+        {
+          "step": 40,
+          "desc": "a \"Aadhaar seeding with NPCI mapping form\"",
+          "focusVisible": true
+        },
+        {
+          "step": 41,
+          "desc": "a \"Check for Bank Aadhaar Mapping Process\"",
+          "focusVisible": true
+        },
+        {
+          "step": 42,
+          "desc": "a \"Instruction for Croping Photo and Signat\"",
+          "focusVisible": true
+        },
+        {
+          "step": 43,
+          "desc": "a \"Frequently Asked Questions\"",
+          "focusVisible": true
+        },
+        {
+          "step": 44,
+          "desc": "a \"Terms & Condition\"",
+          "focusVisible": true
+        },
+        {
+          "step": 45,
+          "desc": "a \"FAQ\"",
+          "focusVisible": true
+        },
+        {
+          "step": 46,
+          "desc": "a",
+          "focusVisible": true
+        }
+      ]
+    },
+    "pdf": {
+      "pdfs": [
+        {
+          "url": "https://mahadbt.maharashtra.gov.in/PDF/AS-DBT-Help.pdf",
+          "status": 200,
+          "result": "text",
+          "bytes": 1931372,
+          "pages": 43,
+          "sampledPages": 5,
+          "textChars": 3596,
+          "tagged": false
+        },
+        {
+          "url": "https://mahadbt.maharashtra.gov.in/PDF/DBTGuidelines.pdf",
+          "status": 200,
+          "result": "text",
+          "bytes": 448528,
+          "pages": 4,
+          "sampledPages": 4,
+          "textChars": 3604,
+          "tagged": false
+        },
+        {
+          "url": "https://mahadbt.maharashtra.gov.in/PDF/RTGU.pdf",
+          "status": 200,
+          "result": "text",
+          "bytes": 144313,
+          "pages": 2,
+          "sampledPages": 2,
+          "textChars": 2898,
+          "tagged": false
+        },
+        {
+          "url": "https://mahadbt.maharashtra.gov.in/PDF/SEBC_GR.pdf",
+          "status": 200,
+          "result": "text",
+          "bytes": 146260,
+          "pages": 3,
+          "sampledPages": 3,
+          "textChars": 4380,
+          "tagged": false
+        },
+        {
+          "url": "https://mahadbt.maharashtra.gov.in/PDF/Aaple%20Sarkar%20DBT%20Portal%20Help%20file.pdf",
+          "status": 200,
+          "result": "text",
+          "bytes": 3343882,
+          "pages": 50,
+          "sampledPages": 5,
+          "textChars": 3672,
+          "tagged": false
+        }
+      ]
+    }
+  },
+  "errors": []
+}

@@ -1,0 +1,357 @@
+{
+  "version": "4.14.1",
+  "violations": [
+    {
+      "id": "button-name",
+      "impact": "critical",
+      "help": "Buttons must have discernible text",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/button-name?application=playwright",
+      "tags": [
+        "cat.name-role-value",
+        "wcag2a",
+        "wcag412",
+        "section508",
+        "section508.22.a",
+        "TTv5",
+        "TT6.a",
+        "EN-301-549",
+        "EN-9.4.1.2",
+        "ACT",
+        "RGAAv4",
+        "RGAA-11.9.1"
+      ],
+      "nodeCount": 2,
+      "nodes": [
+        {
+          "target": "button[onclick=\"myFunction()\"]",
+          "html": "<button onclick=\"myFunction()\" style=\"background-color: black; height:20px; width:20px; \"></button>",
+          "failureSummary": "Fix any of the following:\n  Element does not have inner text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element does not have an implicit (wrapped) <label>\n  Element does not have an explicit <label>\n  El"
+        },
+        {
+          "target": "button[onclick=\"myFunction2()\"]",
+          "html": "<button onclick=\"myFunction2()\" style=\"background-color: white; height:20px; width:20px\"> </button>",
+          "failureSummary": "Fix any of the following:\n  Element does not have inner text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element does not have an implicit (wrapped) <label>\n  Element does not have an explicit <label>\n  El"
+        }
+      ]
+    },
+    {
+      "id": "color-contrast",
+      "impact": "serious",
+      "help": "Elements must meet minimum color contrast ratio thresholds",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/color-contrast?application=playwright",
+      "tags": [
+        "cat.color",
+        "wcag2aa",
+        "wcag143",
+        "TTv5",
+        "TT13.c",
+        "EN-301-549",
+        "EN-9.1.4.3",
+        "ACT",
+        "RGAAv4",
+        "RGAA-3.2.1"
+      ],
+      "nodeCount": 1,
+      "nodes": [
+        {
+          "target": "td > b",
+          "html": "<b style=\"color:red\">(All Characters are Case insensitive)</b>",
+          "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.99 (foreground color: #ff0000, background color: #ffffff, font size: 10.5pt (14px), font weight: bold). Expected contrast ratio of 4.5:1"
+        }
+      ]
+    },
+    {
+      "id": "empty-table-header",
+      "impact": "minor",
+      "help": "Table header text should not be empty",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/empty-table-header?application=playwright",
+      "tags": [
+        "cat.name-role-value",
+        "best-practice"
+      ],
+      "nodeCount": 2,
+      "nodes": [
+        {
+          "target": ".LTHfirst",
+          "html": "<th class=\"LTHfirst\" colspan=\"2\" align=\"center\">&nbsp; </th>",
+          "failureSummary": "Fix any of the following:\n  Element does not have text that is visible to screen readers\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+        },
+        {
+          "target": "tr:nth-child(6) > th",
+          "html": "<th>&nbsp;</th>",
+          "failureSummary": "Fix any of the following:\n  Element does not have text that is visible to screen readers\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+        }
+      ]
+    },
+    {
+      "id": "heading-order",
+      "impact": "moderate",
+      "help": "Heading levels should only increase by one",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/heading-order?application=playwright",
+      "tags": [
+        "cat.semantics",
+        "best-practice"
+      ],
+      "nodeCount": 1,
+      "nodes": [
+        {
+          "target": "h4",
+          "html": "<h4>Citizen Login</h4>",
+          "failureSummary": "Fix any of the following:\n  Heading order invalid"
+        }
+      ]
+    },
+    {
+      "id": "image-alt",
+      "impact": "critical",
+      "help": "Images must have alternative text",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/image-alt?application=playwright",
+      "tags": [
+        "cat.text-alternatives",
+        "wcag2a",
+        "wcag111",
+        "section508",
+        "section508.22.a",
+        "TTv5",
+        "TT7.a",
+        "TT7.b",
+        "EN-301-549",
+        "EN-9.1.1.1",
+        "ACT",
+        "RGAAv4",
+        "RGAA-1.1.1"
+      ],
+      "nodeCount": 1,
+      "nodes": [
+        {
+          "target": "#captchaimg",
+          "html": "<img src=\"captcha_code_file.php?rand=1421525426\" id=\"captchaimg\" class=\"captcha\" style=\"height:40px;\">",
+          "failureSummary": "Fix any of the following:\n  Element does not have an alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+        }
+      ]
+    },
+    {
+      "id": "label",
+      "impact": "critical",
+      "help": "Form elements must have labels",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/label?application=playwright",
+      "tags": [
+        "cat.forms",
+        "wcag2a",
+        "wcag412",
+        "section508",
+        "section508.22.n",
+        "TTv5",
+        "TT5.c",
+        "EN-301-549",
+        "EN-9.4.1.2",
+        "ACT",
+        "RGAAv4",
+        "RGAA-11.1.1"
+      ],
+      "nodeCount": 3,
+      "nodes": [
+        {
+          "target": "#UserName",
+          "html": "<input type=\"text\" name=\"UserName\" id=\"UserName\" class=\"alphaNumUser\" maxlength=\"25\" data-pahunch-critical=\"0\" style=\"\">",
+          "failureSummary": "Fix any of the following:\n  Element does not have an implicit (wrapped) <label>\n  Element does not have an explicit <label>\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element has no placeholder attribute\n  Element's default semantics were"
+        },
+        {
+          "target": "#password",
+          "html": "<input type=\"password\" name=\"password\" id=\"password\" maxlength=\"50\" onblur=\"getPassword(this.value);\" data-pahunch-critical=\"1\" style=\"\">",
+          "failureSummary": "Fix any of the following:\n  Element does not have an implicit (wrapped) <label>\n  Element does not have an explicit <label>\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element has no placeholder attribute\n  Element's default semantics were"
+        },
+        {
+          "target": "#\\36 _letters_code",
+          "html": "<input type=\"text\" name=\"6_letters_code\" id=\"6_letters_code\" class=\"captchaInput alphaNumeric\" maxlength=\"10\" data-pahunch-critical=\"2\" style=\"\">",
+          "failureSummary": "Fix any of the following:\n  Element does not have an implicit (wrapped) <label>\n  Element does not have an explicit <label>\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element has no placeholder attribute\n  Element's default semantics were"
+        }
+      ]
+    },
+    {
+      "id": "landmark-one-main",
+      "impact": "moderate",
+      "help": "Document should have one main landmark",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/landmark-one-main?application=playwright",
+      "tags": [
+        "cat.semantics",
+        "best-practice"
+      ],
+      "nodeCount": 1,
+      "nodes": [
+        {
+          "target": "html",
+          "html": "<html lang=\"en\" xmlns=\"http://www.w3.org/1999/xhtml\">",
+          "failureSummary": "Fix all of the following:\n  Document does not have a main landmark"
+        }
+      ]
+    },
+    {
+      "id": "region",
+      "impact": "moderate",
+      "help": "All page content should be contained by landmarks",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/region?application=playwright",
+      "tags": [
+        "cat.keyboard",
+        "best-practice",
+        "RGAAv4",
+        "RGAA-9.2.1"
+      ],
+      "nodeCount": 15,
+      "nodes": [
+        {
+          "target": ".city_top_social",
+          "html": "<div _ngcontent-iae-c103=\"\" class=\"city_top_social\" align=\"right\" style=\"margin-right:220px;\">",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "target": "#emblem",
+          "html": "<div id=\"emblem\"> <img src=\"https://rtionline.gov.in/images/logo/indian-emblam-white.png\" alt=\"national-emblem\"> </div>",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "target": "#frmLang > span",
+          "html": "<span>Select Language:</span>",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "target": "#lan",
+          "html": "<select name=\"lan\" id=\"lan\" onchange=\"frmlangSub(this.value);\"><option value=\"en\" selected=\"selected\">English</option><option value=\"hi\">Hindi</option></select>",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "target": ".changetheme:nth-child(3)",
+          "html": "<div id=\"language\" class=\"changetheme\"> <a style=\"font-weight:bold; color:white;\" href=\"https://rtionline.gov.in/request/allpa.php?pageid=\">Public Authorities Available</a> </div>",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "target": "#logo",
+          "html": "<div id=\"logo\"> <h1>RTI Online</h1> </div>",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "target": "#slogan",
+          "html": "<div id=\"slogan\" class=\"changetheme\">Version 2.0<br> An Initiative of Department of Personnel &amp; Training, Government of India </div>",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "target": "#menu",
+          "html": "<div id=\"menu\" style=\"font-size:14px;padding:0 15px;width:950px;\">",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "target": "#slider-From",
+          "html": "<div id=\"slider-From\"><h4>Citizen Login</h4> <p>Note:Fields marked with <samp style=\"color:#FF0000\"><b>*</b></samp> are Mandatory.</p> </div>",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "target": "tr:nth-child(2)",
+          "html": "<tr><th id=\"lblUName\"><samp style=\"color:#FF0000\"><b>*</b></samp> Enter Username</th> <td><input type=\"text\" name=\"UserName\" id=\"UserName\" class=\"alphaNumUser\" maxlength=\"25\" data-pahunch-critical=\"0\" style=\"\"></td> </tr>",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        }
+      ]
+    },
+    {
+      "id": "select-name",
+      "impact": "critical",
+      "help": "Select element must have an accessible name",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/select-name?application=playwright",
+      "tags": [
+        "cat.forms",
+        "wcag2a",
+        "wcag412",
+        "section508",
+        "section508.22.n",
+        "TTv5",
+        "TT5.c",
+        "EN-301-549",
+        "EN-9.4.1.2",
+        "ACT",
+        "RGAAv4",
+        "RGAA-11.1.1"
+      ],
+      "nodeCount": 1,
+      "nodes": [
+        {
+          "target": "#lan",
+          "html": "<select name=\"lan\" id=\"lan\" onchange=\"frmlangSub(this.value);\"><option value=\"en\" selected=\"selected\">English</option><option value=\"hi\">Hindi</option></select>",
+          "failureSummary": "Fix any of the following:\n  Element does not have an implicit (wrapped) <label>\n  Element does not have an explicit <label>\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element's default semantics were not overridden with role=\"none\" or rol"
+        }
+      ]
+    }
+  ],
+  "incomplete": [
+    {
+      "id": "color-contrast",
+      "impact": "serious",
+      "help": "Elements must meet minimum color contrast ratio thresholds",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/color-contrast?application=playwright",
+      "tags": [
+        "cat.color",
+        "wcag2aa",
+        "wcag143",
+        "TTv5",
+        "TT13.c",
+        "EN-301-549",
+        "EN-9.1.4.3",
+        "ACT",
+        "RGAAv4",
+        "RGAA-3.2.1"
+      ],
+      "nodeCount": 29,
+      "nodes": [
+        {
+          "target": "a[onclick=\"increaseFontSizeBy1px()\"]",
+          "html": "<a _ngcontent-iae-c103=\"\" onclick=\"increaseFontSizeBy1px()\"> A+ </a>",
+          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background image"
+        },
+        {
+          "target": "a[onclick=\"defaultFontSize()\"]",
+          "html": "<a _ngcontent-iae-c103=\"\" onclick=\"defaultFontSize()\"> A </a>",
+          "failureSummary": "Fix any of the following:\n  Element content is too short to determine if it is actual text content"
+        },
+        {
+          "target": "a[onclick=\"decreaseFontSizeBy1px()\"]",
+          "html": "<a _ngcontent-iae-c103=\"\" onclick=\"decreaseFontSizeBy1px()\"> A- </a>",
+          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background image"
+        },
+        {
+          "target": "#frmLang > span",
+          "html": "<span>Select Language:</span>",
+          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background image"
+        },
+        {
+          "target": ".changetheme:nth-child(3) > a",
+          "html": "<a style=\"font-weight:bold; color:white;\" href=\"https://rtionline.gov.in/request/allpa.php?pageid=\">Public Authorities Available</a>",
+          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background image"
+        },
+        {
+          "target": "h1",
+          "html": "<h1>RTI Online</h1>",
+          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background image"
+        },
+        {
+          "target": "#slogan",
+          "html": "<div id=\"slogan\" class=\"changetheme\">Version 2.0<br> An Initiative of Department of Personnel &amp; Training, Government of India </div>",
+          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it partially overlaps other elements"
+        },
+        {
+          "target": "li:nth-child(1) > a",
+          "html": "<a href=\"https://rtionline.gov.in/index.php\">Home</a>",
+          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background image"
+        },
+        {
+          "target": "li:nth-child(2) > a",
+          "html": "<a href=\"https://rtionline.gov.in/guidelines.php?request&amp;&amp;pageid=\">Submit Request</a>",
+          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background image"
+        },
+        {
+          "target": "li:nth-child(3) > a",
+          "html": "<a href=\"https://rtionline.gov.in/guidelines.php?appeal&amp;&amp;pageid=\">Submit First Appeal</a>",
+          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background image"
+        }
+      ]
+    }
+  ],
+  "passes": 27
+}

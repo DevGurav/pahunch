@@ -1,0 +1,97 @@
+banner landmark
+list
+भारत सरकार |, link
+Government of India website — opens in a new window, link
+Government of India
+list
+Screen Reader Access, link
+ Screen reader access
+Skip to main content, link
+Decrease Font Size, button
+Default Font Size, button, pressed
+Increase Font Size, button
+combo box, no name
+English, option, selected
+हिंदी, option
+ಕನ್ನಡ, option
+मराठी, option
+National Emblem of India Logo, graphic
+eShram Logo, graphic
+G 20, link
+G 20, graphic
+heading level 4, no name
+Helpdesk No. 14434/18008896811 9.00 AM to 6.00 PM (Daily including Sundays)
+Prime Minister Shri Narendra Modi, graphic
+navigation landmark
+list
+Home, link
+Dashboard, link
+One Stop Solution, button
+State Login opens in a new tab, link
+State Login
+CSC Locator opens in a new tab, link
+CSC locator
+My Schemes, link
+form landmark, Site navigation search
+Search pages, search edit
+Start typing to see page suggestions.
+Search page, button
+main landmark
+यदि आप एक प्लेटफॉर्म वर्कर हैं (ओला, उबर, अमेज़ॅन, फ्लिपकार्ट आदि के साथ काम कर रहे हैं), तो कृपया ईश्रम पोर्टल पर पंजीकरण करें या अपना विवरण अपडेट करें। If you are a Platform Worker (working with Ola, Uber, Amazon, Flipkart etc.), please register on eShram Portal or update your details if already registered.
+heading level 2, Self Registration
+form landmark
+Fields marked with are required.
+Enter mobile Number (Aadhaar linked mobile number is preferred)
++91
+Enter mobile Number (Aadhaar linked mobile number is preferred), edit
+Enter Captcha
+Captcha, graphic
+Refresh Captcha, button
+refresh-img, graphic
+Enter Captcha, edit
+Are you an active member of Employees' Provident Fund Organization (EPFO)
+Are you an active member of Employees' Provident Fund Organization (EPFO)
+Yes, radio button
+Yes
+No, radio button
+No
+Are you an active member of Employees' State Insurance Corporation (ESIC)
+Are you an active member of Employees' State Insurance Corporation (ESIC)
+Yes, radio button
+Yes
+No, radio button
+No
+Send OTP, button, unavailable
+heading level 2, Information required for registration
+list
+Self-registration icon image, graphic
+Aadhaar number
+Mobile icon image, graphic
+Aadhaar linked active mobile number
+Age icon image, graphic
+Age should be minimum 16 years at the time of registration.
+Note: By registering on eShram, you are opting in to receive messages, calls and mails from Ministry of Labour and Employment.
+Click Here to open Platform Worker Registration opens in a new tab, button
+digital seva, graphic
+heading level 3, Login for CSC
+Click Here to vist Digital seva opens in a new tab, button
+heading level 2, Now by enrolling on eShram, you may seamlessly opt for the following
+My Schemes, graphic
+heading level 3, My Schemes
+Click Here to vist myschemes, button
+Skill India, graphic
+heading level 3, Training
+Click Here to vist skill india opens in a new tab, button
+National Career service, graphic
+heading level 3, Job
+Click Here to vist National Career service opens in a new tab, button
+Pradhan mantri sharam mandhan (PM-SYM), graphic
+heading level 3, Pension
+Click Here to vist Pradhan mantri sharam mandhan (PM-SYM) opens in a new tab, button
+content info landmark
+Previous slide, button
+play slide, button
+pause slide, button
+Next slide, button
+Designed and Developed by National Informatics Centre (NIC)
+©2026 ©Website Content Managed by Ministry of Labour and Employment, Government of India

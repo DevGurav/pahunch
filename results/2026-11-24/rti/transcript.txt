@@ -1,0 +1,59 @@
+button, no name
+button, no name
+A+ A A-
+national-emblem, graphic
+Select Language:
+combo box, no name
+English, option, selected
+Hindi, option
+Public Authorities Available, link
+heading level 1, RTI Online
+Version 2.0 An Initiative of Department of Personnel & Training, Government of India
+list
+Home, link
+Submit Request, link
+Submit First Appeal, link
+View Status, link
+View History, link
+Login, link
+User Manual, link
+Contact Us, link
+FAQ, link
+Payment Reconciliationnew, link
+Payment Reconciliation
+new, graphic
+heading level 4, Citizen Login
+Note:Fields marked with * are Mandatory.
+table
+* Enter Username
+* Enter Username
+edit, no name
+*Enter Password
+*Enter Password
+edit, no name
+*Enter Security code (All Characters are Case insensitive) Can't read the image? click here to refresh
+*Enter Security code
+(All Characters are Case insensitive) Can't read the image? click here to refresh
+graphic, no name
+edit, no name
+(All Characters are Case insensitive) Can't read the image? click
+here, link
+to refresh
+Image of Speaker
+Image of Speaker
+Image of Speaker, link
+Image of Speaker, graphic
+Submit Reset
+Submit Reset
+Submit, button
+Reset, button
+Home, link
+|
+National Portal of India, link
+|
+Complaint & Second Appeal to CIC, link
+|
+FAQ, link
+|
+Policy, link
+Copyright © 2026. All rights reserved | Website designed, developed, and hosted by National Informatics Centre, New Delhi | Content owned and managed by DOP&T

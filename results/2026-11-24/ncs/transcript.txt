@@ -1,0 +1,451 @@
+Indian flag, graphic
+heading level 1, Government of India
+Language Translator, combo box
+Facebook, link
+Facebook, graphic
+X, link
+X, graphic
+Instagram, link
+Instagram, graphic
+YouTube, link
+YouTube, graphic
+heading level 1, Toll Free Helpline - 1514
+Ministry of Labour and Employment, graphic
+National Career Service, graphic
+Search jobs, link
+
+Login/Signup, button
+list
+ Jobseekers, button
+ Employers, button
+ Counsellors, button
+ Career Centers, button
+ Resources, button
+ Classified Jobs, link
+region landmark, National Career Service statistics
+Registered Jobseekers
+heading level 1, 69.2 Milli 🎉 ✨ n
+Active Employers
+5.9 M
+Job Applications Submitted
+1.5 M
+Total Job Listings
+3.6 M
+Active Vacancies
+3.7 L
+heading level 1, Find Your Next Career Opportunity
+Empowering India's workforce with careers, skills, mentorship, and training on one platform.
+Pradhan Mantri Viksit Bharat Rozgar Yojana, button
+Pradhan Mantri Viksit Bharat Rozgar Yojana, graphic
+APAAR, button
+APAAR, graphic
+EPFO, button
+EPFO, graphic
+PM Internship Scheme, button
+PM Internship Scheme, graphic
+Show banner 1, button
+Show banner 2, button
+Show banner 3, button
+Show banner 4, button
+navigation landmark, Quick links
+Internships, link
+Jobs, link
+Career Guidance, link
+Career Centers, link
+AI Resume Building, link
+Job Fairs, link
+Previous news, button
+What's New
+INDIAN COAST GUARD DIRECTORATE OF RECRUITMENT
+Learn More, button
+Next news, button
+Profile, graphic
+“
+PM emphasises that democracy and technology together can ensure the welfare of humanity.
+”
+SEMICONDUCTOR EXECUTIVES’ ROUNDTABLE
+10.09.2024
+↗ VIEW MORE, link
+heading level 2, About Us
+The Ministry of Labour & Employment is one of the oldest and important Ministries of the Government of India. The main responsibility of the Ministry is to protect and safeguard the interests of workers in general and those who constitute the poor, deprived and disadvantage sections of the society, in particular, with due regard to creating a healthy work environment for higher production and productivity and to develop and coordinate vocational skill training and employment services. Government’s attention is also focused on promotion of welfare and providing social security to the labour force both in organized and unorganized sectors, in tandem with the process of liberalization. These objectives are sought to be achieved through enactment and implementation of various labour laws, which regulate the terms and conditions of service and employment of workers. The State Governments are also competent to enact legislations, as labour is a subject in the concurrent list under the Constitution of India.
+Minister profile, graphic
+Minister of State profile, graphic
+heading level 2, Trusted by Top Companies
+View jobs at Apna, link
+Apna
+View jobs at SWIGGY LIMITED, link
+SWIGGY LIMITED
+View jobs at Cassius Technologies Private Limited, link
+Cassius Technologies Private Limited
+View jobs at T.M.INPUTS AND SERVICES PRIVATE LIMITED, link
+T.M.INPUTS AND SERVICES PRIVATE LIMITED
+View jobs at Quess Corp Limited, link
+Quess Corp Limited
+View jobs at Apna, link
+Apna
+View jobs at SWIGGY LIMITED, link
+SWIGGY LIMITED
+View jobs at Cassius Technologies Private Limited, link
+Cassius Technologies Private Limited
+View jobs at T.M.INPUTS AND SERVICES PRIVATE LIMITED, link
+T.M.INPUTS AND SERVICES PRIVATE LIMITED
+View jobs at Quess Corp Limited, link
+Quess Corp Limited
+heading level 2, Start Your Journey
+Choose your path — we have tailored tools for everyone
+tab control, Choose your path
+ For Jobseekers, tab, selected
+ For Employers, tab
+ For Counsellors, tab
+ For Career Centers, tab
+heading level 3, Find Your Next Opportunity
+Explore 10 lakh+ job vacancies across sectors, cities, and skill levels — from freshers to experienced professionals.
+Government & private jobs AI resume + interview coach
+Login / Register , button
+Jobseekers, graphic
+Average salary, graphic
+Latest openings, graphic
+heading level 1, Your Career. India's Future.
+Connect with 8.5 lakh+ employers. Discover government, private & international jobs. All free, always.
+graphic, no name
+Jobs
+graphic, no name
+Internship Opportunities
+graphic, no name
+Skill Courses
+graphic, no name
+Career Center
+graphic, no name
+Counsellors
+graphic, no name
+RA-International-job
+graphic, no name
+Enter jobs/skills/designation, edit
+Enter City, edit
+Search Jobs, button
+IT & Communication , link
+Transportation and Storage , link
+Education , link
+Operations & Support , link
+Manufacturing , link
+Finance and Insurance , link
+Health , link
+Power and Energy , link
+Hospitality , link
+Jobs for Women , link
+Jobs for Ex-Servicemen , link
+heading level 2, Trending Jobs
+tab control
+Domestic Jobs, tab, selected
+International Jobs, tab
+Search Jobs near me, switch
+Search Jobs near me
+Previous jobs, button, unavailable
+Posted on 18/11/26
+Save job, button
+K
+heading level 3, Back Office Executive
+KNOWMORE Full Time Admin Back Office Communication Data Entry Typing
+KNOWMORE is hiring a Back Office Executive for administrative and operational support. Enter and verify business records, maintain spreadsheets, update task and enquiry trackers, organise documents and coordinate routine follow-ups with the team. Applicants should have basic computer and typing skills, attention to detail and clear communication. Freshers may apply; training is provided. This is a full-time, All India/Remote opportunity.
+6 days ago Learn more
+Posted on 04/09/26
+Save job, button
+T
+heading level 3, Data Entry Operator
+Think Innovation edge Private Limited Full Time Admin Back Office Data Entry Operator Trainee Data entry Typing speed
+We need an organized, detail-oriented Data Entry Clerk to join our team. You will enter customer data into our computer systems, check records for errors, and update existing files. Fast, accurate typing skills Basic knowledge of MS Office High school or equivalent or higher Full-time and remote options available. Apply today!
+80 days ago Learn more
+Posted on 05/11/26
+Save job, button
+V
+heading level 3, Executive Assistant
+Voxphone Nysdeck Full Time Food Processing Executive support Communication Calendar management
+Seeking an Executive Assistant to support daily operations in the food processing industry. Full-time role for junior professionals. Responsibilities: Coordinate schedules, manage communications, prepare reports, and assist in administrative tasks. Requirements: 1-3 years of relevant experience, strong organizational skills, proficiency in MS Office, and excellent communication abilities. Join a dynamic team in a growing sector with opportunities for professional development. Apply now with your resume to contribute to our success!
+19 days ago Learn more
+Posted on 19/10/26
+Save job, button
+S
+heading level 3, Autocad Designer
+Syntech Full Time Mechanical Design 3D modeling Visualization Technical
+Seeking an Autocad Designer to create 3D mechanical machine designs. Ideal for entry-level professionals with 0-2 years of experience. Responsibilities: Develop accurate 3D models for mechanical systems. Collaborate with engineers to refine designs. Ensure project adherence to specifications. Requirements: Proficiency in AutoCAD and 3D modeling. Understanding of mechanical design principles. Strong attention to detail and teamwork skills. Join a dynamic team focused on cutting-edge mechanical design innovations. Apply now to contribute to impactful projects in a fast-paced environment.
+36 days ago Learn more
+Posted on 09/10/26
+Save job, button
+B
+heading level 3, DATA ENTRY OPERATOR FOR BACK OFFICE IN HDFC BANK DSA HR RIMA
+Banking dsa India Full Time Admin Back Office Data entry
+URGENT HIRING FOR CORPORATE BANK Employment Notice. Male and female both can apply for this Process. Interviews (online and offline) going on. JOB ROLE - BACK OFFICE EXECUTIVE, BRANCH BANKING, KYC VERIFICATION and Data Entry Operator Etc. Skill Good Communication, Good Behaviour, Basic Computer Knowledge. Back Office Executive for Banking Officer. Age Limit 18 to 35 Year. 22000 to 35000 per Month. Job Location as per Your LOCATION Pin Code Wise. Minimum Qualification Required 12th Pass or Graduate. Additional Nature of job is Full Time and work from home. Benefits include Medical + P.F+E.S.I for further details Contact DIRECT HR RIMA 9123845540 Call or WhatSapp. For the application process or interview schedule, contact directly (HR RIMA 9123845540).
+45 days ago Learn more
+Posted on 10/09/26
+Save job, button
+R
+heading level 3, Office Assistant
+Rozgoo Full Time Admin Back Office Accounting Tally Financial reporting
+We are looking for a Junior Accountant Cum Back Office Executive (Fresher can apply). Responsibilities include data entry, maintaining daily accounts, billing, filling documents, handling Ms Excel sheets, and assisting senior accountant. Candidate should have basic computer knowledge and good typing speed. 12th pass with 0-1 year experience can apply. Training will be provided.
+75 days ago Learn more
+Posted on 31/08/26
+Save job, button
+H
+heading level 3, Work from home
+Hoora Part Time Customer Care Service Sales Business development Relationship building
+Work From Home Job Company Provide leads for calling . 15 days Payment Cycle . Only contact good communication skill person
+85 days ago Learn more
+Posted on 28/09/26
+Save job, button
+R
+heading level 3, Executive Assistant
+Rihan Enterprises Part Time Education Communication Coordination
+WORK FROM HOME OPPORTUNITY Looking for a smart way to earn from home? ✔ Work using just your smartphone ✔ Flexible timing (Part-time / Full-time) ✔ Training & guidance provided ✔ Suitable for students, homemakers & professionals
+57 days ago Learn more
+Posted on 30/10/26
+Save job, button
+A
+heading level 3, urgent hiring for customer relationship manager officer in bank
+ADEKON MANAGEMENT PRIVATE LIMITED (On behalf of Adekon management private limited) Full Time Customer Care Service Communication Analyst Relationship management
+HIRING FRESHER CANDIDATES FOR IN HOUSE KYC VERIFICATION EXECUTIVE HR Department-7980554571 MALE AND FEMALE BOTH CAN APPLY.QUALIFICATION-12 PASS TO ANY GRADUATE.AGE BETWEEN-18 YEARS TO 33 YEARS. POST OF JOB PROFILE-BACK OFFICE EXECUTIVE,CASA OFFICER,DATA ENTRY OPERATOR,KYC VERIFICATION OFFICER ETC. MONTHLY PAYOUT -19,000 TO 25,000(PER MONTH).JOB POSTING DEPENDS ON AS PER YOUR PIN CODE. IT IS A FULL TIME AND PERMANENT JOB.INTERESTED CANDIDATES CAN CALL-7980554571(HR SWETA GUPTA).INTERVIEW RELATED ANY QUARRIES THEN CALL ON THIS NO- 7980554571
+25 days ago Learn more
+Posted on 22/09/26
+Save job, button
+C
+heading level 3, Work From Home
+Chandan enterprises Part Time Education Communication
+work from home for apply student . Housewife . Job person no experience needed to part time full time work available
+63 days ago Learn more
+Posted on 25/10/26
+Save job, button
+P
+heading level 3, Work from home
+Pallavi enterprises Part Time Education Customer service Team management Escalation handling
+We are looking for a responsible and motivated Customer Support Executive to assist customers with their queries, provide accurate information, and help resolve their problems. The candidate should have good communication skills, a positive attitude, and the ability to handle customer concerns politely. Freshers can also apply. Basic computer knowledge is preferred.
+30 days ago Learn more
+Posted on 03/11/26
+Save job, button
+T
+heading level 3, NEED A NEW STAFF FOR BACK OFFICE ASSISTANT AT H DFC BANK
+TENSOTEN ROOFS PRIVATE LIMITED Full Time Admin Back Office Good Communication Skill
+URGENT HIRING BANK EMPLOYMENT FOR H D F C BANK DSA. SALARY PAY IS 15,000 TO 35000 WITH PF AND ESI AGE LIMIT 18 TO 35 YEAR. MINIMUM QUALIFICATION SHOULD BE 12TH PASS. JOB LOCATION WILL BE WITHIN 15KM FROM YOUR HOME. JOB ROLLS ARE 1. BACK OFFICE EXECUTIVE OFFICER, 2.CUSTOMER SERVICE EXECUTIVE OFFICER, 3.KYC VERIFICATION EXECUTIVE.4. DOCUMENTATION,5. DATA ENTRY OPERATOR 6. CASA AND OTHERS. MUST BE SKILL GOOD COMMUNICATION SKILL,GOOD BEHAVIOUR SKILL AND BASIC COMPUTER KNOWLEDGE. THE JOB IS FULL TIME AND PERMANENT. FOR MORE INFORMATION DETAILS SEND CV AND CALL ME 8276849638
+21 days ago Learn more
+Posted on 08/09/26
+Save job, button
+S
+heading level 3, Food and Beverage Service Staff
+SODEXO INDIA SERVICES PRIVATE LIMITED (On behalf of Sodexo India Service Private Limited) Bengaluru Full Time Hospitality & Food Service Fresher F&B service
+Position: Food & Beverage Service Staff Employment Type: NAPS Apprentice Experience: Fresher – No prior experience required Joining: Immediate Joiners Preferred Job Responsibilities Assist in serving food and beverages to guests/customers. Maintain cleanliness and hygiene standards in the service area. Support the team in daily F&B operations. Ensure a positive guest experience through courteous and professional service. Follow company safety, hygiene, and operational procedures. Assist with setting up and maintaining dining/service areas. Eligibility Freshers are welcome to apply. Good communication and customer-service skills. Willingness to work in a hospitality/food-service environment. Candidates available for immediate joining preferred. Job Details Working Hours: 9 hours per day
+77 days ago Learn more
+Posted on 11/11/26
+Save job, button
+S
+heading level 3, BACK OFFICE EXECUTIVE
+SSE MANPOWER CONSULTANCY PRIVATE LIMITED Full Time Agriculture Good Communication Skill
+URGENT HIRING FOR FRESHER CANDIDATE , WE ARE PROVIDING A GOOD SALARY . FULL TIME JOB ,NO HIDDEN CHARGE ,FREE OF COST JOB. JOB LOCATION PIN CODE WISE .
+13 days ago Learn more
+Posted on 17/09/26
+Save job, button
+F
+heading level 3, Work From Home
+FLP TRADING PRIVATE LIMITED Freelance Healthcare HR operations HR And Operation Executive Online Associate
+We need serious candidate for our online work flexible hours part time / full time available contact no. 9306599859 Rihan Ansari and hindi is mandatory here.....
+68 days ago Learn more
+Posted on 23/10/26
+Save job, button
+E
+heading level 3, Production Trainee
+EDUZEN SOLUTIONS PRIVATE LIMITED Chennai Full Time Manufacturing & Production Planning Production management Team coordination
+Eduzen Solutions is inviting applications from eligible candidates for multiple job opportunities with reputed manufacturing, automotive, engineering, and industrial companies in Chennai and nearby industrial areas. Candidates will be considered for various positions based on their educational qualifications, technical skills, and the requirements of the respective employers.
+32 days ago Learn more
+Posted on 07/09/26
+Save job, button
+R
+heading level 3, JUNIOR ACCOUNTANT
+Rozgoo Full Time Analytics & BI Tally Accounting Financial reporting
+Seeking a Junior Accountant to support financial reporting, taxation, and data analysis in a dynamic environment. Responsibilities: Prepare and maintain financial records, assist in tax filings, and generate analytical reports using Tally. Requirements: Basic knowledge of data analysis, accounting principles, Tally software, and proficiency in basic English. No prior experience required. Company: Join a forward-thinking team in the Analytics & BI sector. Application: Submit your resume to apply for this full-time trainee role.
+78 days ago Learn more
+Posted on 24/09/26
+Save job, button
+E
+heading level 3, Work From Home
+Eagle Plus 23 Part Time Education Data entry
+Part Time Full Time Students Job person Flexible Time Starting Monthly income 10000-35000 Helping others
+61 days ago Learn more
+Posted on 12/09/26
+Save job, button
+F
+heading level 3, WORK FROM HOME
+FLP Trading Private Limited Panipat Freelance Beauty & Wellness Marketing Brand management Content Creation
+work from home freelance work part/ full time not a job ad . work based income . immediate requirement only serious people contact .
+72 days ago Learn more
+Posted on 16/10/26
+Save job, button
+M
+heading level 3, Part-Time Customer Support Executive (Work From Home)
+MONSTER INDIA PRIVATE LIMITED (On behalf of Confidential) Hyderabad Full Time Common Roles (All Sectors) Written Communication Email Support Live Chat Support
+We're a SaaS startup looking for a motivated and experienced part-time Customer Support Executive to assist our customer service department. Here is what you would require to ace this role: 1. We need someone very good at written English since you would primarily be helping with email support and live chat. 2. This is a night shift job. So, we would need you to be flexible with the shift hours. 3. You would need to be able to coordinate with the rest of the team to make sure all KPIs are being met. If you feel you're the right candidate to help us troubleshoot our customer's problems, please apply right now!
+38 days ago Learn more
+Posted on 03/11/26
+Save job, button
+H
+heading level 3, Business development associate
+HIMANSGU TRADING Part Time Beauty & Wellness Business development Relationship building Communication Skills
+We are looking for motivated individuals to join our growing remote team. This work-from-home opportunity offers flexible hours, professional training, and growth opportunities. Candidates should have good communication skills, a positive attitude, and a willingness to learn. Freshers are welcome to apply
+21 days ago Learn more
+Next jobs, button
+View all jobs, link
+heading level 2, Upcoming Events and Job Fairs
+Rojgar Mela
+Job Fair Korba
+heading level 3, Rojgar Mela
+23 Nov – 25 Nov, 2026
+heading level 3, 23 November, 2026
+Year, combo box
+2025, option
+2026, option, selected
+2027, option
+November 2026
+grid
+Mon
+Tue
+Wed
+Thu
+Fri
+Sat
+Sun
+Monday, October 26, 2026, button
+Tuesday, October 27, 2026, button
+Wednesday, October 28, 2026, button
+Thursday, October 29, 2026, button
+Friday, October 30, 2026, button
+Saturday, October 31, 2026, button
+Sunday, November 1, 2026, button
+Monday, November 2, 2026, button
+Tuesday, November 3, 2026, button
+Wednesday, November 4, 2026, button
+Thursday, November 5, 2026, button
+Friday, November 6, 2026, button
+Saturday, November 7, 2026, button
+Sunday, November 8, 2026, button
+Monday, November 9, 2026, button
+Tuesday, November 10, 2026, button
+Wednesday, November 11, 2026, button
+Thursday, November 12, 2026, button
+Friday, November 13, 2026, button
+Saturday, November 14, 2026, button
+Sunday, November 15, 2026, button
+Monday, November 16, 2026, button
+Tuesday, November 17, 2026, button
+Wednesday, November 18, 2026, button
+Thursday, November 19, 2026, button
+Friday, November 20, 2026, button
+Saturday, November 21, 2026, button
+Sunday, November 22, 2026, button
+Monday, November 23, 2026, event or job fair starts, button, pressed
+Tuesday, November 24, 2026, event or job fair starts, button
+Wednesday, November 25, 2026, event or job fair starts, button
+Thursday, November 26, 2026, event or job fair starts, button
+Friday, November 27, 2026, event or job fair starts, button
+Saturday, November 28, 2026, event or job fair starts, button
+Sunday, November 29, 2026, button
+Monday, November 30, 2026, button
+Tuesday, December 1, 2026, button
+Wednesday, December 2, 2026, button
+Thursday, December 3, 2026, button
+Friday, December 4, 2026, button
+Saturday, December 5, 2026, button
+Sunday, December 6, 2026, button
+1 of 3 on this date · click the date again for the next
+Previous month, button
+Next month, button
+heading level 1, NCS Resources
+graphic, no name
+heading level 1, Instructional Videos
+Watch Now, link
+Watch Now, button
+Watch Now
+graphic, no name
+hire-mee, graphic
+heading level 1, Employability Assessment
+Lean More, button
+Lean More
+graphic, no name
+hire-mee, graphic
+heading level 1, Personalized Online Mentoring Programs
+Lean More, button
+Lean More
+graphic, no name
+Sidh-Register, graphic
+heading level 1, Sidh Registration
+Lean More, button
+Lean More
+graphic, no name
+NCS mobile app screens, graphic
+heading level 2, Search Jobs On-the-Go
+The NCS Mobile App offers 10 lakh+ job vacancies, applications, job fair registrations, and your AI resume — all in your pocket.
+Get it on Google Play, link
+Get it on Google Play, graphic
+Download on the App Store, link
+Download on the
+App Store
+heading level 2, Frequently asked questions
+Everything you need to know about using NCS.
+What is NCS?, button, expanded
+region landmark, What is NCS?
+The National Career Service (NCS) is a one-stop solution offering a wide range of employment and career-related services to the citizens of India, including job search, job matching, career content, counselling, and job fair information. It is an initiative of the Ministry of Labour & Employment, Government of India.
+Who can register on the portal?, button
+region landmark, Who can register on the portal?
+Job Seekers, Employers, Skill Providers, Career Counsellors, Local Service Providers, Career Centers, Placement Organisations, Households, and Government Departments.
+Is NCS free to use?, button
+region landmark, Is NCS free to use?
+Yes. NCS does not charge any fee at any stage of registration, job application, or interview processing. Jobseekers should not pay fees to employers.
+Is a mobile app available?, button
+region landmark, Is a mobile app available?
+Yes. The NCS mobile app is available for finding and applying for jobs. It can be downloaded from the app store links on the portal home page.
+How can I avoid fake NCS communication?, button
+region landmark, How can I avoid fake NCS communication?
+Some websites and individuals falsely claim an association with NCS or use its logo. Please verify information only on the official website,
+www.ncs.gov.in, link
+. You may contact NCS at support.ncs@gov.in or on the toll-free helpline 1514. Cyber fraud can be reported on 1930.
+Namaste! 👋 Ask me about employment and skill development schemes., button
+Namaste! 👋
+Ask me about employment and skill development schemes.
+Dismiss, button
+Open Employment and Skill Development Assistant, button
+heading level 2, Still have questions?
+Can't find the answer you're looking for? Contact us now.
+Get in touch, link
+content info landmark
+National Career Service, graphic
+Facebook, link
+
+X, link
+
+Instagram, link
+
+YouTube, link
+
+Directorate General of Employment (DGE) Ministry of Labour & Employment Govt. of India, Shram Shakti Bhawan Rafi Marg, New Delhi-110001, India, link
+Last updated: 28-09-26
+heading level 5, NCS
+list
+For Jobseekers, link
+For Employers, link
+For Career Center, link
+For Career Counsellor, link
+About us, link
+heading level 5, Explore Opportunities
+list
+Career Information, link
+Jobs for Differently Abled, link
+Government Jobs, link
+International Jobs, link
+heading level 5, Other Links
+list
+Sitemap, link
+Right to Information, link
+Disclaimer, link
+FAQs, link
+heading level 5, Important Links
+list
+Feedback, link
+Contact Us, link
+© 2026 Website contents are managed by Ministry of Labour & Employment, Government of India.
+Terms & Conditions, link
+Privacy Policy, link

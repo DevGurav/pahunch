@@ -1,0 +1,696 @@
+{
+  "schema": 1,
+  "portal": {
+    "id": "rti",
+    "name": "RTI Online",
+    "owner": "Department of Personnel and Training",
+    "jurisdiction": "Central",
+    "task": "Reach the citizen login form for filing an RTI request"
+  },
+  "startedAt": "2026-11-24T13:36:46.116Z",
+  "finishedAt": "2026-11-24T13:36:52.330Z",
+  "tool": {
+    "name": "pahunch",
+    "version": "0.1.0",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/159.0.8154.6 Safari/537.36 pahunch/0.1.0 (+https://github.com/DevGurav/pahunch)",
+    "browser": "chromium 159.0.8154.6",
+    "axe": "4.14.1"
+  },
+  "pages": [
+    {
+      "requested": "https://rtionline.gov.in/login.php",
+      "finalUrl": "https://rtionline.gov.in/login.php",
+      "status": 200,
+      "title": "RTI Online :: Citizen Login Form"
+    }
+  ],
+  "robots": {
+    "robotsUrl": "https://rtionline.gov.in/robots.txt",
+    "status": 404,
+    "disallowed": false
+  },
+  "critical": [
+    {
+      "index": 0,
+      "label": "Username field",
+      "kind": "field",
+      "selector": "#UserName",
+      "found": true,
+      "role": "textbox",
+      "name": "",
+      "disabled": false,
+      "reached": true,
+      "focusVisible": false
+    },
+    {
+      "index": 1,
+      "label": "Password field",
+      "kind": "field",
+      "selector": "#password",
+      "found": true,
+      "role": "textbox",
+      "name": "",
+      "disabled": false,
+      "reached": true,
+      "focusVisible": false
+    },
+    {
+      "index": 2,
+      "label": "CAPTCHA field",
+      "kind": "captcha-field",
+      "selector": "input.captchaInput",
+      "found": true,
+      "role": "textbox",
+      "name": "",
+      "disabled": false,
+      "reached": true,
+      "focusVisible": false
+    },
+    {
+      "index": 3,
+      "label": "Audio CAPTCHA link",
+      "kind": "captcha-audio",
+      "selector": "a:has(img[src*=\"peaker\" i]), a:has(img[alt*=\"speaker\" i])",
+      "found": true,
+      "role": "link",
+      "name": "Image of Speaker",
+      "disabled": false,
+      "reached": true,
+      "focusVisible": true
+    },
+    {
+      "index": 4,
+      "label": "Submit button",
+      "kind": "button",
+      "selector": "#Login",
+      "found": true,
+      "role": "button",
+      "name": "Submit",
+      "disabled": false,
+      "reached": true,
+      "focusVisible": false
+    }
+  ],
+  "verdict": "barriers",
+  "inconclusiveReasons": [],
+  "findings": [
+    {
+      "check": "names",
+      "rule": "name-missing",
+      "severity": "barrier",
+      "wcag": [
+        "4.1.2",
+        "1.3.1"
+      ],
+      "summary": "\"Username field\" is announced only as \"edit\", with no name.",
+      "target": "Username field",
+      "snippet": "<input type=\"text\" name=\"UserName\" id=\"UserName\" class=\"alphaNumUser\" maxlength=\"25\" data-pahunch-critical=\"0\" style=\"\">"
+    },
+    {
+      "check": "names",
+      "rule": "name-missing",
+      "severity": "barrier",
+      "wcag": [
+        "4.1.2",
+        "1.3.1"
+      ],
+      "summary": "\"Password field\" is announced only as \"edit\", with no name.",
+      "target": "Password field",
+      "snippet": "<input type=\"password\" name=\"password\" id=\"password\" maxlength=\"50\" onblur=\"getPassword(this.value);\" data-pahunch-critical=\"1\" style=\"\">"
+    },
+    {
+      "check": "names",
+      "rule": "name-missing",
+      "severity": "barrier",
+      "wcag": [
+        "4.1.2",
+        "1.3.1"
+      ],
+      "summary": "\"CAPTCHA field\" is announced only as \"edit\", with no name.",
+      "target": "CAPTCHA field",
+      "snippet": "<input type=\"text\" name=\"6_letters_code\" id=\"6_letters_code\" class=\"captchaInput alphaNumeric\" maxlength=\"10\" data-pahunch-critical=\"2\" style=\"\">"
+    },
+    {
+      "check": "captcha",
+      "rule": "captcha-with-audio",
+      "severity": "info",
+      "wcag": [
+        "1.1.1"
+      ],
+      "summary": "Image CAPTCHA with an audio option (\"Image of Speaker\") that the keyboard can reach.",
+      "target": "img#captchaimg",
+      "snippet": "<img src=\"captcha_code_file.php?rand=1421525426\" id=\"captchaimg\" class=\"captcha\" style=\"height:40px;\">",
+      "details": {
+        "audio": {
+          "description": "Image of Speaker",
+          "focusable": true,
+          "exposed": true,
+          "snippet": "<a style=\"float:left;\" href=\"audiofile1.php\" onclick=\"window.open(this.href,'popUpWindow','height=100,width=100,left=10,top=10,resizable=no,scrollbars=no,menubar=no'); return false;\" data-pahunch-critical=\"3\"><img src=\"https://rtionline.gov.in/images/speaker-btn.png\" style=\"position: relative; left:"
+        },
+        "imageAlt": null
+      }
+    },
+    {
+      "check": "axe",
+      "rule": "axe/button-name",
+      "severity": "barrier",
+      "wcag": [
+        "4.1.2"
+      ],
+      "summary": "Buttons must have discernible text (2 elements).",
+      "target": "button[onclick=\"myFunction()\"]",
+      "snippet": "<button onclick=\"myFunction()\" style=\"background-color: black; height:20px; width:20px; \"></button>",
+      "details": {
+        "impact": "critical",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/button-name?application=playwright",
+        "nodes": [
+          {
+            "target": "button[onclick=\"myFunction()\"]",
+            "html": "<button onclick=\"myFunction()\" style=\"background-color: black; height:20px; width:20px; \"></button>",
+            "failureSummary": "Fix any of the following:\n  Element does not have inner text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element does not have an implicit (wrapped) <label>\n  Element does not have an explicit <label>\n  El"
+          },
+          {
+            "target": "button[onclick=\"myFunction2()\"]",
+            "html": "<button onclick=\"myFunction2()\" style=\"background-color: white; height:20px; width:20px\"> </button>",
+            "failureSummary": "Fix any of the following:\n  Element does not have inner text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element does not have an implicit (wrapped) <label>\n  Element does not have an explicit <label>\n  El"
+          }
+        ]
+      }
+    },
+    {
+      "check": "axe",
+      "rule": "axe/color-contrast",
+      "severity": "barrier",
+      "wcag": [
+        "1.4.3"
+      ],
+      "summary": "Elements must meet minimum color contrast ratio thresholds (1 element).",
+      "target": "td > b",
+      "snippet": "<b style=\"color:red\">(All Characters are Case insensitive)</b>",
+      "details": {
+        "impact": "serious",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/color-contrast?application=playwright",
+        "nodes": [
+          {
+            "target": "td > b",
+            "html": "<b style=\"color:red\">(All Characters are Case insensitive)</b>",
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.99 (foreground color: #ff0000, background color: #ffffff, font size: 10.5pt (14px), font weight: bold). Expected contrast ratio of 4.5:1"
+          }
+        ]
+      }
+    },
+    {
+      "check": "axe",
+      "rule": "axe/empty-table-header",
+      "severity": "info",
+      "wcag": [],
+      "summary": "Table header text should not be empty (2 elements).",
+      "target": ".LTHfirst",
+      "snippet": "<th class=\"LTHfirst\" colspan=\"2\" align=\"center\">&nbsp; </th>",
+      "details": {
+        "impact": "minor",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/empty-table-header?application=playwright",
+        "nodes": [
+          {
+            "target": ".LTHfirst",
+            "html": "<th class=\"LTHfirst\" colspan=\"2\" align=\"center\">&nbsp; </th>",
+            "failureSummary": "Fix any of the following:\n  Element does not have text that is visible to screen readers\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+          },
+          {
+            "target": "tr:nth-child(6) > th",
+            "html": "<th>&nbsp;</th>",
+            "failureSummary": "Fix any of the following:\n  Element does not have text that is visible to screen readers\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+          }
+        ]
+      }
+    },
+    {
+      "check": "axe",
+      "rule": "axe/heading-order",
+      "severity": "info",
+      "wcag": [],
+      "summary": "Heading levels should only increase by one (1 element).",
+      "target": "h4",
+      "snippet": "<h4>Citizen Login</h4>",
+      "details": {
+        "impact": "moderate",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/heading-order?application=playwright",
+        "nodes": [
+          {
+            "target": "h4",
+            "html": "<h4>Citizen Login</h4>",
+            "failureSummary": "Fix any of the following:\n  Heading order invalid"
+          }
+        ]
+      }
+    },
+    {
+      "check": "axe",
+      "rule": "axe/image-alt",
+      "severity": "barrier",
+      "wcag": [
+        "1.1.1"
+      ],
+      "summary": "Images must have alternative text (1 element).",
+      "target": "#captchaimg",
+      "snippet": "<img src=\"captcha_code_file.php?rand=1421525426\" id=\"captchaimg\" class=\"captcha\" style=\"height:40px;\">",
+      "details": {
+        "impact": "critical",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/image-alt?application=playwright",
+        "nodes": [
+          {
+            "target": "#captchaimg",
+            "html": "<img src=\"captcha_code_file.php?rand=1421525426\" id=\"captchaimg\" class=\"captcha\" style=\"height:40px;\">",
+            "failureSummary": "Fix any of the following:\n  Element does not have an alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+          }
+        ]
+      }
+    },
+    {
+      "check": "axe",
+      "rule": "axe/label",
+      "severity": "barrier",
+      "wcag": [
+        "4.1.2"
+      ],
+      "summary": "Form elements must have labels (3 elements).",
+      "target": "#UserName",
+      "snippet": "<input type=\"text\" name=\"UserName\" id=\"UserName\" class=\"alphaNumUser\" maxlength=\"25\" data-pahunch-critical=\"0\" style=\"\">",
+      "details": {
+        "impact": "critical",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/label?application=playwright",
+        "nodes": [
+          {
+            "target": "#UserName",
+            "html": "<input type=\"text\" name=\"UserName\" id=\"UserName\" class=\"alphaNumUser\" maxlength=\"25\" data-pahunch-critical=\"0\" style=\"\">",
+            "failureSummary": "Fix any of the following:\n  Element does not have an implicit (wrapped) <label>\n  Element does not have an explicit <label>\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element has no placeholder attribute\n  Element's default semantics were"
+          },
+          {
+            "target": "#password",
+            "html": "<input type=\"password\" name=\"password\" id=\"password\" maxlength=\"50\" onblur=\"getPassword(this.value);\" data-pahunch-critical=\"1\" style=\"\">",
+            "failureSummary": "Fix any of the following:\n  Element does not have an implicit (wrapped) <label>\n  Element does not have an explicit <label>\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element has no placeholder attribute\n  Element's default semantics were"
+          },
+          {
+            "target": "#\\36 _letters_code",
+            "html": "<input type=\"text\" name=\"6_letters_code\" id=\"6_letters_code\" class=\"captchaInput alphaNumeric\" maxlength=\"10\" data-pahunch-critical=\"2\" style=\"\">",
+            "failureSummary": "Fix any of the following:\n  Element does not have an implicit (wrapped) <label>\n  Element does not have an explicit <label>\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element has no placeholder attribute\n  Element's default semantics were"
+          }
+        ]
+      }
+    },
+    {
+      "check": "axe",
+      "rule": "axe/landmark-one-main",
+      "severity": "info",
+      "wcag": [],
+      "summary": "Document should have one main landmark (1 element).",
+      "target": "html",
+      "snippet": "<html lang=\"en\" xmlns=\"http://www.w3.org/1999/xhtml\">",
+      "details": {
+        "impact": "moderate",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/landmark-one-main?application=playwright",
+        "nodes": [
+          {
+            "target": "html",
+            "html": "<html lang=\"en\" xmlns=\"http://www.w3.org/1999/xhtml\">",
+            "failureSummary": "Fix all of the following:\n  Document does not have a main landmark"
+          }
+        ]
+      }
+    },
+    {
+      "check": "axe",
+      "rule": "axe/region",
+      "severity": "info",
+      "wcag": [],
+      "summary": "All page content should be contained by landmarks (15 elements).",
+      "target": ".city_top_social",
+      "snippet": "<div _ngcontent-iae-c103=\"\" class=\"city_top_social\" align=\"right\" style=\"margin-right:220px;\">",
+      "details": {
+        "impact": "moderate",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/region?application=playwright",
+        "nodes": [
+          {
+            "target": ".city_top_social",
+            "html": "<div _ngcontent-iae-c103=\"\" class=\"city_top_social\" align=\"right\" style=\"margin-right:220px;\">",
+            "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+          },
+          {
+            "target": "#emblem",
+            "html": "<div id=\"emblem\"> <img src=\"https://rtionline.gov.in/images/logo/indian-emblam-white.png\" alt=\"national-emblem\"> </div>",
+            "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+          },
+          {
+            "target": "#frmLang > span",
+            "html": "<span>Select Language:</span>",
+            "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+          },
+          {
+            "target": "#lan",
+            "html": "<select name=\"lan\" id=\"lan\" onchange=\"frmlangSub(this.value);\"><option value=\"en\" selected=\"selected\">English</option><option value=\"hi\">Hindi</option></select>",
+            "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+          },
+          {
+            "target": ".changetheme:nth-child(3)",
+            "html": "<div id=\"language\" class=\"changetheme\"> <a style=\"font-weight:bold; color:white;\" href=\"https://rtionline.gov.in/request/allpa.php?pageid=\">Public Authorities Available</a> </div>",
+            "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+          }
+        ]
+      }
+    },
+    {
+      "check": "axe",
+      "rule": "axe/select-name",
+      "severity": "barrier",
+      "wcag": [
+        "4.1.2"
+      ],
+      "summary": "Select element must have an accessible name (1 element).",
+      "target": "#lan",
+      "snippet": "<select name=\"lan\" id=\"lan\" onchange=\"frmlangSub(this.value);\"><option value=\"en\" selected=\"selected\">English</option><option value=\"hi\">Hindi</option></select>",
+      "details": {
+        "impact": "critical",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/select-name?application=playwright",
+        "nodes": [
+          {
+            "target": "#lan",
+            "html": "<select name=\"lan\" id=\"lan\" onchange=\"frmlangSub(this.value);\"><option value=\"en\" selected=\"selected\">English</option><option value=\"hi\">Hindi</option></select>",
+            "failureSummary": "Fix any of the following:\n  Element does not have an implicit (wrapped) <label>\n  Element does not have an explicit <label>\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element's default semantics were not overridden with role=\"none\" or rol"
+          }
+        ]
+      }
+    },
+    {
+      "check": "keyboard",
+      "rule": "keyboard-focus-invisible",
+      "severity": "barrier",
+      "wcag": [
+        "2.4.7"
+      ],
+      "summary": "No visible focus indicator on Username field, Password field, CAPTCHA field, Submit button.",
+      "target": "Username field",
+      "details": {
+        "controls": [
+          "Username field",
+          "Password field",
+          "CAPTCHA field",
+          "Submit button"
+        ]
+      }
+    }
+  ],
+  "counts": {
+    "blocker": 0,
+    "barrier": 9,
+    "info": 5
+  },
+  "evidence": {
+    "names": {
+      "controls": [
+        {
+          "index": 0,
+          "label": "Username field",
+          "kind": "field",
+          "role": "textbox",
+          "name": "",
+          "disabled": false,
+          "hidden": false,
+          "visible": true,
+          "snapshot": "- textbox"
+        },
+        {
+          "index": 1,
+          "label": "Password field",
+          "kind": "field",
+          "role": "textbox",
+          "name": "",
+          "disabled": false,
+          "hidden": false,
+          "visible": true,
+          "snapshot": "- textbox"
+        },
+        {
+          "index": 2,
+          "label": "CAPTCHA field",
+          "kind": "captcha-field",
+          "role": "textbox",
+          "name": "",
+          "disabled": false,
+          "hidden": false,
+          "visible": true,
+          "snapshot": "- textbox"
+        },
+        {
+          "index": 3,
+          "label": "Audio CAPTCHA link",
+          "kind": "captcha-audio",
+          "role": "link",
+          "name": "Image of Speaker",
+          "disabled": false,
+          "hidden": false,
+          "visible": true,
+          "snapshot": "- link \"Image of Speaker\":\n  - /url: audiofile1.php\n  - img \"Image of Speaker\""
+        },
+        {
+          "index": 4,
+          "label": "Submit button",
+          "kind": "button",
+          "role": "button",
+          "name": "Submit",
+          "disabled": false,
+          "hidden": false,
+          "visible": true,
+          "snapshot": "- button \"Submit\""
+        }
+      ]
+    },
+    "captcha": {
+      "groups": [
+        {
+          "kind": "image",
+          "onPath": true,
+          "imageAlt": null,
+          "target": "img#captchaimg",
+          "inputTarget": "input#6_letters_code",
+          "audio": {
+            "description": "Image of Speaker",
+            "focusable": true,
+            "exposed": true,
+            "snippet": "<a style=\"float:left;\" href=\"audiofile1.php\" onclick=\"window.open(this.href,'popUpWindow','height=100,width=100,left=10,top=10,resizable=no,scrollbars=no,menubar=no'); return false;\" data-pahunch-critical=\"3\"><img src=\"https://rtionline.gov.in/images/speaker-btn.png\" style=\"position: relative; left:"
+          },
+          "snippet": "<img src=\"captcha_code_file.php?rand=1421525426\" id=\"captchaimg\" class=\"captcha\" style=\"height:40px;\">"
+        }
+      ]
+    },
+    "lang": {
+      "frames": [
+        {
+          "htmlLang": "en",
+          "indicTotal": 0,
+          "indicUnmarked": 0,
+          "latinAtRoot": 568,
+          "indicAtRoot": 0,
+          "samples": []
+        }
+      ]
+    },
+    "axe": {
+      "version": "4.14.1",
+      "violations": 9,
+      "incomplete": 1,
+      "passes": 27
+    },
+    "keyboard": {
+      "presses": 28,
+      "completedCycle": true,
+      "stopsSeen": 26,
+      "inModal": false,
+      "trap": null,
+      "controls": [
+        {
+          "index": 0,
+          "label": "Username field",
+          "reached": true,
+          "focusVisible": false,
+          "firstStep": 15
+        },
+        {
+          "index": 1,
+          "label": "Password field",
+          "reached": true,
+          "focusVisible": false,
+          "firstStep": 16
+        },
+        {
+          "index": 2,
+          "label": "CAPTCHA field",
+          "reached": true,
+          "focusVisible": false,
+          "firstStep": 17
+        },
+        {
+          "index": 3,
+          "label": "Audio CAPTCHA link",
+          "reached": true,
+          "focusVisible": true,
+          "firstStep": 19
+        },
+        {
+          "index": 4,
+          "label": "Submit button",
+          "reached": true,
+          "focusVisible": false,
+          "firstStep": 20
+        }
+      ],
+      "sequence": [
+        {
+          "step": 1,
+          "desc": "button",
+          "focusVisible": true
+        },
+        {
+          "step": 2,
+          "desc": "button",
+          "focusVisible": true
+        },
+        {
+          "step": 3,
+          "desc": "select#lan \"English Hindi\"",
+          "focusVisible": false
+        },
+        {
+          "step": 4,
+          "desc": "a \"Public Authorities Available\"",
+          "focusVisible": true
+        },
+        {
+          "step": 5,
+          "desc": "a \"Home\"",
+          "focusVisible": true
+        },
+        {
+          "step": 6,
+          "desc": "a \"Submit Request\"",
+          "focusVisible": true
+        },
+        {
+          "step": 7,
+          "desc": "a \"Submit First Appeal\"",
+          "focusVisible": true
+        },
+        {
+          "step": 8,
+          "desc": "a \"View Status\"",
+          "focusVisible": true
+        },
+        {
+          "step": 9,
+          "desc": "a \"View History\"",
+          "focusVisible": true
+        },
+        {
+          "step": 10,
+          "desc": "a \"Login\"",
+          "focusVisible": true
+        },
+        {
+          "step": 11,
+          "desc": "a \"User Manual\"",
+          "focusVisible": true
+        },
+        {
+          "step": 12,
+          "desc": "a \"Contact Us\"",
+          "focusVisible": true
+        },
+        {
+          "step": 13,
+          "desc": "a \"FAQ\"",
+          "focusVisible": true
+        },
+        {
+          "step": 14,
+          "desc": "a \"Payment Reconciliation\"",
+          "focusVisible": true
+        },
+        {
+          "step": 15,
+          "desc": "input#UserName",
+          "focusVisible": false,
+          "critical": 0
+        },
+        {
+          "step": 16,
+          "desc": "input#password",
+          "focusVisible": false,
+          "critical": 1
+        },
+        {
+          "step": 17,
+          "desc": "input#6_letters_code",
+          "focusVisible": false,
+          "critical": 2
+        },
+        {
+          "step": 18,
+          "desc": "a \"here\"",
+          "focusVisible": true
+        },
+        {
+          "step": 19,
+          "desc": "a",
+          "focusVisible": true,
+          "critical": 3
+        },
+        {
+          "step": 20,
+          "desc": "input#Login \"Submit\"",
+          "focusVisible": false,
+          "critical": 4
+        },
+        {
+          "step": 21,
+          "desc": "input \"Reset\"",
+          "focusVisible": false
+        },
+        {
+          "step": 22,
+          "desc": "a \"Home\"",
+          "focusVisible": true
+        },
+        {
+          "step": 23,
+          "desc": "a \"National Portal of India\"",
+          "focusVisible": true
+        },
+        {
+          "step": 24,
+          "desc": "a \"Complaint & Second Appeal to CIC\"",
+          "focusVisible": true
+        },
+        {
+          "step": 25,
+          "desc": "a \"FAQ\"",
+          "focusVisible": true
+        },
+        {
+          "step": 26,
+          "desc": "a \"Policy\"",
+          "focusVisible": true
+        }
+      ]
+    },
+    "pdf": {
+      "pdfs": [
+        {
+          "url": "https://rtionline.gov.in/viewPDF.php?file=um_citizen.pdf",
+          "status": 200,
+          "result": "not-pdf",
+          "bytes": 1710549
+        }
+      ]
+    }
+  },
+  "errors": []
+}

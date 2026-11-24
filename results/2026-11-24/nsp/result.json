@@ -1,0 +1,676 @@
+{
+  "schema": 1,
+  "portal": {
+    "id": "nsp",
+    "name": "National Scholarship Portal",
+    "owner": "Ministry of Electronics and Information Technology (NeGD)",
+    "jurisdiction": "Central",
+    "task": "Reach the first step of the student login",
+    "notes": "The login is a multi-step wizard. Its CAPTCHAs (images with empty alt text) appear only in later steps, which need the boxes ticked first, so they are out of reach for this audit."
+  },
+  "startedAt": "2026-11-24T13:35:39.997Z",
+  "finishedAt": "2026-11-24T13:35:55.930Z",
+  "tool": {
+    "name": "pahunch",
+    "version": "0.1.0",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/159.0.8154.6 Safari/537.36 pahunch/0.1.0 (+https://github.com/DevGurav/pahunch)",
+    "browser": "chromium 159.0.8154.6",
+    "axe": "4.14.1"
+  },
+  "pages": [
+    {
+      "requested": "https://scholarships.gov.in/otrapplication/#/login-page",
+      "finalUrl": "https://scholarships.gov.in/otrapplication/#/login-page",
+      "status": 200,
+      "title": "NSP : National Scholarship Portal"
+    }
+  ],
+  "robots": {
+    "robotsUrl": "https://scholarships.gov.in/robots.txt",
+    "status": null,
+    "error": "Error: apiRequestContext.get: socket hang up (ECONNRESET)\nCall log:\n\u001b[2m  - → GET https://scholarships.gov.in/robots.txt\u001b[22m\n\u001b[2m    - user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKi",
+    "disallowed": false
+  },
+  "critical": [
+    {
+      "index": 0,
+      "label": "First consent checkbox",
+      "kind": "checkbox",
+      "selector": "#myCheck1",
+      "found": true,
+      "role": "checkbox",
+      "name": "",
+      "disabled": false,
+      "reached": true,
+      "focusVisible": true
+    },
+    {
+      "index": 1,
+      "label": "Second consent checkbox",
+      "kind": "checkbox",
+      "selector": "#myCheck2",
+      "found": true,
+      "role": "checkbox",
+      "name": "",
+      "disabled": false,
+      "reached": true,
+      "focusVisible": true
+    },
+    {
+      "index": 2,
+      "label": "Next button",
+      "kind": "button",
+      "selector": "#step-btn-one",
+      "found": true,
+      "role": "button",
+      "name": "Next",
+      "disabled": true,
+      "reached": false,
+      "focusVisible": null
+    }
+  ],
+  "verdict": "barriers",
+  "inconclusiveReasons": [],
+  "findings": [
+    {
+      "check": "names",
+      "rule": "name-missing",
+      "severity": "barrier",
+      "wcag": [
+        "4.1.2",
+        "1.3.1"
+      ],
+      "summary": "\"First consent checkbox\" is announced only as \"check box\", with no name.",
+      "target": "First consent checkbox",
+      "snippet": "<input _ngcontent-ng-c3192780573=\"\" type=\"checkbox\" id=\"myCheck1\" onclick=\"checkBoxAlert()\" class=\"form-check-input ng-untouched ng-pristine ng-valid\" data-pahunch-critical=\"0\" style=\"\">"
+    },
+    {
+      "check": "names",
+      "rule": "name-missing",
+      "severity": "barrier",
+      "wcag": [
+        "4.1.2",
+        "1.3.1"
+      ],
+      "summary": "\"Second consent checkbox\" is announced only as \"check box\", with no name.",
+      "target": "Second consent checkbox",
+      "snippet": "<input _ngcontent-ng-c3192780573=\"\" type=\"checkbox\" id=\"myCheck2\" onclick=\"checkBoxAlert()\" class=\"form-check-input ng-untouched ng-pristine ng-valid\" data-pahunch-critical=\"1\" style=\"\">"
+    },
+    {
+      "check": "axe",
+      "rule": "axe/aria-required-children",
+      "severity": "barrier",
+      "wcag": [
+        "1.3.1"
+      ],
+      "summary": "Certain ARIA roles must contain particular children (1 element).",
+      "target": "#pills-tab",
+      "snippet": "<ul _ngcontent-ng-c3192780573=\"\" id=\"pills-tab\" role=\"tablist\" class=\"nav nav-pills nav-tabs custom-tab student-bg\">",
+      "details": {
+        "impact": "critical",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/aria-required-children?application=playwright",
+        "nodes": [
+          {
+            "target": "#pills-tab",
+            "html": "<ul _ngcontent-ng-c3192780573=\"\" id=\"pills-tab\" role=\"tablist\" class=\"nav nav-pills nav-tabs custom-tab student-bg\">",
+            "failureSummary": "Fix any of the following:\n  Element has children which are not allowed: li"
+          }
+        ]
+      }
+    },
+    {
+      "check": "axe",
+      "rule": "axe/button-name",
+      "severity": "barrier",
+      "wcag": [
+        "4.1.2"
+      ],
+      "summary": "Buttons must have discernible text (1 element).",
+      "target": ".navbar-toggler",
+      "snippet": "<button _ngcontent-ng-c2376722496=\"\" type=\"button\" data-bs-toggle=\"offcanvas\" data-bs-target=\"#offcanvasNavbar\" aria-controls=\"offcanvasNavbar\" class=\"navbar-toggler\">",
+      "details": {
+        "impact": "critical",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/button-name?application=playwright",
+        "nodes": [
+          {
+            "target": ".navbar-toggler",
+            "html": "<button _ngcontent-ng-c2376722496=\"\" type=\"button\" data-bs-toggle=\"offcanvas\" data-bs-target=\"#offcanvasNavbar\" aria-controls=\"offcanvasNavbar\" class=\"navbar-toggler\">",
+            "failureSummary": "Fix any of the following:\n  Element does not have inner text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element does not have an implicit (wrapped) <label>\n  Element does not have an explicit <label>\n  El"
+          }
+        ]
+      }
+    },
+    {
+      "check": "axe",
+      "rule": "axe/heading-order",
+      "severity": "info",
+      "wcag": [],
+      "summary": "Heading levels should only increase by one (1 element).",
+      "target": "#step-one > .justify-content-between.row > .col-sm-12.col-md-12 > .form-warp.mb-5 > .form-header.text-start",
+      "snippet": "<h5 _ngcontent-ng-c3192780573=\"\" class=\"form-header text-start\">1. One Time Registration (OTR) Guidelines for Scholarships Hosted on NSP</h5>",
+      "details": {
+        "impact": "moderate",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/heading-order?application=playwright",
+        "nodes": [
+          {
+            "target": "#step-one > .justify-content-between.row > .col-sm-12.col-md-12 > .form-warp.mb-5 > .form-header.text-start",
+            "html": "<h5 _ngcontent-ng-c3192780573=\"\" class=\"form-header text-start\">1. One Time Registration (OTR) Guidelines for Scholarships Hosted on NSP</h5>",
+            "failureSummary": "Fix any of the following:\n  Heading order invalid"
+          }
+        ]
+      }
+    },
+    {
+      "check": "axe",
+      "rule": "axe/image-alt",
+      "severity": "barrier",
+      "wcag": [
+        "1.1.1"
+      ],
+      "summary": "Images must have alternative text (13 elements).",
+      "target": ".nav-item:nth-child(3) > img",
+      "snippet": "<img _ngcontent-ng-c2376722496=\"\" src=\"assets/images/icons/Digital-India-Color.svg\">",
+      "details": {
+        "impact": "critical",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/image-alt?application=playwright",
+        "nodes": [
+          {
+            "target": ".nav-item:nth-child(3) > img",
+            "html": "<img _ngcontent-ng-c2376722496=\"\" src=\"assets/images/icons/Digital-India-Color.svg\">",
+            "failureSummary": "Fix any of the following:\n  Element does not have an alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+          },
+          {
+            "target": "a[href=\"#\"] > img[src$=\"acces.svg\"][width=\"26\"]",
+            "html": "<img _ngcontent-ng-c2376722496=\"\" src=\"assets/images/icons/acces.svg\" width=\"26\">",
+            "failureSummary": "Fix any of the following:\n  Element does not have an alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+          },
+          {
+            "target": ".dest",
+            "html": "<img _ngcontent-ng-c2376722496=\"\" src=\"assets/images/nsp-logo.svg\" class=\"dest\">",
+            "failureSummary": "Fix any of the following:\n  Element does not have an alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+          },
+          {
+            "target": "img[src$=\"faq.svg\"]",
+            "html": "<img _ngcontent-ng-c2376722496=\"\" src=\"assets/images/icons/faq.svg\">",
+            "failureSummary": "Fix any of the following:\n  Element does not have an alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+          },
+          {
+            "target": ".dropdown.nav-item:nth-child(2) > .nav-link[target=\"_blank\"] > img",
+            "html": "<img _ngcontent-ng-c2376722496=\"\" src=\"assets/images/icons/Announcements.svg\">",
+            "failureSummary": "Fix any of the following:\n  Element does not have an alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+          }
+        ]
+      }
+    },
+    {
+      "check": "axe",
+      "rule": "axe/image-redundant-alt",
+      "severity": "info",
+      "wcag": [],
+      "summary": "Alternative text of images should not be repeated as text (2 elements).",
+      "target": "img[alt=\"Login\"]",
+      "snippet": "<img _ngcontent-ng-c3192780573=\"\" src=\"assets/images/icons/login-white.svg\" alt=\"Login\">",
+      "details": {
+        "impact": "minor",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/image-redundant-alt?application=playwright",
+        "nodes": [
+          {
+            "target": "img[alt=\"Login\"]",
+            "html": "<img _ngcontent-ng-c3192780573=\"\" src=\"assets/images/icons/login-white.svg\" alt=\"Login\">",
+            "failureSummary": "Fix all of the following:\n  Element contains <img> element with alt text that duplicates existing text"
+          },
+          {
+            "target": "img[alt=\"Register\"]",
+            "html": "<img _ngcontent-ng-c3192780573=\"\" src=\"assets/images/icons/register-white.svg\" alt=\"Register\">",
+            "failureSummary": "Fix all of the following:\n  Element contains <img> element with alt text that duplicates existing text"
+          }
+        ]
+      }
+    },
+    {
+      "check": "axe",
+      "rule": "axe/label",
+      "severity": "barrier",
+      "wcag": [
+        "4.1.2"
+      ],
+      "summary": "Form elements must have labels (2 elements).",
+      "target": "#myCheck1",
+      "snippet": "<input _ngcontent-ng-c3192780573=\"\" type=\"checkbox\" id=\"myCheck1\" onclick=\"checkBoxAlert()\" class=\"form-check-input ng-untouched ng-pristine ng-valid\" data-pahunch-critical=\"0\" style=\"\">",
+      "details": {
+        "impact": "critical",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/label?application=playwright",
+        "nodes": [
+          {
+            "target": "#myCheck1",
+            "html": "<input _ngcontent-ng-c3192780573=\"\" type=\"checkbox\" id=\"myCheck1\" onclick=\"checkBoxAlert()\" class=\"form-check-input ng-untouched ng-pristine ng-valid\" data-pahunch-critical=\"0\" style=\"\">",
+            "failureSummary": "Fix any of the following:\n  Element does not have an implicit (wrapped) <label>\n  Element does not have an explicit <label>\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element has no placeholder attribute\n  Element's default semantics were"
+          },
+          {
+            "target": "#myCheck2",
+            "html": "<input _ngcontent-ng-c3192780573=\"\" type=\"checkbox\" id=\"myCheck2\" onclick=\"checkBoxAlert()\" class=\"form-check-input ng-untouched ng-pristine ng-valid\" data-pahunch-critical=\"1\" style=\"\">",
+            "failureSummary": "Fix any of the following:\n  Element does not have an implicit (wrapped) <label>\n  Element does not have an explicit <label>\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element has no placeholder attribute\n  Element's default semantics were"
+          }
+        ]
+      }
+    },
+    {
+      "check": "axe",
+      "rule": "axe/landmark-banner-is-top-level",
+      "severity": "info",
+      "wcag": [],
+      "summary": "Banner landmark should not be contained in another landmark (1 element).",
+      "target": "app-header > header",
+      "snippet": "<header _ngcontent-ng-c2376722496=\"\">",
+      "details": {
+        "impact": "moderate",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/landmark-banner-is-top-level?application=playwright",
+        "nodes": [
+          {
+            "target": "app-header > header",
+            "html": "<header _ngcontent-ng-c2376722496=\"\">",
+            "failureSummary": "Fix any of the following:\n  The banner landmark is contained in another landmark."
+          }
+        ]
+      }
+    },
+    {
+      "check": "axe",
+      "rule": "axe/landmark-no-duplicate-banner",
+      "severity": "info",
+      "wcag": [],
+      "summary": "Document should not have more than one banner landmark (1 element).",
+      "target": "app-root > header",
+      "snippet": "<header _ngcontent-ng-c1380428344=\"\">",
+      "details": {
+        "impact": "moderate",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/landmark-no-duplicate-banner?application=playwright",
+        "nodes": [
+          {
+            "target": "app-root > header",
+            "html": "<header _ngcontent-ng-c1380428344=\"\">",
+            "failureSummary": "Fix any of the following:\n  Document has more than one banner landmark"
+          }
+        ]
+      }
+    },
+    {
+      "check": "axe",
+      "rule": "axe/landmark-unique",
+      "severity": "info",
+      "wcag": [],
+      "summary": "Landmarks should have a unique role or role/label/title (i.e. accessible name) combination (1 element).",
+      "target": "app-root > header",
+      "snippet": "<header _ngcontent-ng-c1380428344=\"\">",
+      "details": {
+        "impact": "moderate",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/landmark-unique?application=playwright",
+        "nodes": [
+          {
+            "target": "app-root > header",
+            "html": "<header _ngcontent-ng-c1380428344=\"\">",
+            "failureSummary": "Fix any of the following:\n  The landmark must have a unique aria-label, aria-labelledby, or title to make landmarks distinguishable"
+          }
+        ]
+      }
+    },
+    {
+      "check": "axe",
+      "rule": "axe/link-name",
+      "severity": "barrier",
+      "wcag": [
+        "2.4.4",
+        "4.1.2"
+      ],
+      "summary": "Links must have discernible text (3 elements).",
+      "target": "a[href=\"#\"]",
+      "snippet": "<a _ngcontent-ng-c2376722496=\"\" href=\"#\" data-bs-toggle=\"offcanvas\" data-bs-target=\"#offcanvasRight\" aria-controls=\"offcanvasRight\"><img _ngcontent-ng-c2376722496=\"\" src=\"assets/images/icons/acces.svg\" width=\"26\"></a>",
+      "details": {
+        "impact": "serious",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/link-name?application=playwright",
+        "nodes": [
+          {
+            "target": "a[href=\"#\"]",
+            "html": "<a _ngcontent-ng-c2376722496=\"\" href=\"#\" data-bs-toggle=\"offcanvas\" data-bs-target=\"#offcanvasRight\" aria-controls=\"offcanvasRight\"><img _ngcontent-ng-c2376722496=\"\" src=\"assets/images/icons/acces.svg\" width=\"26\"></a>",
+            "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+          },
+          {
+            "target": ".logo",
+            "html": "<a _ngcontent-ng-c2376722496=\"\" href=\"https://scholarships.gov.in/\" class=\"logo\"><img _ngcontent-ng-c2376722496=\"\" src=\"assets/images/nsp-logo.svg\" class=\"dest\"><img _ngcontent-ng-c2376722496=\"\" src=\"assets/images/nsp_logo_short.svg\" class=\"mob\"></a>",
+            "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+          },
+          {
+            "target": ".nav-link[href$=\"scholarships.gov.in/\"]",
+            "html": "<a _ngcontent-ng-c3192780573=\"\" href=\"https://scholarships.gov.in/\" class=\"nav-link\"><img _ngcontent-ng-c3192780573=\"\" src=\"assets/images/icons/back-btn-white.svg\"></a>",
+            "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+          }
+        ]
+      }
+    },
+    {
+      "check": "axe",
+      "rule": "axe/list",
+      "severity": "barrier",
+      "wcag": [
+        "1.3.1"
+      ],
+      "summary": "<ul> and <ol> must only directly contain <li>, <script> or <template> elements (1 element).",
+      "target": ".px-4 > ol",
+      "snippet": "<ol _ngcontent-ng-c3192780573=\"\">",
+      "details": {
+        "impact": "serious",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/list?application=playwright",
+        "nodes": [
+          {
+            "target": ".px-4 > ol",
+            "html": "<ol _ngcontent-ng-c3192780573=\"\">",
+            "failureSummary": "Fix all of the following:\n  List element has direct children that are not allowed: ol"
+          }
+        ]
+      }
+    },
+    {
+      "check": "axe",
+      "rule": "axe/listitem",
+      "severity": "barrier",
+      "wcag": [
+        "1.3.1"
+      ],
+      "summary": "<li> elements must be contained in a <ul> or <ol> (5 elements).",
+      "target": "#pills-tab > .nav-item:nth-child(1)",
+      "snippet": "<li _ngcontent-ng-c3192780573=\"\" class=\"nav-item\"><a _ngcontent-ng-c3192780573=\"\" href=\"https://scholarships.gov.in/\" class=\"nav-link\"><img _ngcontent-ng-c3192780573=\"\" src=\"assets/images/icons/back-btn-white.svg\"></a></li>",
+      "details": {
+        "impact": "serious",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/listitem?application=playwright",
+        "nodes": [
+          {
+            "target": "#pills-tab > .nav-item:nth-child(1)",
+            "html": "<li _ngcontent-ng-c3192780573=\"\" class=\"nav-item\"><a _ngcontent-ng-c3192780573=\"\" href=\"https://scholarships.gov.in/\" class=\"nav-link\"><img _ngcontent-ng-c3192780573=\"\" src=\"assets/images/icons/back-btn-white.svg\"></a></li>",
+            "failureSummary": "Fix any of the following:\n  List item parent element has a role that is not role=\"list\". Ensure the parent element has role=\"list\", or move the <li> inside a <ul> or <ol>."
+          },
+          {
+            "target": "#pills-tab > .nav-item:nth-child(2)",
+            "html": "<li _ngcontent-ng-c3192780573=\"\" class=\"nav-item\">",
+            "failureSummary": "Fix any of the following:\n  List item parent element has a role that is not role=\"list\". Ensure the parent element has role=\"list\", or move the <li> inside a <ul> or <ol>."
+          },
+          {
+            "target": "#pills-tab > .nav-item:nth-child(3)",
+            "html": "<li _ngcontent-ng-c3192780573=\"\" class=\"nav-item\"><a _ngcontent-ng-c3192780573=\"\" href=\"\" class=\"nav-link active\"><img _ngcontent-ng-c3192780573=\"\" src=\"assets/images/icons/register-white.svg\" alt=\"Register\"><span _ngcontent-ng-c3192780573=\"\">Register</span></a></li>",
+            "failureSummary": "Fix any of the following:\n  List item parent element has a role that is not role=\"list\". Ensure the parent element has role=\"list\", or move the <li> inside a <ul> or <ol>."
+          },
+          {
+            "target": "#pills-tab > .nav-item:nth-child(4)",
+            "html": "<li _ngcontent-ng-c3192780573=\"\" class=\"nav-item\"><a _ngcontent-ng-c3192780573=\"\" routerlink=\"/changemobile\" class=\"nav-link\" href=\"/otrapplication/changemobile\"><span _ngcontent-ng-c3192780573=\"\">Change Mobile no.</span></a></li>",
+            "failureSummary": "Fix any of the following:\n  List item parent element has a role that is not role=\"list\". Ensure the parent element has role=\"list\", or move the <li> inside a <ul> or <ol>."
+          },
+          {
+            "target": "#pills-tab > .nav-item:nth-child(5)",
+            "html": "<li _ngcontent-ng-c3192780573=\"\" class=\"nav-item\"><a _ngcontent-ng-c3192780573=\"\" class=\"nav-link\"><span _ngcontent-ng-c3192780573=\"\">CSC Login</span></a></li>",
+            "failureSummary": "Fix any of the following:\n  List item parent element has a role that is not role=\"list\". Ensure the parent element has role=\"list\", or move the <li> inside a <ul> or <ol>."
+          }
+        ]
+      }
+    },
+    {
+      "check": "axe",
+      "rule": "axe/page-has-heading-one",
+      "severity": "info",
+      "wcag": [],
+      "summary": "Page should contain a level-one heading (1 element).",
+      "target": "html",
+      "snippet": "<html lang=\"en\" class=\"h-100\" data-bs-theme=\"auto\" data-critters-container=\"\">",
+      "details": {
+        "impact": "moderate",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/page-has-heading-one?application=playwright",
+        "nodes": [
+          {
+            "target": "html",
+            "html": "<html lang=\"en\" class=\"h-100\" data-bs-theme=\"auto\" data-critters-container=\"\">",
+            "failureSummary": "Fix all of the following:\n  Page must have a level-one heading"
+          }
+        ]
+      }
+    },
+    {
+      "check": "axe",
+      "rule": "axe/region",
+      "severity": "info",
+      "wcag": [],
+      "summary": "All page content should be contained by landmarks (1 element).",
+      "target": ".container > .align-items-center.d-flex.justify-content-center",
+      "snippet": "<div _ngcontent-ng-c562338441=\"\" class=\"row d-flex justify-content-center align-items-center\">",
+      "details": {
+        "impact": "moderate",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/region?application=playwright",
+        "nodes": [
+          {
+            "target": ".container > .align-items-center.d-flex.justify-content-center",
+            "html": "<div _ngcontent-ng-c562338441=\"\" class=\"row d-flex justify-content-center align-items-center\">",
+            "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+          }
+        ]
+      }
+    }
+  ],
+  "counts": {
+    "blocker": 0,
+    "barrier": 9,
+    "info": 7
+  },
+  "evidence": {
+    "names": {
+      "controls": [
+        {
+          "index": 0,
+          "label": "First consent checkbox",
+          "kind": "checkbox",
+          "role": "checkbox",
+          "name": "",
+          "disabled": false,
+          "hidden": false,
+          "visible": true,
+          "snapshot": "- checkbox"
+        },
+        {
+          "index": 1,
+          "label": "Second consent checkbox",
+          "kind": "checkbox",
+          "role": "checkbox",
+          "name": "",
+          "disabled": false,
+          "hidden": false,
+          "visible": true,
+          "snapshot": "- checkbox"
+        },
+        {
+          "index": 2,
+          "label": "Next button",
+          "kind": "button",
+          "role": "button",
+          "name": "Next",
+          "disabled": true,
+          "hidden": false,
+          "visible": true,
+          "snapshot": "- button \"Next\" [disabled]"
+        }
+      ]
+    },
+    "captcha": {
+      "groups": []
+    },
+    "lang": {
+      "frames": [
+        {
+          "htmlLang": "en",
+          "indicTotal": 0,
+          "indicUnmarked": 0,
+          "latinAtRoot": 1976,
+          "indicAtRoot": 0,
+          "samples": []
+        }
+      ]
+    },
+    "axe": {
+      "version": "4.14.1",
+      "violations": 14,
+      "incomplete": 2,
+      "passes": 40
+    },
+    "keyboard": {
+      "presses": 23,
+      "completedCycle": true,
+      "stopsSeen": 21,
+      "inModal": false,
+      "trap": null,
+      "controls": [
+        {
+          "index": 0,
+          "label": "First consent checkbox",
+          "reached": true,
+          "focusVisible": true,
+          "firstStep": 13
+        },
+        {
+          "index": 1,
+          "label": "Second consent checkbox",
+          "reached": true,
+          "focusVisible": true,
+          "firstStep": 14
+        },
+        {
+          "index": 2,
+          "label": "Next button",
+          "reached": false,
+          "focusVisible": null,
+          "skipped": "disabled"
+        }
+      ],
+      "sequence": [
+        {
+          "step": 1,
+          "desc": "button \"English\"",
+          "focusVisible": false
+        },
+        {
+          "step": 2,
+          "desc": "a",
+          "focusVisible": true
+        },
+        {
+          "step": 3,
+          "desc": "a",
+          "focusVisible": true
+        },
+        {
+          "step": 4,
+          "desc": "button",
+          "focusVisible": true
+        },
+        {
+          "step": 5,
+          "desc": "a \"FAQ’s\"",
+          "focusVisible": true
+        },
+        {
+          "step": 6,
+          "desc": "a \"Announcements\"",
+          "focusVisible": true
+        },
+        {
+          "step": 7,
+          "desc": "a \"Helpdesk\"",
+          "focusVisible": true
+        },
+        {
+          "step": 8,
+          "desc": "a",
+          "focusVisible": true
+        },
+        {
+          "step": 9,
+          "desc": "a \"Login\"",
+          "focusVisible": true
+        },
+        {
+          "step": 10,
+          "desc": "a \"Register\"",
+          "focusVisible": true
+        },
+        {
+          "step": 11,
+          "desc": "a \"Change Mobile no.\"",
+          "focusVisible": true
+        },
+        {
+          "step": 12,
+          "desc": "a \"Login\"",
+          "focusVisible": true
+        },
+        {
+          "step": 13,
+          "desc": "input#myCheck1",
+          "focusVisible": true,
+          "critical": 0
+        },
+        {
+          "step": 14,
+          "desc": "input#myCheck2",
+          "focusVisible": true,
+          "critical": 1
+        },
+        {
+          "step": 15,
+          "desc": "button \"Cancel\"",
+          "focusVisible": true
+        },
+        {
+          "step": 16,
+          "desc": "a \"Copyright Policy\"",
+          "focusVisible": true
+        },
+        {
+          "step": 17,
+          "desc": "a \"Privacy Policy\"",
+          "focusVisible": true
+        },
+        {
+          "step": 18,
+          "desc": "a \"Terms and Conditions\"",
+          "focusVisible": true
+        },
+        {
+          "step": 19,
+          "desc": "a \"Disclaimer\"",
+          "focusVisible": true
+        },
+        {
+          "step": 20,
+          "desc": "a \"Hyperlink\"",
+          "focusVisible": true
+        },
+        {
+          "step": 21,
+          "desc": "a \"Site Map\"",
+          "focusVisible": true
+        }
+      ]
+    },
+    "pdf": {
+      "pdfs": [
+        {
+          "url": "https://nsp.gov.in/public/manual/Operational_Steps_Involved_In_Filling_Institute_Registration_Form.pdf",
+          "status": 404,
+          "result": "not-pdf",
+          "bytes": 0
+        },
+        {
+          "url": "https://scholarships.gov.in/public/nodalOfficersList/grievance_redressal_officer.pdf",
+          "status": 404,
+          "result": "not-pdf",
+          "bytes": 1915
+        }
+      ]
+    }
+  },
+  "errors": []
+}

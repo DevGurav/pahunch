@@ -1,0 +1,514 @@
+{
+  "schema": 1,
+  "portal": {
+    "id": "cpgrams",
+    "name": "CPGRAMS (public grievance portal)",
+    "owner": "Department of Administrative Reforms and Public Grievances",
+    "jurisdiction": "Central",
+    "task": "Reach the sign-in form needed to lodge a grievance"
+  },
+  "startedAt": "2026-11-24T13:35:17.442Z",
+  "finishedAt": "2026-11-24T13:35:19.454Z",
+  "tool": {
+    "name": "pahunch",
+    "version": "0.1.0",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/159.0.8154.6 Safari/537.36 pahunch/0.1.0 (+https://github.com/DevGurav/pahunch)",
+    "browser": "chromium 159.0.8154.6",
+    "axe": "4.14.1"
+  },
+  "pages": [
+    {
+      "requested": "https://pgportal.gov.in/Signin",
+      "finalUrl": "https://pgportal.gov.in/Signin",
+      "status": 200,
+      "title": "CPGRAMS-Home"
+    }
+  ],
+  "robots": {
+    "robotsUrl": "https://pgportal.gov.in/robots.txt",
+    "status": 404,
+    "disallowed": false
+  },
+  "critical": [
+    {
+      "index": 0,
+      "label": "Mobile / email / username field",
+      "kind": "field",
+      "selector": "#Username",
+      "found": true,
+      "role": "textbox",
+      "name": "Mobile No/Email Id/Username",
+      "disabled": false,
+      "reached": true,
+      "focusVisible": true
+    },
+    {
+      "index": 1,
+      "label": "Password field",
+      "kind": "field",
+      "selector": "#TempPassword",
+      "found": true,
+      "role": "textbox",
+      "name": "Password",
+      "disabled": false,
+      "reached": true,
+      "focusVisible": true
+    },
+    {
+      "index": 2,
+      "label": "Security code (CAPTCHA) field",
+      "kind": "captcha-field",
+      "selector": "#Captcha",
+      "found": true,
+      "role": "textbox",
+      "name": "Security code",
+      "disabled": false,
+      "reached": true,
+      "focusVisible": true
+    },
+    {
+      "index": 3,
+      "label": "Audio CAPTCHA button",
+      "kind": "captcha-audio",
+      "selector": "#btnCaptchaAudio",
+      "found": true,
+      "role": "button",
+      "name": "Speech aloud",
+      "disabled": false,
+      "reached": true,
+      "focusVisible": true
+    },
+    {
+      "index": 4,
+      "label": "Login button",
+      "kind": "button",
+      "selector": "#btnSubmit",
+      "found": true,
+      "role": "button",
+      "name": "Login",
+      "disabled": false,
+      "reached": true,
+      "focusVisible": true
+    }
+  ],
+  "verdict": "barriers",
+  "inconclusiveReasons": [],
+  "findings": [
+    {
+      "check": "captcha",
+      "rule": "captcha-with-audio",
+      "severity": "info",
+      "wcag": [
+        "1.1.1"
+      ],
+      "summary": "Image CAPTCHA with an audio option (\"Speech aloud\") that the keyboard can reach.",
+      "target": "img#CaptchaImage",
+      "snippet": "<img alt=\"Captcha\" id=\"CaptchaImage\" src=\"/Captcha/GetCaptcha\" width=\"120\" height=\"42\">",
+      "details": {
+        "audio": {
+          "description": "Speech aloud",
+          "focusable": true,
+          "exposed": true,
+          "snippet": "<button title=\"Speech aloud\" id=\"btnCaptchaAudio\" class=\"refresh\" data-pahunch-critical=\"3\"><i class=\"fa fa-volume\" id=\"audioIcon\"></i></button>"
+        },
+        "imageAlt": "Captcha"
+      }
+    },
+    {
+      "check": "axe",
+      "rule": "axe/color-contrast",
+      "severity": "barrier",
+      "wcag": [
+        "1.4.3"
+      ],
+      "summary": "Elements must meet minimum color contrast ratio thresholds (3 elements).",
+      "target": ".forgot-username",
+      "snippet": "<a href=\"/ForgotUsername\" class=\"forgot-username\" title=\"forgot username\">Forgot Username</a>",
+      "details": {
+        "impact": "serious",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/color-contrast?application=playwright",
+        "nodes": [
+          {
+            "target": ".forgot-username",
+            "html": "<a href=\"/ForgotUsername\" class=\"forgot-username\" title=\"forgot username\">Forgot Username</a>",
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.77 (foreground color: #337be5, background color: #f5f5f5, font size: 8.3pt (11px), font weight: bold). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "target": ".forgot-password",
+            "html": "<a href=\"/ForgetPassword\" class=\"forgot-password\" title=\"forgot password\">Forgot Password</a>",
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.77 (foreground color: #337be5, background color: #f5f5f5, font size: 8.3pt (11px), font weight: bold). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "target": "#btnSubmit",
+            "html": "<button type=\"submit\" id=\"btnSubmit\" class=\"btn primary\" data-pahunch-critical=\"4\">Login</button>",
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.29 (foreground color: #ffffff, background color: #4678d3, font size: 11.3pt (15px), font weight: normal). Expected contrast ratio of 4.5:1"
+          }
+        ]
+      }
+    },
+    {
+      "check": "axe",
+      "rule": "axe/heading-order",
+      "severity": "info",
+      "wcag": [],
+      "summary": "Heading levels should only increase by one (1 element).",
+      "target": "h5",
+      "snippet": "<h5 class=\"samadhan-didi\">SAMADHAN DIDI</h5>",
+      "details": {
+        "impact": "moderate",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/heading-order?application=playwright",
+        "nodes": [
+          {
+            "target": "h5",
+            "html": "<h5 class=\"samadhan-didi\">SAMADHAN DIDI</h5>",
+            "failureSummary": "Fix any of the following:\n  Heading order invalid"
+          }
+        ]
+      }
+    },
+    {
+      "check": "axe",
+      "rule": "axe/image-alt",
+      "severity": "barrier",
+      "wcag": [
+        "1.1.1"
+      ],
+      "summary": "Images must have alternative text (3 elements).",
+      "target": ".img-content > img",
+      "snippet": "<img src=\"/Content/loginAssets/img/chatbot.png\">",
+      "details": {
+        "impact": "critical",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/image-alt?application=playwright",
+        "nodes": [
+          {
+            "target": ".img-content > img",
+            "html": "<img src=\"/Content/loginAssets/img/chatbot.png\">",
+            "failureSummary": "Fix any of the following:\n  Element does not have an alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+          },
+          {
+            "target": ".chatbot-care",
+            "html": "<img src=\"/Content/loginAssets/img/chatbot-care.png\" class=\"chatbot-care\">",
+            "failureSummary": "Fix any of the following:\n  Element does not have an alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+          },
+          {
+            "target": ".chatbot-mic",
+            "html": "<img src=\"/Content/loginAssets/img/mic.png\" class=\"chatbot-mic\">",
+            "failureSummary": "Fix any of the following:\n  Element does not have an alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+          }
+        ]
+      }
+    },
+    {
+      "check": "axe",
+      "rule": "axe/landmark-one-main",
+      "severity": "info",
+      "wcag": [],
+      "summary": "Document should have one main landmark (1 element).",
+      "target": "html",
+      "snippet": "<html lang=\"en\">",
+      "details": {
+        "impact": "moderate",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/landmark-one-main?application=playwright",
+        "nodes": [
+          {
+            "target": "html",
+            "html": "<html lang=\"en\">",
+            "failureSummary": "Fix all of the following:\n  Document does not have a main landmark"
+          }
+        ]
+      }
+    },
+    {
+      "check": "axe",
+      "rule": "axe/page-has-heading-one",
+      "severity": "info",
+      "wcag": [],
+      "summary": "Page should contain a level-one heading (1 element).",
+      "target": "html",
+      "snippet": "<html lang=\"en\">",
+      "details": {
+        "impact": "moderate",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/page-has-heading-one?application=playwright",
+        "nodes": [
+          {
+            "target": "html",
+            "html": "<html lang=\"en\">",
+            "failureSummary": "Fix all of the following:\n  Page must have a level-one heading"
+          }
+        ]
+      }
+    },
+    {
+      "check": "axe",
+      "rule": "axe/region",
+      "severity": "info",
+      "wcag": [],
+      "summary": "All page content should be contained by landmarks (8 elements).",
+      "target": ".active.slide",
+      "snippet": "<div class=\"slide active\">",
+      "details": {
+        "impact": "moderate",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/region?application=playwright",
+        "nodes": [
+          {
+            "target": ".active.slide",
+            "html": "<div class=\"slide active\">",
+            "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+          },
+          {
+            "target": ".mb-4",
+            "html": "<div class=\"d-flex justify-content-between align-items-center mb-4\"> <h2>User Login</h2> <a href=\"/Signin/Login\" class=\"btn-opt secondary\">Login with OTP</a> </div>",
+            "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+          },
+          {
+            "target": ".login-card > div:nth-child(3)",
+            "html": "<div>",
+            "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+          },
+          {
+            "target": ".login-card > div:nth-child(4)",
+            "html": "<div>",
+            "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+          },
+          {
+            "target": "label[for=\"Captcha\"]",
+            "html": "<label for=\"Captcha\">Security code</label>",
+            "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+          }
+        ]
+      }
+    }
+  ],
+  "counts": {
+    "blocker": 0,
+    "barrier": 2,
+    "info": 5
+  },
+  "evidence": {
+    "names": {
+      "controls": [
+        {
+          "index": 0,
+          "label": "Mobile / email / username field",
+          "kind": "field",
+          "role": "textbox",
+          "name": "Mobile No/Email Id/Username",
+          "disabled": false,
+          "hidden": false,
+          "visible": true,
+          "snapshot": "- textbox \"Mobile No/Email Id/Username\""
+        },
+        {
+          "index": 1,
+          "label": "Password field",
+          "kind": "field",
+          "role": "textbox",
+          "name": "Password",
+          "disabled": false,
+          "hidden": false,
+          "visible": true,
+          "snapshot": "- textbox \"Password\""
+        },
+        {
+          "index": 2,
+          "label": "Security code (CAPTCHA) field",
+          "kind": "captcha-field",
+          "role": "textbox",
+          "name": "Security code",
+          "disabled": false,
+          "hidden": false,
+          "visible": true,
+          "snapshot": "- textbox \"Security code\""
+        },
+        {
+          "index": 3,
+          "label": "Audio CAPTCHA button",
+          "kind": "captcha-audio",
+          "role": "button",
+          "name": "Speech aloud",
+          "disabled": false,
+          "hidden": false,
+          "visible": true,
+          "snapshot": "- button \"Speech aloud\""
+        },
+        {
+          "index": 4,
+          "label": "Login button",
+          "kind": "button",
+          "role": "button",
+          "name": "Login",
+          "disabled": false,
+          "hidden": false,
+          "visible": true,
+          "snapshot": "- button \"Login\""
+        }
+      ]
+    },
+    "captcha": {
+      "groups": [
+        {
+          "kind": "image",
+          "onPath": true,
+          "imageAlt": "Captcha",
+          "target": "img#CaptchaImage",
+          "inputTarget": "input#Captcha",
+          "audio": {
+            "description": "Speech aloud",
+            "focusable": true,
+            "exposed": true,
+            "snippet": "<button title=\"Speech aloud\" id=\"btnCaptchaAudio\" class=\"refresh\" data-pahunch-critical=\"3\"><i class=\"fa fa-volume\" id=\"audioIcon\"></i></button>"
+          },
+          "snippet": "<img alt=\"Captcha\" id=\"CaptchaImage\" src=\"/Captcha/GetCaptcha\" width=\"120\" height=\"42\">"
+        }
+      ]
+    },
+    "lang": {
+      "frames": [
+        {
+          "htmlLang": "en",
+          "indicTotal": 0,
+          "indicUnmarked": 0,
+          "latinAtRoot": 296,
+          "indicAtRoot": 0,
+          "samples": []
+        }
+      ]
+    },
+    "axe": {
+      "version": "4.14.1",
+      "violations": 6,
+      "incomplete": 1,
+      "passes": 25
+    },
+    "keyboard": {
+      "presses": 17,
+      "completedCycle": true,
+      "stopsSeen": 15,
+      "inModal": false,
+      "trap": null,
+      "controls": [
+        {
+          "index": 0,
+          "label": "Mobile / email / username field",
+          "reached": true,
+          "focusVisible": true,
+          "firstStep": 8
+        },
+        {
+          "index": 1,
+          "label": "Password field",
+          "reached": true,
+          "focusVisible": true,
+          "firstStep": 10
+        },
+        {
+          "index": 2,
+          "label": "Security code (CAPTCHA) field",
+          "reached": true,
+          "focusVisible": true,
+          "firstStep": 12
+        },
+        {
+          "index": 3,
+          "label": "Audio CAPTCHA button",
+          "reached": true,
+          "focusVisible": true,
+          "firstStep": 13
+        },
+        {
+          "index": 4,
+          "label": "Login button",
+          "reached": true,
+          "focusVisible": true,
+          "firstStep": 14
+        }
+      ],
+      "sequence": [
+        {
+          "step": 1,
+          "desc": "a",
+          "focusVisible": true
+        },
+        {
+          "step": 2,
+          "desc": "a \"PG OFFICER LOGIN\"",
+          "focusVisible": true
+        },
+        {
+          "step": 3,
+          "desc": "a",
+          "focusVisible": true
+        },
+        {
+          "step": 4,
+          "desc": "a#dropdownToggle \"English\"",
+          "focusVisible": true
+        },
+        {
+          "step": 5,
+          "desc": "button \"❮\"",
+          "focusVisible": true
+        },
+        {
+          "step": 6,
+          "desc": "button \"❯\"",
+          "focusVisible": true
+        },
+        {
+          "step": 7,
+          "desc": "a \"Login with OTP\"",
+          "focusVisible": true
+        },
+        {
+          "step": 8,
+          "desc": "input#Username \"Mobile No/Email Id/Username\"",
+          "focusVisible": true,
+          "critical": 0
+        },
+        {
+          "step": 9,
+          "desc": "a \"Forgot Username\"",
+          "focusVisible": true
+        },
+        {
+          "step": 10,
+          "desc": "input#TempPassword \"Password\"",
+          "focusVisible": true,
+          "critical": 1
+        },
+        {
+          "step": 11,
+          "desc": "a \"Forgot Password\"",
+          "focusVisible": true
+        },
+        {
+          "step": 12,
+          "desc": "input#Captcha \"Security code\"",
+          "focusVisible": true,
+          "critical": 2
+        },
+        {
+          "step": 13,
+          "desc": "button#btnCaptchaAudio \"Speech aloud\"",
+          "focusVisible": true,
+          "critical": 3
+        },
+        {
+          "step": 14,
+          "desc": "button#btnSubmit \"Login\"",
+          "focusVisible": true,
+          "critical": 4
+        },
+        {
+          "step": 15,
+          "desc": "a \"Click here to sign up\"",
+          "focusVisible": true
+        }
+      ]
+    },
+    "pdf": {
+      "pdfs": []
+    }
+  },
+  "errors": []
+}

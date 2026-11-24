@@ -1,0 +1,259 @@
+{
+  "version": "4.14.1",
+  "violations": [
+    {
+      "id": "accesskeys",
+      "impact": "serious",
+      "help": "accesskey attribute value should be unique",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/accesskeys?application=playwright",
+      "tags": [
+        "cat.keyboard",
+        "best-practice"
+      ],
+      "nodeCount": 1,
+      "nodes": [
+        {
+          "target": "#navMob > li:nth-child(1) > a[accesskey=\"h\"][title=\"Home\"][routerlink=\"/\"]",
+          "html": "<a _ngcontent-ng-c100162613=\"\" routerlink=\"/\" title=\"Home\" accesskey=\"h\" href=\"/\"><img _ngcontent-ng-c100162613=\"\" src=\"assets/images/home-icons.png\" alt=\"home-icons\"></a>",
+          "failureSummary": "Fix all of the following:\n  Document has multiple elements with the same accesskey"
+        }
+      ]
+    },
+    {
+      "id": "button-name",
+      "impact": "critical",
+      "help": "Buttons must have discernible text",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/button-name?application=playwright",
+      "tags": [
+        "cat.name-role-value",
+        "wcag2a",
+        "wcag412",
+        "section508",
+        "section508.22.a",
+        "TTv5",
+        "TT6.a",
+        "EN-301-549",
+        "EN-9.4.1.2",
+        "ACT",
+        "RGAAv4",
+        "RGAA-11.9.1"
+      ],
+      "nodeCount": 1,
+      "nodes": [
+        {
+          "target": ".btn-close",
+          "html": "<button _ngcontent-ng-c100162613=\"\" type=\"button\" class=\"btn-close\"><span _ngcontent-ng-c100162613=\"\" class=\"d-none\"> close</span></button>",
+          "failureSummary": "Fix any of the following:\n  Element does not have inner text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element does not have an implicit (wrapped) <label>\n  Element does not have an explicit <label>\n  El"
+        }
+      ]
+    },
+    {
+      "id": "heading-order",
+      "impact": "moderate",
+      "help": "Heading levels should only increase by one",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/heading-order?application=playwright",
+      "tags": [
+        "cat.semantics",
+        "best-practice"
+      ],
+      "nodeCount": 1,
+      "nodes": [
+        {
+          "target": ".mb-12.align-items-end.row:nth-child(3) > h3",
+          "html": "<h3>1.Submit Your Application</h3>",
+          "failureSummary": "Fix any of the following:\n  Heading order invalid"
+        }
+      ]
+    },
+    {
+      "id": "landmark-one-main",
+      "impact": "moderate",
+      "help": "Document should have one main landmark",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/landmark-one-main?application=playwright",
+      "tags": [
+        "cat.semantics",
+        "best-practice"
+      ],
+      "nodeCount": 1,
+      "nodes": [
+        {
+          "target": ".js",
+          "html": "<html lang=\"en\" data-critters-contai...=\"\" class=\" js flexbox flexboxl...\">",
+          "failureSummary": "Fix all of the following:\n  Document does not have a main landmark"
+        }
+      ]
+    },
+    {
+      "id": "link-in-text-block",
+      "impact": "serious",
+      "help": "Links must be distinguishable without relying on color",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/link-in-text-block?application=playwright",
+      "tags": [
+        "cat.color",
+        "wcag2a",
+        "wcag141",
+        "TTv5",
+        "TT13.a",
+        "EN-301-549",
+        "EN-9.1.4.1",
+        "RGAAv4",
+        "RGAA-10.6.1"
+      ],
+      "nodeCount": 1,
+      "nodes": [
+        {
+          "target": ".breadcrumbItem:nth-child(1) > a[href=\"#\"]",
+          "html": "<a href=\"#\">Home</a>",
+          "failureSummary": "Fix any of the following:\n  The link has insufficient color contrast of 1.36:1 with the surrounding text. (Minimum contrast is 3:1, link text: #000000, surrounding text: #212529)\n  The link has no styling (such as underline) to distinguish it from the surrounding text"
+        }
+      ]
+    },
+    {
+      "id": "list",
+      "impact": "serious",
+      "help": "<ul> and <ol> must only directly contain <li>, <script> or <template> elements",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/list?application=playwright",
+      "tags": [
+        "cat.structure",
+        "wcag2a",
+        "wcag131",
+        "EN-301-549",
+        "EN-9.1.3.1",
+        "RGAAv4",
+        "RGAA-9.3.1"
+      ],
+      "nodeCount": 3,
+      "nodes": [
+        {
+          "target": ".footer-grid[_ngcontent-ng-c30535460=\"\"]:nth-child(1) > .footerQuickLinks",
+          "html": "<ul _ngcontent-ng-c30535460=\"\" class=\"footerQuickLinks\">",
+          "failureSummary": "Fix all of the following:\n  List element has direct children that are not allowed: h3"
+        },
+        {
+          "target": ".footer-grid[_ngcontent-ng-c30535460=\"\"]:nth-child(3) > .footerQuickLinks",
+          "html": "<ul _ngcontent-ng-c30535460=\"\" class=\"footerQuickLinks\">",
+          "failureSummary": "Fix all of the following:\n  List element has direct children that are not allowed: h3"
+        },
+        {
+          "target": ".mb-0",
+          "html": "<ul _ngcontent-ng-c30535460=\"\" class=\"footerQuickLinks mb-0 quickaccess\">",
+          "failureSummary": "Fix all of the following:\n  List element has direct children that are not allowed: h4"
+        }
+      ]
+    },
+    {
+      "id": "region",
+      "impact": "moderate",
+      "help": "All page content should be contained by landmarks",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/region?application=playwright",
+      "tags": [
+        "cat.keyboard",
+        "best-practice",
+        "RGAAv4",
+        "RGAA-9.2.1"
+      ],
+      "nodeCount": 13,
+      "nodes": [
+        {
+          "target": ".innerBannerWrap",
+          "html": "<section class=\"innerBannerWrap\"><div class=\"bgimg\"><img src=\"assets/images/innerbanner.png\" alt=\"banner-img.png\"></div><div class=\"container-xl\"><div class=\"row\"><div class=\"innerBanner\"><div class=\"innerBannerCaption\"><h2 class=\"font80px h2\">Apply For UDID</h2></div></div></div></div></section>",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "target": ".breadcrumbWrap",
+          "html": "<section class=\"breadcrumbWrap\"><div class=\"container-xl\"><div class=\"row\"><div class=\"col-md-12\"><h2 id=\"system-breadcrumb\" class=\"visually-hidden\">Breadcrumb</h2><ul><li class=\"breadcrumbItem\"><a href=\"#\">Home</a></li><li class=\"breadcrumbItem\">Apply For UDID</li></ul></div></div></div></section>",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "target": "form > h1",
+          "html": "<h1>Steps to Get Your UDID Card and Disability Certificate</h1>",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "target": ".mb-12.align-items-end.row:nth-child(2)",
+          "html": "<div class=\"row align-items-end mb-12\">",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "target": ".mb-12.align-items-end.row:nth-child(3)",
+          "html": "<div class=\"row align-items-end mb-12\"><h3>1.Submit Your Application</h3><p>i. Double-check all details and submit the application through the Portal.</p></div>",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "target": ".mb-6.align-items-end.row:nth-child(4)",
+          "html": "<div class=\"row align-items-end mb-6\">",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "target": ".mb-6.align-items-end.row:nth-child(5)",
+          "html": "<div class=\"row align-items-end mb-6\"><h3>3. Verification of Application</h3><p>i. Get your application verified by the concerned Hospital or Medical Authority or make corrections if required for verification.</p></div>",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "target": ".mb-6.align-items-end.row:nth-child(6)",
+          "html": "<div class=\"row align-items-end mb-6\">",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "target": ".mb-6.align-items-end.row:nth-child(7)",
+          "html": "<div class=\"row align-items-end mb-6\"><h3>5. Review by Medical Board</h3><p>o. The Medical Board will review the specialist doctor(s) report.</p><p>o. They will determine the type and percentage of your disability and validate the disability certificate. </p></div>",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "target": ".mb-6.align-items-end.row:nth-child(8)",
+          "html": "<div class=\"row align-items-end mb-6\">",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        }
+      ]
+    }
+  ],
+  "incomplete": [
+    {
+      "id": "color-contrast",
+      "impact": "serious",
+      "help": "Elements must meet minimum color contrast ratio thresholds",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/color-contrast?application=playwright",
+      "tags": [
+        "cat.color",
+        "wcag2aa",
+        "wcag143",
+        "TTv5",
+        "TT13.c",
+        "EN-301-549",
+        "EN-9.1.4.3",
+        "ACT",
+        "RGAAv4",
+        "RGAA-3.2.1"
+      ],
+      "nodeCount": 5,
+      "nodes": [
+        {
+          "target": "#normal",
+          "html": "<input _ngcontent-ng-c100162613=\"\" type=\"button\" name=\"normal\" value=\"\" id=\"normal\" title=\"Standard View\" class=\"contrastChanger normal current\" style=\"\">",
+          "failureSummary": "Fix any of the following:\n  Element has a 1:1 contrast ratio with the background"
+        },
+        {
+          "target": ".cyberbtn",
+          "html": "<a _ngcontent-ng-c100162613=\"\" routerlink=\"/login\" title=\"PwD login\" class=\"cyberbtn\" href=\"/login\"><img _ngcontent-ng-c100162613=\"\" src=\"assets/images/login.svg\" alt=\"login\"> PwD login</a>",
+          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+        },
+        {
+          "target": "a[title=\"Department User Login \"]",
+          "html": "<a _ngcontent-ng-c100162613=\"\" title=\"Department User Login \" target=\"_blank\" href=\"https://swavlambancard.gov.in/admin\"><img _ngcontent-ng-c100162613=\"\" src=\"assets/images/user-plus.svg\" alt=\"login\"> Department User Login </a>",
+          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+        },
+        {
+          "target": ".font80px",
+          "html": "<h2 class=\"font80px h2\">Apply For UDID</h2>",
+          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+        },
+        {
+          "target": ".submit",
+          "html": "<button type=\"button\" class=\"submit\" data-pahunch-critical=\"1\"> Submit </button>",
+          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+        }
+      ]
+    }
+  ],
+  "passes": 42
+}

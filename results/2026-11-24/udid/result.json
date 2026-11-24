@@ -1,0 +1,829 @@
+{
+  "schema": 1,
+  "portal": {
+    "id": "udid",
+    "name": "UDID (Unique Disability ID) portal",
+    "owner": "Department of Empowerment of Persons with Disabilities",
+    "jurisdiction": "Central",
+    "task": "Start an application for a disability certificate and UDID card",
+    "notes": "The portal disabled people must use to get a disability certificate. The application form itself opens only after Submit, which we do not press."
+  },
+  "startedAt": "2026-11-24T13:34:57.488Z",
+  "finishedAt": "2026-11-24T13:35:05.543Z",
+  "tool": {
+    "name": "pahunch",
+    "version": "0.1.0",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/159.0.8154.6 Safari/537.36 pahunch/0.1.0 (+https://github.com/DevGurav/pahunch)",
+    "browser": "chromium 159.0.8154.6",
+    "axe": "4.14.1"
+  },
+  "pages": [
+    {
+      "requested": "https://swavlambancard.gov.in/Applyforudid",
+      "finalUrl": "https://swavlambancard.gov.in/Applyforudid",
+      "status": 200,
+      "title": "UDID"
+    }
+  ],
+  "robots": {
+    "robotsUrl": "https://swavlambancard.gov.in/robots.txt",
+    "status": 200,
+    "disallowed": false
+  },
+  "critical": [
+    {
+      "index": 0,
+      "label": "\"I have read and understood the process\" checkbox",
+      "kind": "checkbox",
+      "selector": "#finalcheck",
+      "found": true,
+      "role": "checkbox",
+      "name": "I have read and understood the process. *",
+      "disabled": false,
+      "reached": true,
+      "focusVisible": true
+    },
+    {
+      "index": 1,
+      "label": "Submit button",
+      "kind": "button",
+      "selector": "#content form button:has-text(\"Submit\")",
+      "found": true,
+      "role": "button",
+      "name": "Submit",
+      "disabled": false,
+      "reached": true,
+      "focusVisible": true
+    }
+  ],
+  "verdict": "barriers",
+  "inconclusiveReasons": [],
+  "findings": [
+    {
+      "check": "axe",
+      "rule": "axe/accesskeys",
+      "severity": "barrier",
+      "wcag": [],
+      "summary": "accesskey attribute value should be unique (1 element).",
+      "target": "#navMob > li:nth-child(1) > a[accesskey=\"h\"][title=\"Home\"][routerlink=\"/\"]",
+      "snippet": "<a _ngcontent-ng-c100162613=\"\" routerlink=\"/\" title=\"Home\" accesskey=\"h\" href=\"/\"><img _ngcontent-ng-c100162613=\"\" src=\"assets/images/home-icons.png\" alt=\"home-icons\"></a>",
+      "details": {
+        "impact": "serious",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/accesskeys?application=playwright",
+        "nodes": [
+          {
+            "target": "#navMob > li:nth-child(1) > a[accesskey=\"h\"][title=\"Home\"][routerlink=\"/\"]",
+            "html": "<a _ngcontent-ng-c100162613=\"\" routerlink=\"/\" title=\"Home\" accesskey=\"h\" href=\"/\"><img _ngcontent-ng-c100162613=\"\" src=\"assets/images/home-icons.png\" alt=\"home-icons\"></a>",
+            "failureSummary": "Fix all of the following:\n  Document has multiple elements with the same accesskey"
+          }
+        ]
+      }
+    },
+    {
+      "check": "axe",
+      "rule": "axe/button-name",
+      "severity": "barrier",
+      "wcag": [
+        "4.1.2"
+      ],
+      "summary": "Buttons must have discernible text (1 element).",
+      "target": ".btn-close",
+      "snippet": "<button _ngcontent-ng-c100162613=\"\" type=\"button\" class=\"btn-close\"><span _ngcontent-ng-c100162613=\"\" class=\"d-none\"> close</span></button>",
+      "details": {
+        "impact": "critical",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/button-name?application=playwright",
+        "nodes": [
+          {
+            "target": ".btn-close",
+            "html": "<button _ngcontent-ng-c100162613=\"\" type=\"button\" class=\"btn-close\"><span _ngcontent-ng-c100162613=\"\" class=\"d-none\"> close</span></button>",
+            "failureSummary": "Fix any of the following:\n  Element does not have inner text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element does not have an implicit (wrapped) <label>\n  Element does not have an explicit <label>\n  El"
+          }
+        ]
+      }
+    },
+    {
+      "check": "axe",
+      "rule": "axe/heading-order",
+      "severity": "info",
+      "wcag": [],
+      "summary": "Heading levels should only increase by one (1 element).",
+      "target": ".mb-12.align-items-end.row:nth-child(3) > h3",
+      "snippet": "<h3>1.Submit Your Application</h3>",
+      "details": {
+        "impact": "moderate",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/heading-order?application=playwright",
+        "nodes": [
+          {
+            "target": ".mb-12.align-items-end.row:nth-child(3) > h3",
+            "html": "<h3>1.Submit Your Application</h3>",
+            "failureSummary": "Fix any of the following:\n  Heading order invalid"
+          }
+        ]
+      }
+    },
+    {
+      "check": "axe",
+      "rule": "axe/landmark-one-main",
+      "severity": "info",
+      "wcag": [],
+      "summary": "Document should have one main landmark (1 element).",
+      "target": ".js",
+      "snippet": "<html lang=\"en\" data-critters-contai...=\"\" class=\" js flexbox flexboxl...\">",
+      "details": {
+        "impact": "moderate",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/landmark-one-main?application=playwright",
+        "nodes": [
+          {
+            "target": ".js",
+            "html": "<html lang=\"en\" data-critters-contai...=\"\" class=\" js flexbox flexboxl...\">",
+            "failureSummary": "Fix all of the following:\n  Document does not have a main landmark"
+          }
+        ]
+      }
+    },
+    {
+      "check": "axe",
+      "rule": "axe/link-in-text-block",
+      "severity": "barrier",
+      "wcag": [
+        "1.4.1"
+      ],
+      "summary": "Links must be distinguishable without relying on color (1 element).",
+      "target": ".breadcrumbItem:nth-child(1) > a[href=\"#\"]",
+      "snippet": "<a href=\"#\">Home</a>",
+      "details": {
+        "impact": "serious",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/link-in-text-block?application=playwright",
+        "nodes": [
+          {
+            "target": ".breadcrumbItem:nth-child(1) > a[href=\"#\"]",
+            "html": "<a href=\"#\">Home</a>",
+            "failureSummary": "Fix any of the following:\n  The link has insufficient color contrast of 1.36:1 with the surrounding text. (Minimum contrast is 3:1, link text: #000000, surrounding text: #212529)\n  The link has no styling (such as underline) to distinguish it from the surrounding text"
+          }
+        ]
+      }
+    },
+    {
+      "check": "axe",
+      "rule": "axe/list",
+      "severity": "barrier",
+      "wcag": [
+        "1.3.1"
+      ],
+      "summary": "<ul> and <ol> must only directly contain <li>, <script> or <template> elements (3 elements).",
+      "target": ".footer-grid[_ngcontent-ng-c30535460=\"\"]:nth-child(1) > .footerQuickLinks",
+      "snippet": "<ul _ngcontent-ng-c30535460=\"\" class=\"footerQuickLinks\">",
+      "details": {
+        "impact": "serious",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/list?application=playwright",
+        "nodes": [
+          {
+            "target": ".footer-grid[_ngcontent-ng-c30535460=\"\"]:nth-child(1) > .footerQuickLinks",
+            "html": "<ul _ngcontent-ng-c30535460=\"\" class=\"footerQuickLinks\">",
+            "failureSummary": "Fix all of the following:\n  List element has direct children that are not allowed: h3"
+          },
+          {
+            "target": ".footer-grid[_ngcontent-ng-c30535460=\"\"]:nth-child(3) > .footerQuickLinks",
+            "html": "<ul _ngcontent-ng-c30535460=\"\" class=\"footerQuickLinks\">",
+            "failureSummary": "Fix all of the following:\n  List element has direct children that are not allowed: h3"
+          },
+          {
+            "target": ".mb-0",
+            "html": "<ul _ngcontent-ng-c30535460=\"\" class=\"footerQuickLinks mb-0 quickaccess\">",
+            "failureSummary": "Fix all of the following:\n  List element has direct children that are not allowed: h4"
+          }
+        ]
+      }
+    },
+    {
+      "check": "axe",
+      "rule": "axe/region",
+      "severity": "info",
+      "wcag": [],
+      "summary": "All page content should be contained by landmarks (13 elements).",
+      "target": ".innerBannerWrap",
+      "snippet": "<section class=\"innerBannerWrap\"><div class=\"bgimg\"><img src=\"assets/images/innerbanner.png\" alt=\"banner-img.png\"></div><div class=\"container-xl\"><div class=\"row\"><div class=\"innerBanner\"><div class=\"innerBannerCaption\"><h2 class=\"font80px h2\">Apply For UDID</h2></div></div></div></div></section>",
+      "details": {
+        "impact": "moderate",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/region?application=playwright",
+        "nodes": [
+          {
+            "target": ".innerBannerWrap",
+            "html": "<section class=\"innerBannerWrap\"><div class=\"bgimg\"><img src=\"assets/images/innerbanner.png\" alt=\"banner-img.png\"></div><div class=\"container-xl\"><div class=\"row\"><div class=\"innerBanner\"><div class=\"innerBannerCaption\"><h2 class=\"font80px h2\">Apply For UDID</h2></div></div></div></div></section>",
+            "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+          },
+          {
+            "target": ".breadcrumbWrap",
+            "html": "<section class=\"breadcrumbWrap\"><div class=\"container-xl\"><div class=\"row\"><div class=\"col-md-12\"><h2 id=\"system-breadcrumb\" class=\"visually-hidden\">Breadcrumb</h2><ul><li class=\"breadcrumbItem\"><a href=\"#\">Home</a></li><li class=\"breadcrumbItem\">Apply For UDID</li></ul></div></div></div></section>",
+            "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+          },
+          {
+            "target": "form > h1",
+            "html": "<h1>Steps to Get Your UDID Card and Disability Certificate</h1>",
+            "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+          },
+          {
+            "target": ".mb-12.align-items-end.row:nth-child(2)",
+            "html": "<div class=\"row align-items-end mb-12\">",
+            "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+          },
+          {
+            "target": ".mb-12.align-items-end.row:nth-child(3)",
+            "html": "<div class=\"row align-items-end mb-12\"><h3>1.Submit Your Application</h3><p>i. Double-check all details and submit the application through the Portal.</p></div>",
+            "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+          }
+        ]
+      }
+    },
+    {
+      "check": "pdf",
+      "rule": "pdf-scanned",
+      "severity": "barrier",
+      "wcag": [
+        "1.1.1"
+      ],
+      "summary": "Scanned PDF: 0 characters of text in the first 3 page(s) of 3.",
+      "target": "https://swavlambancard.gov.in/assets/images/UDIDCertificate.pdf",
+      "details": {
+        "pages": 3,
+        "textChars": 0
+      }
+    }
+  ],
+  "counts": {
+    "blocker": 0,
+    "barrier": 5,
+    "info": 3
+  },
+  "evidence": {
+    "names": {
+      "controls": [
+        {
+          "index": 0,
+          "label": "\"I have read and understood the process\" checkbox",
+          "kind": "checkbox",
+          "role": "checkbox",
+          "name": "I have read and understood the process. *",
+          "disabled": false,
+          "hidden": false,
+          "visible": true,
+          "snapshot": "- checkbox \"I have read and understood the process. *\""
+        },
+        {
+          "index": 1,
+          "label": "Submit button",
+          "kind": "button",
+          "role": "button",
+          "name": "Submit",
+          "disabled": false,
+          "hidden": false,
+          "visible": true,
+          "snapshot": "- button \"Submit\""
+        }
+      ]
+    },
+    "captcha": {
+      "groups": []
+    },
+    "lang": {
+      "frames": [
+        {
+          "htmlLang": "en",
+          "indicTotal": 0,
+          "indicUnmarked": 0,
+          "latinAtRoot": 2079,
+          "indicAtRoot": 0,
+          "samples": []
+        }
+      ]
+    },
+    "axe": {
+      "version": "4.14.1",
+      "violations": 7,
+      "incomplete": 1,
+      "passes": 42
+    },
+    "keyboard": {
+      "presses": 98,
+      "completedCycle": true,
+      "stopsSeen": 96,
+      "inModal": false,
+      "trap": null,
+      "controls": [
+        {
+          "index": 0,
+          "label": "\"I have read and understood the process\" checkbox",
+          "reached": true,
+          "focusVisible": true,
+          "firstStep": 49
+        },
+        {
+          "index": 1,
+          "label": "Submit button",
+          "reached": true,
+          "focusVisible": true,
+          "firstStep": 50
+        }
+      ],
+      "sequence": [
+        {
+          "step": 1,
+          "desc": "a \"Home\"",
+          "focusVisible": true
+        },
+        {
+          "step": 2,
+          "desc": "a \"Sitemap\"",
+          "focusVisible": true
+        },
+        {
+          "step": 3,
+          "desc": "a \"Skip to Main Content\"",
+          "focusVisible": true
+        },
+        {
+          "step": 4,
+          "desc": "a \"Screen Reader Access\"",
+          "focusVisible": true
+        },
+        {
+          "step": 5,
+          "desc": "input#zoom-in \"T+\"",
+          "focusVisible": true
+        },
+        {
+          "step": 6,
+          "desc": "input#zoom-auto \"T\"",
+          "focusVisible": true
+        },
+        {
+          "step": 7,
+          "desc": "input#zoom-out \"T-\"",
+          "focusVisible": true
+        },
+        {
+          "step": 8,
+          "desc": "input#normal \"Standard View\"",
+          "focusVisible": true
+        },
+        {
+          "step": 9,
+          "desc": "input#wob \"High Contrast View\"",
+          "focusVisible": true
+        },
+        {
+          "step": 10,
+          "desc": "button \"Language Translator\"",
+          "focusVisible": true
+        },
+        {
+          "step": 11,
+          "desc": "a \"Logo\"",
+          "focusVisible": true
+        },
+        {
+          "step": 12,
+          "desc": "a \"PwD login\"",
+          "focusVisible": true
+        },
+        {
+          "step": 13,
+          "desc": "a \"Department User Login\"",
+          "focusVisible": true
+        },
+        {
+          "step": 14,
+          "desc": "button#slide",
+          "focusVisible": true
+        },
+        {
+          "step": 15,
+          "desc": "a \"Home\"",
+          "focusVisible": true
+        },
+        {
+          "step": 16,
+          "desc": "a \"Apply For UDID\"",
+          "focusVisible": true
+        },
+        {
+          "step": 17,
+          "desc": "a \"Track Your Application\"",
+          "focusVisible": true
+        },
+        {
+          "step": 18,
+          "desc": "a \"PwD login\"",
+          "focusVisible": true
+        },
+        {
+          "step": 19,
+          "desc": "a \"Aggregated-Data\"",
+          "focusVisible": true
+        },
+        {
+          "step": 20,
+          "desc": "a \"Pendency-Report\"",
+          "focusVisible": true
+        },
+        {
+          "step": 21,
+          "desc": "a \"Statewise-Report\"",
+          "focusVisible": true
+        },
+        {
+          "step": 22,
+          "desc": "a \"Data wrapper\"",
+          "focusVisible": true
+        },
+        {
+          "step": 23,
+          "desc": "a \"Total Cards Generated\"",
+          "focusVisible": true
+        },
+        {
+          "step": 24,
+          "desc": "a \"Total Pendency\"",
+          "focusVisible": true
+        },
+        {
+          "step": 25,
+          "desc": "a \"State wise Report\"",
+          "focusVisible": true
+        },
+        {
+          "step": 26,
+          "desc": "a \"Media\"",
+          "focusVisible": true
+        },
+        {
+          "step": 27,
+          "desc": "a \"Photo Gallery\"",
+          "focusVisible": true
+        },
+        {
+          "step": 28,
+          "desc": "a \"Video Gallery\"",
+          "focusVisible": true
+        },
+        {
+          "step": 29,
+          "desc": "a \"FAQs\"",
+          "focusVisible": true
+        },
+        {
+          "step": 30,
+          "desc": "a \"Contact Us\"",
+          "focusVisible": true
+        },
+        {
+          "step": 31,
+          "desc": "button",
+          "focusVisible": true
+        },
+        {
+          "step": 32,
+          "desc": "a \"Home\"",
+          "focusVisible": true
+        },
+        {
+          "step": 33,
+          "desc": "a \"Apply For UDID\"",
+          "focusVisible": true
+        },
+        {
+          "step": 34,
+          "desc": "a \"Track Your Application\"",
+          "focusVisible": true
+        },
+        {
+          "step": 35,
+          "desc": "a \"PwD login\"",
+          "focusVisible": true
+        },
+        {
+          "step": 36,
+          "desc": "a \"Aggregated-Data\"",
+          "focusVisible": true
+        },
+        {
+          "step": 37,
+          "desc": "a \"Pendency-Report\"",
+          "focusVisible": true
+        },
+        {
+          "step": 38,
+          "desc": "a \"Statewise-Report\"",
+          "focusVisible": true
+        },
+        {
+          "step": 39,
+          "desc": "a \"Data wrapper\"",
+          "focusVisible": true
+        },
+        {
+          "step": 40,
+          "desc": "a \"Total Cards Generated\"",
+          "focusVisible": true
+        },
+        {
+          "step": 41,
+          "desc": "a \"Total Pendency\"",
+          "focusVisible": true
+        },
+        {
+          "step": 42,
+          "desc": "a \"State wise Report\"",
+          "focusVisible": true
+        },
+        {
+          "step": 43,
+          "desc": "a \"Media\"",
+          "focusVisible": true
+        },
+        {
+          "step": 44,
+          "desc": "a \"Photo Gallery\"",
+          "focusVisible": true
+        },
+        {
+          "step": 45,
+          "desc": "a \"Video Gallery\"",
+          "focusVisible": true
+        },
+        {
+          "step": 46,
+          "desc": "a \"FAQs\"",
+          "focusVisible": true
+        },
+        {
+          "step": 47,
+          "desc": "a \"Contact Us\"",
+          "focusVisible": true
+        },
+        {
+          "step": 48,
+          "desc": "a \"Home\"",
+          "focusVisible": true
+        },
+        {
+          "step": 49,
+          "desc": "input#finalcheck",
+          "focusVisible": true,
+          "critical": 0
+        },
+        {
+          "step": 50,
+          "desc": "button \"Submit\"",
+          "focusVisible": true,
+          "critical": 1
+        },
+        {
+          "step": 51,
+          "desc": "a \"svnirtar\"",
+          "focusVisible": true
+        },
+        {
+          "step": 52,
+          "desc": "a \"The National Trust\"",
+          "focusVisible": true
+        },
+        {
+          "step": 53,
+          "desc": "a \"niepmd\"",
+          "focusVisible": true
+        },
+        {
+          "step": 54,
+          "desc": "a \"National Handicapped Finance And Develop\"",
+          "focusVisible": true
+        },
+        {
+          "step": 55,
+          "desc": "a \"Department of Empowerment of Persons wit\"",
+          "focusVisible": true
+        },
+        {
+          "step": 56,
+          "desc": "a \"islrtc\"",
+          "focusVisible": true
+        },
+        {
+          "step": 57,
+          "desc": "a \"niepid\"",
+          "focusVisible": true
+        },
+        {
+          "step": 58,
+          "desc": "a \"NIEPVD\"",
+          "focusVisible": true
+        },
+        {
+          "step": 59,
+          "desc": "a \"pdunippd\"",
+          "focusVisible": true
+        },
+        {
+          "step": 60,
+          "desc": "a \"alimco\"",
+          "focusVisible": true
+        },
+        {
+          "step": 61,
+          "desc": "a \"rehabcouncil\"",
+          "focusVisible": true
+        },
+        {
+          "step": 62,
+          "desc": "a \"NILD\"",
+          "focusVisible": true
+        },
+        {
+          "step": 63,
+          "desc": "a \"AYJNISHD\"",
+          "focusVisible": true
+        },
+        {
+          "step": 64,
+          "desc": "a \"Yoga\"",
+          "focusVisible": true
+        },
+        {
+          "step": 65,
+          "desc": "a \"beti padhao\"",
+          "focusVisible": true
+        },
+        {
+          "step": 66,
+          "desc": "a \"International Years of Cooperate\"",
+          "focusVisible": true
+        },
+        {
+          "step": 67,
+          "desc": "a \"Sugayama\"",
+          "focusVisible": true
+        },
+        {
+          "step": 68,
+          "desc": "div \"Next slide\"",
+          "focusVisible": true
+        },
+        {
+          "step": 69,
+          "desc": "a \"stop\"",
+          "focusVisible": true
+        },
+        {
+          "step": 70,
+          "desc": "a \"Know more about UDID\"",
+          "focusVisible": true
+        },
+        {
+          "step": 71,
+          "desc": "a \"Schemes for Persons with Disabilities\"",
+          "focusVisible": true
+        },
+        {
+          "step": 72,
+          "desc": "a \"About Department of Empowerment of Perso\"",
+          "focusVisible": true
+        },
+        {
+          "step": 73,
+          "desc": "a \"H = Go to Home Page\"",
+          "focusVisible": true
+        },
+        {
+          "step": 74,
+          "desc": "a \"S = Skip to main content\"",
+          "focusVisible": true
+        },
+        {
+          "step": 75,
+          "desc": "a \"F = Site Search\"",
+          "focusVisible": true
+        },
+        {
+          "step": 76,
+          "desc": "a \"T = Back to Top\"",
+          "focusVisible": true
+        },
+        {
+          "step": 77,
+          "desc": "a \"G = Help/Guide\"",
+          "focusVisible": true
+        },
+        {
+          "step": 78,
+          "desc": "a \"Internet Explorer - [Alt] + accesskey\"",
+          "focusVisible": true
+        },
+        {
+          "step": 79,
+          "desc": "a \"Chrome - [Alt] + accesskey\"",
+          "focusVisible": true
+        },
+        {
+          "step": 80,
+          "desc": "a \"Firefox - [Alt] [Shift] + accesskey\"",
+          "focusVisible": true
+        },
+        {
+          "step": 81,
+          "desc": "a \"Safari - [Alt] + accesskey\"",
+          "focusVisible": true
+        },
+        {
+          "step": 82,
+          "desc": "a \"Mac - [Ctrl] + accesskey\"",
+          "focusVisible": true
+        },
+        {
+          "step": 83,
+          "desc": "a \"Terms & Conditions\"",
+          "focusVisible": true
+        },
+        {
+          "step": 84,
+          "desc": "a \"Privacy Policy\"",
+          "focusVisible": true
+        },
+        {
+          "step": 85,
+          "desc": "a \"Copyright Policy\"",
+          "focusVisible": true
+        },
+        {
+          "step": 86,
+          "desc": "a \"Hyperlinking Policy\"",
+          "focusVisible": true
+        },
+        {
+          "step": 87,
+          "desc": "a \"Accessibility Statement\"",
+          "focusVisible": true
+        },
+        {
+          "step": 88,
+          "desc": "a \"Accessibility Options\"",
+          "focusVisible": true
+        },
+        {
+          "step": 89,
+          "desc": "a \"Help\"",
+          "focusVisible": true
+        },
+        {
+          "step": 90,
+          "desc": "a \"Web Information Manager\"",
+          "focusVisible": true
+        },
+        {
+          "step": 91,
+          "desc": "a \"Twitter\"",
+          "focusVisible": true
+        },
+        {
+          "step": 92,
+          "desc": "a \"Facebook\"",
+          "focusVisible": true
+        },
+        {
+          "step": 93,
+          "desc": "a \"YouTube\"",
+          "focusVisible": true
+        },
+        {
+          "step": 94,
+          "desc": "a \"Linkeding\"",
+          "focusVisible": true
+        },
+        {
+          "step": 95,
+          "desc": "a \"Instagram\"",
+          "focusVisible": true
+        },
+        {
+          "step": 96,
+          "desc": "a \"Website Quality Certification\"",
+          "focusVisible": true
+        }
+      ]
+    },
+    "pdf": {
+      "pdfs": [
+        {
+          "url": "https://swavlambancard.gov.in/assets/images/UDIDCertificate.pdf",
+          "status": 200,
+          "result": "scanned",
+          "bytes": 1279577,
+          "pages": 3,
+          "sampledPages": 3,
+          "textChars": 0,
+          "tagged": false
+        }
+      ]
+    }
+  },
+  "errors": []
+}

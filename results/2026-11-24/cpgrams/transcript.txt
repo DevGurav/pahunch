@@ -1,0 +1,36 @@
+banner landmark
+DARPG_logo, link
+DARPG_logo, graphic
+heading level 2, CPGRAMS
+PG Officer-loginPG OFFICER LOGIN, link
+PG Officer-login, graphic
+PG OFFICER LOGIN
+DIGITAL SEVA CONNECT, link
+DIGITAL SEVA CONNECT, graphic
+selec language, graphic
+English, link
+graphic, no name
+heading level 5, SAMADHAN DIDI
+graphic, no name
+Introducing new
+heading level 2, CPGRAMS AI chatbot
+Now the Grievance can be lodged just by Voice based Utility tool
+Currently, Supports by 22 Eighth Schedule languages.
+graphic, no name
+❮, button
+❯, button
+heading level 2, User Login
+Login with OTP, link
+Mobile No/Email Id/Username
+Mobile No/Email Id/Username, edit
+Forgot Username, link
+Password
+Password, edit
+Forgot Password, link
+Security code
+Security code, edit
+Captcha, graphic
+Speech aloud, button
+Login, button
+Don't have an account?
+Click here to sign up, link

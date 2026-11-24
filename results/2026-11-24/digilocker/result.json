@@ -1,0 +1,491 @@
+{
+  "schema": 1,
+  "portal": {
+    "id": "digilocker",
+    "name": "DigiLocker",
+    "owner": "Ministry of Electronics and Information Technology",
+    "jurisdiction": "Central",
+    "task": "Reach the sign-up form",
+    "notes": "Redirects to accounts.digilocker.gov.in."
+  },
+  "startedAt": "2026-11-24T13:35:36.732Z",
+  "finishedAt": "2026-11-24T13:35:39.601Z",
+  "tool": {
+    "name": "pahunch",
+    "version": "0.1.0",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/159.0.8154.6 Safari/537.36 pahunch/0.1.0 (+https://github.com/DevGurav/pahunch)",
+    "browser": "chromium 159.0.8154.6",
+    "axe": "4.14.1"
+  },
+  "pages": [
+    {
+      "requested": "https://www.digilocker.gov.in/web/signup",
+      "finalUrl": "https://accounts.digilocker.gov.in/v3/7b77d1a11bce0aa9bf50c2710df73f4a2a54208d8b55d6acaf8fbe85db815ce5--en",
+      "status": 200,
+      "title": "DigiLocker Sign-up"
+    }
+  ],
+  "robots": {
+    "robotsUrl": "https://www.digilocker.gov.in/robots.txt",
+    "status": 403,
+    "disallowed": false
+  },
+  "critical": [
+    {
+      "index": 0,
+      "label": "Mobile number field",
+      "kind": "field",
+      "selector": "#mobile",
+      "found": true,
+      "role": "textbox",
+      "name": "Mobile number",
+      "disabled": false,
+      "reached": true,
+      "focusVisible": true
+    },
+    {
+      "index": 1,
+      "label": "Continue button",
+      "kind": "button",
+      "selector": "#button",
+      "found": true,
+      "role": "button",
+      "name": "Continue",
+      "disabled": true,
+      "reached": false,
+      "focusVisible": null
+    }
+  ],
+  "verdict": "barriers",
+  "inconclusiveReasons": [],
+  "findings": [
+    {
+      "check": "axe",
+      "rule": "axe/color-contrast",
+      "severity": "barrier",
+      "wcag": [
+        "1.4.3"
+      ],
+      "summary": "Elements must meet minimum color contrast ratio thresholds (2 elements).",
+      "target": "#basic-addon1",
+      "snippet": "<span class=\"input-group-text text-black-50\" id=\"basic-addon1\">+91</span>",
+      "details": {
+        "impact": "serious",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/color-contrast?application=playwright",
+        "nodes": [
+          {
+            "target": "#basic-addon1",
+            "html": "<span class=\"input-group-text text-black-50\" id=\"basic-addon1\">+91</span>",
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.94 (foreground color: #808080, background color: #ffffff, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "target": "#try_using_aadhaar",
+            "html": "<a class=\"text-primary\" href=\"/v3/aadhaar\" id=\"try_using_aadhaar\" tabindex=\"6\">Try using Aadhaar or VID</a>",
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.06 (foreground color: #1a73df, background color: #f2effe, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+          }
+        ]
+      }
+    },
+    {
+      "check": "axe",
+      "rule": "axe/html-has-lang",
+      "severity": "barrier",
+      "wcag": [
+        "3.1.1"
+      ],
+      "summary": "<html> element must have a lang attribute (1 element).",
+      "target": "html",
+      "snippet": "<html>",
+      "details": {
+        "impact": "serious",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/html-has-lang?application=playwright",
+        "nodes": [
+          {
+            "target": "html",
+            "html": "<html>",
+            "failureSummary": "Fix any of the following:\n  The <html> element does not have a lang attribute"
+          }
+        ]
+      }
+    },
+    {
+      "check": "axe",
+      "rule": "axe/landmark-one-main",
+      "severity": "info",
+      "wcag": [],
+      "summary": "Document should have one main landmark (1 element).",
+      "target": "html",
+      "snippet": "<html>",
+      "details": {
+        "impact": "moderate",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/landmark-one-main?application=playwright",
+        "nodes": [
+          {
+            "target": "html",
+            "html": "<html>",
+            "failureSummary": "Fix all of the following:\n  Document does not have a main landmark"
+          }
+        ]
+      }
+    },
+    {
+      "check": "axe",
+      "rule": "axe/page-has-heading-one",
+      "severity": "info",
+      "wcag": [],
+      "summary": "Page should contain a level-one heading (1 element).",
+      "target": "html",
+      "snippet": "<html>",
+      "details": {
+        "impact": "moderate",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/page-has-heading-one?application=playwright",
+        "nodes": [
+          {
+            "target": "html",
+            "html": "<html>",
+            "failureSummary": "Fix all of the following:\n  Page must have a level-one heading"
+          }
+        ]
+      }
+    },
+    {
+      "check": "axe",
+      "rule": "axe/region",
+      "severity": "info",
+      "wcag": [],
+      "summary": "All page content should be contained by landmarks (7 elements).",
+      "target": ".col-md-12 > .mb-4",
+      "snippet": "<div class=\"mb-4\"> <h4 class=\"card-title mb-0\" id=\"signin_mob\">Login or Create Account</h4> <small class=\"text-muted\" id=\"signinDescription\">Enter your mobile number to proceed</small> </div>",
+      "details": {
+        "impact": "moderate",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/region?application=playwright",
+        "nodes": [
+          {
+            "target": ".col-md-12 > .mb-4",
+            "html": "<div class=\"mb-4\"> <h4 class=\"card-title mb-0\" id=\"signin_mob\">Login or Create Account</h4> <small class=\"text-muted\" id=\"signinDescription\">Enter your mobile number to proceed</small> </div>",
+            "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+          },
+          {
+            "target": "#basic-addon1",
+            "html": "<span class=\"input-group-text text-black-50\" id=\"basic-addon1\">+91</span>",
+            "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+          },
+          {
+            "target": "#mobile",
+            "html": "<input type=\"tel\" class=\"form-control groupInputControl\" id=\"mobile\" maxlength=\"10\" minlength=\"10\" autocomplete=\"off\" placeholder=\"Mobile number\" tabindex=\"2\" autocapitalize=\"off\" autofocus=\"on\" required=\"\" data-pahunch-critical=\"0\" style=\"\">",
+            "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+          },
+          {
+            "target": "#termsText",
+            "html": "<small class=\"text-muted\" id=\"termsText\">By continuing, I agree to the </small>",
+            "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+          },
+          {
+            "target": "small:nth-child(5)",
+            "html": "<small><a href=\"https://www.digilocker.gov.in/web/about/tos\" target=\"_blank\" class=\"text-primary\" tabindex=\"4\" id=\"TermsofServices\">Terms of Service</a></small>",
+            "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+          }
+        ]
+      }
+    },
+    {
+      "check": "axe",
+      "rule": "axe/tabindex",
+      "severity": "barrier",
+      "wcag": [],
+      "summary": "Elements should not have tabindex greater than zero (4 elements).",
+      "target": "#mobile",
+      "snippet": "<input type=\"tel\" class=\"form-control groupInputControl\" id=\"mobile\" maxlength=\"10\" minlength=\"10\" autocomplete=\"off\" placeholder=\"Mobile number\" tabindex=\"2\" autocapitalize=\"off\" autofocus=\"on\" required=\"\" data-pahunch-critical=\"0\" style=\"\">",
+      "details": {
+        "impact": "serious",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/tabindex?application=playwright",
+        "nodes": [
+          {
+            "target": "#mobile",
+            "html": "<input type=\"tel\" class=\"form-control groupInputControl\" id=\"mobile\" maxlength=\"10\" minlength=\"10\" autocomplete=\"off\" placeholder=\"Mobile number\" tabindex=\"2\" autocapitalize=\"off\" autofocus=\"on\" required=\"\" data-pahunch-critical=\"0\" style=\"\">",
+            "failureSummary": "Fix any of the following:\n  Element has a tabindex greater than 0"
+          },
+          {
+            "target": "#button",
+            "html": "<button type=\"submit\" tabindex=\"3\" id=\"button\" class=\"btn btn-primary input-group\" disabled=\"\" data-pahunch-critical=\"1\">Continue</button>",
+            "failureSummary": "Fix any of the following:\n  Element has a tabindex greater than 0"
+          },
+          {
+            "target": "#TermsofServices",
+            "html": "<a href=\"https://www.digilocker.gov.in/web/about/tos\" target=\"_blank\" class=\"text-primary\" tabindex=\"4\" id=\"TermsofServices\">Terms of Service</a>",
+            "failureSummary": "Fix any of the following:\n  Element has a tabindex greater than 0"
+          },
+          {
+            "target": "#try_using_aadhaar",
+            "html": "<a class=\"text-primary\" href=\"/v3/aadhaar\" id=\"try_using_aadhaar\" tabindex=\"6\">Try using Aadhaar or VID</a>",
+            "failureSummary": "Fix any of the following:\n  Element has a tabindex greater than 0"
+          }
+        ]
+      }
+    }
+  ],
+  "counts": {
+    "blocker": 0,
+    "barrier": 3,
+    "info": 3
+  },
+  "evidence": {
+    "names": {
+      "controls": [
+        {
+          "index": 0,
+          "label": "Mobile number field",
+          "kind": "field",
+          "role": "textbox",
+          "name": "Mobile number",
+          "disabled": false,
+          "hidden": false,
+          "visible": true,
+          "snapshot": "- textbox \"Mobile number\""
+        },
+        {
+          "index": 1,
+          "label": "Continue button",
+          "kind": "button",
+          "role": "button",
+          "name": "Continue",
+          "disabled": true,
+          "hidden": false,
+          "visible": true,
+          "snapshot": "- button \"Continue\" [disabled]"
+        }
+      ]
+    },
+    "captcha": {
+      "groups": []
+    },
+    "lang": {
+      "frames": [
+        {
+          "htmlLang": "",
+          "indicTotal": 0,
+          "indicUnmarked": 0,
+          "latinAtRoot": 0,
+          "indicAtRoot": 0,
+          "samples": []
+        }
+      ]
+    },
+    "axe": {
+      "version": "4.14.1",
+      "violations": 6,
+      "incomplete": 2,
+      "passes": 36
+    },
+    "keyboard": {
+      "presses": 38,
+      "completedCycle": true,
+      "stopsSeen": 36,
+      "inModal": false,
+      "trap": null,
+      "controls": [
+        {
+          "index": 0,
+          "label": "Mobile number field",
+          "reached": true,
+          "focusVisible": true,
+          "firstStep": 37
+        },
+        {
+          "index": 1,
+          "label": "Continue button",
+          "reached": false,
+          "focusVisible": null,
+          "skipped": "disabled"
+        }
+      ],
+      "sequence": [
+        {
+          "step": 1,
+          "desc": "a#TermsofServices \"Terms of Service\"",
+          "focusVisible": true
+        },
+        {
+          "step": 2,
+          "desc": "a#try_using_aadhaar \"Try using Aadhaar or VID\"",
+          "focusVisible": true
+        },
+        {
+          "step": 3,
+          "desc": "a#goiLink \"Government of India \"",
+          "focusVisible": true
+        },
+        {
+          "step": 4,
+          "desc": "a#SkipToMain \"Skip to main content\"",
+          "focusVisible": true
+        },
+        {
+          "step": 5,
+          "desc": "button#btn-increase \"A+\"",
+          "focusVisible": false
+        },
+        {
+          "step": 6,
+          "desc": "button#btn-orig \"A\"",
+          "focusVisible": false
+        },
+        {
+          "step": 7,
+          "desc": "button#btn-decrease \"A-\"",
+          "focusVisible": false
+        },
+        {
+          "step": 8,
+          "desc": "button#language \"English\"",
+          "focusVisible": false
+        },
+        {
+          "step": 9,
+          "desc": "a \"DigiLocker Logo\"",
+          "focusVisible": true
+        },
+        {
+          "step": 10,
+          "desc": "button#qr-login-link \"Login using QR Code Scan using DigiLocke\"",
+          "focusVisible": true
+        },
+        {
+          "step": 11,
+          "desc": "a \"DigiLocker Facebook\"",
+          "focusVisible": true
+        },
+        {
+          "step": 12,
+          "desc": "a \"DigiLocker X\"",
+          "focusVisible": true
+        },
+        {
+          "step": 13,
+          "desc": "a \"DigiLocker Instagram\"",
+          "focusVisible": true
+        },
+        {
+          "step": 14,
+          "desc": "a \"DigiLocker LinkedIn\"",
+          "focusVisible": true
+        },
+        {
+          "step": 15,
+          "desc": "a \"DigiLocker YouTube\"",
+          "focusVisible": true
+        },
+        {
+          "step": 16,
+          "desc": "a#Home1 \"Home\"",
+          "focusVisible": true
+        },
+        {
+          "step": 17,
+          "desc": "a#AboutUs1 \"About Us\"",
+          "focusVisible": true
+        },
+        {
+          "step": 18,
+          "desc": "a#FAQ1 \"FAQ\"",
+          "focusVisible": true
+        },
+        {
+          "step": 19,
+          "desc": "a#Statistics1 \"Statistics\"",
+          "focusVisible": true
+        },
+        {
+          "step": 20,
+          "desc": "a#Resources1 \"Resources\"",
+          "focusVisible": true
+        },
+        {
+          "step": 21,
+          "desc": "a#Circulars1 \"Circulars\"",
+          "focusVisible": true
+        },
+        {
+          "step": 22,
+          "desc": "a#ExploreDigiLocker \"Explore DigiLocker\"",
+          "focusVisible": true
+        },
+        {
+          "step": 23,
+          "desc": "a#NeedHelp1 \"Support/Feedback\"",
+          "focusVisible": true
+        },
+        {
+          "step": 24,
+          "desc": "a#tc_of_use \"Terms & Condition of Use\"",
+          "focusVisible": true
+        },
+        {
+          "step": 25,
+          "desc": "a#Video Guides \"Video Guides\"",
+          "focusVisible": true
+        },
+        {
+          "step": 26,
+          "desc": "a#Credits1 \"Credits\"",
+          "focusVisible": true
+        },
+        {
+          "step": 27,
+          "desc": "a#Partners1 \"Partners\"",
+          "focusVisible": true
+        },
+        {
+          "step": 28,
+          "desc": "a#MeriPehchaan1 \"MeriPehchaan\"",
+          "focusVisible": true
+        },
+        {
+          "step": 29,
+          "desc": "a#National \"National e-Governance Division (NeGD)\"",
+          "focusVisible": true
+        },
+        {
+          "step": 30,
+          "desc": "a",
+          "focusVisible": true
+        },
+        {
+          "step": 31,
+          "desc": "a",
+          "focusVisible": true
+        },
+        {
+          "step": 32,
+          "desc": "a",
+          "focusVisible": true
+        },
+        {
+          "step": 33,
+          "desc": "a#National \"National eGovernance Division (NeGD)\"",
+          "focusVisible": true
+        },
+        {
+          "step": 34,
+          "desc": "a#DigiLockerPolicy1 \"DigiLocker Policy\"",
+          "focusVisible": true
+        },
+        {
+          "step": 35,
+          "desc": "a#ContactUs \"Contact Us\"",
+          "focusVisible": true
+        },
+        {
+          "step": 37,
+          "desc": "input#mobile \"Mobile number\"",
+          "focusVisible": true,
+          "critical": 0
+        }
+      ]
+    },
+    "pdf": {
+      "pdfs": []
+    }
+  },
+  "errors": []
+}

@@ -1,0 +1,594 @@
+{
+  "schema": 1,
+  "portal": {
+    "id": "ecourts",
+    "name": "eCourts services: case status",
+    "owner": "eCommittee, Supreme Court of India",
+    "jurisdiction": "Central",
+    "task": "Look up a case by its CNR number"
+  },
+  "startedAt": "2026-11-24T13:35:59.668Z",
+  "finishedAt": "2026-11-24T13:36:07.740Z",
+  "tool": {
+    "name": "pahunch",
+    "version": "0.1.0",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/159.0.8154.6 Safari/537.36 pahunch/0.1.0 (+https://github.com/DevGurav/pahunch)",
+    "browser": "chromium 159.0.8154.6",
+    "axe": "4.14.1"
+  },
+  "pages": [
+    {
+      "requested": "https://services.ecourts.gov.in/ecourtindia_v6/",
+      "finalUrl": "https://services.ecourts.gov.in/ecourtindia_v6/",
+      "status": 200,
+      "title": "Home - eCourt India Services"
+    }
+  ],
+  "robots": {
+    "robotsUrl": "https://services.ecourts.gov.in/robots.txt",
+    "status": 404,
+    "disallowed": false
+  },
+  "critical": [
+    {
+      "index": 0,
+      "label": "CNR number field",
+      "kind": "field",
+      "selector": "#cino",
+      "found": true,
+      "role": "textbox",
+      "name": "Enter 16 digit CNR number",
+      "disabled": false,
+      "reached": true,
+      "focusVisible": true
+    },
+    {
+      "index": 1,
+      "label": "CAPTCHA field",
+      "kind": "captcha-field",
+      "selector": "#fcaptcha_code",
+      "found": true,
+      "role": "textbox",
+      "name": "*Enter Captcha",
+      "disabled": false,
+      "reached": true,
+      "focusVisible": true
+    },
+    {
+      "index": 2,
+      "label": "Play CAPTCHA audio link",
+      "kind": "captcha-audio",
+      "selector": "#captcha_image_audio_controls > a",
+      "found": true,
+      "role": "button",
+      "name": "Play CAPTCHA Audio",
+      "disabled": false,
+      "reached": true,
+      "focusVisible": true
+    },
+    {
+      "index": 3,
+      "label": "Search button",
+      "kind": "button",
+      "selector": "#searchbtn",
+      "found": true,
+      "role": "button",
+      "name": "Search case by CNR number",
+      "disabled": false,
+      "reached": true,
+      "focusVisible": true
+    }
+  ],
+  "verdict": "no-blockers-found",
+  "inconclusiveReasons": [],
+  "findings": [
+    {
+      "check": "captcha",
+      "rule": "captcha-with-audio",
+      "severity": "info",
+      "wcag": [
+        "1.1.1"
+      ],
+      "summary": "Image CAPTCHA with an audio option (\"Play CAPTCHA Audio\") that the keyboard can reach.",
+      "target": "img#captcha_image",
+      "snippet": "<img style=\"padding-right: 0px;border:1px solid #ccc;\" id=\"captcha_image\" src=\"/ecourtindia_v6/vendor/securimage/securimage_show.php?9ae7d3187e98a99979e22876eb2ec94d\" alt=\"Enter the characters shown in the image, or select the audio Captcha and type the characters you hear.\" tabindex=\"0\" width=\"120\"",
+      "details": {
+        "audio": {
+          "description": "Play CAPTCHA Audio",
+          "focusable": true,
+          "exposed": true,
+          "snippet": "<a tabindex=\"0\" class=\"captcha_play_button\" href=\"/ecourtindia_v6/vendor/securimage/securimage_play.php?id=6b0592c3be122\" onclick=\"return false\" role=\"button\" data-pahunch-critical=\"2\"> <img class=\"captcha_play_image speaker-btn\" height=\"34\" width=\"39\" src=\"images/speaker-btn.png\" alt=\"Play CAPTCHA "
+        },
+        "imageAlt": "Enter the characters shown in the image, or select the audio Captcha and type the characters you hear."
+      }
+    },
+    {
+      "check": "axe",
+      "rule": "axe/landmark-contentinfo-is-top-level",
+      "severity": "info",
+      "wcag": [],
+      "summary": "Contentinfo landmark should not be contained in another landmark (1 element).",
+      "target": "#footer-container",
+      "snippet": "<div id=\"footer-container\" class=\"container clearfix pt-2 mt-2\" role=\"contentinfo\">",
+      "details": {
+        "impact": "moderate",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/landmark-contentinfo-is-top-level?application=playwright",
+        "nodes": [
+          {
+            "target": "#footer-container",
+            "html": "<div id=\"footer-container\" class=\"container clearfix pt-2 mt-2\" role=\"contentinfo\">",
+            "failureSummary": "Fix any of the following:\n  The contentinfo landmark is contained in another landmark."
+          }
+        ]
+      }
+    },
+    {
+      "check": "axe",
+      "rule": "axe/landmark-no-duplicate-banner",
+      "severity": "info",
+      "wcag": [],
+      "summary": "Document should not have more than one banner landmark (1 element).",
+      "target": ".site-header",
+      "snippet": "<header class=\"site-header\">",
+      "details": {
+        "impact": "moderate",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/landmark-no-duplicate-banner?application=playwright",
+        "nodes": [
+          {
+            "target": ".site-header",
+            "html": "<header class=\"site-header\">",
+            "failureSummary": "Fix any of the following:\n  Document has more than one banner landmark"
+          }
+        ]
+      }
+    },
+    {
+      "check": "axe",
+      "rule": "axe/landmark-no-duplicate-contentinfo",
+      "severity": "info",
+      "wcag": [],
+      "summary": "Document should not have more than one contentinfo landmark (1 element).",
+      "target": "footer",
+      "snippet": "<footer class=\"login-footer\">",
+      "details": {
+        "impact": "moderate",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/landmark-no-duplicate-contentinfo?application=playwright",
+        "nodes": [
+          {
+            "target": "footer",
+            "html": "<footer class=\"login-footer\">",
+            "failureSummary": "Fix any of the following:\n  Document has more than one contentinfo landmark"
+          }
+        ]
+      }
+    },
+    {
+      "check": "axe",
+      "rule": "axe/landmark-unique",
+      "severity": "info",
+      "wcag": [],
+      "summary": "Landmarks should have a unique role or role/label/title (i.e. accessible name) combination (2 elements).",
+      "target": ".site-header",
+      "snippet": "<header class=\"site-header\">",
+      "details": {
+        "impact": "moderate",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/landmark-unique?application=playwright",
+        "nodes": [
+          {
+            "target": ".site-header",
+            "html": "<header class=\"site-header\">",
+            "failureSummary": "Fix any of the following:\n  The landmark must have a unique aria-label, aria-labelledby, or title to make landmarks distinguishable"
+          },
+          {
+            "target": "footer",
+            "html": "<footer class=\"login-footer\">",
+            "failureSummary": "Fix any of the following:\n  The landmark must have a unique aria-label, aria-labelledby, or title to make landmarks distinguishable"
+          }
+        ]
+      }
+    }
+  ],
+  "counts": {
+    "blocker": 0,
+    "barrier": 0,
+    "info": 5
+  },
+  "evidence": {
+    "names": {
+      "controls": [
+        {
+          "index": 0,
+          "label": "CNR number field",
+          "kind": "field",
+          "role": "textbox",
+          "name": "Enter 16 digit CNR number",
+          "disabled": false,
+          "hidden": false,
+          "visible": true,
+          "snapshot": "- textbox \"Enter 16 digit CNR number\""
+        },
+        {
+          "index": 1,
+          "label": "CAPTCHA field",
+          "kind": "captcha-field",
+          "role": "textbox",
+          "name": "*Enter Captcha",
+          "disabled": false,
+          "hidden": false,
+          "visible": true,
+          "snapshot": "- textbox \"*Enter Captcha\":\n  - /placeholder: Enter Captcha"
+        },
+        {
+          "index": 2,
+          "label": "Play CAPTCHA audio link",
+          "kind": "captcha-audio",
+          "role": "button",
+          "name": "Play CAPTCHA Audio",
+          "disabled": false,
+          "hidden": false,
+          "visible": true,
+          "snapshot": "- button \"Play CAPTCHA Audio\":\n  - img \"Play CAPTCHA Audio\""
+        },
+        {
+          "index": 3,
+          "label": "Search button",
+          "kind": "button",
+          "role": "button",
+          "name": "Search case by CNR number",
+          "disabled": false,
+          "hidden": false,
+          "visible": true,
+          "snapshot": "- button \"Search case by CNR number\": Search"
+        }
+      ]
+    },
+    "captcha": {
+      "groups": [
+        {
+          "kind": "image",
+          "onPath": true,
+          "imageAlt": "Enter the characters shown in the image, or select the audio Captcha and type the characters you hear.",
+          "target": "img#captcha_image",
+          "inputTarget": "input#fcaptcha_code",
+          "audio": {
+            "description": "Play CAPTCHA Audio",
+            "focusable": true,
+            "exposed": true,
+            "snippet": "<a tabindex=\"0\" class=\"captcha_play_button\" href=\"/ecourtindia_v6/vendor/securimage/securimage_play.php?id=6b0592c3be122\" onclick=\"return false\" role=\"button\" data-pahunch-critical=\"2\"> <img class=\"captcha_play_image speaker-btn\" height=\"34\" width=\"39\" src=\"images/speaker-btn.png\" alt=\"Play CAPTCHA "
+          },
+          "snippet": "<img style=\"padding-right: 0px;border:1px solid #ccc;\" id=\"captcha_image\" src=\"/ecourtindia_v6/vendor/securimage/securimage_show.php?9ae7d3187e98a99979e22876eb2ec94d\" alt=\"Enter the characters shown in the image, or select the audio Captcha and type the characters you hear.\" tabindex=\"0\" width=\"120\""
+        }
+      ]
+    },
+    "lang": {
+      "frames": [
+        {
+          "htmlLang": "en",
+          "indicTotal": 42,
+          "indicUnmarked": 0,
+          "latinAtRoot": 1104,
+          "indicAtRoot": 0,
+          "samples": []
+        }
+      ]
+    },
+    "axe": {
+      "version": "4.14.1",
+      "violations": 4,
+      "incomplete": 1,
+      "passes": 48
+    },
+    "keyboard": {
+      "presses": 55,
+      "completedCycle": true,
+      "stopsSeen": 53,
+      "inModal": false,
+      "trap": null,
+      "controls": [
+        {
+          "index": 0,
+          "label": "CNR number field",
+          "reached": true,
+          "focusVisible": true,
+          "firstStep": 26
+        },
+        {
+          "index": 1,
+          "label": "CAPTCHA field",
+          "reached": true,
+          "focusVisible": true,
+          "firstStep": 30
+        },
+        {
+          "index": 2,
+          "label": "Play CAPTCHA audio link",
+          "reached": true,
+          "focusVisible": true,
+          "firstStep": 28
+        },
+        {
+          "index": 3,
+          "label": "Search button",
+          "reached": true,
+          "focusVisible": true,
+          "firstStep": 31
+        }
+      ],
+      "sequence": [
+        {
+          "step": 1,
+          "desc": "a \"इ-कमिटी, उच्चतम न्यायालय, भारत - Externa\"",
+          "focusVisible": true
+        },
+        {
+          "step": 2,
+          "desc": "a \"E-COMMITTEE, SUPREME COURT OF INDIA - Ex\"",
+          "focusVisible": true
+        },
+        {
+          "step": 3,
+          "desc": "a \"Skip to main content\"",
+          "focusVisible": true
+        },
+        {
+          "step": 4,
+          "desc": "button \"Language\"",
+          "focusVisible": true
+        },
+        {
+          "step": 5,
+          "desc": "button \"Accessibility options\"",
+          "focusVisible": true
+        },
+        {
+          "step": 6,
+          "desc": "a \"जिला न्यायालय सेवाएं eCourts Services Di\"",
+          "focusVisible": true
+        },
+        {
+          "step": 7,
+          "desc": "a",
+          "focusVisible": true
+        },
+        {
+          "step": 8,
+          "desc": "a",
+          "focusVisible": true
+        },
+        {
+          "step": 9,
+          "desc": "a \"Home\"",
+          "focusVisible": true
+        },
+        {
+          "step": 10,
+          "desc": "a \"e-Committee\"",
+          "focusVisible": true
+        },
+        {
+          "step": 11,
+          "desc": "a \"Supreme Court\"",
+          "focusVisible": true
+        },
+        {
+          "step": 12,
+          "desc": "a \"High Courts\"",
+          "focusVisible": true
+        },
+        {
+          "step": 13,
+          "desc": "a \"District Courts\"",
+          "focusVisible": true
+        },
+        {
+          "step": 14,
+          "desc": "a \"NJDG\"",
+          "focusVisible": true
+        },
+        {
+          "step": 15,
+          "desc": "a \"Contact Us\"",
+          "focusVisible": true
+        },
+        {
+          "step": 16,
+          "desc": "a#leftPaneMenuCnr \"CNR Number\"",
+          "focusVisible": true
+        },
+        {
+          "step": 17,
+          "desc": "a#leftPaneMenuCS \"Case Status\"",
+          "focusVisible": true
+        },
+        {
+          "step": 18,
+          "desc": "a#leftPaneMenuCO \"Court Orders\"",
+          "focusVisible": true
+        },
+        {
+          "step": 19,
+          "desc": "a#leftPaneMenuCL \"Cause List\"",
+          "focusVisible": true
+        },
+        {
+          "step": 20,
+          "desc": "a#leftPaneMenuCavet \"Caveat Search\"",
+          "focusVisible": true
+        },
+        {
+          "step": 21,
+          "desc": "a#leftPaneMenuprocessDetails \"Process Details\"",
+          "focusVisible": true
+        },
+        {
+          "step": 22,
+          "desc": "a#leftPaneMenuLocation \"Location\"",
+          "focusVisible": true
+        },
+        {
+          "step": 23,
+          "desc": "a",
+          "focusVisible": true
+        },
+        {
+          "step": 24,
+          "desc": "a",
+          "focusVisible": true
+        },
+        {
+          "step": 25,
+          "desc": "button \"Close download app notification\"",
+          "focusVisible": true
+        },
+        {
+          "step": 26,
+          "desc": "input#cino \"Enter 16 digit CNR number\"",
+          "focusVisible": true,
+          "critical": 0
+        },
+        {
+          "step": 27,
+          "desc": "img#captcha_image",
+          "focusVisible": true
+        },
+        {
+          "step": 28,
+          "desc": "a",
+          "focusVisible": true,
+          "critical": 2
+        },
+        {
+          "step": 29,
+          "desc": "a \"Refresh Image\"",
+          "focusVisible": true
+        },
+        {
+          "step": 30,
+          "desc": "input#fcaptcha_code \"Enter Captcha\"",
+          "focusVisible": true,
+          "critical": 1
+        },
+        {
+          "step": 31,
+          "desc": "button#searchbtn \"Search case by CNR number\"",
+          "focusVisible": true,
+          "critical": 3
+        },
+        {
+          "step": 32,
+          "desc": "button \"Reset CNR search form\"",
+          "focusVisible": true
+        },
+        {
+          "step": 33,
+          "desc": "a \"Click here to view help video\"",
+          "focusVisible": true
+        },
+        {
+          "step": 34,
+          "desc": "a \"About Us\"",
+          "focusVisible": true
+        },
+        {
+          "step": 35,
+          "desc": "a \"Newsletter\"",
+          "focusVisible": true
+        },
+        {
+          "step": 36,
+          "desc": "a \"Forms for Advocates\"",
+          "focusVisible": true
+        },
+        {
+          "step": 37,
+          "desc": "a \"Help Videos\"",
+          "focusVisible": true
+        },
+        {
+          "step": 38,
+          "desc": "a \"Site map\"",
+          "focusVisible": true
+        },
+        {
+          "step": 39,
+          "desc": "a \"Contact Us\"",
+          "focusVisible": true
+        },
+        {
+          "step": 40,
+          "desc": "a \"Web Information Manager\"",
+          "focusVisible": true
+        },
+        {
+          "step": 41,
+          "desc": "a \"Copyright Policy\"",
+          "focusVisible": true
+        },
+        {
+          "step": 42,
+          "desc": "a \"Hyperlinking Policy\"",
+          "focusVisible": true
+        },
+        {
+          "step": 43,
+          "desc": "a \"Accessibility Statement\"",
+          "focusVisible": true
+        },
+        {
+          "step": 44,
+          "desc": "a \"Screen Reader Access\"",
+          "focusVisible": true
+        },
+        {
+          "step": 45,
+          "desc": "a \"Disclaimer\"",
+          "focusVisible": true
+        },
+        {
+          "step": 46,
+          "desc": "a \"National Informatics Centre (NIC) opens \"",
+          "focusVisible": true
+        },
+        {
+          "step": 47,
+          "desc": "a \"YouTube - External site that opens in a \"",
+          "focusVisible": true
+        },
+        {
+          "step": 48,
+          "desc": "a \"Digital India opens a new window\"",
+          "focusVisible": true
+        },
+        {
+          "step": 49,
+          "desc": "a \"National Portal of India opens a new win\"",
+          "focusVisible": true
+        },
+        {
+          "step": 50,
+          "desc": "a \"Department of Justice opens a new window\"",
+          "focusVisible": true
+        },
+        {
+          "step": 51,
+          "desc": "a \"e-Committee Supreme Court of India opens\"",
+          "focusVisible": true
+        },
+        {
+          "step": 52,
+          "desc": "a \"India Code opens a new window\"",
+          "focusVisible": true
+        },
+        {
+          "step": 53,
+          "desc": "a \"National Informatics Centre opens a new \"",
+          "focusVisible": true
+        }
+      ]
+    },
+    "pdf": {
+      "pdfs": []
+    }
+  },
+  "errors": []
+}

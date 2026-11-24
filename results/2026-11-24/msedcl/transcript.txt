@@ -1,0 +1,98 @@
+table
+graphic, no name
+graphic, no name
+heading level 3, Language/भाषा
+heading level 1, वेब स्वयंसेवा
+मुख्य पान, link
+>
+वीज देयक अवलोकन/भरणा, link
+heading level 2, वीज देयक अवलोकन/भरणा
+table
+मुख्य पान नवीन सदस्य नोंदणी प्रवेश प्रवेश नाम/परवली शब्द विस्मरण वीज देयक अवलोकन/भरणा अभय योजना २०२६-२७ वीज वापर परिगणक वीज देयक परिगणक नवीन जोडणीची मागणी Prepaid Meter Recharge स्वागत सेल तक्रार नोंदणी तक्रार नोंदवणे ऑनलाइन अर्ज संबंधित तक्रार नोंदवणे सुरक्षा ठेव अंदाज तक्रारीची सद्यस्थिती रिडिंग पाठवा कृषी इंडेक्स-संमती अक्षय ऊर्जा वापर पहा पैसे भरून कृषि पंप प्रतीक्षा यादीमध्ये प्रलंबित ग्राहकांनी कृषीपंप विदयुत जोडणी ऐवजी सौर कृषिपंप घेण्यास संमती देण्यासाठी येथे क्लिक करावे. स्थितीचा मागोवा घेणे, दस्तऐवज पाठवणे, शुल्क भरणे आणि नुकसान भरपाई नोंदणी *इतर शुल्काचे ऑनलाइन देय *मोबाइल नंबर, ई-मेल, आधार, टी.डी.एस आणि पॅन क्रमांक नोंदणी / बदल
+list
+मुख्य पान, link
+नवीन सदस्य नोंदणी, link
+प्रवेश, link
+प्रवेश नाम/परवली शब्द विस्मरण, link
+वीज देयक अवलोकन/भरणा, link
+अभय योजना २०२६-२७, link
+वीज वापर परिगणक, link
+वीज देयक परिगणक, link
+नवीन जोडणीची मागणी, link
+Prepaid Meter Recharge, link
+स्वागत सेल तक्रार नोंदणी, link
+तक्रार नोंदवणे, link
+ऑनलाइन अर्ज संबंधित तक्रार नोंदवणे, link
+सुरक्षा ठेव अंदाज, link
+तक्रारीची सद्यस्थिती, link
+रिडिंग पाठवा, link
+कृषी इंडेक्स-संमती, link
+अक्षय ऊर्जा वापर पहा, link
+पैसे भरून कृषि पंप प्रतीक्षा यादीमध्ये प्रलंबित ग्राहकांनी कृषीपंप विदयुत जोडणी ऐवजी सौर कृषिपंप घेण्यास संमती देण्यासाठी येथे क्लिक करावे., link
+स्थितीचा मागोवा घेणे, दस्तऐवज पाठवणे, शुल्क भरणे आणि नुकसान भरपाई नोंदणी
+*इतर शुल्काचे ऑनलाइन देय, link
+*मोबाइल नंबर, ई-मेल, आधार, टी.डी.एस आणि पॅन क्रमांक नोंदणी / बदल, link
+पॉप-अपला ब्लॉक करणे किंवा परवानगी देण्यासाठी मदतपुस्तिका लेखी माहिती व्हिडिओ माझे देयक *दर्शविलेली माहिती अवश्यक आहे ग्राहक प्रकार * LT Consumer ग्राहक क्रमांक (१२ अंकी) * View/Pay bill (without login) facility only for LT/LTIP consumers. Please enter 12 digit consumer number here. Consumer Number (ग्राहक क्रमांक) can be found on top left of your energy bill. कॅप्चा* refresh Enter the above captcha in the box. Captcha* माहिती नोंद करा रिक्त करा
+पॉप-अपला ब्लॉक करणे किंवा परवानगी देण्यासाठी मदतपुस्तिका
+लेखी माहिती, link
+व्हिडिओ, link
+table
+माझे देयक *दर्शविलेली माहिती अवश्यक आहे
+माझे देयक
+heading level 4, माझे देयक
+*दर्शविलेली माहिती अवश्यक आहे
+table
+ग्राहक प्रकार * LT Consumer
+ग्राहक प्रकार *
+LT Consumer
+combo box, no name
+LT Consumer, option, selected
+ग्राहक क्रमांक (१२ अंकी) * View/Pay bill (without login) facility only for LT/LTIP consumers. Please enter 12 digit consumer number here. Consumer Number (ग्राहक क्रमांक) can be found on top left of your energy bill.
+ग्राहक क्रमांक (१२ अंकी) *
+View/Pay bill (without login) facility only for LT/LTIP consumers. Please enter 12 digit consumer number here. Consumer Number (ग्राहक क्रमांक) can be found on top left of your energy bill.
+edit, no name
+View/Pay bill (without login) facility only for LT/LTIP consumers. Please enter 12 digit consumer number here. Consumer Number (ग्राहक क्रमांक) can be found on top left of your energy bill., button, unavailable
+कॅप्चा* refresh
+कॅप्चा*
+refresh
+table
+refresh
+refresh
+refresh, button
+refresh, graphic
+Enter the above captcha in the box.
+Enter the above captcha in the box.
+Captcha*
+Captcha*
+edit, no name
+माहिती नोंद करा, button
+माहिती नोंद करा
+रिक्त करा, button
+रिक्त करा
+आमच्या विषयी, link
+|
+संपर्क करा, link
+|
+मनातले प्रश्न, link
+|
+मदत, link
+|
+सूचना व अटी, link
+|
+गुप्तता धोरण, link
+|
+साइट मॅप, link
+| आम्हाला फॉलो करा :
+Facebook Page Link, link
+Facebook Page Link, graphic
+Tweeter Page Link, link
+Tweeter Page Link, graphic
+Youtube Channel Link, link
+Youtube Channel Link, graphic
+Instagram Page Link, link
+Instagram Page Link, graphic
+ऑनलाइन अर्जाशी संबंधित कोणत्याही प्रश्नांसाठी, कृपया
+customercare@mahadiscom.in, link
+वर मेल करा किंवा आमच्या ग्राहक सेवा केंद्र १९१२, १८००-२३३-३४३५, १८००-२१२-३४३५ वर संपर्क साधा. ऑनलाइन पेमेंटशी संबंधित कोणत्याही शंका/ तक्रारीसाठी, ग्राहक महावितरण मोबाइल ॲपद्वारे तक्रार करू शकतात किंवा तक्रार करण्यासाठी खालील लिंकचा वापर करू शकतात.
+https://wss.mahadiscom.in/wss/wss?uiActionName=getServiceRequestConsumerDetailsLink, link
+table

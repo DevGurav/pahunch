@@ -1,0 +1,81 @@
+banner landmark
+indian flag Government of India , link
+indian flag, graphic
+Government of India
+
+Skip to main content, link
+|
+A+, button
+A, button
+A-, button
+|
+language, graphic
+English, button
+Logo, link
+Logo, graphic
+heading level 4, Login or Create Account
+Enter your mobile number to proceed +91
+Mobile number, edit
+Continue, button, unavailable
+By continuing, I agree to the
+Terms of Service, link
+or
+QR Code Login using QR Code Scan using DigiLocker Mobile App, button
+QR Code, graphic
+heading level 4, Login using QR Code
+Scan using DigiLocker Mobile App
+Facing trouble?
+Try using Aadhaar or VID, link
+content info landmark
+DigiLocker Logo, graphic
+DigiLocker aims at 'Digital Empowerment' by providing access to authentic digital documents to the citizen's digital document wallet.
+ISO Certificate, graphic
+ISO Certificate, graphic
+heading level 3, FOLLOW US
+Facebook, link
+Facebook, graphic
+Twitter, link
+Twitter, graphic
+Instagram, link
+Instagram, graphic
+LinkedIn, link
+LinkedIn, graphic
+YouTube, link
+YouTube, graphic
+list
+Home, link
+About Us, link
+FAQ, link
+Statistics, link
+Resources, link
+Circulars, link
+Explore DigiLocker, link
+list
+Support/Feedback, link
+
+Terms & Condition of Use, link
+Video Guides, link
+Credits, link
+Partners, link
+MeriPehchaan, link
+
+Powered by
+Digital India Logo, graphic
+National e-Governance Division (NeGD), link
+National e-Governance Division (NeGD)
+Digital India Corporation
+Ministry of Electronics & IT (MeitY)
+Government of India
+heading level 3, DOWNLOAD APP
+Google Play, link
+Google Play, graphic
+App Store, link
+App Store, graphic
+Google Play, link
+Google Play, graphic
+Last Updated: Nov 11, 2026
+Copyright  2026, Website maintained by
+National eGovernance Division (NeGD), link
+
+DigiLocker Policy, link
+Contact Us, link

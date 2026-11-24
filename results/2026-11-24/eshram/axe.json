@@ -1,0 +1,187 @@
+{
+  "version": "4.14.1",
+  "violations": [
+    {
+      "id": "aria-allowed-attr",
+      "impact": "critical",
+      "help": "Elements must only use supported ARIA attributes",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/aria-allowed-attr?application=playwright",
+      "tags": [
+        "cat.aria",
+        "wcag2a",
+        "wcag412",
+        "EN-301-549",
+        "EN-9.4.1.2",
+        "RGAAv4",
+        "RGAA-7.1.1"
+      ],
+      "nodeCount": 1,
+      "nodes": [
+        {
+          "target": ".search-box",
+          "html": "<div _ngcontent-ng-c216618883=\"\" aria-haspopup=\"listbox\" class=\"search-box\" aria-expanded=\"false\">",
+          "failureSummary": "Fix all of the following:\n  ARIA attribute is not allowed: aria-expanded=\"false\""
+        }
+      ]
+    },
+    {
+      "id": "empty-heading",
+      "impact": "minor",
+      "help": "Headings should not be empty",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/empty-heading?application=playwright",
+      "tags": [
+        "cat.name-role-value",
+        "best-practice"
+      ],
+      "nodeCount": 1,
+      "nodes": [
+        {
+          "target": "h4",
+          "html": "<h4 _ngcontent-ng-c358800968=\"\" class=\"testReg\"></h4>",
+          "failureSummary": "Fix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+        }
+      ]
+    },
+    {
+      "id": "label-content-name-mismatch",
+      "impact": "serious",
+      "help": "Elements must have their visible text as part of their accessible name",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright",
+      "tags": [
+        "cat.semantics",
+        "wcag21a",
+        "wcag253",
+        "EN-301-549",
+        "EN-9.2.5.3",
+        "RGAAv4",
+        "RGAA-6.1.5"
+      ],
+      "nodeCount": 2,
+      "nodes": [
+        {
+          "target": "#decfont",
+          "html": "<a _ngcontent-ng-c358800968=\"\" id=\"decfont\" tabindex=\"0\" role=\"button\" aria-label=\"Decrease Font Size\" class=\"local\" aria-pressed=\"false\"> A- </a>",
+          "failureSummary": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+        },
+        {
+          "target": "#incfont",
+          "html": "<a _ngcontent-ng-c358800968=\"\" id=\"incfont\" tabindex=\"0\" role=\"button\" aria-label=\"Increase Font Size\" class=\"local\" aria-pressed=\"false\"> A+ </a>",
+          "failureSummary": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+        }
+      ]
+    },
+    {
+      "id": "page-has-heading-one",
+      "impact": "moderate",
+      "help": "Page should contain a level-one heading",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/page-has-heading-one?application=playwright",
+      "tags": [
+        "cat.semantics",
+        "best-practice"
+      ],
+      "nodeCount": 1,
+      "nodes": [
+        {
+          "target": "html",
+          "html": "<html lang=\"en\" data-beasties-container=\"\">",
+          "failureSummary": "Fix all of the following:\n  Page must have a level-one heading"
+        }
+      ]
+    },
+    {
+      "id": "select-name",
+      "impact": "critical",
+      "help": "Select element must have an accessible name",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/select-name?application=playwright",
+      "tags": [
+        "cat.forms",
+        "wcag2a",
+        "wcag412",
+        "section508",
+        "section508.22.n",
+        "TTv5",
+        "TT5.c",
+        "EN-301-549",
+        "EN-9.4.1.2",
+        "ACT",
+        "RGAAv4",
+        "RGAA-11.1.1"
+      ],
+      "nodeCount": 1,
+      "nodes": [
+        {
+          "target": "select",
+          "html": "<select _ngcontent-ng-c358800968=\"\">",
+          "failureSummary": "Fix any of the following:\n  Element does not have an implicit (wrapped) <label>\n  Element does not have an explicit <label>\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element's default semantics were not overridden with role=\"none\" or rol"
+        }
+      ]
+    }
+  ],
+  "incomplete": [
+    {
+      "id": "color-contrast",
+      "impact": "serious",
+      "help": "Elements must meet minimum color contrast ratio thresholds",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/color-contrast?application=playwright",
+      "tags": [
+        "cat.color",
+        "wcag2aa",
+        "wcag143",
+        "TTv5",
+        "TT13.c",
+        "EN-301-549",
+        "EN-9.1.4.3",
+        "ACT",
+        "RGAAv4",
+        "RGAA-3.2.1"
+      ],
+      "nodeCount": 4,
+      "nodes": [
+        {
+          "target": ".search-btn > span[_ngcontent-ng-c216618883=\"\"]",
+          "html": "<span _ngcontent-ng-c216618883=\"\">Search</span>",
+          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+        },
+        {
+          "target": "span[lang=\"hi\"][aria-live=\"polite\"][aria-atomic=\"true\"]",
+          "html": "<span _ngcontent-ng-c3472823434=\"\" lang=\"hi\" aria-live=\"polite\" aria-atomic=\"true\">",
+          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background image"
+        },
+        {
+          "target": ".epfoText > legend",
+          "html": "<legend _ngcontent-ng-c3472823434=\"\" class=\"col-md-8 col-12 radio_btn\"> Are you an active member of Employees' Provident Fund Organization (EPFO) <sup _ngcontent-ng-c3472823434=\"\"><span _ngcontent-ng-c3472823434=\"\" aria-hidden=\"true\">*</span></sup></legend>",
+          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+        },
+        {
+          "target": "fieldset:nth-child(2) > legend",
+          "html": "<legend _ngcontent-ng-c3472823434=\"\" class=\"col-md-8 col-12 radio_btn\"> Are you an active member of Employees' State Insurance Corporation (ESIC) <sup _ngcontent-ng-c3472823434=\"\"><span _ngcontent-ng-c3472823434=\"\" aria-hidden=\"true\">*</span></sup></legend>",
+          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+        }
+      ]
+    },
+    {
+      "id": "label-content-name-mismatch",
+      "impact": "serious",
+      "help": "Elements must have their visible text as part of their accessible name",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright",
+      "tags": [
+        "cat.semantics",
+        "wcag21a",
+        "wcag253",
+        "EN-301-549",
+        "EN-9.2.5.3",
+        "RGAAv4",
+        "RGAA-6.1.5"
+      ],
+      "nodeCount": 1,
+      "nodes": [
+        {
+          "target": "#normal",
+          "html": "<a _ngcontent-ng-c358800968=\"\" id=\"normal\" tabindex=\"0\" role=\"button\" aria-label=\"Default Font Size\" class=\"local\" aria-pressed=\"true\"> A </a>",
+          "failureSummary": "Fix any of the following:\n  Unable to determine if the visible text is part of the accessible name"
+        }
+      ]
+    }
+  ],
+  "passes": 49
+}

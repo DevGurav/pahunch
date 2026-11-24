@@ -1,0 +1,87 @@
+banner landmark
+banner landmark
+list
+Government of India
+Ministry of Electronics & Information Technology
+graphic, no name
+list
+English, button
+English
+graphic, no name
+link, no name
+graphic, no name
+list
+link, no name
+graphic, no name
+button, no name
+list
+FAQ’s, link
+FAQ’s
+graphic, no name
+Announcements, link
+Announcements
+graphic, no name
+Helpdesk, link
+Helpdesk
+graphic, no name
+graphic, no name
+heading level 3, Students
+main landmark
+tab control
+link, no name
+graphic, no name
+LoginLogin, link
+Login, graphic
+Login
+RegisterRegister, link
+Register, graphic
+Register
+Change Mobile no., link
+CSC Login
+heading level 3, Register
+Already have an account?
+Login, link
+list
+1. Guidelines
+2. Register Mobile No.
+3. eKYC
+4. Finish
+heading level 5, 1. One Time Registration (OTR) Guidelines for Scholarships Hosted on NSP
+list
+Mandatory Requirement: One Time Registration (OTR) is mandatory for applying for various scholarship schemes on National Scholarship Portal/other portals.
+Essential Requirement for OTR: Active mobile number is mandatory for OTR.
+No payment of fee is required for OTR.
+Steps for Registration:
+list
+Once allotted an OTR, student can apply for scholarship later when the portal is open for application submission.
+Upon successful registration, a reference number will be sent on the registered mobile number.
+Download and install NSP OTR app and Aadhaar Face RD services on android based devices.
+Perform the Face-Authentication using the generated reference number for OTR sent on your mobile no.
+After successful Face-Authentication OTR will be generated.
+Please apply for Scholarship using OTR. Merely generation of OTR does not tantamount to application for scholarship.
+Aadhaar Requirement: Aadhaar is required for OTR. If Aadhaar is not assigned, registration can be done using Enrollment ID (EID) for Aadhaar. If a minor student has not been assigned Aadhaar yet, registration can be done using Aadhaar of her parent or legal guardian.
+It is advised to update other relevant demographic records (name, dob, gender) to match with Aadhaar/EID.
+Parent/legal guardian of minor applying with their Aadhaar must ensure that while making an application for Aadhaar enrolment of minor shall use the same demographic details (of minor) as used in the OTR.
+One OTR ID is allowed per student. However, parent/legal guardian can generate upto a maximum of two OTRs (for two minor children)
+In case more than one OTR is found for a student, she would be liable for debarment from scholarships.
+I agree to the following:
+check box, no name
+I have read and understood the guidelines for One time Registration.
+check box, no name
+I hereby consent to use the Aadhaar/ OTR for de-duplication on NSP/State/UT Scholarship Portals.
+Cancel, button
+Next, button, unavailable
+graphic, no name
+graphic, no name
+graphic, no name
+graphic, no name
+graphic, no name
+content info landmark
+list
+Copyright Policy, link
+Privacy Policy, link
+Terms and Conditions, link
+Disclaimer, link
+Hyperlink, link
+Site Map, link
+The original text is in English. Translation into other languages is powered by the Bhashini service. Last update on 17 December 2025

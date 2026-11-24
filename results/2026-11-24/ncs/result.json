@@ -1,0 +1,1503 @@
+{
+  "schema": 1,
+  "portal": {
+    "id": "ncs",
+    "name": "National Career Service",
+    "owner": "Ministry of Labour and Employment",
+    "jurisdiction": "Central",
+    "task": "Reach the job search form",
+    "notes": "An announcement dialog opens on load and holds keyboard focus, as a modal should. The audit closes it first, as a user would."
+  },
+  "startedAt": "2026-11-24T13:36:08.199Z",
+  "finishedAt": "2026-11-24T13:36:45.569Z",
+  "tool": {
+    "name": "pahunch",
+    "version": "0.1.0",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/159.0.8154.6 Safari/537.36 pahunch/0.1.0 (+https://github.com/DevGurav/pahunch)",
+    "browser": "chromium 159.0.8154.6",
+    "axe": "4.14.1"
+  },
+  "pages": [
+    {
+      "requested": "https://www.ncs.gov.in/",
+      "finalUrl": "https://ncs.gov.in/",
+      "status": 200,
+      "title": "NcsNewWebsite"
+    }
+  ],
+  "robots": {
+    "robotsUrl": "https://www.ncs.gov.in/robots.txt",
+    "status": 200,
+    "disallowed": false
+  },
+  "critical": [
+    {
+      "index": 0,
+      "label": "Jobs / skills / designation field",
+      "kind": "field",
+      "selector": "input[placeholder=\"Enter jobs/skills/designation\"]",
+      "found": true,
+      "role": "textbox",
+      "name": "Enter jobs/skills/designation",
+      "disabled": false,
+      "reached": true,
+      "focusVisible": true
+    },
+    {
+      "index": 1,
+      "label": "City field",
+      "kind": "field",
+      "selector": "input[placeholder=\"Enter City\"]",
+      "found": true,
+      "role": "textbox",
+      "name": "Enter City",
+      "disabled": false,
+      "reached": true,
+      "focusVisible": true
+    },
+    {
+      "index": 2,
+      "label": "Search Jobs button",
+      "kind": "button",
+      "selector": "button:has-text(\"Search Jobs\")",
+      "found": true,
+      "role": "button",
+      "name": "Search Jobs",
+      "disabled": false,
+      "reached": true,
+      "focusVisible": true
+    }
+  ],
+  "verdict": "barriers",
+  "inconclusiveReasons": [],
+  "findings": [
+    {
+      "check": "axe",
+      "rule": "axe/aria-allowed-role",
+      "severity": "info",
+      "wcag": [],
+      "summary": "ARIA role should be appropriate for the element (1 element).",
+      "target": "article[aria-label=\"Rojgar Mela\"]",
+      "snippet": "<article _ngcontent-ng-c3797088375=\"\" role=\"group\" class=\"update-card active ng-star-inserted\" aria-hidden=\"false\" tabindex=\"0\" aria-label=\"Rojgar Mela\" style=\"transform: translateX(calc(-50%)) scale(1); z-index: 10; opacity: 1; filter: none; pointer-events: auto;\">",
+      "details": {
+        "impact": "minor",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/aria-allowed-role?application=playwright",
+        "nodes": [
+          {
+            "target": "article[aria-label=\"Rojgar Mela\"]",
+            "html": "<article _ngcontent-ng-c3797088375=\"\" role=\"group\" class=\"update-card active ng-star-inserted\" aria-hidden=\"false\" tabindex=\"0\" aria-label=\"Rojgar Mela\" style=\"transform: translateX(calc(-50%)) scale(1); z-index: 10; opacity: 1; filter: none; pointer-events: auto;\">",
+            "failureSummary": "Fix any of the following:\n  ARIA role group is not allowed for given element"
+          }
+        ]
+      }
+    },
+    {
+      "check": "axe",
+      "rule": "axe/aria-required-children",
+      "severity": "barrier",
+      "wcag": [
+        "1.3.1"
+      ],
+      "summary": "Certain ARIA roles must contain particular children (1 element).",
+      "target": ".calendar-grid",
+      "snippet": "<div _ngcontent-ng-c3797088375=\"\" role=\"grid\" class=\"calendar-grid\">",
+      "details": {
+        "impact": "critical",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/aria-required-children?application=playwright",
+        "nodes": [
+          {
+            "target": ".calendar-grid",
+            "html": "<div _ngcontent-ng-c3797088375=\"\" role=\"grid\" class=\"calendar-grid\">",
+            "failureSummary": "Fix any of the following:\n  Element has children which are not allowed: [role=columnheader], button[aria-label]"
+          }
+        ]
+      }
+    },
+    {
+      "check": "axe",
+      "rule": "axe/aria-required-parent",
+      "severity": "barrier",
+      "wcag": [
+        "1.3.1"
+      ],
+      "summary": "Certain ARIA roles must be contained by particular parents (7 elements).",
+      "target": ".weekday[role=\"columnheader\"][_ngcontent-ng-c3797088375=\"\"]:nth-child(1)",
+      "snippet": "<span _ngcontent-ng-c3797088375=\"\" role=\"columnheader\" class=\"weekday\">Mon</span>",
+      "details": {
+        "impact": "critical",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/aria-required-parent?application=playwright",
+        "nodes": [
+          {
+            "target": ".weekday[role=\"columnheader\"][_ngcontent-ng-c3797088375=\"\"]:nth-child(1)",
+            "html": "<span _ngcontent-ng-c3797088375=\"\" role=\"columnheader\" class=\"weekday\">Mon</span>",
+            "failureSummary": "Fix any of the following:\n  Required ARIA parent role not present: row"
+          },
+          {
+            "target": ".weekday[role=\"columnheader\"][_ngcontent-ng-c3797088375=\"\"]:nth-child(2)",
+            "html": "<span _ngcontent-ng-c3797088375=\"\" role=\"columnheader\" class=\"weekday\">Tue</span>",
+            "failureSummary": "Fix any of the following:\n  Required ARIA parent role not present: row"
+          },
+          {
+            "target": ".weekday[role=\"columnheader\"][_ngcontent-ng-c3797088375=\"\"]:nth-child(3)",
+            "html": "<span _ngcontent-ng-c3797088375=\"\" role=\"columnheader\" class=\"weekday\">Wed</span>",
+            "failureSummary": "Fix any of the following:\n  Required ARIA parent role not present: row"
+          },
+          {
+            "target": ".weekday[role=\"columnheader\"][_ngcontent-ng-c3797088375=\"\"]:nth-child(4)",
+            "html": "<span _ngcontent-ng-c3797088375=\"\" role=\"columnheader\" class=\"weekday\">Thu</span>",
+            "failureSummary": "Fix any of the following:\n  Required ARIA parent role not present: row"
+          },
+          {
+            "target": ".weekday[role=\"columnheader\"][_ngcontent-ng-c3797088375=\"\"]:nth-child(5)",
+            "html": "<span _ngcontent-ng-c3797088375=\"\" role=\"columnheader\" class=\"weekday\">Fri</span>",
+            "failureSummary": "Fix any of the following:\n  Required ARIA parent role not present: row"
+          }
+        ]
+      }
+    },
+    {
+      "check": "axe",
+      "rule": "axe/color-contrast",
+      "severity": "barrier",
+      "wcag": [
+        "1.4.3"
+      ],
+      "summary": "Elements must meet minimum color contrast ratio thresholds (15 elements).",
+      "target": ".company-link[title=\"SWIGGY LIMITED\"][aria-label=\"View jobs at SWIGGY LIMITED\"]:nth-child(2) > .company-name[_ngcontent-ng-c339973063=\"\"]",
+      "snippet": "<span _ngcontent-ng-c339973063=\"\" class=\"company-name\">SWIGGY LIMITED</span>",
+      "details": {
+        "impact": "serious",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/color-contrast?application=playwright",
+        "nodes": [
+          {
+            "target": ".company-link[title=\"SWIGGY LIMITED\"][aria-label=\"View jobs at SWIGGY LIMITED\"]:nth-child(2) > .company-name[_ngcontent-ng-c339973063=\"\"]",
+            "html": "<span _ngcontent-ng-c339973063=\"\" class=\"company-name\">SWIGGY LIMITED</span>",
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.67 (foreground color: #8a8483, background color: #ffffff, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "target": ".company-link[_ngcontent-ng-c339973063=\"\"]:nth-child(3) > .company-name[_ngcontent-ng-c339973063=\"\"]",
+            "html": "<span _ngcontent-ng-c339973063=\"\" class=\"company-name\">Cassius Technologies Private Limited</span>",
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.67 (foreground color: #8a8483, background color: #ffffff, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "target": ".company-link[_ngcontent-ng-c339973063=\"\"]:nth-child(4) > .company-name[_ngcontent-ng-c339973063=\"\"]",
+            "html": "<span _ngcontent-ng-c339973063=\"\" class=\"company-name\">T.M.INPUTS AND SERVICES PRIVATE LIMITED</span>",
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.67 (foreground color: #8a8483, background color: #ffffff, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "target": ".company-link[title=\"Quess Corp Limited\"][_ngcontent-ng-c339973063=\"\"]:nth-child(5) > .company-name[_ngcontent-ng-c339973063=\"\"]",
+            "html": "<span _ngcontent-ng-c339973063=\"\" class=\"company-name\">Quess Corp Limited</span>",
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.67 (foreground color: #8a8483, background color: #ffffff, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "target": ".company-link[title=\"Apna\"][aria-label=\"View jobs at Apna\"]:nth-child(6) > .company-name[_ngcontent-ng-c339973063=\"\"]",
+            "html": "<span _ngcontent-ng-c339973063=\"\" class=\"company-name\">Apna</span>",
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.67 (foreground color: #8a8483, background color: #ffffff, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1"
+          }
+        ]
+      }
+    },
+    {
+      "check": "axe",
+      "rule": "axe/heading-order",
+      "severity": "info",
+      "wcag": [],
+      "summary": "Heading levels should only increase by one (1 element).",
+      "target": ".col-md-3.col-6[_ngcontent-ng-c2105119963=\"\"]:nth-child(1) > h5",
+      "snippet": "<h5 _ngcontent-ng-c2105119963=\"\">NCS</h5>",
+      "details": {
+        "impact": "moderate",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/heading-order?application=playwright",
+        "nodes": [
+          {
+            "target": ".col-md-3.col-6[_ngcontent-ng-c2105119963=\"\"]:nth-child(1) > h5",
+            "html": "<h5 _ngcontent-ng-c2105119963=\"\">NCS</h5>",
+            "failureSummary": "Fix any of the following:\n  Heading order invalid"
+          }
+        ]
+      }
+    },
+    {
+      "check": "axe",
+      "rule": "axe/label-content-name-mismatch",
+      "severity": "barrier",
+      "wcag": [
+        "2.5.3"
+      ],
+      "summary": "Elements must have their visible text as part of their accessible name (1 element).",
+      "target": ".app-store-badge",
+      "snippet": "<a _ngcontent-ng-c1725812278=\"\" href=\"https://apps.apple.com/in/app/national-career-service-ncs/id6759326457\" target=\"_blank\" rel=\"noopener\" aria-label=\"Download on the App Store\" class=\"app-store-badge\">",
+      "details": {
+        "impact": "serious",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright",
+        "nodes": [
+          {
+            "target": ".app-store-badge",
+            "html": "<a _ngcontent-ng-c1725812278=\"\" href=\"https://apps.apple.com/in/app/national-career-service-ncs/id6759326457\" target=\"_blank\" rel=\"noopener\" aria-label=\"Download on the App Store\" class=\"app-store-badge\">",
+            "failureSummary": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+          }
+        ]
+      }
+    },
+    {
+      "check": "axe",
+      "rule": "axe/landmark-one-main",
+      "severity": "info",
+      "wcag": [],
+      "summary": "Document should have one main landmark (1 element).",
+      "target": "html",
+      "snippet": "<html lang=\"en\">",
+      "details": {
+        "impact": "moderate",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/landmark-one-main?application=playwright",
+        "nodes": [
+          {
+            "target": "html",
+            "html": "<html lang=\"en\">",
+            "failureSummary": "Fix all of the following:\n  Document does not have a main landmark"
+          }
+        ]
+      }
+    },
+    {
+      "check": "axe",
+      "rule": "axe/region",
+      "severity": "info",
+      "wcag": [],
+      "summary": "All page content should be contained by landmarks (175 elements).",
+      "target": ".left-flag-div",
+      "snippet": "<div _ngcontent-ng-c2244526599=\"\" class=\"left-flag-div d-flex align-items-center gap-2\"><img _ngcontent-ng-c2244526599=\"\" src=\"../../../assets/icon/Inidan-Flag.png\" alt=\"Indian flag\" data-clarity-loaded=\"1xj1o0t\"><h1 _ngcontent-ng-c2244526599=\"\" class=\"gov-text m-0\">Government of India</h1></div>",
+      "details": {
+        "impact": "moderate",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/region?application=playwright",
+        "nodes": [
+          {
+            "target": ".left-flag-div",
+            "html": "<div _ngcontent-ng-c2244526599=\"\" class=\"left-flag-div d-flex align-items-center gap-2\"><img _ngcontent-ng-c2244526599=\"\" src=\"../../../assets/icon/Inidan-Flag.png\" alt=\"Indian flag\" data-clarity-loaded=\"1xj1o0t\"><h1 _ngcontent-ng-c2244526599=\"\" class=\"gov-text m-0\">Government of India</h1></div>",
+            "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+          },
+          {
+            "target": ".bhashini-dropdown-btn",
+            "html": "<button role=\"combobox\" aria-label=\"Language Translator\" aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-controls=\"bhashiniLanguageDropdown\" class=\"bhashini-dropdown-btn\">",
+            "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+          },
+          {
+            "target": ".font-inc-dec",
+            "html": "<div _ngcontent-ng-c2244526599=\"\" class=\"font-inc-dec d-flex align-items-center gap-2\">",
+            "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+          },
+          {
+            "target": ".skip-text",
+            "html": "<h1 _ngcontent-ng-c2244526599=\"\" class=\"skip-text d-flex align-items-center gap-2 m-0\">",
+            "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+          },
+          {
+            "target": ".pe-3 > img",
+            "html": "<img _ngcontent-ng-c3049235200=\"\" src=\"../../../assets/logo/ministry-of-labour.svg\" alt=\"Ministry of Labour and Employment\" class=\"ng-tns-c3049235200-0\">",
+            "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+          }
+        ]
+      }
+    },
+    {
+      "check": "pdf",
+      "rule": "pdf-untagged",
+      "severity": "info",
+      "wcag": [
+        "1.3.1"
+      ],
+      "summary": "The PDF has text but no tags.",
+      "target": "https://ncs.gov.in/assets/pdf/Jobseeker%20registration%20flowchart%201.pdf",
+      "details": {
+        "pages": 1
+      }
+    },
+    {
+      "check": "pdf",
+      "rule": "pdf-untagged",
+      "severity": "info",
+      "wcag": [
+        "1.3.1"
+      ],
+      "summary": "The PDF has text but no tags.",
+      "target": "https://ncsdocsstorage.blob.core.windows.net/ncsdocsstorage/common%2Fwhatsnew%2Fnewsletter_1786551484415.pdf?sv=2023-11-03&spr=https&st=2026-08-12T16%3A13%3A04Z&se=2028-08-12T16%3A18%3A04Z&sr=b&sp=r&sig=J6d35Ykkg%2FeUOZf0PfJoDniyrL1B8z5ZUIctdiE5UXc%3D",
+      "details": {
+        "pages": 5
+      }
+    },
+    {
+      "check": "pdf",
+      "rule": "pdf-untagged",
+      "severity": "info",
+      "wcag": [
+        "1.3.1"
+      ],
+      "summary": "The PDF has text but no tags.",
+      "target": "https://ncsdocsstorage.blob.core.windows.net/ncsdocsstorage/common%2Fwhatsnew%2Fnewsletter_1786551955970.pdf?sv=2023-11-03&spr=https&st=2026-08-12T16%3A20%3A56Z&se=2028-08-12T16%3A25%3A56Z&sr=b&sp=r&sig=xxmfZ2IWn8GaGFjPWXNVCRTlfR65Q1F9Lgy69b8wV6w%3D",
+      "details": {
+        "pages": 3
+      }
+    },
+    {
+      "check": "pdf",
+      "rule": "pdf-untagged",
+      "severity": "info",
+      "wcag": [
+        "1.3.1"
+      ],
+      "summary": "The PDF has text but no tags.",
+      "target": "https://ncs.gov.in/assets/pdf/Employer%20registration%20flowchart%201.pdf",
+      "details": {
+        "pages": 1
+      }
+    },
+    {
+      "check": "pdf",
+      "rule": "pdf-untagged",
+      "severity": "info",
+      "wcag": [
+        "1.3.1"
+      ],
+      "summary": "The PDF has text but no tags.",
+      "target": "https://ncs.gov.in/assets/pdf/Indian%20Staffing%20Federation%20(ISF%20Registration%20Flow).pdf",
+      "details": {
+        "pages": 19
+      }
+    }
+  ],
+  "counts": {
+    "blocker": 0,
+    "barrier": 4,
+    "info": 9
+  },
+  "evidence": {
+    "names": {
+      "controls": [
+        {
+          "index": 0,
+          "label": "Jobs / skills / designation field",
+          "kind": "field",
+          "role": "textbox",
+          "name": "Enter jobs/skills/designation",
+          "disabled": false,
+          "hidden": false,
+          "visible": true,
+          "snapshot": "- textbox \"Enter jobs/skills/designation\""
+        },
+        {
+          "index": 1,
+          "label": "City field",
+          "kind": "field",
+          "role": "textbox",
+          "name": "Enter City",
+          "disabled": false,
+          "hidden": false,
+          "visible": true,
+          "snapshot": "- textbox \"Enter City\""
+        },
+        {
+          "index": 2,
+          "label": "Search Jobs button",
+          "kind": "button",
+          "role": "button",
+          "name": "Search Jobs",
+          "disabled": false,
+          "hidden": false,
+          "visible": true,
+          "snapshot": "- button \"Search Jobs\""
+        }
+      ]
+    },
+    "captcha": {
+      "groups": []
+    },
+    "lang": {
+      "frames": [
+        {
+          "htmlLang": "en",
+          "indicTotal": 0,
+          "indicUnmarked": 0,
+          "latinAtRoot": 13608,
+          "indicAtRoot": 0,
+          "samples": []
+        }
+      ]
+    },
+    "axe": {
+      "version": "4.14.1",
+      "violations": 8,
+      "incomplete": 3,
+      "passes": 46
+    },
+    "keyboard": {
+      "presses": 198,
+      "completedCycle": true,
+      "stopsSeen": 196,
+      "inModal": false,
+      "trap": null,
+      "controls": [
+        {
+          "index": 0,
+          "label": "Jobs / skills / designation field",
+          "reached": true,
+          "focusVisible": true,
+          "firstStep": 77
+        },
+        {
+          "index": 1,
+          "label": "City field",
+          "reached": true,
+          "focusVisible": true,
+          "firstStep": 78
+        },
+        {
+          "index": 2,
+          "label": "Search Jobs button",
+          "reached": true,
+          "focusVisible": true,
+          "firstStep": 79
+        }
+      ],
+      "sequence": [
+        {
+          "step": 1,
+          "desc": "button \"Namaste! 👋 Ask me about employment and \"",
+          "focusVisible": true
+        },
+        {
+          "step": 2,
+          "desc": "button \"Dismiss\"",
+          "focusVisible": true
+        },
+        {
+          "step": 3,
+          "desc": "button \"Open Employment and Skill Development As\"",
+          "focusVisible": true
+        },
+        {
+          "step": 4,
+          "desc": "a \"Get in touch\"",
+          "focusVisible": true
+        },
+        {
+          "step": 5,
+          "desc": "a \"Facebook\"",
+          "focusVisible": true
+        },
+        {
+          "step": 6,
+          "desc": "a \"X\"",
+          "focusVisible": true
+        },
+        {
+          "step": 7,
+          "desc": "a \"Instagram\"",
+          "focusVisible": true
+        },
+        {
+          "step": 8,
+          "desc": "a \"YouTube\"",
+          "focusVisible": true
+        },
+        {
+          "step": 9,
+          "desc": "a \"Directorate General of Employment (DGE) \"",
+          "focusVisible": true
+        },
+        {
+          "step": 10,
+          "desc": "a \"For Jobseekers\"",
+          "focusVisible": true
+        },
+        {
+          "step": 11,
+          "desc": "a \"For Employers\"",
+          "focusVisible": true
+        },
+        {
+          "step": 12,
+          "desc": "a \"For Career Center\"",
+          "focusVisible": true
+        },
+        {
+          "step": 13,
+          "desc": "a \"For Career Counsellor\"",
+          "focusVisible": true
+        },
+        {
+          "step": 14,
+          "desc": "a \"About us\"",
+          "focusVisible": true
+        },
+        {
+          "step": 15,
+          "desc": "a \"Career Information\"",
+          "focusVisible": true
+        },
+        {
+          "step": 16,
+          "desc": "a \"Jobs for Differently Abled\"",
+          "focusVisible": true
+        },
+        {
+          "step": 17,
+          "desc": "a \"Government Jobs\"",
+          "focusVisible": true
+        },
+        {
+          "step": 18,
+          "desc": "a \"International Jobs\"",
+          "focusVisible": true
+        },
+        {
+          "step": 19,
+          "desc": "a \"Sitemap\"",
+          "focusVisible": true
+        },
+        {
+          "step": 20,
+          "desc": "a \"Right to Information\"",
+          "focusVisible": true
+        },
+        {
+          "step": 21,
+          "desc": "a \"Disclaimer\"",
+          "focusVisible": true
+        },
+        {
+          "step": 22,
+          "desc": "a \"FAQs\"",
+          "focusVisible": true
+        },
+        {
+          "step": 23,
+          "desc": "a \"Feedback\"",
+          "focusVisible": true
+        },
+        {
+          "step": 24,
+          "desc": "a \"Contact Us\"",
+          "focusVisible": true
+        },
+        {
+          "step": 25,
+          "desc": "a \"Terms & Conditions\"",
+          "focusVisible": true
+        },
+        {
+          "step": 26,
+          "desc": "a \"Privacy Policy\"",
+          "focusVisible": true
+        },
+        {
+          "step": 28,
+          "desc": "button \"Language Translator\"",
+          "focusVisible": true
+        },
+        {
+          "step": 29,
+          "desc": "a \"Facebook\"",
+          "focusVisible": true
+        },
+        {
+          "step": 30,
+          "desc": "a \"X\"",
+          "focusVisible": true
+        },
+        {
+          "step": 31,
+          "desc": "a \"Instagram\"",
+          "focusVisible": true
+        },
+        {
+          "step": 32,
+          "desc": "a \"YouTube\"",
+          "focusVisible": true
+        },
+        {
+          "step": 33,
+          "desc": "button \"Jobseekers\"",
+          "focusVisible": true
+        },
+        {
+          "step": 34,
+          "desc": "button \"Employers\"",
+          "focusVisible": true
+        },
+        {
+          "step": 35,
+          "desc": "a \"Search jobs\"",
+          "focusVisible": true
+        },
+        {
+          "step": 36,
+          "desc": "button \"Login/Signup\"",
+          "focusVisible": true
+        },
+        {
+          "step": 37,
+          "desc": "button \"Jobseekers\"",
+          "focusVisible": true
+        },
+        {
+          "step": 38,
+          "desc": "button \"Employers\"",
+          "focusVisible": true
+        },
+        {
+          "step": 39,
+          "desc": "button \"Counsellors\"",
+          "focusVisible": true
+        },
+        {
+          "step": 40,
+          "desc": "button \"Career Centers\"",
+          "focusVisible": true
+        },
+        {
+          "step": 41,
+          "desc": "button \"Resources\"",
+          "focusVisible": true
+        },
+        {
+          "step": 42,
+          "desc": "a \"Classified Jobs\"",
+          "focusVisible": true
+        },
+        {
+          "step": 43,
+          "desc": "div \"Pradhan Mantri Viksit Bharat Rozgar Yoja\"",
+          "focusVisible": true
+        },
+        {
+          "step": 44,
+          "desc": "div \"APAAR\"",
+          "focusVisible": true
+        },
+        {
+          "step": 45,
+          "desc": "div \"EPFO\"",
+          "focusVisible": true
+        },
+        {
+          "step": 46,
+          "desc": "div \"PM Internship Scheme\"",
+          "focusVisible": true
+        },
+        {
+          "step": 47,
+          "desc": "button \"Show banner 1\"",
+          "focusVisible": true
+        },
+        {
+          "step": 48,
+          "desc": "button \"Show banner 2\"",
+          "focusVisible": true
+        },
+        {
+          "step": 49,
+          "desc": "button \"Show banner 3\"",
+          "focusVisible": true
+        },
+        {
+          "step": 50,
+          "desc": "button \"Show banner 4\"",
+          "focusVisible": true
+        },
+        {
+          "step": 51,
+          "desc": "a \"Internships\"",
+          "focusVisible": true
+        },
+        {
+          "step": 52,
+          "desc": "a \"Jobs\"",
+          "focusVisible": true
+        },
+        {
+          "step": 53,
+          "desc": "a \"Career Guidance\"",
+          "focusVisible": true
+        },
+        {
+          "step": 54,
+          "desc": "a \"Career Centers\"",
+          "focusVisible": true
+        },
+        {
+          "step": 55,
+          "desc": "a \"AI Resume Building\"",
+          "focusVisible": true
+        },
+        {
+          "step": 56,
+          "desc": "a \"Job Fairs\"",
+          "focusVisible": true
+        },
+        {
+          "step": 57,
+          "desc": "button \"Previous news\"",
+          "focusVisible": true
+        },
+        {
+          "step": 58,
+          "desc": "div \"INDIAN COAST GUARD DIRECTORATE OF RECRUI\"",
+          "focusVisible": true
+        },
+        {
+          "step": 59,
+          "desc": "button \"Learn More\"",
+          "focusVisible": true
+        },
+        {
+          "step": 60,
+          "desc": "button \"Next news\"",
+          "focusVisible": true
+        },
+        {
+          "step": 61,
+          "desc": "a \"↗ VIEW MORE\"",
+          "focusVisible": true
+        },
+        {
+          "step": 62,
+          "desc": "a \"View jobs at Apna\"",
+          "focusVisible": true
+        },
+        {
+          "step": 63,
+          "desc": "a \"View jobs at SWIGGY LIMITED\"",
+          "focusVisible": true
+        },
+        {
+          "step": 64,
+          "desc": "a \"View jobs at Cassius Technologies Privat\"",
+          "focusVisible": true
+        },
+        {
+          "step": 65,
+          "desc": "a \"View jobs at T.M.INPUTS AND SERVICES PRI\"",
+          "focusVisible": true
+        },
+        {
+          "step": 66,
+          "desc": "a \"View jobs at Quess Corp Limited\"",
+          "focusVisible": true
+        },
+        {
+          "step": 67,
+          "desc": "a \"View jobs at Apna\"",
+          "focusVisible": true
+        },
+        {
+          "step": 68,
+          "desc": "a \"View jobs at SWIGGY LIMITED\"",
+          "focusVisible": true
+        },
+        {
+          "step": 69,
+          "desc": "a \"View jobs at Cassius Technologies Privat\"",
+          "focusVisible": true
+        },
+        {
+          "step": 70,
+          "desc": "a \"View jobs at T.M.INPUTS AND SERVICES PRI\"",
+          "focusVisible": true
+        },
+        {
+          "step": 71,
+          "desc": "a \"View jobs at Quess Corp Limited\"",
+          "focusVisible": true
+        },
+        {
+          "step": 72,
+          "desc": "button \"For Jobseekers\"",
+          "focusVisible": true
+        },
+        {
+          "step": 73,
+          "desc": "button \"For Employers\"",
+          "focusVisible": true
+        },
+        {
+          "step": 74,
+          "desc": "button \"For Counsellors\"",
+          "focusVisible": true
+        },
+        {
+          "step": 75,
+          "desc": "button \"For Career Centers\"",
+          "focusVisible": true
+        },
+        {
+          "step": 76,
+          "desc": "button \"Login / Register\"",
+          "focusVisible": true
+        },
+        {
+          "step": 77,
+          "desc": "input \"Enter jobs/skills/designation\"",
+          "focusVisible": true,
+          "critical": 0
+        },
+        {
+          "step": 78,
+          "desc": "input \"Enter City\"",
+          "focusVisible": true,
+          "critical": 1
+        },
+        {
+          "step": 79,
+          "desc": "button \"Search Jobs\"",
+          "focusVisible": true,
+          "critical": 2
+        },
+        {
+          "step": 80,
+          "desc": "a \"IT & Communication\"",
+          "focusVisible": true
+        },
+        {
+          "step": 81,
+          "desc": "a \"Transportation and Storage\"",
+          "focusVisible": true
+        },
+        {
+          "step": 82,
+          "desc": "a \"Education\"",
+          "focusVisible": true
+        },
+        {
+          "step": 83,
+          "desc": "a \"Operations & Support\"",
+          "focusVisible": true
+        },
+        {
+          "step": 84,
+          "desc": "a \"Manufacturing\"",
+          "focusVisible": true
+        },
+        {
+          "step": 85,
+          "desc": "a \"Finance and Insurance\"",
+          "focusVisible": true
+        },
+        {
+          "step": 86,
+          "desc": "a \"Health\"",
+          "focusVisible": true
+        },
+        {
+          "step": 87,
+          "desc": "a \"Power and Energy\"",
+          "focusVisible": true
+        },
+        {
+          "step": 88,
+          "desc": "a \"Hospitality\"",
+          "focusVisible": true
+        },
+        {
+          "step": 89,
+          "desc": "a \"Jobs for Women\"",
+          "focusVisible": true
+        },
+        {
+          "step": 90,
+          "desc": "a \"Jobs for Ex-Servicemen\"",
+          "focusVisible": true
+        },
+        {
+          "step": 91,
+          "desc": "button \"Domestic Jobs\"",
+          "focusVisible": true
+        },
+        {
+          "step": 92,
+          "desc": "button \"International Jobs\"",
+          "focusVisible": true
+        },
+        {
+          "step": 93,
+          "desc": "input",
+          "focusVisible": true
+        },
+        {
+          "step": 94,
+          "desc": "article \"Posted on 18/11/26 K Back Office Executi\"",
+          "focusVisible": true
+        },
+        {
+          "step": 95,
+          "desc": "button \"Save job\"",
+          "focusVisible": true
+        },
+        {
+          "step": 96,
+          "desc": "article \"Posted on 04/09/26 T Data Entry Operator\"",
+          "focusVisible": true
+        },
+        {
+          "step": 97,
+          "desc": "button \"Save job\"",
+          "focusVisible": true
+        },
+        {
+          "step": 98,
+          "desc": "article \"Posted on 05/11/26 V Executive Assistant\"",
+          "focusVisible": true
+        },
+        {
+          "step": 99,
+          "desc": "button \"Save job\"",
+          "focusVisible": true
+        },
+        {
+          "step": 100,
+          "desc": "article \"Posted on 19/10/26 S Autocad Designer Sy\"",
+          "focusVisible": true
+        },
+        {
+          "step": 101,
+          "desc": "button \"Save job\"",
+          "focusVisible": true
+        },
+        {
+          "step": 102,
+          "desc": "article \"Posted on 09/10/26 B DATA ENTRY OPERATOR\"",
+          "focusVisible": true
+        },
+        {
+          "step": 103,
+          "desc": "button \"Save job\"",
+          "focusVisible": true
+        },
+        {
+          "step": 104,
+          "desc": "article \"Posted on 10/09/26 R Office Assistant Ro\"",
+          "focusVisible": true
+        },
+        {
+          "step": 105,
+          "desc": "button \"Save job\"",
+          "focusVisible": true
+        },
+        {
+          "step": 106,
+          "desc": "article \"Posted on 31/08/26 H Work from home Hoor\"",
+          "focusVisible": true
+        },
+        {
+          "step": 107,
+          "desc": "button \"Save job\"",
+          "focusVisible": true
+        },
+        {
+          "step": 108,
+          "desc": "article \"Posted on 28/09/26 R Executive Assistant\"",
+          "focusVisible": true
+        },
+        {
+          "step": 109,
+          "desc": "button \"Save job\"",
+          "focusVisible": true
+        },
+        {
+          "step": 110,
+          "desc": "article \"Posted on 30/10/26 A urgent hiring for c\"",
+          "focusVisible": true
+        },
+        {
+          "step": 111,
+          "desc": "button \"Save job\"",
+          "focusVisible": true
+        },
+        {
+          "step": 112,
+          "desc": "article \"Posted on 22/09/26 C Work From Home Chan\"",
+          "focusVisible": true
+        },
+        {
+          "step": 113,
+          "desc": "button \"Save job\"",
+          "focusVisible": true
+        },
+        {
+          "step": 114,
+          "desc": "article \"Posted on 25/10/26 P Work from home Pall\"",
+          "focusVisible": true
+        },
+        {
+          "step": 115,
+          "desc": "button \"Save job\"",
+          "focusVisible": true
+        },
+        {
+          "step": 116,
+          "desc": "article \"Posted on 03/11/26 T NEED A NEW STAFF FO\"",
+          "focusVisible": true
+        },
+        {
+          "step": 117,
+          "desc": "button \"Save job\"",
+          "focusVisible": true
+        },
+        {
+          "step": 118,
+          "desc": "article \"Posted on 08/09/26 S Food and Beverage S\"",
+          "focusVisible": true
+        },
+        {
+          "step": 119,
+          "desc": "button \"Save job\"",
+          "focusVisible": true
+        },
+        {
+          "step": 120,
+          "desc": "article \"Posted on 11/11/26 S BACK OFFICE EXECUTI\"",
+          "focusVisible": true
+        },
+        {
+          "step": 121,
+          "desc": "button \"Save job\"",
+          "focusVisible": true
+        },
+        {
+          "step": 122,
+          "desc": "article \"Posted on 17/09/26 F Work From Home FLP \"",
+          "focusVisible": true
+        },
+        {
+          "step": 123,
+          "desc": "button \"Save job\"",
+          "focusVisible": true
+        },
+        {
+          "step": 124,
+          "desc": "article \"Posted on 23/10/26 E Production Trainee \"",
+          "focusVisible": true
+        },
+        {
+          "step": 125,
+          "desc": "button \"Save job\"",
+          "focusVisible": true
+        },
+        {
+          "step": 126,
+          "desc": "article \"Posted on 07/09/26 R JUNIOR ACCOUNTANT R\"",
+          "focusVisible": true
+        },
+        {
+          "step": 127,
+          "desc": "button \"Save job\"",
+          "focusVisible": true
+        },
+        {
+          "step": 128,
+          "desc": "article \"Posted on 24/09/26 E Work From Home Eagl\"",
+          "focusVisible": true
+        },
+        {
+          "step": 129,
+          "desc": "button \"Save job\"",
+          "focusVisible": true
+        },
+        {
+          "step": 130,
+          "desc": "article \"Posted on 12/09/26 F WORK FROM HOME FLP \"",
+          "focusVisible": true
+        },
+        {
+          "step": 131,
+          "desc": "button \"Save job\"",
+          "focusVisible": true
+        },
+        {
+          "step": 132,
+          "desc": "article \"Posted on 16/10/26 M Part-Time Customer \"",
+          "focusVisible": true
+        },
+        {
+          "step": 133,
+          "desc": "button \"Save job\"",
+          "focusVisible": true
+        },
+        {
+          "step": 134,
+          "desc": "article \"Posted on 03/11/26 H Business developmen\"",
+          "focusVisible": true
+        },
+        {
+          "step": 135,
+          "desc": "button \"Save job\"",
+          "focusVisible": true
+        },
+        {
+          "step": 136,
+          "desc": "button \"Next jobs\"",
+          "focusVisible": true
+        },
+        {
+          "step": 137,
+          "desc": "a \"View all jobs\"",
+          "focusVisible": true
+        },
+        {
+          "step": 138,
+          "desc": "article \"MINI JOB FAIR\"",
+          "focusVisible": true
+        },
+        {
+          "step": 139,
+          "desc": "select \"Year\"",
+          "focusVisible": true
+        },
+        {
+          "step": 140,
+          "desc": "button \"Monday, October 26, 2026\"",
+          "focusVisible": true
+        },
+        {
+          "step": 141,
+          "desc": "button \"Tuesday, October 27, 2026\"",
+          "focusVisible": true
+        },
+        {
+          "step": 142,
+          "desc": "button \"Wednesday, October 28, 2026\"",
+          "focusVisible": true
+        },
+        {
+          "step": 143,
+          "desc": "button \"Thursday, October 29, 2026\"",
+          "focusVisible": true
+        },
+        {
+          "step": 144,
+          "desc": "button \"Friday, October 30, 2026\"",
+          "focusVisible": true
+        },
+        {
+          "step": 145,
+          "desc": "button \"Saturday, October 31, 2026\"",
+          "focusVisible": true
+        },
+        {
+          "step": 146,
+          "desc": "button \"Sunday, November 1, 2026\"",
+          "focusVisible": true
+        },
+        {
+          "step": 147,
+          "desc": "button \"Monday, November 2, 2026\"",
+          "focusVisible": true
+        },
+        {
+          "step": 148,
+          "desc": "button \"Tuesday, November 3, 2026\"",
+          "focusVisible": true
+        },
+        {
+          "step": 149,
+          "desc": "button \"Wednesday, November 4, 2026\"",
+          "focusVisible": true
+        },
+        {
+          "step": 150,
+          "desc": "button \"Thursday, November 5, 2026\"",
+          "focusVisible": true
+        },
+        {
+          "step": 151,
+          "desc": "button \"Friday, November 6, 2026\"",
+          "focusVisible": true
+        },
+        {
+          "step": 152,
+          "desc": "button \"Saturday, November 7, 2026\"",
+          "focusVisible": true
+        },
+        {
+          "step": 153,
+          "desc": "button \"Sunday, November 8, 2026\"",
+          "focusVisible": true
+        },
+        {
+          "step": 154,
+          "desc": "button \"Monday, November 9, 2026\"",
+          "focusVisible": true
+        },
+        {
+          "step": 155,
+          "desc": "button \"Tuesday, November 10, 2026\"",
+          "focusVisible": true
+        },
+        {
+          "step": 156,
+          "desc": "button \"Wednesday, November 11, 2026\"",
+          "focusVisible": true
+        },
+        {
+          "step": 157,
+          "desc": "button \"Thursday, November 12, 2026\"",
+          "focusVisible": true
+        },
+        {
+          "step": 158,
+          "desc": "button \"Friday, November 13, 2026\"",
+          "focusVisible": true
+        },
+        {
+          "step": 159,
+          "desc": "button \"Saturday, November 14, 2026\"",
+          "focusVisible": true
+        },
+        {
+          "step": 160,
+          "desc": "button \"Sunday, November 15, 2026\"",
+          "focusVisible": true
+        },
+        {
+          "step": 161,
+          "desc": "button \"Monday, November 16, 2026\"",
+          "focusVisible": true
+        },
+        {
+          "step": 162,
+          "desc": "button \"Tuesday, November 17, 2026\"",
+          "focusVisible": true
+        },
+        {
+          "step": 163,
+          "desc": "button \"Wednesday, November 18, 2026\"",
+          "focusVisible": true
+        },
+        {
+          "step": 164,
+          "desc": "button \"Thursday, November 19, 2026\"",
+          "focusVisible": true
+        },
+        {
+          "step": 165,
+          "desc": "button \"Friday, November 20, 2026\"",
+          "focusVisible": true
+        },
+        {
+          "step": 166,
+          "desc": "button \"Saturday, November 21, 2026\"",
+          "focusVisible": true
+        },
+        {
+          "step": 167,
+          "desc": "button \"Sunday, November 22, 2026\"",
+          "focusVisible": true
+        },
+        {
+          "step": 168,
+          "desc": "button \"Monday, November 23, 2026, event or job \"",
+          "focusVisible": true
+        },
+        {
+          "step": 169,
+          "desc": "button \"Tuesday, November 24, 2026, event or job\"",
+          "focusVisible": true
+        },
+        {
+          "step": 170,
+          "desc": "button \"Wednesday, November 25, 2026, event or j\"",
+          "focusVisible": true
+        },
+        {
+          "step": 171,
+          "desc": "button \"Thursday, November 26, 2026, event or jo\"",
+          "focusVisible": true
+        },
+        {
+          "step": 172,
+          "desc": "button \"Friday, November 27, 2026, event or job \"",
+          "focusVisible": true
+        },
+        {
+          "step": 173,
+          "desc": "button \"Saturday, November 28, 2026, event or jo\"",
+          "focusVisible": true
+        },
+        {
+          "step": 174,
+          "desc": "button \"Sunday, November 29, 2026\"",
+          "focusVisible": true
+        },
+        {
+          "step": 175,
+          "desc": "button \"Monday, November 30, 2026\"",
+          "focusVisible": true
+        },
+        {
+          "step": 176,
+          "desc": "button \"Tuesday, December 1, 2026\"",
+          "focusVisible": true
+        },
+        {
+          "step": 177,
+          "desc": "button \"Wednesday, December 2, 2026\"",
+          "focusVisible": true
+        },
+        {
+          "step": 178,
+          "desc": "button \"Thursday, December 3, 2026\"",
+          "focusVisible": true
+        },
+        {
+          "step": 179,
+          "desc": "button \"Friday, December 4, 2026\"",
+          "focusVisible": true
+        },
+        {
+          "step": 180,
+          "desc": "button \"Saturday, December 5, 2026\"",
+          "focusVisible": true
+        },
+        {
+          "step": 181,
+          "desc": "button \"Sunday, December 6, 2026\"",
+          "focusVisible": true
+        },
+        {
+          "step": 182,
+          "desc": "button \"Previous month\"",
+          "focusVisible": true
+        },
+        {
+          "step": 183,
+          "desc": "button \"Next month\"",
+          "focusVisible": true
+        },
+        {
+          "step": 184,
+          "desc": "a",
+          "focusVisible": true
+        },
+        {
+          "step": 185,
+          "desc": "a \"Watch Now\"",
+          "focusVisible": true
+        },
+        {
+          "step": 186,
+          "desc": "button \"Watch Now\"",
+          "focusVisible": true
+        },
+        {
+          "step": 187,
+          "desc": "button \"Lean More\"",
+          "focusVisible": true
+        },
+        {
+          "step": 188,
+          "desc": "button \"Lean More\"",
+          "focusVisible": true
+        },
+        {
+          "step": 189,
+          "desc": "button \"Lean More\"",
+          "focusVisible": true
+        },
+        {
+          "step": 190,
+          "desc": "a \"Get it on Google Play\"",
+          "focusVisible": true
+        },
+        {
+          "step": 191,
+          "desc": "a \"Download on the App Store\"",
+          "focusVisible": true
+        },
+        {
+          "step": 192,
+          "desc": "button#faq-q-0 \"What is NCS?\"",
+          "focusVisible": true
+        },
+        {
+          "step": 193,
+          "desc": "button#faq-q-1 \"Who can register on the portal?\"",
+          "focusVisible": true
+        },
+        {
+          "step": 194,
+          "desc": "button#faq-q-2 \"Is NCS free to use?\"",
+          "focusVisible": true
+        },
+        {
+          "step": 195,
+          "desc": "button#faq-q-3 \"Is a mobile app available?\"",
+          "focusVisible": true
+        },
+        {
+          "step": 196,
+          "desc": "button#faq-q-4 \"How can I avoid fake NCS communication?\"",
+          "focusVisible": true
+        },
+        {
+          "step": 197,
+          "desc": "a \"www.ncs.gov.in\"",
+          "focusVisible": true
+        }
+      ]
+    },
+    "pdf": {
+      "pdfs": [
+        {
+          "url": "https://ncs.gov.in/assets/pdf/Jobseeker%20registration%20flowchart%201.pdf",
+          "status": 200,
+          "result": "text",
+          "bytes": 275672,
+          "pages": 1,
+          "sampledPages": 1,
+          "textChars": 420,
+          "tagged": false
+        },
+        {
+          "url": "https://ncsdocsstorage.blob.core.windows.net/ncsdocsstorage/common%2Fwhatsnew%2Fnewsletter_1786551484415.pdf?sv=2023-11-03&spr=https&st=2026-08-12T16%3A13%3A04Z&se=2028-08-12T16%3A18%3A04Z&sr=b&sp=r&sig=J6d35Ykkg%2FeUOZf0PfJoDniyrL1B8z5ZUIctdiE5UXc%3D",
+          "status": 200,
+          "result": "text",
+          "bytes": 657380,
+          "pages": 5,
+          "sampledPages": 5,
+          "textChars": 3022,
+          "tagged": false
+        },
+        {
+          "url": "https://ncsdocsstorage.blob.core.windows.net/ncsdocsstorage/common%2Fwhatsnew%2Fnewsletter_1786551955970.pdf?sv=2023-11-03&spr=https&st=2026-08-12T16%3A20%3A56Z&se=2028-08-12T16%3A25%3A56Z&sr=b&sp=r&sig=xxmfZ2IWn8GaGFjPWXNVCRTlfR65Q1F9Lgy69b8wV6w%3D",
+          "status": 200,
+          "result": "text",
+          "bytes": 433142,
+          "pages": 3,
+          "sampledPages": 3,
+          "textChars": 8995,
+          "tagged": false
+        },
+        {
+          "url": "https://ncs.gov.in/assets/pdf/Employer%20registration%20flowchart%201.pdf",
+          "status": 200,
+          "result": "text",
+          "bytes": 373013,
+          "pages": 1,
+          "sampledPages": 1,
+          "textChars": 541,
+          "tagged": false
+        },
+        {
+          "url": "https://ncs.gov.in/assets/pdf/Indian%20Staffing%20Federation%20(ISF%20Registration%20Flow).pdf",
+          "status": 200,
+          "result": "text",
+          "bytes": 4735972,
+          "pages": 19,
+          "sampledPages": 5,
+          "textChars": 1804,
+          "tagged": false
+        }
+      ]
+    }
+  },
+  "errors": []
+}

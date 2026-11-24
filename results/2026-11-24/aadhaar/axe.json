@@ -1,0 +1,513 @@
+{
+  "version": "4.14.1",
+  "violations": [
+    {
+      "id": "button-name",
+      "impact": "critical",
+      "help": "Buttons must have discernible text",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/button-name?application=playwright",
+      "tags": [
+        "cat.name-role-value",
+        "wcag2a",
+        "wcag412",
+        "section508",
+        "section508.22.a",
+        "TTv5",
+        "TT6.a",
+        "EN-301-549",
+        "EN-9.4.1.2",
+        "ACT",
+        "RGAAv4",
+        "RGAA-11.9.1"
+      ],
+      "nodeCount": 3,
+      "nodes": [
+        {
+          "target": ".FODg5gKpqTHIgQvDgL1w",
+          "html": "<button class=\"FODg5gKpqTHIgQvDgL1w QC5BsywXLvzhyxSfS6QY\">",
+          "failureSummary": "Fix any of the following:\n  Element does not have inner text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element does not have an implicit (wrapped) <label>\n  Element does not have an explicit <label>\n  El"
+        },
+        {
+          "target": ".EsThbUG09C_Nd1sqsX5F",
+          "html": "<button type=\"button\" class=\"EsThbUG09C_Nd1sqsX5F \">",
+          "failureSummary": "Fix any of the following:\n  Element does not have inner text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element does not have an implicit (wrapped) <label>\n  Element does not have an explicit <label>\n  El"
+        },
+        {
+          "target": ".ceJ9bxUQfMPRms7QyokA",
+          "html": "<button class=\"QP4gjezINDRaCeHhr8hX ceJ9bxUQfMPRms7QyokA\" tabindex=\"0\">",
+          "failureSummary": "Fix any of the following:\n  Element does not have inner text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element does not have an implicit (wrapped) <label>\n  Element does not have an explicit <label>\n  El"
+        }
+      ]
+    },
+    {
+      "id": "image-alt",
+      "impact": "critical",
+      "help": "Images must have alternative text",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/image-alt?application=playwright",
+      "tags": [
+        "cat.text-alternatives",
+        "wcag2a",
+        "wcag111",
+        "section508",
+        "section508.22.a",
+        "TTv5",
+        "TT7.a",
+        "TT7.b",
+        "EN-301-549",
+        "EN-9.1.1.1",
+        "ACT",
+        "RGAAv4",
+        "RGAA-1.1.1"
+      ],
+      "nodeCount": 1,
+      "nodes": [
+        {
+          "target": ".IyghLaPeE7N04RaulRnJ",
+          "html": "<img src=\"/4b650fc00405b84de010.png\" class=\"IyghLaPeE7N04RaulRnJ\">",
+          "failureSummary": "Fix any of the following:\n  Element does not have an alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+        }
+      ]
+    },
+    {
+      "id": "label",
+      "impact": "critical",
+      "help": "Form elements must have labels",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/label?application=playwright",
+      "tags": [
+        "cat.forms",
+        "wcag2a",
+        "wcag412",
+        "section508",
+        "section508.22.n",
+        "TTv5",
+        "TT5.c",
+        "EN-301-549",
+        "EN-9.4.1.2",
+        "ACT",
+        "RGAAv4",
+        "RGAA-11.1.1"
+      ],
+      "nodeCount": 13,
+      "nodes": [
+        {
+          "target": "input[value=\"en_IN\"]",
+          "html": "<input type=\"radio\" name=\"language\" value=\"en_IN\" style=\"\">",
+          "failureSummary": "Fix any of the following:\n  Element does not have an implicit (wrapped) <label>\n  Element does not have an explicit <label>\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element has no placeholder attribute\n  Element's default semantics were"
+        },
+        {
+          "target": "input[value=\"hi_IN\"]",
+          "html": "<input type=\"radio\" name=\"language\" value=\"hi_IN\" checked=\"\" style=\"\">",
+          "failureSummary": "Fix any of the following:\n  Element does not have an implicit (wrapped) <label>\n  Element does not have an explicit <label>\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element has no placeholder attribute\n  Element's default semantics were"
+        },
+        {
+          "target": "input[value=\"bn_IN\"]",
+          "html": "<input type=\"radio\" name=\"language\" value=\"bn_IN\" style=\"\">",
+          "failureSummary": "Fix any of the following:\n  Element does not have an implicit (wrapped) <label>\n  Element does not have an explicit <label>\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element has no placeholder attribute\n  Element's default semantics were"
+        },
+        {
+          "target": "input[value=\"kn_IN\"]",
+          "html": "<input type=\"radio\" name=\"language\" value=\"kn_IN\" style=\"\">",
+          "failureSummary": "Fix any of the following:\n  Element does not have an implicit (wrapped) <label>\n  Element does not have an explicit <label>\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element has no placeholder attribute\n  Element's default semantics were"
+        },
+        {
+          "target": "input[value=\"gu_IN\"]",
+          "html": "<input type=\"radio\" name=\"language\" value=\"gu_IN\" style=\"\">",
+          "failureSummary": "Fix any of the following:\n  Element does not have an implicit (wrapped) <label>\n  Element does not have an explicit <label>\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element has no placeholder attribute\n  Element's default semantics were"
+        },
+        {
+          "target": "input[value=\"ml_IN\"]",
+          "html": "<input type=\"radio\" name=\"language\" value=\"ml_IN\" style=\"\">",
+          "failureSummary": "Fix any of the following:\n  Element does not have an implicit (wrapped) <label>\n  Element does not have an explicit <label>\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element has no placeholder attribute\n  Element's default semantics were"
+        },
+        {
+          "target": "input[value=\"mr_IN\"]",
+          "html": "<input type=\"radio\" name=\"language\" value=\"mr_IN\" style=\"\">",
+          "failureSummary": "Fix any of the following:\n  Element does not have an implicit (wrapped) <label>\n  Element does not have an explicit <label>\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element has no placeholder attribute\n  Element's default semantics were"
+        },
+        {
+          "target": "input[value=\"or_IN\"]",
+          "html": "<input type=\"radio\" name=\"language\" value=\"or_IN\" style=\"\">",
+          "failureSummary": "Fix any of the following:\n  Element does not have an implicit (wrapped) <label>\n  Element does not have an explicit <label>\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element has no placeholder attribute\n  Element's default semantics were"
+        },
+        {
+          "target": "input[value=\"pa_IN\"]",
+          "html": "<input type=\"radio\" name=\"language\" value=\"pa_IN\" style=\"\">",
+          "failureSummary": "Fix any of the following:\n  Element does not have an implicit (wrapped) <label>\n  Element does not have an explicit <label>\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element has no placeholder attribute\n  Element's default semantics were"
+        },
+        {
+          "target": "input[value=\"ta_IN\"]",
+          "html": "<input type=\"radio\" name=\"language\" value=\"ta_IN\" style=\"\">",
+          "failureSummary": "Fix any of the following:\n  Element does not have an implicit (wrapped) <label>\n  Element does not have an explicit <label>\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element has no placeholder attribute\n  Element's default semantics were"
+        }
+      ]
+    },
+    {
+      "id": "landmark-one-main",
+      "impact": "moderate",
+      "help": "Document should have one main landmark",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/landmark-one-main?application=playwright",
+      "tags": [
+        "cat.semantics",
+        "best-practice"
+      ],
+      "nodeCount": 1,
+      "nodes": [
+        {
+          "target": "html",
+          "html": "<html lang=\"hi\" dir=\"ltr\">",
+          "failureSummary": "Fix all of the following:\n  Document does not have a main landmark"
+        }
+      ]
+    },
+    {
+      "id": "landmark-unique",
+      "impact": "moderate",
+      "help": "Landmarks should have a unique role or role/label/title (i.e. accessible name) combination",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/landmark-unique?application=playwright",
+      "tags": [
+        "cat.semantics",
+        "best-practice"
+      ],
+      "nodeCount": 1,
+      "nodes": [
+        {
+          "target": ".CsCOKJ5Tm3USqBWeKE3M > .SM4Ezc4QHgHFO5ZGz4pG.OhRHtglJRYcB8pr9Uu1U[aria-controls=\"faq-panel-0\"] > .FsciwW4NDsoEu7eKcTwM[role=\"region\"][aria-labelledby=\"faq-header-0\"]",
+          "html": "<div id=\"faq-panel-0\" role=\"region\" aria-labelledby=\"faq-header-0\" class=\"FsciwW4NDsoEu7eKcTwM kl1bskvGJ9Ue5IlFApZH\">Masked Aadhaar implies replacing of first 8 digits of Aadhaar number with “xxxx-xxxx” while only last 4 digits of the Aadhaar Number are visible.</div>",
+          "failureSummary": "Fix any of the following:\n  The landmark must have a unique aria-label, aria-labelledby, or title to make landmarks distinguishable"
+        }
+      ]
+    },
+    {
+      "id": "link-name",
+      "impact": "serious",
+      "help": "Links must have discernible text",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/link-name?application=playwright",
+      "tags": [
+        "cat.name-role-value",
+        "wcag2a",
+        "wcag244",
+        "wcag412",
+        "section508",
+        "section508.22.a",
+        "TTv5",
+        "TT6.a",
+        "EN-301-549",
+        "EN-9.2.4.4",
+        "EN-9.4.1.2",
+        "ACT",
+        "RGAAv4",
+        "RGAA-6.2.1"
+      ],
+      "nodeCount": 5,
+      "nodes": [
+        {
+          "target": ".tFaHrTTANi7Dmv9Sznqa > a[rel=\"noopener noreferrer\"]:nth-child(1)",
+          "html": "<a href=\"https://www.facebook.com/AadhaarOfficial/\" target=\"_blank\" rel=\"noopener noreferrer\">",
+          "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+        },
+        {
+          "target": "a[rel=\"noopener noreferrer\"]:nth-child(2)",
+          "html": "<a href=\"https://www.youtube.com/user/AadhaarUID\" target=\"_blank\" rel=\"noopener noreferrer\">",
+          "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+        },
+        {
+          "target": "a[href$=\"UIDAI\"]",
+          "html": "<a href=\"https://x.com/UIDAI\" target=\"_blank\" rel=\"noopener noreferrer\">",
+          "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+        },
+        {
+          "target": "a[rel=\"noopener noreferrer\"]:nth-child(4)",
+          "html": "<a href=\"https://www.instagram.com/aadhaar_official/?hl=en\" target=\"_blank\" rel=\"noopener noreferrer\">",
+          "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+        },
+        {
+          "target": "a[rel=\"noopener noreferrer\"]:nth-child(5)",
+          "html": "<a href=\"https://www.linkedin.com/company/unique-identification-authority-of-india-uidai-/posts/?feedView=all\" target=\"_blank\" rel=\"noopener noreferrer\">",
+          "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+        }
+      ]
+    },
+    {
+      "id": "nested-interactive",
+      "impact": "serious",
+      "help": "Interactive controls must not be nested",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/nested-interactive?application=playwright",
+      "tags": [
+        "cat.keyboard",
+        "wcag2a",
+        "wcag412",
+        "TTv5",
+        "TT6.a",
+        "EN-301-549",
+        "EN-9.4.1.2",
+        "RGAAv4",
+        "RGAA-7.1.1"
+      ],
+      "nodeCount": 13,
+      "nodes": [
+        {
+          "target": ".TSmvzKZtEbt6W3c7WMW6:nth-child(1)",
+          "html": "<button class=\"TSmvzKZtEbt6W3c7WMW6 \">",
+          "failureSummary": "Fix any of the following:\n  Element has focusable descendants. Move them outside of the element, or remove them."
+        },
+        {
+          "target": ".JmiLrEFyt0G7E50LSPrg",
+          "html": "<button class=\"TSmvzKZtEbt6W3c7WMW6 JmiLrEFyt0G7E50LSPrg\">",
+          "failureSummary": "Fix any of the following:\n  Element has focusable descendants. Move them outside of the element, or remove them."
+        },
+        {
+          "target": ".TSmvzKZtEbt6W3c7WMW6:nth-child(3)",
+          "html": "<button class=\"TSmvzKZtEbt6W3c7WMW6 \">",
+          "failureSummary": "Fix any of the following:\n  Element has focusable descendants. Move them outside of the element, or remove them."
+        },
+        {
+          "target": ".TSmvzKZtEbt6W3c7WMW6:nth-child(4)",
+          "html": "<button class=\"TSmvzKZtEbt6W3c7WMW6 \">",
+          "failureSummary": "Fix any of the following:\n  Element has focusable descendants. Move them outside of the element, or remove them."
+        },
+        {
+          "target": ".TSmvzKZtEbt6W3c7WMW6:nth-child(5)",
+          "html": "<button class=\"TSmvzKZtEbt6W3c7WMW6 \">",
+          "failureSummary": "Fix any of the following:\n  Element has focusable descendants. Move them outside of the element, or remove them."
+        },
+        {
+          "target": ".TSmvzKZtEbt6W3c7WMW6:nth-child(6)",
+          "html": "<button class=\"TSmvzKZtEbt6W3c7WMW6 \">",
+          "failureSummary": "Fix any of the following:\n  Element has focusable descendants. Move them outside of the element, or remove them."
+        },
+        {
+          "target": ".TSmvzKZtEbt6W3c7WMW6:nth-child(7)",
+          "html": "<button class=\"TSmvzKZtEbt6W3c7WMW6 \">",
+          "failureSummary": "Fix any of the following:\n  Element has focusable descendants. Move them outside of the element, or remove them."
+        },
+        {
+          "target": ".TSmvzKZtEbt6W3c7WMW6:nth-child(8)",
+          "html": "<button class=\"TSmvzKZtEbt6W3c7WMW6 \">",
+          "failureSummary": "Fix any of the following:\n  Element has focusable descendants. Move them outside of the element, or remove them."
+        },
+        {
+          "target": ".TSmvzKZtEbt6W3c7WMW6:nth-child(9)",
+          "html": "<button class=\"TSmvzKZtEbt6W3c7WMW6 \">",
+          "failureSummary": "Fix any of the following:\n  Element has focusable descendants. Move them outside of the element, or remove them."
+        },
+        {
+          "target": ".TSmvzKZtEbt6W3c7WMW6:nth-child(10)",
+          "html": "<button class=\"TSmvzKZtEbt6W3c7WMW6 \">",
+          "failureSummary": "Fix any of the following:\n  Element has focusable descendants. Move them outside of the element, or remove them."
+        }
+      ]
+    },
+    {
+      "id": "page-has-heading-one",
+      "impact": "moderate",
+      "help": "Page should contain a level-one heading",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/page-has-heading-one?application=playwright",
+      "tags": [
+        "cat.semantics",
+        "best-practice"
+      ],
+      "nodeCount": 1,
+      "nodes": [
+        {
+          "target": "html",
+          "html": "<html lang=\"hi\" dir=\"ltr\">",
+          "failureSummary": "Fix all of the following:\n  Page must have a level-one heading"
+        }
+      ]
+    },
+    {
+      "id": "region",
+      "impact": "moderate",
+      "help": "All page content should be contained by landmarks",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/region?application=playwright",
+      "tags": [
+        "cat.keyboard",
+        "best-practice",
+        "RGAAv4",
+        "RGAA-9.2.1"
+      ],
+      "nodeCount": 63,
+      "nodes": [
+        {
+          "target": ".u8okwqb86Jaf1pWKiQYy",
+          "html": "<div class=\"u8okwqb86Jaf1pWKiQYy\">",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "target": ".PfCJM4UZdj2xjCsyjOZK",
+          "html": "<img src=\"/efc2ae12151977ee59de.png\" alt=\"Uidai Logo\" class=\"PfCJM4UZdj2xjCsyjOZK\" height=\"50\" width=\"400\">",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "target": ".sFNk7yb611WkDPWyxaNc",
+          "html": "<input class=\"sFNk7yb611WkDPWyxaNc \" inputmode=\"text\" name=\"preheader-search\" placeholder=\"Search services\" tabindex=\"-1\" readonly=\"\" value=\"\" style=\"\">",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "target": ".LTkVk56kgXALcNB2Se7U",
+          "html": "<div class=\"LTkVk56kgXALcNB2Se7U\"><div class=\" AH_O6o1JmAvT3snGPCwz DgzNsmgOxWx83DFB8Jzk\">Welcome to myAadhaar</div><div class=\"caMXIWjXtFlUkD88MEGo\">What do you want to do today ?</div></div>",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "target": ".Kqo_7UZBvLQmdtOMgvbO",
+          "html": "<input type=\"text\" placeholder=\"Search services\" class=\"Kqo_7UZBvLQmdtOMgvbO\" style=\"\">",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "target": ".Juq6WPDi18AhvZvAfaxy:nth-child(1) > .a0cOoAJgWyYAwcyyrlRt.wjG80vm2DQL4WnyV34jw",
+          "html": "<div class=\"a0cOoAJgWyYAwcyyrlRt wjG80vm2DQL4WnyV34jw\">Update Services</div>",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "target": ".Juq6WPDi18AhvZvAfaxy:nth-child(2) > .a0cOoAJgWyYAwcyyrlRt.wjG80vm2DQL4WnyV34jw",
+          "html": "<div class=\"a0cOoAJgWyYAwcyyrlRt wjG80vm2DQL4WnyV34jw\">Get Aadhaar</div>",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "target": ".Juq6WPDi18AhvZvAfaxy:nth-child(3) > .a0cOoAJgWyYAwcyyrlRt.wjG80vm2DQL4WnyV34jw",
+          "html": "<div class=\"a0cOoAJgWyYAwcyyrlRt wjG80vm2DQL4WnyV34jw\">Keep Aadhaar Secure</div>",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "target": ".Juq6WPDi18AhvZvAfaxy:nth-child(4) > .a0cOoAJgWyYAwcyyrlRt.wjG80vm2DQL4WnyV34jw",
+          "html": "<div class=\"a0cOoAJgWyYAwcyyrlRt wjG80vm2DQL4WnyV34jw\">Plan Enrolment</div>",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "target": "div[data-tour=\"relevant_services\"] > .wnWRMNHDX5GMQsZlGSWN > .xXM8ykawhIEzW9FjNrbk.IS5XEqrUlW2rVwCiIiz3",
+          "html": "<div class=\"IS5XEqrUlW2rVwCiIiz3 xXM8ykawhIEzW9FjNrbk\">Find Services relevant to you</div>",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        }
+      ]
+    }
+  ],
+  "incomplete": [
+    {
+      "id": "bypass",
+      "impact": "serious",
+      "help": "Page must have means to bypass repeated blocks",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/bypass?application=playwright",
+      "tags": [
+        "cat.keyboard",
+        "wcag2a",
+        "wcag241",
+        "section508",
+        "section508.22.o",
+        "TTv5",
+        "TT9.a",
+        "EN-301-549",
+        "EN-9.2.4.1",
+        "RGAAv4",
+        "RGAA-12.7.1"
+      ],
+      "nodeCount": 1,
+      "nodes": [
+        {
+          "target": "html",
+          "html": "<html lang=\"hi\" dir=\"ltr\">",
+          "failureSummary": "Fix any of the following:\n  No valid skip link found\n  Page does not have a heading\n  Page does not have a landmark region"
+        }
+      ]
+    },
+    {
+      "id": "color-contrast",
+      "impact": "serious",
+      "help": "Elements must meet minimum color contrast ratio thresholds",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/color-contrast?application=playwright",
+      "tags": [
+        "cat.color",
+        "wcag2aa",
+        "wcag143",
+        "TTv5",
+        "TT13.c",
+        "EN-301-549",
+        "EN-9.1.4.3",
+        "ACT",
+        "RGAAv4",
+        "RGAA-3.2.1"
+      ],
+      "nodeCount": 131,
+      "nodes": [
+        {
+          "target": ".sFNk7yb611WkDPWyxaNc",
+          "html": "<input class=\"sFNk7yb611WkDPWyxaNc \" inputmode=\"text\" name=\"preheader-search\" placeholder=\"Search services\" tabindex=\"-1\" readonly=\"\" value=\"\" style=\"\">",
+          "failureSummary": "Fix any of the following:\n  Element has no value; test color contrast with a value entered"
+        },
+        {
+          "target": ".FD1dOn2wOwix8_XMOoi3[aria-haspopup=\"false\"][role=\"button\"]:nth-child(1)",
+          "html": "<div class=\"VkOwOYbjS97AhjOg5bax FD1dOn2wOwix8_XMOoi3 \" tabindex=\"0\" role=\"button\" aria-expanded=\"false\" aria-haspopup=\"false\">Home</div>",
+          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+        },
+        {
+          "target": ".FD1dOn2wOwix8_XMOoi3[aria-haspopup=\"true\"][role=\"button\"]:nth-child(2)",
+          "html": "<div class=\"VkOwOYbjS97AhjOg5bax FD1dOn2wOwix8_XMOoi3 \" tabindex=\"0\" role=\"button\" aria-expanded=\"false\" aria-haspopup=\"true\">",
+          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+        },
+        {
+          "target": ".FD1dOn2wOwix8_XMOoi3[aria-haspopup=\"false\"][role=\"button\"]:nth-child(3)",
+          "html": "<div class=\"VkOwOYbjS97AhjOg5bax FD1dOn2wOwix8_XMOoi3 \" tabindex=\"0\" role=\"button\" aria-expanded=\"false\" aria-haspopup=\"false\">Seva Kendra</div>",
+          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+        },
+        {
+          "target": ".FD1dOn2wOwix8_XMOoi3[aria-haspopup=\"true\"][role=\"button\"]:nth-child(4)",
+          "html": "<div class=\"VkOwOYbjS97AhjOg5bax FD1dOn2wOwix8_XMOoi3 \" tabindex=\"0\" role=\"button\" aria-expanded=\"false\" aria-haspopup=\"true\">",
+          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+        },
+        {
+          "target": ".AH_O6o1JmAvT3snGPCwz",
+          "html": "<div class=\" AH_O6o1JmAvT3snGPCwz DgzNsmgOxWx83DFB8Jzk\">Welcome to myAadhaar</div>",
+          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+        },
+        {
+          "target": ".caMXIWjXtFlUkD88MEGo",
+          "html": "<div class=\"caMXIWjXtFlUkD88MEGo\">What do you want to do today ?</div>",
+          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+        },
+        {
+          "target": ".Kqo_7UZBvLQmdtOMgvbO",
+          "html": "<input type=\"text\" placeholder=\"Search services\" class=\"Kqo_7UZBvLQmdtOMgvbO\" style=\"\">",
+          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+        },
+        {
+          "target": ".Juq6WPDi18AhvZvAfaxy:nth-child(1) > .a0cOoAJgWyYAwcyyrlRt.wjG80vm2DQL4WnyV34jw",
+          "html": "<div class=\"a0cOoAJgWyYAwcyyrlRt wjG80vm2DQL4WnyV34jw\">Update Services</div>",
+          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+        },
+        {
+          "target": ".Juq6WPDi18AhvZvAfaxy:nth-child(2) > .a0cOoAJgWyYAwcyyrlRt.wjG80vm2DQL4WnyV34jw",
+          "html": "<div class=\"a0cOoAJgWyYAwcyyrlRt wjG80vm2DQL4WnyV34jw\">Get Aadhaar</div>",
+          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+        }
+      ]
+    },
+    {
+      "id": "duplicate-id-aria",
+      "impact": "critical",
+      "help": "IDs used in ARIA and labels must be unique",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/duplicate-id-aria?application=playwright",
+      "tags": [
+        "cat.parsing",
+        "wcag2a",
+        "wcag412",
+        "EN-301-549",
+        "EN-9.4.1.2",
+        "RGAAv4",
+        "RGAA-8.2.1"
+      ],
+      "nodeCount": 2,
+      "nodes": [
+        {
+          "target": ".CsCOKJ5Tm3USqBWeKE3M > .SM4Ezc4QHgHFO5ZGz4pG.OhRHtglJRYcB8pr9Uu1U[aria-controls=\"faq-panel-0\"] > .rw8E8Yo2oInNBPnP1lMQ",
+          "html": "<div id=\"faq-header-0\" class=\"rw8E8Yo2oInNBPnP1lMQ\">",
+          "failureSummary": "Fix any of the following:\n  Document has multiple elements referenced with ARIA with the same id attribute: faq-header-0"
+        },
+        {
+          "target": ".CsCOKJ5Tm3USqBWeKE3M > .SM4Ezc4QHgHFO5ZGz4pG.OhRHtglJRYcB8pr9Uu1U[aria-controls=\"faq-panel-0\"] > .FsciwW4NDsoEu7eKcTwM[role=\"region\"][aria-labelledby=\"faq-header-0\"]",
+          "html": "<div id=\"faq-panel-0\" role=\"region\" aria-labelledby=\"faq-header-0\" class=\"FsciwW4NDsoEu7eKcTwM kl1bskvGJ9Ue5IlFApZH\">Masked Aadhaar implies replacing of first 8 digits of Aadhaar number with “xxxx-xxxx” while only last 4 digits of the Aadhaar Number are visible.</div>",
+          "failureSummary": "Fix any of the following:\n  Document has multiple elements referenced with ARIA with the same id attribute: faq-panel-0"
+        }
+      ]
+    }
+  ],
+  "passes": 34
+}

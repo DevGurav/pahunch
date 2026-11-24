@@ -1,0 +1,88 @@
+Navigate to Homepage, button
+|
+Change Word Spacing Normal, button
+Change Word Spacing Wide, button
+Change Word Spacing Too Wide, button
+|
+Change Font Size to Small, button
+Change Font Size to Normal, button
+Change Font Size to Large, button
+graphic, no name
+भारत निर्वाचन आयोग Election Commission of India मतदाता सेवा पोर्टल VOTERS' SERVICE PORTAL
+graphic, no name
+Search in Electoral Roll
+Search By EPIC, button
+graphic, no name
+ईपीआईसी द्वारा खोजें / Search by EPIC
+Search By Details, button
+graphic, no name
+विवरण द्वारा खोजें/ Search by Details
+Search By Mobile Number, button
+graphic, no name
+मोबाइल द्वारा खोजें / Search by Mobile
+भाषा का चयन करे/Select Language
+Select Language, combo box
+Select Language, option, selected
+Hindi/हिंदी, option
+Assamese/অসমীয়া, option
+Bengali/বাংলা, option
+Konkani/कोंकणी, option
+Gujarati/ગુજરાતી, option
+Malayalam/മലയാളം, option
+Odia/ଓଡିଆ, option
+Punjabi/ਪੰਜਾਬੀ, option
+Tamil/தமிழ், option
+Telugu/తెలుగు, option
+Marathi/मराठी, option
+Kannada/ಕನ್ನಡ, option
+Urdu/اردو, option
+EPIC DETAIL
+ईपीआईसी संख्या/ EPIC Number *
+Enter EPIC Number, edit
+राज्य/ State
+Select State, combo box
+Select Your State, option, selected
+Andaman & Nicobar Islands, option
+Andhra Pradesh, option
+Arunachal Pradesh, option
+Assam, option
+Bihar, option
+Chandigarh, option
+Chhattisgarh, option
+Dadra & Nagar Haveli and Daman & Diu, option
+Goa, option
+Gujarat, option
+Haryana, option
+Himachal Pradesh, option
+Jammu and Kashmir, option
+Jharkhand, option
+Karnataka, option
+Kerala, option
+Ladakh, option
+Lakshadweep, option
+Madhya Pradesh, option
+Maharashtra, option
+Manipur, option
+Meghalaya, option
+Mizoram, option
+Nagaland, option
+NCT OF Delhi, option
+Odisha, option
+Puducherry, option
+Punjab, option
+Rajasthan, option
+Sikkim, option
+Tamil Nadu, option
+Telangana, option
+Tripura, option
+Uttar Pradesh, option
+Uttarakhand, option
+West Bengal, option
+Captcha Code *
+Captcha Refresh, button
+listen captcha, button
+Enter Captcha *
+Enter Captcha, edit
+Search, button
+Clear, button
+region landmark, Notifications Alt+T

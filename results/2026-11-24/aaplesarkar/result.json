@@ -1,0 +1,2710 @@
+{
+  "schema": 1,
+  "portal": {
+    "id": "aaplesarkar",
+    "name": "Aaple Sarkar",
+    "owner": "Government of Maharashtra",
+    "jurisdiction": "Maharashtra",
+    "task": "Reach the citizen login form for state services (certificates, permissions)"
+  },
+  "startedAt": "2026-11-24T13:36:56.995Z",
+  "finishedAt": "2026-11-24T13:37:33.850Z",
+  "tool": {
+    "name": "pahunch",
+    "version": "0.1.0",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/159.0.8154.6 Safari/537.36 pahunch/0.1.0 (+https://github.com/DevGurav/pahunch)",
+    "browser": "chromium 159.0.8154.6",
+    "axe": "4.14.1"
+  },
+  "pages": [
+    {
+      "requested": "https://aaplesarkar.mahaonline.gov.in/en",
+      "finalUrl": "https://aaplesarkar.mahaonline.gov.in/en",
+      "status": 200,
+      "title": "aaplesarkar.mahaonline.gov.in"
+    }
+  ],
+  "robots": {
+    "robotsUrl": "https://aaplesarkar.mahaonline.gov.in/robots.txt",
+    "status": 404,
+    "disallowed": false
+  },
+  "critical": [
+    {
+      "index": 0,
+      "label": "Username field",
+      "kind": "field",
+      "selector": "#UserName",
+      "found": true,
+      "role": "textbox",
+      "name": "",
+      "disabled": false,
+      "reached": true,
+      "focusVisible": true
+    },
+    {
+      "index": 1,
+      "label": "Password field",
+      "kind": "field",
+      "selector": "#Password",
+      "found": true,
+      "role": "textbox",
+      "name": "",
+      "disabled": false,
+      "reached": true,
+      "focusVisible": true
+    },
+    {
+      "index": 2,
+      "label": "CAPTCHA field",
+      "kind": "captcha-field",
+      "selector": "#Captcha",
+      "found": true,
+      "role": "textbox",
+      "name": "",
+      "disabled": false,
+      "reached": true,
+      "focusVisible": true
+    },
+    {
+      "index": 3,
+      "label": "Login button",
+      "kind": "button",
+      "selector": "#btnLogin",
+      "found": true,
+      "role": "button",
+      "name": "LOGIN",
+      "disabled": false,
+      "reached": true,
+      "focusVisible": true
+    }
+  ],
+  "verdict": "blocked",
+  "inconclusiveReasons": [],
+  "findings": [
+    {
+      "check": "names",
+      "rule": "name-missing",
+      "severity": "barrier",
+      "wcag": [
+        "4.1.2",
+        "1.3.1"
+      ],
+      "summary": "\"Username field\" is announced only as \"edit\", with no name.",
+      "target": "Username field",
+      "snippet": "<input autocompletetype=\"Disabled\" class=\"form-control\" data-val=\"true\" data-val-required=\"The User name field is required.\" id=\"UserName\" maxlength=\"100\" name=\"UserName\" onblur=\"if(this.value=='')this.value='User ID';\" onfocus=\"if(this.value=='User ID')this.value='';\" onkeypress=\"return IsAlphabetN"
+    },
+    {
+      "check": "names",
+      "rule": "name-missing",
+      "severity": "barrier",
+      "wcag": [
+        "4.1.2",
+        "1.3.1"
+      ],
+      "summary": "\"Password field\" is announced only as \"edit\", with no name.",
+      "target": "Password field",
+      "snippet": "<input autocompletetype=\"Disabled\" autocomplete=\"off\" class=\"form-control\" id=\"Password\" maxlength=\"100\" name=\"Password\" onblur=\"if(this.value=='')this.value='Password';\" onfocus=\"if(this.value=='Password')this.value='';\" type=\"password\" data-pahunch-critical=\"1\" style=\"\">"
+    },
+    {
+      "check": "names",
+      "rule": "name-missing",
+      "severity": "barrier",
+      "wcag": [
+        "4.1.2",
+        "1.3.1"
+      ],
+      "summary": "\"CAPTCHA field\" is announced only as \"edit\", with no name.",
+      "target": "CAPTCHA field",
+      "snippet": "<input autocompletetype=\"Disabled\" autocomplete=\"off\" id=\"Captcha\" maxlength=\"5\" name=\"Captcha\" oncopy=\"return false\" onfocus=\"this.removeAttribute('readonly')\" onkeyup=\"return ToUppercase(this);\" onpaste=\"return false\" readonly=\"true\" type=\"text\" value=\"\" data-pahunch-critical=\"2\" style=\"\">"
+    },
+    {
+      "check": "captcha",
+      "rule": "captcha-image-only",
+      "severity": "blocker",
+      "wcag": [
+        "1.1.1"
+      ],
+      "summary": "The task needs this image CAPTCHA, and there is no audio or other non-visual option.",
+      "target": "img",
+      "snippet": "<img alt=\"Captcha\" src=\"/Login/Captcha\" style=\"\">",
+      "details": {
+        "imageAlt": "Captcha",
+        "input": "input#Captcha"
+      }
+    },
+    {
+      "check": "lang",
+      "rule": "lang-indic-unmarked",
+      "severity": "barrier",
+      "wcag": [
+        "3.1.2"
+      ],
+      "summary": "75 characters of Indic text are not marked with an Indic language; the page declares \"en\".",
+      "target": "a",
+      "snippet": "मराठी",
+      "details": {
+        "htmlLang": "en",
+        "indicUnmarked": 75,
+        "indicTotal": 75,
+        "samples": [
+          {
+            "text": "मराठी",
+            "lang": "en",
+            "where": "a"
+          },
+          {
+            "text": "लोकसेवा हक्क अधिनियमाबाबत वारंवार उपस्थित होणारे प्रश्न आणि ",
+            "lang": "en",
+            "where": "a"
+          },
+          {
+            "text": "वार्षिक अहवाल 2023-2024",
+            "lang": "en",
+            "where": "a"
+          }
+        ]
+      }
+    },
+    {
+      "check": "axe",
+      "rule": "axe/color-contrast",
+      "severity": "barrier",
+      "wcag": [
+        "1.4.3"
+      ],
+      "summary": "Elements must meet minimum color contrast ratio thresholds (17 elements).",
+      "target": ".csc-services-link",
+      "snippet": "<div class=\"csc-services-link\"> Know Your Benefits <i class=\"fa fa-chevron-down fa-chevron-up\"> </i> </div>",
+      "details": {
+        "impact": "serious",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/color-contrast?application=playwright",
+        "nodes": [
+          {
+            "target": ".csc-services-link",
+            "html": "<div class=\"csc-services-link\"> Know Your Benefits <i class=\"fa fa-chevron-down fa-chevron-up\"> </i> </div>",
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.87 (foreground color: #ffffff, background color: #27ae60, font size: 11.5pt (15.4px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "target": ".btn-panel > .btn-sm.btn-primary.btn:nth-child(1)",
+            "html": "<a href=\"https://maitri.maharashtra.gov.in/\" target=\"_blank\" class=\"btn btn-sm btn-primary\"> <i class=\"fa fa-external-link\"></i> Go To MAITRI </a>",
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.77 (foreground color: #ffffff, background color: #0ea5e9, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "target": "a[href$=\"MAITRI-Instructions.pdf\"]",
+            "html": "<a href=\"/pdf/MAITRI-Instructions.pdf\" target=\"_blank\" class=\"btn btn-sm btn-primary\"> <i class=\"fa fa-download\"></i> Download Instructions </a>",
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.77 (foreground color: #ffffff, background color: #0ea5e9, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "target": ".linkHomeNew:nth-child(1) > a[target=\"_blank\"]:nth-child(2)",
+            "html": "<a href=\"../../pdf/FAQ-Marathi-22-11-2021.pdf\" target=\"_blank\">लोकसेवा हक्क अधिनियमाबाबत वारंवार उपस्थित होणारे प्रश्न आणि उत्तरे<img src=\"../../Images/new-icon-animated.gif\" alt=\"\" style=\"width:35px;\"></a>",
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.14 (foreground color: #ffffff, background color: #f39f19, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "target": ".linkHomeNew:nth-child(2) > a[target=\"_blank\"]:nth-child(1)",
+            "html": "<a href=\"../../pdf/RTS_Annual_Report_2023-24.pdf\" target=\"_blank\">Annual Report 2023-2024 <img src=\"../../Images/new-icon-animated.gif\" style=\"width:35px;\" alt=\"\"></a>",
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.14 (foreground color: #ffffff, background color: #f39f19, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+          }
+        ]
+      }
+    },
+    {
+      "check": "axe",
+      "rule": "axe/image-alt",
+      "severity": "barrier",
+      "wcag": [
+        "1.1.1"
+      ],
+      "summary": "Images must have alternative text (2 elements).",
+      "target": "img[src$=\"Andriodapp.png\"]",
+      "snippet": "<img src=\"../../Images/Andriodapp.png\">",
+      "details": {
+        "impact": "critical",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/image-alt?application=playwright",
+        "nodes": [
+          {
+            "target": "img[src$=\"Andriodapp.png\"]",
+            "html": "<img src=\"../../Images/Andriodapp.png\">",
+            "failureSummary": "Fix any of the following:\n  Element does not have an alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+          },
+          {
+            "target": "img[src$=\"appstorelogo.png\"]",
+            "html": "<img src=\"../../Images/appstorelogo.png\">",
+            "failureSummary": "Fix any of the following:\n  Element does not have an alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+          }
+        ]
+      }
+    },
+    {
+      "check": "axe",
+      "rule": "axe/label",
+      "severity": "barrier",
+      "wcag": [
+        "4.1.2"
+      ],
+      "summary": "Form elements must have labels (4 elements).",
+      "target": "#UserName",
+      "snippet": "<input autocompletetype=\"Disabled\" class=\"form-control\" data-val=\"true\" data-val-required=\"The User name field ...\" id=\"UserName\" maxlength=\"100\" name=\"UserName\" onblur=\"if(this.value=='')th...\" onfocus=\"if(this.value=='User...\" onkeypress=\"return IsAlphabetNum...\" type=\"text\" value=\"\" style=\"\" ...>",
+      "details": {
+        "impact": "critical",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/label?application=playwright",
+        "nodes": [
+          {
+            "target": "#UserName",
+            "html": "<input autocompletetype=\"Disabled\" class=\"form-control\" data-val=\"true\" data-val-required=\"The User name field ...\" id=\"UserName\" maxlength=\"100\" name=\"UserName\" onblur=\"if(this.value=='')th...\" onfocus=\"if(this.value=='User...\" onkeypress=\"return IsAlphabetNum...\" type=\"text\" value=\"\" style=\"\" ...>",
+            "failureSummary": "Fix any of the following:\n  Element does not have an implicit (wrapped) <label>\n  Element does not have an explicit <label>\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element has no placeholder attribute\n  Element's default semantics were"
+          },
+          {
+            "target": "#Password",
+            "html": "<input autocompletetype=\"Disabled\" autocomplete=\"off\" class=\"form-control\" id=\"Password\" maxlength=\"100\" name=\"Password\" onblur=\"if(this.value=='')this.value='Password';\" onfocus=\"if(this.value=='Password')this.value='';\" type=\"password\" data-pahunch-critical=\"1\" style=\"\">",
+            "failureSummary": "Fix any of the following:\n  Element does not have an implicit (wrapped) <label>\n  Element does not have an explicit <label>\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element has no placeholder attribute\n  Element's default semantics were"
+          },
+          {
+            "target": "#Captcha",
+            "html": "<input autocompletetype=\"Disabled\" autocomplete=\"off\" id=\"Captcha\" maxlength=\"5\" name=\"Captcha\" oncopy=\"return false\" onfocus=\"this.removeAttribute('readonly')\" onkeyup=\"return ToUppercase(this);\" onpaste=\"return false\" readonly=\"true\" type=\"text\" value=\"\" data-pahunch-critical=\"2\" style=\"\">",
+            "failureSummary": "Fix any of the following:\n  Element does not have an implicit (wrapped) <label>\n  Element does not have an explicit <label>\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element has no placeholder attribute\n  Element's default semantics were"
+          },
+          {
+            "target": "#ServiceName",
+            "html": "<input autocomplete=\"on\" class=\"form-control w-100\" cols=\"10\" id=\"ServiceName\" maxlength=\"200\" name=\"ServiceName\" rows=\"4\" type=\"text\" style=\"\">",
+            "failureSummary": "Fix any of the following:\n  Element does not have an implicit (wrapped) <label>\n  Element does not have an explicit <label>\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element has no placeholder attribute\n  Element's default semantics were"
+          }
+        ]
+      }
+    },
+    {
+      "check": "axe",
+      "rule": "axe/landmark-one-main",
+      "severity": "info",
+      "wcag": [],
+      "summary": "Document should have one main landmark (1 element).",
+      "target": "html",
+      "snippet": "<html lang=\"en\" class=\" js no-flexbox flexb...\">",
+      "details": {
+        "impact": "moderate",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/landmark-one-main?application=playwright",
+        "nodes": [
+          {
+            "target": "html",
+            "html": "<html lang=\"en\" class=\" js no-flexbox flexb...\">",
+            "failureSummary": "Fix all of the following:\n  Document does not have a main landmark"
+          }
+        ]
+      }
+    },
+    {
+      "check": "axe",
+      "rule": "axe/link-name",
+      "severity": "barrier",
+      "wcag": [
+        "2.4.4",
+        "4.1.2"
+      ],
+      "summary": "Links must have discernible text (6 elements).",
+      "target": ".news-item:nth-child(46) > .row > .col-md-6 > a",
+      "snippet": "<a href=\"/en/Login/Certificate_Documents?ServiceId=4354\"></a>",
+      "details": {
+        "impact": "serious",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/link-name?application=playwright",
+        "nodes": [
+          {
+            "target": ".news-item:nth-child(46) > .row > .col-md-6 > a",
+            "html": "<a href=\"/en/Login/Certificate_Documents?ServiceId=4354\"></a>",
+            "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+          },
+          {
+            "target": ".news-item:nth-child(54) > .row > .col-md-6:nth-child(1) > a",
+            "html": "<a href=\"/en/Login/Certificate_Documents?ServiceId=1044\"></a>",
+            "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+          },
+          {
+            "target": ".mCSB_buttonUp",
+            "html": "<a href=\"#\" class=\"mCSB_buttonUp\" oncontextmenu=\"return false;\" style=\"display: block;\"></a>",
+            "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+          },
+          {
+            "target": ".mCSB_buttonDown",
+            "html": "<a href=\"#\" class=\"mCSB_buttonDown\" oncontextmenu=\"return false;\" style=\"display: block;\"></a>",
+            "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+          },
+          {
+            "target": ".homethumb2:nth-child(1) > a[target=\"_blank\"]",
+            "html": "<a href=\"https://play.google.com/store/apps/details?id=com.rtsmaharashtra.com&amp;hl=en\" target=\"_blank\"> <img src=\"../../Images/Andriodapp.png\"> </a>",
+            "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+          }
+        ]
+      }
+    },
+    {
+      "check": "axe",
+      "rule": "axe/meta-viewport",
+      "severity": "info",
+      "wcag": [
+        "1.4.4"
+      ],
+      "summary": "Zooming and scaling must not be disabled (1 element).",
+      "target": "#viewport",
+      "snippet": "<meta name=\"viewport\" id=\"viewport\" content=\"width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1\">",
+      "details": {
+        "impact": "moderate",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/meta-viewport?application=playwright",
+        "nodes": [
+          {
+            "target": "#viewport",
+            "html": "<meta name=\"viewport\" id=\"viewport\" content=\"width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1\">",
+            "failureSummary": "Fix any of the following:\n  maximum-scale=1 on <meta> tag disables zooming on mobile devices"
+          }
+        ]
+      }
+    },
+    {
+      "check": "axe",
+      "rule": "axe/page-has-heading-one",
+      "severity": "info",
+      "wcag": [],
+      "summary": "Page should contain a level-one heading (1 element).",
+      "target": "html",
+      "snippet": "<html lang=\"en\" class=\" js no-flexbox flexb...\">",
+      "details": {
+        "impact": "moderate",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/page-has-heading-one?application=playwright",
+        "nodes": [
+          {
+            "target": "html",
+            "html": "<html lang=\"en\" class=\" js no-flexbox flexb...\">",
+            "failureSummary": "Fix all of the following:\n  Page must have a level-one heading"
+          }
+        ]
+      }
+    },
+    {
+      "check": "axe",
+      "rule": "axe/region",
+      "severity": "info",
+      "wcag": [],
+      "summary": "All page content should be contained by landmarks (27 elements).",
+      "target": ".Service",
+      "snippet": "<div class=\"flip-container Service\" data-toggle=\"modal\" data-target=\"#myModal\" ontouchstart=\"this.classList.toggle('hover');\">",
+      "details": {
+        "impact": "moderate",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/region?application=playwright",
+        "nodes": [
+          {
+            "target": ".Service",
+            "html": "<div class=\"flip-container Service\" data-toggle=\"modal\" data-target=\"#myModal\" ontouchstart=\"this.classList.toggle('hover');\">",
+            "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+          },
+          {
+            "target": "div[data-target=\"#myModal2\"]",
+            "html": "<div class=\"flip-container Queues\" data-toggle=\"modal\" data-target=\"#myModal2\" ontouchstart=\"this.classList.toggle('hover');\">",
+            "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+          },
+          {
+            "target": "div[data-target=\"#Access\"]",
+            "html": "<div class=\"flip-container Queues\" data-toggle=\"modal\" data-target=\"#Access\" ontouchstart=\"this.classList.toggle('hover');\">",
+            "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+          },
+          {
+            "target": ".payment",
+            "html": "<div class=\"flip-container payment\" data-toggle=\"modal\" data-target=\"#EasyPayment\" ontouchstart=\"this.classList.toggle('hover');\">",
+            "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+          },
+          {
+            "target": ".Friendly",
+            "html": "<div class=\"flip-container Friendly\" data-toggle=\"modal\" data-target=\"#Friendly\" ontouchstart=\"this.classList.toggle('hover');\">",
+            "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+          }
+        ]
+      }
+    },
+    {
+      "check": "axe",
+      "rule": "axe/select-name",
+      "severity": "barrier",
+      "wcag": [
+        "4.1.2"
+      ],
+      "summary": "Select element must have an accessible name (1 element).",
+      "target": "#DistrictCode_Login",
+      "snippet": "<select class=\"form-control gray\" id=\"DistrictCode_Login\" name=\"DistrictCode_Login\">",
+      "details": {
+        "impact": "critical",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/select-name?application=playwright",
+        "nodes": [
+          {
+            "target": "#DistrictCode_Login",
+            "html": "<select class=\"form-control gray\" id=\"DistrictCode_Login\" name=\"DistrictCode_Login\">",
+            "failureSummary": "Fix any of the following:\n  Element does not have an implicit (wrapped) <label>\n  Element does not have an explicit <label>\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element's default semantics were not overridden with role=\"none\" or rol"
+          }
+        ]
+      }
+    },
+    {
+      "check": "pdf",
+      "rule": "pdf-untagged",
+      "severity": "info",
+      "wcag": [
+        "1.3.1"
+      ],
+      "summary": "The PDF has text but no tags.",
+      "target": "https://aaplesarkar.mahaonline.gov.in/pdf/MAITRI-Instructions.pdf",
+      "details": {
+        "pages": 1
+      }
+    },
+    {
+      "check": "pdf",
+      "rule": "pdf-scanned",
+      "severity": "barrier",
+      "wcag": [
+        "1.1.1"
+      ],
+      "summary": "Scanned PDF: 0 characters of text in the first 5 page(s) of 28.",
+      "target": "https://aaplesarkar.mahaonline.gov.in/pdf/FAQ-English-22-11-2021.pdf",
+      "details": {
+        "pages": 28,
+        "textChars": 0
+      }
+    },
+    {
+      "check": "pdf",
+      "rule": "pdf-scanned",
+      "severity": "barrier",
+      "wcag": [
+        "1.1.1"
+      ],
+      "summary": "Scanned PDF: 0 characters of text in the first 5 page(s) of 25.",
+      "target": "https://aaplesarkar.mahaonline.gov.in/pdf/FAQ-Marathi-22-11-2021.pdf",
+      "details": {
+        "pages": 25,
+        "textChars": 0
+      }
+    },
+    {
+      "check": "pdf",
+      "rule": "pdf-untagged",
+      "severity": "info",
+      "wcag": [
+        "1.3.1"
+      ],
+      "summary": "The PDF has text but no tags.",
+      "target": "https://aaplesarkar.mahaonline.gov.in/pdf/RTS_Annual_Report_2023-24.pdf",
+      "details": {
+        "pages": 382
+      }
+    },
+    {
+      "check": "pdf",
+      "rule": "pdf-untagged",
+      "severity": "info",
+      "wcag": [
+        "1.3.1"
+      ],
+      "summary": "The PDF has text but no tags.",
+      "target": "https://aaplesarkar.mahaonline.gov.in/pdf/IntegrationDocs/Aaple_Sarkar_Portal_Technical_Integration_V_3.3.pdf",
+      "details": {
+        "pages": 34
+      }
+    }
+  ],
+  "counts": {
+    "blocker": 1,
+    "barrier": 11,
+    "info": 7
+  },
+  "evidence": {
+    "names": {
+      "controls": [
+        {
+          "index": 0,
+          "label": "Username field",
+          "kind": "field",
+          "role": "textbox",
+          "name": "",
+          "disabled": false,
+          "hidden": false,
+          "visible": true,
+          "snapshot": "- textbox"
+        },
+        {
+          "index": 1,
+          "label": "Password field",
+          "kind": "field",
+          "role": "textbox",
+          "name": "",
+          "disabled": false,
+          "hidden": false,
+          "visible": true,
+          "snapshot": "- textbox"
+        },
+        {
+          "index": 2,
+          "label": "CAPTCHA field",
+          "kind": "captcha-field",
+          "role": "textbox",
+          "name": "",
+          "disabled": false,
+          "hidden": false,
+          "visible": true,
+          "snapshot": "- textbox"
+        },
+        {
+          "index": 3,
+          "label": "Login button",
+          "kind": "button",
+          "role": "button",
+          "name": "LOGIN",
+          "disabled": false,
+          "hidden": false,
+          "visible": true,
+          "snapshot": "- button \"LOGIN\""
+        }
+      ]
+    },
+    "captcha": {
+      "groups": [
+        {
+          "kind": "image",
+          "onPath": true,
+          "imageAlt": "Captcha",
+          "target": "img",
+          "inputTarget": "input#Captcha",
+          "audio": null,
+          "snippet": "<img alt=\"Captcha\" src=\"/Login/Captcha\" style=\"\">"
+        }
+      ]
+    },
+    "lang": {
+      "frames": [
+        {
+          "htmlLang": "en",
+          "indicTotal": 75,
+          "indicUnmarked": 75,
+          "latinAtRoot": 47050,
+          "indicAtRoot": 75,
+          "samples": [
+            {
+              "text": "मराठी",
+              "lang": "en",
+              "where": "a"
+            },
+            {
+              "text": "लोकसेवा हक्क अधिनियमाबाबत वारंवार उपस्थित होणारे प्रश्न आणि ",
+              "lang": "en",
+              "where": "a"
+            },
+            {
+              "text": "वार्षिक अहवाल 2023-2024",
+              "lang": "en",
+              "where": "a"
+            }
+          ]
+        }
+      ]
+    },
+    "axe": {
+      "version": "4.14.1",
+      "violations": 9,
+      "incomplete": 1,
+      "passes": 33
+    },
+    "keyboard": {
+      "presses": 400,
+      "completedCycle": false,
+      "stopsSeen": 400,
+      "inModal": false,
+      "trap": null,
+      "controls": [
+        {
+          "index": 0,
+          "label": "Username field",
+          "reached": true,
+          "focusVisible": true,
+          "firstStep": 119
+        },
+        {
+          "index": 1,
+          "label": "Password field",
+          "reached": true,
+          "focusVisible": true,
+          "firstStep": 120
+        },
+        {
+          "index": 2,
+          "label": "CAPTCHA field",
+          "reached": true,
+          "focusVisible": true,
+          "firstStep": 122
+        },
+        {
+          "index": 3,
+          "label": "Login button",
+          "reached": true,
+          "focusVisible": true,
+          "firstStep": 124
+        }
+      ],
+      "sequence": [
+        {
+          "step": 1,
+          "desc": "a \"A +\"",
+          "focusVisible": true
+        },
+        {
+          "step": 2,
+          "desc": "a \"A =\"",
+          "focusVisible": true
+        },
+        {
+          "step": 3,
+          "desc": "a \"A -\"",
+          "focusVisible": true
+        },
+        {
+          "step": 4,
+          "desc": "a \"A\"",
+          "focusVisible": true
+        },
+        {
+          "step": 5,
+          "desc": "a \"A\"",
+          "focusVisible": true
+        },
+        {
+          "step": 6,
+          "desc": "a \"मराठी\"",
+          "focusVisible": true
+        },
+        {
+          "step": 7,
+          "desc": "a \"HOME\"",
+          "focusVisible": true
+        },
+        {
+          "step": 8,
+          "desc": "a \"ABOUT RTS COMMISSION\"",
+          "focusVisible": true
+        },
+        {
+          "step": 9,
+          "desc": "a \"DEPARTMENT NOTIFIED SERVICES\"",
+          "focusVisible": true
+        },
+        {
+          "step": 10,
+          "desc": "a \"EASE OF DOING BUSINESS\"",
+          "focusVisible": true
+        },
+        {
+          "step": 11,
+          "desc": "a \"SERVICE INFORMATION\"",
+          "focusVisible": true
+        },
+        {
+          "step": 12,
+          "desc": "a \"CONTACT US\"",
+          "focusVisible": true
+        },
+        {
+          "step": 13,
+          "desc": "a \"SEWA KENDRA\"",
+          "focusVisible": true
+        },
+        {
+          "step": 14,
+          "desc": "a \"DASHBOARD\"",
+          "focusVisible": true
+        },
+        {
+          "step": 15,
+          "desc": "a \"INSPECTION FORM\"",
+          "focusVisible": true
+        },
+        {
+          "step": 16,
+          "desc": "a \"RTS DASHBOARD LOGIN\"",
+          "focusVisible": true
+        },
+        {
+          "step": 17,
+          "desc": "a \"Application For Plan Approval of Electri\"",
+          "focusVisible": true
+        },
+        {
+          "step": 18,
+          "desc": "a \"Charging permission of Electrical Instal\"",
+          "focusVisible": true
+        },
+        {
+          "step": 19,
+          "desc": "a \"Generating Set Energization (Energy Depa\"",
+          "focusVisible": true
+        },
+        {
+          "step": 20,
+          "desc": "a \"Generating Set Plan Approval (Energy Dep\"",
+          "focusVisible": true
+        },
+        {
+          "step": 21,
+          "desc": "a \"Generating Set Registration (Energy Depa\"",
+          "focusVisible": true
+        },
+        {
+          "step": 22,
+          "desc": "a \"Communication of decision by Tree Office\"",
+          "focusVisible": true
+        },
+        {
+          "step": 23,
+          "desc": "a \"Registration for Industrial Transit Pass\"",
+          "focusVisible": true
+        },
+        {
+          "step": 24,
+          "desc": "a \"Amendament in Regishration certificate t\"",
+          "focusVisible": true
+        },
+        {
+          "step": 25,
+          "desc": "a \"Approval and Renewal of Manufacturer, Er\"",
+          "focusVisible": true
+        },
+        {
+          "step": 26,
+          "desc": "a \"Beedi & Cigar License (Labour Department\"",
+          "focusVisible": true
+        },
+        {
+          "step": 27,
+          "desc": "a \"Boiler and Economiser Registration Inspe\"",
+          "focusVisible": true
+        },
+        {
+          "step": 28,
+          "desc": "a \"Building & Other Construction Registrati\"",
+          "focusVisible": true
+        },
+        {
+          "step": 29,
+          "desc": "a \"Contract Labour Licence (Labour Departme\"",
+          "focusVisible": true
+        },
+        {
+          "step": 30,
+          "desc": "a \"Contract Labour Renewal (Labour Departme\"",
+          "focusVisible": true
+        },
+        {
+          "step": 31,
+          "desc": "a \"Factory Renewal (Labour Department)\"",
+          "focusVisible": true
+        },
+        {
+          "step": 32,
+          "desc": "a \"Issue of Duplicate Certificate (Labour D\"",
+          "focusVisible": true
+        },
+        {
+          "step": 33,
+          "desc": "a \"Motor Transport Workers Registration (La\"",
+          "focusVisible": true
+        },
+        {
+          "step": 34,
+          "desc": "a \"Permission of Boiler / Economiser Repair\"",
+          "focusVisible": true
+        },
+        {
+          "step": 35,
+          "desc": "a \"Plan Approval (Labour Department)\"",
+          "focusVisible": true
+        },
+        {
+          "step": 36,
+          "desc": "a \"Principal Employer Registration (Labour \"",
+          "focusVisible": true
+        },
+        {
+          "step": 37,
+          "desc": "a \"Registration of Establishment Employing \"",
+          "focusVisible": true
+        },
+        {
+          "step": 38,
+          "desc": "a \"Registration of Establishment Employing \"",
+          "focusVisible": true
+        },
+        {
+          "step": 39,
+          "desc": "a \"Registration of Factory (Labour Departme\"",
+          "focusVisible": true
+        },
+        {
+          "step": 40,
+          "desc": "a \"Shop and Establishment Registration (Lab\"",
+          "focusVisible": true
+        },
+        {
+          "step": 41,
+          "desc": "a \"Shop and Establishment Renewal (Labour D\"",
+          "focusVisible": true
+        },
+        {
+          "step": 42,
+          "desc": "a \"Transfer of Ownership within Maharashtra\"",
+          "focusVisible": true
+        },
+        {
+          "step": 43,
+          "desc": "a \"Amendment in Registration as Manufacture\"",
+          "focusVisible": true
+        },
+        {
+          "step": 44,
+          "desc": "a \"Amendment in Weight or Measure Dealer Li\"",
+          "focusVisible": true
+        },
+        {
+          "step": 45,
+          "desc": "a \"Amendment in Weight or Measure Manufactu\"",
+          "focusVisible": true
+        },
+        {
+          "step": 46,
+          "desc": "a \"Amendment in Weight or Measure Repairer \"",
+          "focusVisible": true
+        },
+        {
+          "step": 47,
+          "desc": "a \"Issue certificate after verification and\"",
+          "focusVisible": true
+        },
+        {
+          "step": 48,
+          "desc": "a \"Issue License for Dealer of Weight or Me\"",
+          "focusVisible": true
+        },
+        {
+          "step": 49,
+          "desc": "a \"Issue License for Manufacture of Weight \"",
+          "focusVisible": true
+        },
+        {
+          "step": 50,
+          "desc": "a \"Issue License for Repairer of Weight or \"",
+          "focusVisible": true
+        },
+        {
+          "step": 51,
+          "desc": "a \"Issue Registration as Importer of Packag\"",
+          "focusVisible": true
+        },
+        {
+          "step": 52,
+          "desc": "a \"Issue Registration as Manufacturer/Packe\"",
+          "focusVisible": true
+        },
+        {
+          "step": 53,
+          "desc": "a \"Renewal of Weight or Measure Dealer Lice\"",
+          "focusVisible": true
+        },
+        {
+          "step": 54,
+          "desc": "a \"Renewal of Weight or Measure Manufacture\"",
+          "focusVisible": true
+        },
+        {
+          "step": 55,
+          "desc": "a \"Renewal of Weight or Measure Repairer Li\"",
+          "focusVisible": true
+        },
+        {
+          "step": 56,
+          "desc": "a \"Building Completion Certificate (BCC) / \"",
+          "focusVisible": true
+        },
+        {
+          "step": 57,
+          "desc": "a \"Building Plan Approval (Maharashtra Indu\"",
+          "focusVisible": true
+        },
+        {
+          "step": 58,
+          "desc": "a \"Change in Activity (Maharashtra Industri\"",
+          "focusVisible": true
+        },
+        {
+          "step": 59,
+          "desc": "a \"Drainage Connection (Maharashtra Industr\"",
+          "focusVisible": true
+        },
+        {
+          "step": 60,
+          "desc": "a \"Final Fire Approval (Maharashtra Industr\"",
+          "focusVisible": true
+        },
+        {
+          "step": 61,
+          "desc": "a \"Final Lease (Maharashtra Industrial Deve\"",
+          "focusVisible": true
+        },
+        {
+          "step": 62,
+          "desc": "a \"IT Unit LOI (Maharashtra Industrial Deve\"",
+          "focusVisible": true
+        },
+        {
+          "step": 63,
+          "desc": "a \"IT Unit Registration (Maharashtra Indust\"",
+          "focusVisible": true
+        },
+        {
+          "step": 64,
+          "desc": "a \"Mortgage Consent (Maharashtra Industrial\"",
+          "focusVisible": true
+        },
+        {
+          "step": 65,
+          "desc": "a \"Permanent Water Connection (Maharashtra \"",
+          "focusVisible": true
+        },
+        {
+          "step": 66,
+          "desc": "a \"PNG Final Fire Approval (Maharashtra Ind\"",
+          "focusVisible": true
+        },
+        {
+          "step": 67,
+          "desc": "a \"PNG Provisional Fire Approval (Maharasht\"",
+          "focusVisible": true
+        },
+        {
+          "step": 68,
+          "desc": "a \"Predetermined Lease (Maharashtra Industr\"",
+          "focusVisible": true
+        },
+        {
+          "step": 69,
+          "desc": "a \"Tree Felling/ Trimming/ Replantation (Ma\"",
+          "focusVisible": true
+        },
+        {
+          "step": 70,
+          "desc": "a \"A). Authorization for processing, recycl\"",
+          "focusVisible": true
+        },
+        {
+          "step": 71,
+          "desc": "a \"A). Consent to establish (under Water & \"",
+          "focusVisible": true
+        },
+        {
+          "step": 72,
+          "desc": "a \"Authorization under Construction and Des\"",
+          "focusVisible": true
+        },
+        {
+          "step": 73,
+          "desc": "a \"Authorization under Solid Waste Manageme\"",
+          "focusVisible": true
+        },
+        {
+          "step": 74,
+          "desc": "a \"B). Consent to operate (under Water & Ai\"",
+          "focusVisible": true
+        },
+        {
+          "step": 75,
+          "desc": "a \"B). One-time Authorization for import of\"",
+          "focusVisible": true
+        },
+        {
+          "step": 76,
+          "desc": "a \"C). Authorization to transporters for tr\"",
+          "focusVisible": true
+        },
+        {
+          "step": 77,
+          "desc": "a \"C). Renewal of Consent to operate (under\"",
+          "focusVisible": true
+        },
+        {
+          "step": 78,
+          "desc": "a \"Combined Consent and Biomedical Waste Au\"",
+          "focusVisible": true
+        },
+        {
+          "step": 79,
+          "desc": "a \"Consent to Establish (Maharashtra Pollut\"",
+          "focusVisible": true
+        },
+        {
+          "step": 80,
+          "desc": "a \"Consent to Establish (SRO and RO level) \"",
+          "focusVisible": true
+        },
+        {
+          "step": 81,
+          "desc": "a \"Consent to Operate (Maharashtra Pollutio\"",
+          "focusVisible": true
+        },
+        {
+          "step": 82,
+          "desc": "a \"Consent to Operate (SRO and RO level) (M\"",
+          "focusVisible": true
+        },
+        {
+          "step": 83,
+          "desc": "a \"D). Application for amendment in Consent\"",
+          "focusVisible": true
+        },
+        {
+          "step": 84,
+          "desc": "a \"EPR Registration under Battery Waste Man\"",
+          "focusVisible": true
+        },
+        {
+          "step": 85,
+          "desc": "a \"Plastic EPR Registration under Plastic W\"",
+          "focusVisible": true
+        },
+        {
+          "step": 86,
+          "desc": "a \"Certificate of registration (for manufac\"",
+          "focusVisible": true
+        },
+        {
+          "step": 87,
+          "desc": "a \"DS-I - Licence for denaturation of India\"",
+          "focusVisible": true
+        },
+        {
+          "step": 88,
+          "desc": "a \"Grant of Form M-I (State Excise Departme\"",
+          "focusVisible": true
+        },
+        {
+          "step": 89,
+          "desc": "a \"Grant of Form R.S-II (State Excise Depar\"",
+          "focusVisible": true
+        },
+        {
+          "step": 90,
+          "desc": "a \"Grant of Form R.S-VI (State Excise Depar\"",
+          "focusVisible": true
+        },
+        {
+          "step": 91,
+          "desc": "a \"Grant of Form R.S-VIA (State Excise Depa\"",
+          "focusVisible": true
+        },
+        {
+          "step": 92,
+          "desc": "a \"Grant of Form R.S-VII (State Excise Depa\"",
+          "focusVisible": true
+        },
+        {
+          "step": 93,
+          "desc": "a \"Licence for a sale of wine in the premis\"",
+          "focusVisible": true
+        },
+        {
+          "step": 94,
+          "desc": "a \"Licence for export of molasses : MV (Sta\"",
+          "focusVisible": true
+        },
+        {
+          "step": 95,
+          "desc": "a \"Licence for import of molasses : MIV (St\"",
+          "focusVisible": true
+        },
+        {
+          "step": 96,
+          "desc": "a \"Licence for possession and sale of molas\"",
+          "focusVisible": true
+        },
+        {
+          "step": 97,
+          "desc": "a \"Licence for possession and use of molass\"",
+          "focusVisible": true
+        },
+        {
+          "step": 98,
+          "desc": "a \"Licence for possession of Mhowra Flowers\"",
+          "focusVisible": true
+        },
+        {
+          "step": 99,
+          "desc": "a \"Licence for purchase, possess and use Ba\"",
+          "focusVisible": true
+        },
+        {
+          "step": 100,
+          "desc": "a \"Licence for sale of mild liquor or wines\"",
+          "focusVisible": true
+        },
+        {
+          "step": 101,
+          "desc": "a \"Licence for the sale at hotel of importe\"",
+          "focusVisible": true
+        },
+        {
+          "step": 102,
+          "desc": "a \"Ordinary trade and Import licence for th\"",
+          "focusVisible": true
+        },
+        {
+          "step": 103,
+          "desc": "a \"Vendor's licence for sale of beer or win\"",
+          "focusVisible": true
+        },
+        {
+          "step": 104,
+          "desc": "a \"Vendors licence for sale of wine i.e. li\"",
+          "focusVisible": true
+        },
+        {
+          "step": 105,
+          "desc": "a \"Industrial Water permission (Water Resou\"",
+          "focusVisible": true
+        },
+        {
+          "step": 106,
+          "desc": "a \"Go To MAITRI\"",
+          "focusVisible": true
+        },
+        {
+          "step": 107,
+          "desc": "a \"Download Instructions\"",
+          "focusVisible": true
+        },
+        {
+          "step": 108,
+          "desc": "a \"FAQs & Answers on Maharashtra Right to P\"",
+          "focusVisible": true
+        },
+        {
+          "step": 109,
+          "desc": "a \"लोकसेवा हक्क अधिनियमाबाबत वारंवार उपस्थि\"",
+          "focusVisible": true
+        },
+        {
+          "step": 110,
+          "desc": "a \"Annual Report 2023-2024\"",
+          "focusVisible": true
+        },
+        {
+          "step": 111,
+          "desc": "a \"वार्षिक अहवाल 2023-2024\"",
+          "focusVisible": true
+        },
+        {
+          "step": 112,
+          "desc": "a \"CITIZEN LOGIN\"",
+          "focusVisible": true
+        },
+        {
+          "step": 113,
+          "desc": "a \"TRACK YOUR APPLICATION\"",
+          "focusVisible": true
+        },
+        {
+          "step": 114,
+          "desc": "a \"VERIFY YOUR AUTHENTICATED CERTIFICATE\"",
+          "focusVisible": true
+        },
+        {
+          "step": 115,
+          "desc": "a \"CALL CENTER\"",
+          "focusVisible": true
+        },
+        {
+          "step": 116,
+          "desc": "a \"Please note that no physical visit is re\"",
+          "focusVisible": true
+        },
+        {
+          "step": 117,
+          "desc": "a \"New User ? Register Here..\"",
+          "focusVisible": true
+        },
+        {
+          "step": 118,
+          "desc": "a \"VLE Login\"",
+          "focusVisible": true
+        },
+        {
+          "step": 119,
+          "desc": "input#UserName",
+          "focusVisible": true,
+          "critical": 0
+        },
+        {
+          "step": 120,
+          "desc": "input#Password",
+          "focusVisible": true,
+          "critical": 1
+        },
+        {
+          "step": 121,
+          "desc": "a \"Try another\"",
+          "focusVisible": true
+        },
+        {
+          "step": 122,
+          "desc": "input#Captcha",
+          "focusVisible": true,
+          "critical": 2
+        },
+        {
+          "step": 123,
+          "desc": "select#DistrictCode_Login \"---Your District--- Ahilyanagar Akola Am\"",
+          "focusVisible": true
+        },
+        {
+          "step": 124,
+          "desc": "button#btnLogin \"LOGIN\"",
+          "focusVisible": true,
+          "critical": 3
+        },
+        {
+          "step": 125,
+          "desc": "a \"Forgot Password?\"",
+          "focusVisible": true
+        },
+        {
+          "step": 126,
+          "desc": "a \"Forgot UserName\"",
+          "focusVisible": true
+        },
+        {
+          "step": 127,
+          "desc": "a \"Toggle auto scrolling\"",
+          "focusVisible": true
+        },
+        {
+          "step": 128,
+          "desc": "input#ServiceName",
+          "focusVisible": true
+        },
+        {
+          "step": 129,
+          "desc": "div#mCSB_1 \"Revenue Department Age Nationality Domic\"",
+          "focusVisible": false
+        },
+        {
+          "step": 130,
+          "desc": "a \"Age Nationality Domicile\"",
+          "focusVisible": true
+        },
+        {
+          "step": 131,
+          "desc": "a \"Income Certificate\"",
+          "focusVisible": true
+        },
+        {
+          "step": 132,
+          "desc": "a \"Temporary Residence Certificate\"",
+          "focusVisible": true
+        },
+        {
+          "step": 133,
+          "desc": "a \"Senior Citizen Certificate\"",
+          "focusVisible": true
+        },
+        {
+          "step": 134,
+          "desc": "a \"Solvency Certificate\"",
+          "focusVisible": true
+        },
+        {
+          "step": 135,
+          "desc": "a \"Cultural Programme Permission\"",
+          "focusVisible": true
+        },
+        {
+          "step": 136,
+          "desc": "a \"Certified Copy\"",
+          "focusVisible": true
+        },
+        {
+          "step": 137,
+          "desc": "a \"Small Land Holder Farmer Certificate\"",
+          "focusVisible": true
+        },
+        {
+          "step": 138,
+          "desc": "a \"LandLess Certificate\"",
+          "focusVisible": true
+        },
+        {
+          "step": 139,
+          "desc": "a \"Agriculturist Certificate\"",
+          "focusVisible": true
+        },
+        {
+          "step": 140,
+          "desc": "a \"General Affidavit\"",
+          "focusVisible": true
+        },
+        {
+          "step": 141,
+          "desc": "a \"Certificate of Residence in Hilly Area\"",
+          "focusVisible": true
+        },
+        {
+          "step": 142,
+          "desc": "a \"Non Creamy Layer\"",
+          "focusVisible": true
+        },
+        {
+          "step": 143,
+          "desc": "a \"Caste Certificate\"",
+          "focusVisible": true
+        },
+        {
+          "step": 144,
+          "desc": "a \"Permission for digging land (Minor miner\"",
+          "focusVisible": true
+        },
+        {
+          "step": 145,
+          "desc": "a \"Permission to cut any non-scheduled tree\"",
+          "focusVisible": true
+        },
+        {
+          "step": 146,
+          "desc": "a \"Birth Certificate\"",
+          "focusVisible": true
+        },
+        {
+          "step": 147,
+          "desc": "a \"Death Certificate\"",
+          "focusVisible": true
+        },
+        {
+          "step": 148,
+          "desc": "a \"Certificate of Registration of Marriage\"",
+          "focusVisible": true
+        },
+        {
+          "step": 149,
+          "desc": "a \"Below Poverty Line Certificate\"",
+          "focusVisible": true
+        },
+        {
+          "step": 150,
+          "desc": "a \"No Dues Certificate\"",
+          "focusVisible": true
+        },
+        {
+          "step": 151,
+          "desc": "a \"Old Age Certificate for Niradhar\"",
+          "focusVisible": true
+        },
+        {
+          "step": 152,
+          "desc": "a \"Assessment Certificate\"",
+          "focusVisible": true
+        },
+        {
+          "step": 153,
+          "desc": "a \"Registration of Shop and Establishment\"",
+          "focusVisible": true
+        },
+        {
+          "step": 154,
+          "desc": "a \"Renewal of Registration Shop and Establi\"",
+          "focusVisible": true
+        },
+        {
+          "step": 155,
+          "desc": "a \"Registration for Principal Employer\"",
+          "focusVisible": true
+        },
+        {
+          "step": 156,
+          "desc": "a \"Contract Labour License New Registration\"",
+          "focusVisible": true
+        },
+        {
+          "step": 157,
+          "desc": "a \"Contract Labour License Renewal\"",
+          "focusVisible": true
+        },
+        {
+          "step": 158,
+          "desc": "a \"Beedi & Cigar License\"",
+          "focusVisible": true
+        },
+        {
+          "step": 159,
+          "desc": "a \"Registration of Factory\"",
+          "focusVisible": true
+        },
+        {
+          "step": 160,
+          "desc": "a \"Factory Renewal\"",
+          "focusVisible": true
+        },
+        {
+          "step": 161,
+          "desc": "a \"Transfer of Ownership of Steam Boiler wi\"",
+          "focusVisible": true
+        },
+        {
+          "step": 162,
+          "desc": "a \"Isuue of Duplicate Certificate for boile\"",
+          "focusVisible": true
+        },
+        {
+          "step": 163,
+          "desc": "a \"Building & Other Construction Registrati\"",
+          "focusVisible": true
+        },
+        {
+          "step": 164,
+          "desc": "a \"Motor Transport Workers Registration\"",
+          "focusVisible": true
+        },
+        {
+          "step": 165,
+          "desc": "a \"Factories Act of 1948 Maharashtra Factor\"",
+          "focusVisible": true
+        },
+        {
+          "step": 166,
+          "desc": "a \"Factory Plan Approval\"",
+          "focusVisible": true
+        },
+        {
+          "step": 167,
+          "desc": "a \"Boiler and Economiser Registration Inspe\"",
+          "focusVisible": true
+        },
+        {
+          "step": 168,
+          "desc": "a \"Renewal of Certificate of Boilers & Econ\"",
+          "focusVisible": true
+        },
+        {
+          "step": 169,
+          "desc": "a \"Approval for Boiler Manufacturer\"",
+          "focusVisible": true
+        },
+        {
+          "step": 170,
+          "desc": "a \"Renewal of Approval for Boiler Manufactu\"",
+          "focusVisible": true
+        },
+        {
+          "step": 171,
+          "desc": "a \"Approval for Erection of Boiler/Economis\"",
+          "focusVisible": true
+        },
+        {
+          "step": 172,
+          "desc": "a \"Renewal of Approval for Erection of Boil\"",
+          "focusVisible": true
+        },
+        {
+          "step": 173,
+          "desc": "a \"Approval for Economiser Manufacturer\"",
+          "focusVisible": true
+        },
+        {
+          "step": 174,
+          "desc": "a \"Renewal of Approval for Economiser Manuf\"",
+          "focusVisible": true
+        },
+        {
+          "step": 175,
+          "desc": "a \"Approval for Pressure Vessel Manufacture\"",
+          "focusVisible": true
+        },
+        {
+          "step": 176,
+          "desc": "a \"Renewal of Approval for Pressure Vessel \"",
+          "focusVisible": true
+        },
+        {
+          "step": 177,
+          "desc": "a \"Approval for Pressure Part Manufacturer\"",
+          "focusVisible": true
+        },
+        {
+          "step": 178,
+          "desc": "a \"Renewal of Approval for Pressure Part Ma\"",
+          "focusVisible": true
+        },
+        {
+          "step": 179,
+          "desc": "a \"Approval for Heat Exchanger Manufacturer\"",
+          "focusVisible": true
+        },
+        {
+          "step": 180,
+          "desc": "a \"Renewal of Approval for Heat Exchanger M\"",
+          "focusVisible": true
+        },
+        {
+          "step": 181,
+          "desc": "a \"Approval for Small Industrial Boiler Man\"",
+          "focusVisible": true
+        },
+        {
+          "step": 182,
+          "desc": "a \"Renewal of Approval for Small Industrial\"",
+          "focusVisible": true
+        },
+        {
+          "step": 183,
+          "desc": "a \"Approval for Boiler/Economiser Repairer\"",
+          "focusVisible": true
+        },
+        {
+          "step": 184,
+          "desc": "a \"Renewal of Approval for Boiler/Economise\"",
+          "focusVisible": true
+        },
+        {
+          "step": 185,
+          "desc": "a \"Approval for Pipe Fabricator\"",
+          "focusVisible": true
+        },
+        {
+          "step": 186,
+          "desc": "a \"Renewal of Approval for Pipe Fabricator\"",
+          "focusVisible": true
+        },
+        {
+          "step": 187,
+          "desc": "a \"Registration of Establishment Employing \"",
+          "focusVisible": true
+        },
+        {
+          "step": 188,
+          "desc": "a \"Registration of Establishment Employing \"",
+          "focusVisible": true
+        },
+        {
+          "step": 189,
+          "desc": "a \"Licence for Recruitment\"",
+          "focusVisible": true
+        },
+        {
+          "step": 190,
+          "desc": "a \"Licence for Recruitment of Laboueres by \"",
+          "focusVisible": true
+        },
+        {
+          "step": 191,
+          "desc": "a \"Licence for Employment\"",
+          "focusVisible": true
+        },
+        {
+          "step": 192,
+          "desc": "a \"Licence (Old User) for Renew and Amendme\"",
+          "focusVisible": true
+        },
+        {
+          "step": 193,
+          "desc": "a \"Permission for Domestic and Drinking Use\"",
+          "focusVisible": true
+        },
+        {
+          "step": 194,
+          "desc": "a \"Domestic and Industrial Water Permits to\"",
+          "focusVisible": true
+        },
+        {
+          "step": 195,
+          "desc": "a \"Sanction of water entitlement to WUA’s\"",
+          "focusVisible": true
+        },
+        {
+          "step": 196,
+          "desc": "a \"Certificate of arrears for Irrigation wa\"",
+          "focusVisible": true
+        },
+        {
+          "step": 197,
+          "desc": "a \"Certificate of Arrears of Non Irrigation\"",
+          "focusVisible": true
+        },
+        {
+          "step": 198,
+          "desc": "a \"Command area Certificate\"",
+          "focusVisible": true
+        },
+        {
+          "step": 199,
+          "desc": "a \"Distance certificate from notified River\"",
+          "focusVisible": true
+        },
+        {
+          "step": 200,
+          "desc": "a \"Permission for long term lift irrigation\"",
+          "focusVisible": true
+        },
+        {
+          "step": 201,
+          "desc": "a \"Industrial Water Permission\"",
+          "focusVisible": true
+        },
+        {
+          "step": 202,
+          "desc": "a \"Gazzette Part 2 for change of Name\"",
+          "focusVisible": true
+        },
+        {
+          "step": 203,
+          "desc": "a \"Gazzette Part 2 for change Date of Birth\"",
+          "focusVisible": true
+        },
+        {
+          "step": 204,
+          "desc": "a \"Gazzette Part 2 for change of Religion\"",
+          "focusVisible": true
+        },
+        {
+          "step": 205,
+          "desc": "a \"Part Two - Sankirna Information and Adve\"",
+          "focusVisible": true
+        },
+        {
+          "step": 206,
+          "desc": "a \"Jobseeker Registration\"",
+          "focusVisible": true
+        },
+        {
+          "step": 207,
+          "desc": "a \"Employer Registration\"",
+          "focusVisible": true
+        },
+        {
+          "step": 208,
+          "desc": "a \"Document verification of Candidates/Trai\"",
+          "focusVisible": true
+        },
+        {
+          "step": 209,
+          "desc": "a \"Registration of Tendu Traders / Manufact\"",
+          "focusVisible": true
+        },
+        {
+          "step": 210,
+          "desc": "a \"Registration of Burad Community for supp\"",
+          "focusVisible": true
+        },
+        {
+          "step": 211,
+          "desc": "a \"Compensation to be sanctioned for Cattle\"",
+          "focusVisible": true
+        },
+        {
+          "step": 212,
+          "desc": "a \"Financial Assistance to be sanctioned fo\"",
+          "focusVisible": true
+        },
+        {
+          "step": 213,
+          "desc": "a \"Compensation to be sanctioned for Crop D\"",
+          "focusVisible": true
+        },
+        {
+          "step": 214,
+          "desc": "a \"Permission for photography in Protected \"",
+          "focusVisible": true
+        },
+        {
+          "step": 215,
+          "desc": "a \"Permission for photography in Protected \"",
+          "focusVisible": true
+        },
+        {
+          "step": 216,
+          "desc": "a \"Communication of decision by licensing a\"",
+          "focusVisible": true
+        },
+        {
+          "step": 217,
+          "desc": "a \"Communication of decision by Tree Office\"",
+          "focusVisible": true
+        },
+        {
+          "step": 218,
+          "desc": "a \"Communication of decision by Tree Office\"",
+          "focusVisible": true
+        },
+        {
+          "step": 219,
+          "desc": "a \"Application for Certifying Non-Forest La\"",
+          "focusVisible": true
+        },
+        {
+          "step": 220,
+          "desc": "a \"Application for Certifying Boundary of a\"",
+          "focusVisible": true
+        },
+        {
+          "step": 221,
+          "desc": "a \"Registration for Industrial Transit Pass\"",
+          "focusVisible": true
+        },
+        {
+          "step": 222,
+          "desc": "a \"e-Search (Free View)\"",
+          "focusVisible": true
+        },
+        {
+          "step": 223,
+          "desc": "a \"Valuation Report for assessment of Stamp\"",
+          "focusVisible": true
+        },
+        {
+          "step": 224,
+          "desc": "a \"Refund of Registration Fee paid by e-Pay\"",
+          "focusVisible": true
+        },
+        {
+          "step": 225,
+          "desc": "a \"Certified Copy of index\"",
+          "focusVisible": true
+        },
+        {
+          "step": 226,
+          "desc": "a \"Certified Copy of document\"",
+          "focusVisible": true
+        },
+        {
+          "step": 227,
+          "desc": "a \"Filing of Notice of Intimation\"",
+          "focusVisible": true
+        },
+        {
+          "step": 228,
+          "desc": "a \"Registration of document\"",
+          "focusVisible": true
+        },
+        {
+          "step": 229,
+          "desc": "a \"Certified copy of index at JDR office\"",
+          "focusVisible": true
+        },
+        {
+          "step": 230,
+          "desc": "a \"Marriage celebrated in other forms,under\"",
+          "focusVisible": true
+        },
+        {
+          "step": 231,
+          "desc": "a \"Visit outside Office regarding Registrat\"",
+          "focusVisible": true
+        },
+        {
+          "step": 232,
+          "desc": "a \"Authentication of Special Power of Attor\"",
+          "focusVisible": true
+        },
+        {
+          "step": 233,
+          "desc": "a \"Certified Copy of Document registered Jo\"",
+          "focusVisible": true
+        },
+        {
+          "step": 234,
+          "desc": "a \"Deposit,withdrawal and opening of sealed\"",
+          "focusVisible": true
+        },
+        {
+          "step": 235,
+          "desc": "a \"Solemnization of Marriage under Special \"",
+          "focusVisible": true
+        },
+        {
+          "step": 236,
+          "desc": "a \"Certified copy of Document at JDR office\"",
+          "focusVisible": true
+        },
+        {
+          "step": 237,
+          "desc": "a \"Deemed Conveyance\"",
+          "focusVisible": true
+        },
+        {
+          "step": 238,
+          "desc": "a \"Society Name Registration\"",
+          "focusVisible": true
+        },
+        {
+          "step": 239,
+          "desc": "a \"Bye Laws Amendment\"",
+          "focusVisible": true
+        },
+        {
+          "step": 240,
+          "desc": "a \"Money Lending License Issuance\"",
+          "focusVisible": true
+        },
+        {
+          "step": 241,
+          "desc": "a \"Money Lending License Renewal\"",
+          "focusVisible": true
+        },
+        {
+          "step": 242,
+          "desc": "a \"Technical guidelines\"",
+          "focusVisible": true
+        },
+        {
+          "step": 243,
+          "desc": "a \"Farmer Registration\"",
+          "focusVisible": true
+        },
+        {
+          "step": 244,
+          "desc": "a \"Chawki Registration\"",
+          "focusVisible": true
+        },
+        {
+          "step": 245,
+          "desc": "a \"Reeling Registration\"",
+          "focusVisible": true
+        },
+        {
+          "step": 246,
+          "desc": "a \"Registration Of Partnership Firms\"",
+          "focusVisible": true
+        },
+        {
+          "step": 247,
+          "desc": "a \"Free legal aid and legal assistance\"",
+          "focusVisible": true
+        },
+        {
+          "step": 248,
+          "desc": "a \"Registration of trust as per Bombay publ\"",
+          "focusVisible": true
+        },
+        {
+          "step": 249,
+          "desc": "a \"Granting Permission to performance of Fo\"",
+          "focusVisible": true
+        },
+        {
+          "step": 250,
+          "desc": "a \"Attestation of Documents by Home Departm\"",
+          "focusVisible": true
+        },
+        {
+          "step": 251,
+          "desc": "a \"License for amplified sound system\"",
+          "focusVisible": true
+        },
+        {
+          "step": 252,
+          "desc": "a \"NOC for license for Amusement\"",
+          "focusVisible": true
+        },
+        {
+          "step": 253,
+          "desc": "a \"Permission for peaceful assembly and Pro\"",
+          "focusVisible": true
+        },
+        {
+          "step": 254,
+          "desc": "a \"Character Verification for Semi- Govt., \"",
+          "focusVisible": true
+        },
+        {
+          "step": 255,
+          "desc": "a \"NOC for petrol pump, gas agency, hotel, \"",
+          "focusVisible": true
+        },
+        {
+          "step": 256,
+          "desc": "a \"NOC Arms License Verification\"",
+          "focusVisible": true
+        },
+        {
+          "step": 257,
+          "desc": "a \"Police Clearance Certificate for Indian \"",
+          "focusVisible": true
+        },
+        {
+          "step": 258,
+          "desc": "a \"Police Clearance Certificate for foreign\"",
+          "focusVisible": true
+        },
+        {
+          "step": 259,
+          "desc": "a \"Maharashtra Cinemas (Regulation) Rules, \"",
+          "focusVisible": true
+        },
+        {
+          "step": 260,
+          "desc": "a \"Maharashtra Cinemas (Regulation) Rules, \"",
+          "focusVisible": true
+        },
+        {
+          "step": 261,
+          "desc": "a \"Maharashtra Theaters (Regulation) Rules,\"",
+          "focusVisible": true
+        },
+        {
+          "step": 262,
+          "desc": "a \"Renewal of licenses granted to places of\"",
+          "focusVisible": true
+        },
+        {
+          "step": 263,
+          "desc": "a \"Providing a copy of the First Informatio\"",
+          "focusVisible": true
+        },
+        {
+          "step": 264,
+          "desc": "a \"Licensing and regulating public and ente\"",
+          "focusVisible": true
+        },
+        {
+          "step": 265,
+          "desc": "a \"Licensing of premises for exhibiting mot\"",
+          "focusVisible": true
+        },
+        {
+          "step": 266,
+          "desc": "a \"Issue of Duplicate Driving License\"",
+          "focusVisible": true
+        },
+        {
+          "step": 267,
+          "desc": "a \"Issue of Duplicate Registration Certific\"",
+          "focusVisible": true
+        },
+        {
+          "step": 268,
+          "desc": "a \"Making Entry Of Agreement (FORM 34)\"",
+          "focusVisible": true
+        },
+        {
+          "step": 269,
+          "desc": "a \"New Vehicle Registration& deliveryod Reg\"",
+          "focusVisible": true
+        },
+        {
+          "step": 270,
+          "desc": "a \"Noting of Transfer of ownership of vehic\"",
+          "focusVisible": true
+        },
+        {
+          "step": 271,
+          "desc": "a \"Noting of Transfer of ownership after De\"",
+          "focusVisible": true
+        },
+        {
+          "step": 272,
+          "desc": "a \"Issue of NOC for Transfer of Ownership\"",
+          "focusVisible": true
+        },
+        {
+          "step": 273,
+          "desc": "a \"Intimation Of Change Of Address\"",
+          "focusVisible": true
+        },
+        {
+          "step": 274,
+          "desc": "a \"Notice Of Termination of an Agreement of\"",
+          "focusVisible": true
+        },
+        {
+          "step": 275,
+          "desc": "a \"Renewal of Driving License\"",
+          "focusVisible": true
+        },
+        {
+          "step": 276,
+          "desc": "a \"Temporary Registration\"",
+          "focusVisible": true
+        },
+        {
+          "step": 277,
+          "desc": "a \"Registration of Vehicle from Other State\"",
+          "focusVisible": true
+        },
+        {
+          "step": 278,
+          "desc": "a \"Issue of Lerner's License\"",
+          "focusVisible": true
+        },
+        {
+          "step": 279,
+          "desc": "a \"Issue of Permanent Driving License\"",
+          "focusVisible": true
+        },
+        {
+          "step": 280,
+          "desc": "a \"Change of Learner License address\"",
+          "focusVisible": true
+        },
+        {
+          "step": 281,
+          "desc": "a \"Issue of Secondary Learner License\"",
+          "focusVisible": true
+        },
+        {
+          "step": 282,
+          "desc": "a \"Change of Permanent License\"",
+          "focusVisible": true
+        },
+        {
+          "step": 283,
+          "desc": "a \"Change of Biometrics in Permanent Licens\"",
+          "focusVisible": true
+        },
+        {
+          "step": 284,
+          "desc": "a \"Permanent License Information\"",
+          "focusVisible": true
+        },
+        {
+          "step": 285,
+          "desc": "a \"Approval to drive a vehicle carrying dan\"",
+          "focusVisible": true
+        },
+        {
+          "step": 286,
+          "desc": "a \"Renewal of Conductor Licence\"",
+          "focusVisible": true
+        },
+        {
+          "step": 287,
+          "desc": "a \"Issue of Secondary Conductor Licence\"",
+          "focusVisible": true
+        },
+        {
+          "step": 288,
+          "desc": "a \"Change of Address in Conductor’s Licence\"",
+          "focusVisible": true
+        },
+        {
+          "step": 289,
+          "desc": "a \"Correction in Date of Birth in License\"",
+          "focusVisible": true
+        },
+        {
+          "step": 290,
+          "desc": "a \"Addition of Class in License\"",
+          "focusVisible": true
+        },
+        {
+          "step": 291,
+          "desc": "a \"Clubbing of Driving License\"",
+          "focusVisible": true
+        },
+        {
+          "step": 292,
+          "desc": "a \"International Driving License (IDP)\"",
+          "focusVisible": true
+        },
+        {
+          "step": 293,
+          "desc": "a \"New Conductor Badge\"",
+          "focusVisible": true
+        },
+        {
+          "step": 294,
+          "desc": "a \"New PSVA - Auto Rickshaw/ Taxi /Bus Badg\"",
+          "focusVisible": true
+        },
+        {
+          "step": 295,
+          "desc": "a \"Driving School License New Application/N\"",
+          "focusVisible": true
+        },
+        {
+          "step": 296,
+          "desc": "a \"Renewal of Driving School Certificate\"",
+          "focusVisible": true
+        },
+        {
+          "step": 297,
+          "desc": "a \"Obtaining Registration of certificate De\"",
+          "focusVisible": true
+        },
+        {
+          "step": 298,
+          "desc": "a \"Issue of Secondary Permit\"",
+          "focusVisible": true
+        },
+        {
+          "step": 299,
+          "desc": "a \"Permanent Surrender of Permit\"",
+          "focusVisible": true
+        },
+        {
+          "step": 300,
+          "desc": "a \"Application for Special Permit\"",
+          "focusVisible": true
+        },
+        {
+          "step": 301,
+          "desc": "a \"Application for Temporary Permit\"",
+          "focusVisible": true
+        },
+        {
+          "step": 302,
+          "desc": "a \"Updating Mobile number on record for Tra\"",
+          "focusVisible": true
+        },
+        {
+          "step": 303,
+          "desc": "a \"Online Payment of Motor Vehicle Tax\"",
+          "focusVisible": true
+        },
+        {
+          "step": 304,
+          "desc": "a \"Online Payment of Environment Tax\"",
+          "focusVisible": true
+        },
+        {
+          "step": 305,
+          "desc": "a \"Payment of Motor Vehicle Tax by Fleet Ow\"",
+          "focusVisible": true
+        },
+        {
+          "step": 306,
+          "desc": "a \"Online application for transportation of\"",
+          "focusVisible": true
+        },
+        {
+          "step": 307,
+          "desc": "a \"Renewal of Registration\"",
+          "focusVisible": true
+        },
+        {
+          "step": 308,
+          "desc": "a \"Noting non-use of the vehicle\"",
+          "focusVisible": true
+        },
+        {
+          "step": 309,
+          "desc": "a \"Withdrawal of Non- Use of Vehicle\"",
+          "focusVisible": true
+        },
+        {
+          "step": 310,
+          "desc": "a \"Citizen Self Backlog Module\"",
+          "focusVisible": true
+        },
+        {
+          "step": 311,
+          "desc": "a \"Issue / Renewal of certificate of fitnes\"",
+          "focusVisible": true
+        },
+        {
+          "step": 312,
+          "desc": "a \"Issue of Duplicate certificate of fitnes\"",
+          "focusVisible": true
+        },
+        {
+          "step": 313,
+          "desc": "a \"Application for New Trade Certificate fo\"",
+          "focusVisible": true
+        },
+        {
+          "step": 314,
+          "desc": "a \"Alteration in motor vehicle regarding Ap\"",
+          "focusVisible": true
+        },
+        {
+          "step": 315,
+          "desc": "a \"Application for New PUC Centre\"",
+          "focusVisible": true
+        },
+        {
+          "step": 316,
+          "desc": "a \"Conversion of Vehicle from T to NT/NT to\"",
+          "focusVisible": true
+        },
+        {
+          "step": 317,
+          "desc": "a \"Cancellation of Vehicle Registration\"",
+          "focusVisible": true
+        },
+        {
+          "step": 318,
+          "desc": "a \"Transfer of Permit/ Transfer of permit i\"",
+          "focusVisible": true
+        },
+        {
+          "step": 319,
+          "desc": "a \"Sanction Order of Passenger Contract Car\"",
+          "focusVisible": true
+        },
+        {
+          "step": 320,
+          "desc": "a \"New Passenger Contract Carriage permit\"",
+          "focusVisible": true
+        },
+        {
+          "step": 321,
+          "desc": "a \"Renewal of Passenger Contract Carriage p\"",
+          "focusVisible": true
+        },
+        {
+          "step": 322,
+          "desc": "a \"Replacement of Passenger Contract Carria\"",
+          "focusVisible": true
+        },
+        {
+          "step": 323,
+          "desc": "a \"New State Permit/Application for New Sta\"",
+          "focusVisible": true
+        },
+        {
+          "step": 324,
+          "desc": "a \"Renewal of State Permit/Application for \"",
+          "focusVisible": true
+        },
+        {
+          "step": 325,
+          "desc": "a \"New National permit\"",
+          "focusVisible": true
+        },
+        {
+          "step": 326,
+          "desc": "a \"Replacement of National permit\"",
+          "focusVisible": true
+        },
+        {
+          "step": 327,
+          "desc": "a \"Renewal Authorization of National permit\"",
+          "focusVisible": true
+        },
+        {
+          "step": 328,
+          "desc": "a \"Renewal of National permit\"",
+          "focusVisible": true
+        },
+        {
+          "step": 329,
+          "desc": "a \"Sanction Order of All Maharashtra AC Con\"",
+          "focusVisible": true
+        },
+        {
+          "step": 330,
+          "desc": "a \"New Application of All Maharashtra AC Co\"",
+          "focusVisible": true
+        },
+        {
+          "step": 331,
+          "desc": "a \"Replacement of All Maharashtra AC Permit\"",
+          "focusVisible": true
+        },
+        {
+          "step": 332,
+          "desc": "a \"Renewal of All Maharashtra AC Permit for\"",
+          "focusVisible": true
+        },
+        {
+          "step": 333,
+          "desc": "a \"Sanction Order of All Maharashtra AC Con\"",
+          "focusVisible": true
+        },
+        {
+          "step": 334,
+          "desc": "a \"New Application of All Maharashtra AC Co\"",
+          "focusVisible": true
+        },
+        {
+          "step": 335,
+          "desc": "a \"Replacement of All Maharashtra AC Contra\"",
+          "focusVisible": true
+        },
+        {
+          "step": 336,
+          "desc": "a \"Renewal of All Maharashtra AC Contract C\"",
+          "focusVisible": true
+        },
+        {
+          "step": 337,
+          "desc": "a \"Sanction Order of All India Tourist Perm\"",
+          "focusVisible": true
+        },
+        {
+          "step": 338,
+          "desc": "a \"New Permit Application of All India Tour\"",
+          "focusVisible": true
+        },
+        {
+          "step": 339,
+          "desc": "a \"Replacement of vehicle having All India \"",
+          "focusVisible": true
+        },
+        {
+          "step": 340,
+          "desc": "a \"Duplicate Permit /Authorization on or Bo\"",
+          "focusVisible": true
+        },
+        {
+          "step": 341,
+          "desc": "a \"Renewal of All India Tourist Permit Auth\"",
+          "focusVisible": true
+        },
+        {
+          "step": 342,
+          "desc": "a \"Permission to Display Advertisements\"",
+          "focusVisible": true
+        },
+        {
+          "step": 343,
+          "desc": "a \"Renewal of Permit and Authorization of A\"",
+          "focusVisible": true
+        },
+        {
+          "step": 344,
+          "desc": "a \"Duplicate National Goods Carriage Permit\"",
+          "focusVisible": true
+        },
+        {
+          "step": 345,
+          "desc": "a \"All Maharashtra Duplicate permits for Sl\"",
+          "focusVisible": true
+        },
+        {
+          "step": 346,
+          "desc": "a \"All Maharashtra Duplicate AC Permit\"",
+          "focusVisible": true
+        },
+        {
+          "step": 347,
+          "desc": "a \"Checkpost tax collection for vehicles of\"",
+          "focusVisible": true
+        },
+        {
+          "step": 348,
+          "desc": "a \"New Sanction order for Permit under Reci\"",
+          "focusVisible": true
+        },
+        {
+          "step": 349,
+          "desc": "a \"New Permit under Reciprocal Agreement in\"",
+          "focusVisible": true
+        },
+        {
+          "step": 350,
+          "desc": "a \"Renewal of Permit under Reciprocal Agree\"",
+          "focusVisible": true
+        },
+        {
+          "step": 351,
+          "desc": "a \"Replacement of Permit under Reciprocal A\"",
+          "focusVisible": true
+        },
+        {
+          "step": 352,
+          "desc": "a \"Duplicate Permit under Reciprocal Agreem\"",
+          "focusVisible": true
+        },
+        {
+          "step": 353,
+          "desc": "a \"New Counter Signature for other states V\"",
+          "focusVisible": true
+        },
+        {
+          "step": 354,
+          "desc": "a \"Renewal of Counter Signature for other s\"",
+          "focusVisible": true
+        },
+        {
+          "step": 355,
+          "desc": "a \"Duplicate Counter Signature for other st\"",
+          "focusVisible": true
+        },
+        {
+          "step": 356,
+          "desc": "a \"Replacement of Counter Signature for oth\"",
+          "focusVisible": true
+        },
+        {
+          "step": 357,
+          "desc": "a \"Temporary Permit of Counter Signature fo\"",
+          "focusVisible": true
+        },
+        {
+          "step": 358,
+          "desc": "a \"New Recommendation Letter for other stat\"",
+          "focusVisible": true
+        },
+        {
+          "step": 359,
+          "desc": "a \"Renewal of Recommendation Letter for oth\"",
+          "focusVisible": true
+        },
+        {
+          "step": 360,
+          "desc": "a \"Replacement of Recommendation Letter for\"",
+          "focusVisible": true
+        },
+        {
+          "step": 361,
+          "desc": "a \"Transfer / Change of name in Recommendat\"",
+          "focusVisible": true
+        },
+        {
+          "step": 362,
+          "desc": "a \"New Counter Signature Permit (Goods Carr\"",
+          "focusVisible": true
+        },
+        {
+          "step": 363,
+          "desc": "a \"Renewal of Counter Signature Permit (Goo\"",
+          "focusVisible": true
+        },
+        {
+          "step": 364,
+          "desc": "a \"Replacement of Counter Signature Permit \"",
+          "focusVisible": true
+        },
+        {
+          "step": 365,
+          "desc": "a \"Transfer / change of Name in Counter Sig\"",
+          "focusVisible": true
+        },
+        {
+          "step": 366,
+          "desc": "a \"Change of Address in Counter Signature P\"",
+          "focusVisible": true
+        },
+        {
+          "step": 367,
+          "desc": "a \"Cancellation in Counter Signature Permit\"",
+          "focusVisible": true
+        },
+        {
+          "step": 368,
+          "desc": "a \"New Sanction Order of Reciprocal Agreeme\"",
+          "focusVisible": true
+        },
+        {
+          "step": 369,
+          "desc": "a \"New Permit of Reciprocal Agreement (Pass\"",
+          "focusVisible": true
+        },
+        {
+          "step": 370,
+          "desc": "a \"Renewal in Permit of Reciprocal Agreemen\"",
+          "focusVisible": true
+        },
+        {
+          "step": 371,
+          "desc": "a \"Replacement of Permit in Reciprocal Agre\"",
+          "focusVisible": true
+        },
+        {
+          "step": 372,
+          "desc": "a \"Duplicate Permit of Reciprocal Agreement\"",
+          "focusVisible": true
+        },
+        {
+          "step": 373,
+          "desc": "a \"New Temporary permit of Reciprocal Agree\"",
+          "focusVisible": true
+        },
+        {
+          "step": 374,
+          "desc": "a \"IT Park Letter of Intent\"",
+          "focusVisible": true
+        },
+        {
+          "step": 375,
+          "desc": "a \"IT Park Unit Registration\"",
+          "focusVisible": true
+        },
+        {
+          "step": 376,
+          "desc": "a \"Bio-Tech Park Letter of Intent\"",
+          "focusVisible": true
+        },
+        {
+          "step": 377,
+          "desc": "a \"Bio-Tech Unit Registration\"",
+          "focusVisible": true
+        },
+        {
+          "step": 378,
+          "desc": "a \"Under Incentive Schema Stamp Duty Certif\"",
+          "focusVisible": true
+        },
+        {
+          "step": 379,
+          "desc": "a \"Under inccentive plan Certificate of eli\"",
+          "focusVisible": true
+        },
+        {
+          "step": 380,
+          "desc": "a \"Industrial Promotion Subsidy\"",
+          "focusVisible": true
+        },
+        {
+          "step": 381,
+          "desc": "a \"Transfer of Tenement (Residential)\"",
+          "focusVisible": true
+        },
+        {
+          "step": 382,
+          "desc": "a \"Transfer of Tenement (Non-Residential)\"",
+          "focusVisible": true
+        },
+        {
+          "step": 383,
+          "desc": "a \"Regularization (Residential)\"",
+          "focusVisible": true
+        },
+        {
+          "step": 384,
+          "desc": "a \"Regularization (Non-Residential)\"",
+          "focusVisible": true
+        },
+        {
+          "step": 385,
+          "desc": "a \"No Dues Certificate\"",
+          "focusVisible": true
+        },
+        {
+          "step": 386,
+          "desc": "a \"No Objection Certificate for Mortgage\"",
+          "focusVisible": true
+        },
+        {
+          "step": 387,
+          "desc": "a \"Sale Permission for Tenament and Commerc\"",
+          "focusVisible": true
+        },
+        {
+          "step": 388,
+          "desc": "a \"Sale Permission for Plot\"",
+          "focusVisible": true
+        },
+        {
+          "step": 389,
+          "desc": "a \"BPP Letter\"",
+          "focusVisible": true
+        },
+        {
+          "step": 390,
+          "desc": "a \"HPS Letter\"",
+          "focusVisible": true
+        },
+        {
+          "step": 391,
+          "desc": "a \"Attested Copy of File\"",
+          "focusVisible": true
+        },
+        {
+          "step": 392,
+          "desc": "a \"No Objection Certificate for Rent\"",
+          "focusVisible": true
+        },
+        {
+          "step": 393,
+          "desc": "a \"Transfer of Tenement (Residential)\"",
+          "focusVisible": true
+        },
+        {
+          "step": 394,
+          "desc": "a \"Transfer of Tenement (Non-Residential)\"",
+          "focusVisible": true
+        },
+        {
+          "step": 395,
+          "desc": "a \"Regularization (Residential)\"",
+          "focusVisible": true
+        },
+        {
+          "step": 396,
+          "desc": "a \"Regularization (Non-Residential)\"",
+          "focusVisible": true
+        },
+        {
+          "step": 397,
+          "desc": "a \"Services related to transfer of inherita\"",
+          "focusVisible": true
+        },
+        {
+          "step": 398,
+          "desc": "a \"Transfer of occupancy certificate of Apa\"",
+          "focusVisible": true
+        },
+        {
+          "step": 399,
+          "desc": "a \"Society Name Registration\"",
+          "focusVisible": true
+        },
+        {
+          "step": 400,
+          "desc": "a \"Providing certified copies of rent depos\"",
+          "focusVisible": true
+        }
+      ]
+    },
+    "pdf": {
+      "pdfs": [
+        {
+          "url": "https://aaplesarkar.mahaonline.gov.in/pdf/MAITRI-Instructions.pdf",
+          "status": 200,
+          "result": "text",
+          "bytes": 158191,
+          "pages": 1,
+          "sampledPages": 1,
+          "textChars": 1112,
+          "tagged": false
+        },
+        {
+          "url": "https://aaplesarkar.mahaonline.gov.in/pdf/FAQ-English-22-11-2021.pdf",
+          "status": 200,
+          "result": "scanned",
+          "bytes": 8084096,
+          "pages": 28,
+          "sampledPages": 5,
+          "textChars": 0,
+          "tagged": false
+        },
+        {
+          "url": "https://aaplesarkar.mahaonline.gov.in/pdf/FAQ-Marathi-22-11-2021.pdf",
+          "status": 200,
+          "result": "scanned",
+          "bytes": 7909278,
+          "pages": 25,
+          "sampledPages": 5,
+          "textChars": 0,
+          "tagged": false
+        },
+        {
+          "url": "https://aaplesarkar.mahaonline.gov.in/pdf/RTS_Annual_Report_2023-24.pdf",
+          "status": 200,
+          "result": "text",
+          "bytes": 10910717,
+          "pages": 382,
+          "sampledPages": 5,
+          "textChars": 4722,
+          "tagged": false
+        },
+        {
+          "url": "https://aaplesarkar.mahaonline.gov.in/pdf/IntegrationDocs/Aaple_Sarkar_Portal_Technical_Integration_V_3.3.pdf",
+          "status": 200,
+          "result": "text",
+          "bytes": 2355056,
+          "pages": 34,
+          "sampledPages": 5,
+          "textChars": 7421,
+          "tagged": false
+        }
+      ]
+    }
+  },
+  "errors": []
+}

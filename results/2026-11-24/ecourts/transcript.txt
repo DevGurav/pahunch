@@ -1,0 +1,113 @@
+banner landmark
+इ-कमिटी, उच्चतम न्यायालय, भारत - External site that opens in a new window, link
+इ-कमिटी, उच्चतम न्यायालय, भारत
+E-COMMITTEE, SUPREME COURT OF INDIA - External site that opens in a new window, link
+E-COMMITTEE, SUPREME COURT OF INDIA
+list
+Skip to main content, link
+Skip to main content
+graphic, no name
+Language, button
+Language
+graphic, no name
+Accessibility options, button
+Accessibility options
+graphic, no name
+State Emblem of India जिला न्यायालय सेवाएं eCourts Services District and Taluka Courts of India, link
+State Emblem of India, graphic
+जिला न्यायालय सेवाएं eCourts Services District and Taluka Courts of India
+ecourts logo, link
+ecourts logo, graphic
+Digital India, link
+Digital India, graphic
+navigation landmark, Main navigation
+list
+Home, link
+e-Committee, link
+Supreme Court, link
+High Courts, link
+District Courts, link
+NJDG, link
+Contact Us, link
+banner landmark
+navigation landmark, Search menu
+region landmark, side navigation
+heading level 2, Search Menu
+list
+CNR Number, link
+Case Status, link
+Court Orders, link
+Cause List, link
+Caveat Search, link
+Process Details, link
+Get Location Location, link
+Get Location, graphic
+Location
+main landmark
+Download eCourts Services App :
+Download eCourts Services app from Google Play, link
+Download eCourts Services app from Google Play, graphic
+Download eCourts Services app from Apple App Store, link
+Download eCourts Services app from Apple App Store, graphic
+Do not use browser toolbar reload or back button
+Close download app notification, button
+heading level 1, Search by CNR number
+Enter CNR Number, for example MHAU019999992015
+Enter 16 digit CNR number, edit
+Fields marked with * are required Captcha
+Enter the characters shown in the image, or select the audio Captcha and type the characters you hear., graphic
+Play CAPTCHA Audio, button
+Play CAPTCHA Audio, graphic
+Refresh Image, button
+Refresh Image, graphic
+*Enter Captcha
+*Enter Captcha, edit
+Search case by CNR number, button
+Reset CNR search form, button
+heading level 2, How to
+list
+Click here to view help video, link
+Enter the 16 digit alphanumeric CNR Number without any hyphen or space
+Click Search button to view current status and history of the case
+If you don't know the CNR number of the case, click on the Case Status icon on the left menu to search the case with other options like case registration number, party name, advocate name etc.
+content info landmark
+content info landmark
+navigation landmark, Useful Links
+heading level 2, Useful Links
+list
+About Us, link
+Newsletter, link
+Forms for Advocates, link
+Help Videos, link
+Site map, link
+Contact Us, link
+Web Information Manager, link
+Copyright Policy, link
+Hyperlinking Policy, link
+Accessibility Statement, link
+Screen Reader Access, link
+Disclaimer, link
+Content Owned by eCommittee, Supreme Court of India. This site is designed, hosted and maintained by
+National Informatics Centre (NIC) opens a new window, link
+National Informatics Centre (NIC)
+Ministry of Electronics & Information Technology, Government of India.
+Last Updated:
+2 January 2026
+heading level 2, Follow Us
+list
+YouTube - External site that opens in a new window, link
+S6
+Version: 1.0
+list
+Digital India opens a new window, link
+Digital India, graphic
+National Portal of India opens a new window, link
+National Portal of India, graphic
+Department of Justice opens a new window, link
+Department of Justice, graphic
+e-Committee Supreme Court of India opens a new window, link
+e-Committee Supreme Court of India, graphic
+India Code opens a new window, link
+India Code, graphic
+National Informatics Centre opens a new window, link
+National Informatics Centre, graphic

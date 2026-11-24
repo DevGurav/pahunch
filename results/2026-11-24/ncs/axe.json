@@ -1,0 +1,454 @@
+{
+  "version": "4.14.1",
+  "violations": [
+    {
+      "id": "aria-allowed-role",
+      "impact": "minor",
+      "help": "ARIA role should be appropriate for the element",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/aria-allowed-role?application=playwright",
+      "tags": [
+        "cat.aria",
+        "best-practice"
+      ],
+      "nodeCount": 1,
+      "nodes": [
+        {
+          "target": "article[aria-label=\"Rojgar Mela\"]",
+          "html": "<article _ngcontent-ng-c3797088375=\"\" role=\"group\" class=\"update-card active ng-star-inserted\" aria-hidden=\"false\" tabindex=\"0\" aria-label=\"Rojgar Mela\" style=\"transform: translateX(calc(-50%)) scale(1); z-index: 10; opacity: 1; filter: none; pointer-events: auto;\">",
+          "failureSummary": "Fix any of the following:\n  ARIA role group is not allowed for given element"
+        }
+      ]
+    },
+    {
+      "id": "aria-required-children",
+      "impact": "critical",
+      "help": "Certain ARIA roles must contain particular children",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/aria-required-children?application=playwright",
+      "tags": [
+        "cat.aria",
+        "wcag2a",
+        "wcag131",
+        "EN-301-549",
+        "EN-9.1.3.1",
+        "RGAAv4",
+        "RGAA-9.3.1"
+      ],
+      "nodeCount": 1,
+      "nodes": [
+        {
+          "target": ".calendar-grid",
+          "html": "<div _ngcontent-ng-c3797088375=\"\" role=\"grid\" class=\"calendar-grid\">",
+          "failureSummary": "Fix any of the following:\n  Element has children which are not allowed: [role=columnheader], button[aria-label]"
+        }
+      ]
+    },
+    {
+      "id": "aria-required-parent",
+      "impact": "critical",
+      "help": "Certain ARIA roles must be contained by particular parents",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/aria-required-parent?application=playwright",
+      "tags": [
+        "cat.aria",
+        "wcag2a",
+        "wcag131",
+        "EN-301-549",
+        "EN-9.1.3.1",
+        "RGAAv4",
+        "RGAA-9.3.1"
+      ],
+      "nodeCount": 7,
+      "nodes": [
+        {
+          "target": ".weekday[role=\"columnheader\"][_ngcontent-ng-c3797088375=\"\"]:nth-child(1)",
+          "html": "<span _ngcontent-ng-c3797088375=\"\" role=\"columnheader\" class=\"weekday\">Mon</span>",
+          "failureSummary": "Fix any of the following:\n  Required ARIA parent role not present: row"
+        },
+        {
+          "target": ".weekday[role=\"columnheader\"][_ngcontent-ng-c3797088375=\"\"]:nth-child(2)",
+          "html": "<span _ngcontent-ng-c3797088375=\"\" role=\"columnheader\" class=\"weekday\">Tue</span>",
+          "failureSummary": "Fix any of the following:\n  Required ARIA parent role not present: row"
+        },
+        {
+          "target": ".weekday[role=\"columnheader\"][_ngcontent-ng-c3797088375=\"\"]:nth-child(3)",
+          "html": "<span _ngcontent-ng-c3797088375=\"\" role=\"columnheader\" class=\"weekday\">Wed</span>",
+          "failureSummary": "Fix any of the following:\n  Required ARIA parent role not present: row"
+        },
+        {
+          "target": ".weekday[role=\"columnheader\"][_ngcontent-ng-c3797088375=\"\"]:nth-child(4)",
+          "html": "<span _ngcontent-ng-c3797088375=\"\" role=\"columnheader\" class=\"weekday\">Thu</span>",
+          "failureSummary": "Fix any of the following:\n  Required ARIA parent role not present: row"
+        },
+        {
+          "target": ".weekday[role=\"columnheader\"][_ngcontent-ng-c3797088375=\"\"]:nth-child(5)",
+          "html": "<span _ngcontent-ng-c3797088375=\"\" role=\"columnheader\" class=\"weekday\">Fri</span>",
+          "failureSummary": "Fix any of the following:\n  Required ARIA parent role not present: row"
+        },
+        {
+          "target": ".weekday[role=\"columnheader\"][_ngcontent-ng-c3797088375=\"\"]:nth-child(6)",
+          "html": "<span _ngcontent-ng-c3797088375=\"\" role=\"columnheader\" class=\"weekday\">Sat</span>",
+          "failureSummary": "Fix any of the following:\n  Required ARIA parent role not present: row"
+        },
+        {
+          "target": ".weekday[role=\"columnheader\"][_ngcontent-ng-c3797088375=\"\"]:nth-child(7)",
+          "html": "<span _ngcontent-ng-c3797088375=\"\" role=\"columnheader\" class=\"weekday\">Sun</span>",
+          "failureSummary": "Fix any of the following:\n  Required ARIA parent role not present: row"
+        }
+      ]
+    },
+    {
+      "id": "color-contrast",
+      "impact": "serious",
+      "help": "Elements must meet minimum color contrast ratio thresholds",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/color-contrast?application=playwright",
+      "tags": [
+        "cat.color",
+        "wcag2aa",
+        "wcag143",
+        "TTv5",
+        "TT13.c",
+        "EN-301-549",
+        "EN-9.1.4.3",
+        "ACT",
+        "RGAAv4",
+        "RGAA-3.2.1"
+      ],
+      "nodeCount": 15,
+      "nodes": [
+        {
+          "target": ".company-link[title=\"SWIGGY LIMITED\"][aria-label=\"View jobs at SWIGGY LIMITED\"]:nth-child(2) > .company-name[_ngcontent-ng-c339973063=\"\"]",
+          "html": "<span _ngcontent-ng-c339973063=\"\" class=\"company-name\">SWIGGY LIMITED</span>",
+          "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.67 (foreground color: #8a8483, background color: #ffffff, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1"
+        },
+        {
+          "target": ".company-link[_ngcontent-ng-c339973063=\"\"]:nth-child(3) > .company-name[_ngcontent-ng-c339973063=\"\"]",
+          "html": "<span _ngcontent-ng-c339973063=\"\" class=\"company-name\">Cassius Technologies Private Limited</span>",
+          "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.67 (foreground color: #8a8483, background color: #ffffff, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1"
+        },
+        {
+          "target": ".company-link[_ngcontent-ng-c339973063=\"\"]:nth-child(4) > .company-name[_ngcontent-ng-c339973063=\"\"]",
+          "html": "<span _ngcontent-ng-c339973063=\"\" class=\"company-name\">T.M.INPUTS AND SERVICES PRIVATE LIMITED</span>",
+          "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.67 (foreground color: #8a8483, background color: #ffffff, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1"
+        },
+        {
+          "target": ".company-link[title=\"Quess Corp Limited\"][_ngcontent-ng-c339973063=\"\"]:nth-child(5) > .company-name[_ngcontent-ng-c339973063=\"\"]",
+          "html": "<span _ngcontent-ng-c339973063=\"\" class=\"company-name\">Quess Corp Limited</span>",
+          "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.67 (foreground color: #8a8483, background color: #ffffff, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1"
+        },
+        {
+          "target": ".company-link[title=\"Apna\"][aria-label=\"View jobs at Apna\"]:nth-child(6) > .company-name[_ngcontent-ng-c339973063=\"\"]",
+          "html": "<span _ngcontent-ng-c339973063=\"\" class=\"company-name\">Apna</span>",
+          "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.67 (foreground color: #8a8483, background color: #ffffff, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1"
+        },
+        {
+          "target": ".company-link[title=\"SWIGGY LIMITED\"][aria-label=\"View jobs at SWIGGY LIMITED\"]:nth-child(7) > .company-name[_ngcontent-ng-c339973063=\"\"]",
+          "html": "<span _ngcontent-ng-c339973063=\"\" class=\"company-name\">SWIGGY LIMITED</span>",
+          "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.67 (foreground color: #8a8483, background color: #ffffff, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1"
+        },
+        {
+          "target": ".journey-subtitle",
+          "html": "<p _ngcontent-ng-c4265435949=\"\" class=\"journey-subtitle\">Choose your path — we have tailored tools for everyone</p>",
+          "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.94 (foreground color: #808080, background color: #ffffff, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+        },
+        {
+          "target": ".factive > .f-tab-text[_ngcontent-ng-c101875441=\"\"]",
+          "html": "<span _ngcontent-ng-c101875441=\"\" class=\"f-tab-text\">Jobs</span>",
+          "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.16 (foreground color: #0b57d0, background color: #fbcb2c, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+        },
+        {
+          "target": ".calendar-month",
+          "html": "<p _ngcontent-ng-c3797088375=\"\" aria-live=\"polite\" class=\"calendar-month\">November 2026</p>",
+          "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.67 (foreground color: #9e9e9e, background color: #ffffff, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1"
+        },
+        {
+          "target": "button[aria-label=\"Monday, October 26, 2026\"]",
+          "html": "<button _ngcontent-ng-c3797088375=\"\" type=\"button\" class=\"day muted ng-star-inserted\" aria-label=\"Monday, October 26, 2026\" aria-pressed=\"false\"> 26 </button>",
+          "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.67 (foreground color: #9e9e9e, background color: #ffffff, font size: 11.3pt (15px), font weight: normal). Expected contrast ratio of 4.5:1"
+        }
+      ]
+    },
+    {
+      "id": "heading-order",
+      "impact": "moderate",
+      "help": "Heading levels should only increase by one",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/heading-order?application=playwright",
+      "tags": [
+        "cat.semantics",
+        "best-practice"
+      ],
+      "nodeCount": 1,
+      "nodes": [
+        {
+          "target": ".col-md-3.col-6[_ngcontent-ng-c2105119963=\"\"]:nth-child(1) > h5",
+          "html": "<h5 _ngcontent-ng-c2105119963=\"\">NCS</h5>",
+          "failureSummary": "Fix any of the following:\n  Heading order invalid"
+        }
+      ]
+    },
+    {
+      "id": "label-content-name-mismatch",
+      "impact": "serious",
+      "help": "Elements must have their visible text as part of their accessible name",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright",
+      "tags": [
+        "cat.semantics",
+        "wcag21a",
+        "wcag253",
+        "EN-301-549",
+        "EN-9.2.5.3",
+        "RGAAv4",
+        "RGAA-6.1.5"
+      ],
+      "nodeCount": 1,
+      "nodes": [
+        {
+          "target": ".app-store-badge",
+          "html": "<a _ngcontent-ng-c1725812278=\"\" href=\"https://apps.apple.com/in/app/national-career-service-ncs/id6759326457\" target=\"_blank\" rel=\"noopener\" aria-label=\"Download on the App Store\" class=\"app-store-badge\">",
+          "failureSummary": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+        }
+      ]
+    },
+    {
+      "id": "landmark-one-main",
+      "impact": "moderate",
+      "help": "Document should have one main landmark",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/landmark-one-main?application=playwright",
+      "tags": [
+        "cat.semantics",
+        "best-practice"
+      ],
+      "nodeCount": 1,
+      "nodes": [
+        {
+          "target": "html",
+          "html": "<html lang=\"en\">",
+          "failureSummary": "Fix all of the following:\n  Document does not have a main landmark"
+        }
+      ]
+    },
+    {
+      "id": "region",
+      "impact": "moderate",
+      "help": "All page content should be contained by landmarks",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/region?application=playwright",
+      "tags": [
+        "cat.keyboard",
+        "best-practice",
+        "RGAAv4",
+        "RGAA-9.2.1"
+      ],
+      "nodeCount": 175,
+      "nodes": [
+        {
+          "target": ".left-flag-div",
+          "html": "<div _ngcontent-ng-c2244526599=\"\" class=\"left-flag-div d-flex align-items-center gap-2\"><img _ngcontent-ng-c2244526599=\"\" src=\"../../../assets/icon/Inidan-Flag.png\" alt=\"Indian flag\" data-clarity-loaded=\"1xj1o0t\"><h1 _ngcontent-ng-c2244526599=\"\" class=\"gov-text m-0\">Government of India</h1></div>",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "target": ".bhashini-dropdown-btn",
+          "html": "<button role=\"combobox\" aria-label=\"Language Translator\" aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-controls=\"bhashiniLanguageDropdown\" class=\"bhashini-dropdown-btn\">",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "target": ".font-inc-dec",
+          "html": "<div _ngcontent-ng-c2244526599=\"\" class=\"font-inc-dec d-flex align-items-center gap-2\">",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "target": ".skip-text",
+          "html": "<h1 _ngcontent-ng-c2244526599=\"\" class=\"skip-text d-flex align-items-center gap-2 m-0\">",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "target": ".pe-3 > img",
+          "html": "<img _ngcontent-ng-c3049235200=\"\" src=\"../../../assets/logo/ministry-of-labour.svg\" alt=\"Ministry of Labour and Employment\" class=\"ng-tns-c3049235200-0\">",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "target": ".cursor-pointer",
+          "html": "<div _ngcontent-ng-c3049235200=\"\" class=\"ncs-logo-div cursor-pointer\"><img _ngcontent-ng-c3049235200=\"\" src=\"../../../assets/logo/ncs-small-logo.png\" alt=\"National Career Service\" style=\"width: 105px;\" class=\"ng-tns-c3049235200-0\" data-clarity-loaded=\"1i3wqnx\"></div>",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "target": ".header-search-btn",
+          "html": "<a _ngcontent-ng-c3049235200=\"\" aria-label=\"Search jobs\" class=\"header-search-btn\" href=\"/job-listing\"><i _ngcontent-ng-c3049235200=\"\" class=\"bi bi-search\"></i></a>",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "target": ".ncs-nav-list > li:nth-child(6)",
+          "html": "<li _ngcontent-ng-c3049235200=\"\" class=\"ng-tns-c3049235200-0 ng-star-inserted\"><a _ngcontent-ng-c3049235200=\"\" routerlink=\"/latest-update\" class=\"ncs-nav-link\" href=\"/latest-update\"><i _ngcontent-ng-c3049235200=\"\" class=\"bi bi-megaphone\"></i> Classified Jobs </a></li>",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "target": ".hero-head",
+          "html": "<div _ngcontent-ng-c125405951=\"\" class=\"hero-head text-center\">",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "target": ".wn-label > span[_ngcontent-ng-c1706672950=\"\"]",
+          "html": "<span _ngcontent-ng-c1706672950=\"\">What's New</span>",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        }
+      ]
+    }
+  ],
+  "incomplete": [
+    {
+      "id": "aria-allowed-role",
+      "impact": "minor",
+      "help": "ARIA role should be appropriate for the element",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/aria-allowed-role?application=playwright",
+      "tags": [
+        "cat.aria",
+        "best-practice"
+      ],
+      "nodeCount": 11,
+      "nodes": [
+        {
+          "target": ".update-card[role=\"group\"]:nth-child(2)",
+          "html": "<article _ngcontent-ng-c37970...=\"\" role=\"group\" class=\"update-card ng-star-...\" aria-hidden=\"true\" tabindex=\"-1\" aria-label=\"Pandit Din Dayal Up...\" style=\"transform: translate...\">",
+          "failureSummary": "Fix any of the following:\n  ARIA role group must be removed when the element is made visible, as it is not allowed for the element"
+        },
+        {
+          "target": "article[aria-label=\"MINI JOB FAIR\"]",
+          "html": "<article _ngcontent-ng-c3797088375=\"\" role=\"group\" class=\"update-card ng-star-inserted\" aria-hidden=\"true\" tabindex=\"-1\" aria-label=\"MINI JOB FAIR\" style=\"transform: translateX(calc(-18%)) scale(0.8); z-index: 8; opacity: 0.5; filter: blur(3px); pointer-events: auto;\">",
+          "failureSummary": "Fix any of the following:\n  ARIA role group must be removed when the element is made visible, as it is not allowed for the element"
+        },
+        {
+          "target": "article[aria-label=\"Recruitment Camp 2\"]",
+          "html": "<article _ngcontent-ng-c3797088375=\"\" role=\"group\" class=\"update-card ng-star-inserted\" aria-hidden=\"true\" tabindex=\"-1\" aria-label=\"Recruitment Camp 2\" style=\"transform: translateX(calc(-2%)) scale(0.7); z-index: 7; opacity: 0; filter: blur(4.5px); pointer-events: none;\">",
+          "failureSummary": "Fix any of the following:\n  ARIA role group must be removed when the element is made visible, as it is not allowed for the element"
+        },
+        {
+          "target": "article[aria-label=\"3rd Job Fair At Srikakulam \"]",
+          "html": "<article _ngcontent-ng-c3797088375=\"\" role=\"group\" class=\"update-card ng-star-inserted\" aria-hidden=\"true\" tabindex=\"-1\" aria-label=\"3rd Job Fair At Srikakulam \" style=\"transform: translateX(calc(14%)) scale(0.6); z-index: 6; opacity: 0; filter: blur(6px); pointer-events: none;\">",
+          "failureSummary": "Fix any of the following:\n  ARIA role group must be removed when the element is made visible, as it is not allowed for the element"
+        },
+        {
+          "target": "article[aria-label=\"CAREER COUNSILING\"]",
+          "html": "<article _ngcontent-ng-c3797088375=\"\" role=\"group\" class=\"update-card ng-star-inserted\" aria-hidden=\"true\" tabindex=\"-1\" aria-label=\"CAREER COUNSILING\" style=\"transform: translateX(calc(30%)) scale(0.5); z-index: 5; opacity: 0; filter: blur(7.5px); pointer-events: none;\">",
+          "failureSummary": "Fix any of the following:\n  ARIA role group must be removed when the element is made visible, as it is not allowed for the element"
+        },
+        {
+          "target": "article[aria-label=\"Mega Job Fair_sitamarhi\"]",
+          "html": "<article _ngcontent-ng-c3797088375=\"\" role=\"group\" class=\"update-card ng-star-inserted\" aria-hidden=\"true\" tabindex=\"-1\" aria-label=\"Mega Job Fair_sitamarhi\" style=\"transform: translateX(calc(46%)) scale(0.4); z-index: 4; opacity: 0; filter: blur(9px); pointer-events: none;\">",
+          "failureSummary": "Fix any of the following:\n  ARIA role group must be removed when the element is made visible, as it is not allowed for the element"
+        },
+        {
+          "target": "article[aria-label=\"Career Talks\"]",
+          "html": "<article _ngcontent-ng-c3797088375=\"\" role=\"group\" class=\"update-card ng-star-inserted\" aria-hidden=\"true\" tabindex=\"-1\" aria-label=\"Career Talks\" style=\"transform: translateX(calc(-130%)) scale(0.5); z-index: 5; opacity: 0; filter: blur(7.5px); pointer-events: none;\">",
+          "failureSummary": "Fix any of the following:\n  ARIA role group must be removed when the element is made visible, as it is not allowed for the element"
+        },
+        {
+          "target": ".update-card[aria-label=\"Career Counsiling\"][role=\"group\"]:nth-child(9)",
+          "html": "<article _ngcontent-ng-c3797088375=\"\" role=\"group\" class=\"update-card ng-star-inserted\" aria-hidden=\"true\" tabindex=\"-1\" aria-label=\"Career Counsiling\" style=\"transform: translateX(calc(-114%)) scale(0.6); z-index: 6; opacity: 0; filter: blur(6px); pointer-events: none;\">",
+          "failureSummary": "Fix any of the following:\n  ARIA role group must be removed when the element is made visible, as it is not allowed for the element"
+        },
+        {
+          "target": ".update-card[aria-label=\"Career Counsiling\"][role=\"group\"]:nth-child(10)",
+          "html": "<article _ngcontent-ng-c3797088375=\"\" role=\"group\" class=\"update-card ng-star-inserted\" aria-hidden=\"true\" tabindex=\"-1\" aria-label=\"Career Counsiling\" style=\"transform: translateX(calc(-98%)) scale(0.7); z-index: 7; opacity: 0; filter: blur(4.5px); pointer-events: none;\">",
+          "failureSummary": "Fix any of the following:\n  ARIA role group must be removed when the element is made visible, as it is not allowed for the element"
+        },
+        {
+          "target": ".update-card[aria-label=\"Career Counsiling\"][role=\"group\"]:nth-child(11)",
+          "html": "<article _ngcontent-ng-c3797088375=\"\" role=\"group\" class=\"update-card ng-star-inserted\" aria-hidden=\"true\" tabindex=\"-1\" aria-label=\"Career Counsiling\" style=\"transform: translateX(calc(-82%)) scale(0.8); z-index: 8; opacity: 0.5; filter: blur(3px); pointer-events: auto;\">",
+          "failureSummary": "Fix any of the following:\n  ARIA role group must be removed when the element is made visible, as it is not allowed for the element"
+        }
+      ]
+    },
+    {
+      "id": "aria-prohibited-attr",
+      "impact": "serious",
+      "help": "Elements must only use permitted ARIA attributes",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/aria-prohibited-attr?application=playwright",
+      "tags": [
+        "cat.aria",
+        "wcag2a",
+        "wcag412",
+        "EN-301-549",
+        "EN-9.4.1.2",
+        "RGAAv4",
+        "RGAA-7.1.1"
+      ],
+      "nodeCount": 1,
+      "nodes": [
+        {
+          "target": ".stage",
+          "html": "<div _ngcontent-ng-c3797088375=\"\" aria-roledescription=\"carousel\" aria-label=\"Upcoming events and job fairs\" class=\"stage\">",
+          "failureSummary": "Fix all of the following:\n  aria-label attribute is not well supported on \"div\" elements with no valid role attribute."
+        }
+      ]
+    },
+    {
+      "id": "color-contrast",
+      "impact": "serious",
+      "help": "Elements must meet minimum color contrast ratio thresholds",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/color-contrast?application=playwright",
+      "tags": [
+        "cat.color",
+        "wcag2aa",
+        "wcag143",
+        "TTv5",
+        "TT13.c",
+        "EN-301-549",
+        "EN-9.1.4.3",
+        "ACT",
+        "RGAAv4",
+        "RGAA-3.2.1"
+      ],
+      "nodeCount": 62,
+      "nodes": [
+        {
+          "target": ".hero-stat > span[_ngcontent-ng-c2142836824=\"\"]:nth-child(4)",
+          "html": "<span _ngcontent-ng-c2142836824=\"\">n</span>",
+          "failureSummary": "Fix any of the following:\n  Element content is too short to determine if it is actual text content"
+        },
+        {
+          "target": ".stat-item[_ngcontent-ng-c2142836824=\"\"]:nth-child(1) > .stat-label",
+          "html": "<p _ngcontent-ng-c2142836824=\"\" class=\"stat-label\">Active Employers</p>",
+          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background image"
+        },
+        {
+          "target": ".stat-item[_ngcontent-ng-c2142836824=\"\"]:nth-child(1) > .stat-value",
+          "html": "<p _ngcontent-ng-c2142836824=\"\" class=\"stat-value\">5.9 M</p>",
+          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background image"
+        },
+        {
+          "target": ".stat-item[_ngcontent-ng-c2142836824=\"\"]:nth-child(2) > .stat-label",
+          "html": "<p _ngcontent-ng-c2142836824=\"\" class=\"stat-label\">Job Applications Submitted</p>",
+          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background image"
+        },
+        {
+          "target": ".stat-item[_ngcontent-ng-c2142836824=\"\"]:nth-child(2) > .stat-value",
+          "html": "<p _ngcontent-ng-c2142836824=\"\" class=\"stat-value\">1.5 M</p>",
+          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background image"
+        },
+        {
+          "target": ".stat-item[_ngcontent-ng-c2142836824=\"\"]:nth-child(3) > .stat-label",
+          "html": "<p _ngcontent-ng-c2142836824=\"\" class=\"stat-label\">Total Job Listings</p>",
+          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background image"
+        },
+        {
+          "target": ".stat-item[_ngcontent-ng-c2142836824=\"\"]:nth-child(3) > .stat-value",
+          "html": "<p _ngcontent-ng-c2142836824=\"\" class=\"stat-value\">3.6 M</p>",
+          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background image"
+        },
+        {
+          "target": ".stat-item[_ngcontent-ng-c2142836824=\"\"]:nth-child(4) > .stat-label",
+          "html": "<p _ngcontent-ng-c2142836824=\"\" class=\"stat-label\">Active Vacancies</p>",
+          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background image"
+        },
+        {
+          "target": ".stat-item[_ngcontent-ng-c2142836824=\"\"]:nth-child(4) > .stat-value",
+          "html": "<p _ngcontent-ng-c2142836824=\"\" class=\"stat-value\">3.7 L</p>",
+          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background image"
+        },
+        {
+          "target": ".hero-head > .hero-title",
+          "html": "<h1 _ngcontent-ng-c125405951=\"\" class=\"hero-title\">Find <span _ngcontent-ng-c125405951=\"\" class=\"highlight\">Your Next</span> Career Opportunity</h1>",
+          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+        }
+      ]
+    }
+  ],
+  "passes": 46
+}

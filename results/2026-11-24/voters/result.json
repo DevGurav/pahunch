@@ -1,0 +1,630 @@
+{
+  "schema": 1,
+  "portal": {
+    "id": "voters",
+    "name": "Voters' Services Portal: electoral roll search",
+    "owner": "Election Commission of India",
+    "jurisdiction": "Central",
+    "task": "Search the electoral roll by EPIC (voter ID) number"
+  },
+  "startedAt": "2026-11-24T13:35:56.319Z",
+  "finishedAt": "2026-11-24T13:35:59.282Z",
+  "tool": {
+    "name": "pahunch",
+    "version": "0.1.0",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/159.0.8154.6 Safari/537.36 pahunch/0.1.0 (+https://github.com/DevGurav/pahunch)",
+    "browser": "chromium 159.0.8154.6",
+    "axe": "4.14.1"
+  },
+  "pages": [
+    {
+      "requested": "https://electoralsearch.eci.gov.in/",
+      "finalUrl": "https://electoralsearch.eci.gov.in/",
+      "status": 200,
+      "title": "VOTERS' SERVICES PORTAL"
+    }
+  ],
+  "robots": {
+    "robotsUrl": "https://electoralsearch.eci.gov.in/robots.txt",
+    "status": 200,
+    "disallowed": false
+  },
+  "critical": [
+    {
+      "index": 0,
+      "label": "EPIC number field",
+      "kind": "field",
+      "selector": "#epicID",
+      "found": true,
+      "role": "textbox",
+      "name": "Enter EPIC Number",
+      "disabled": false,
+      "reached": true,
+      "focusVisible": true
+    },
+    {
+      "index": 1,
+      "label": "State dropdown",
+      "kind": "select",
+      "selector": "select[aria-label=\"Select State\"] >> visible=true",
+      "found": true,
+      "role": "combobox",
+      "name": "Select State",
+      "disabled": false,
+      "reached": true,
+      "focusVisible": true
+    },
+    {
+      "index": 2,
+      "label": "CAPTCHA field",
+      "kind": "captcha-field",
+      "selector": "input[name=\"captcha\"]",
+      "found": true,
+      "role": "textbox",
+      "name": "Enter Captcha",
+      "disabled": false,
+      "reached": true,
+      "focusVisible": true
+    },
+    {
+      "index": 3,
+      "label": "Listen-to-CAPTCHA icon",
+      "kind": "captcha-audio",
+      "selector": "i[aria-label=\"listen captcha\" i]",
+      "found": true,
+      "role": "button",
+      "name": "listen captcha",
+      "disabled": false,
+      "reached": true,
+      "focusVisible": true
+    },
+    {
+      "index": 4,
+      "label": "Search button",
+      "kind": "button",
+      "selector": "button:text-is(\"SEARCH\")",
+      "found": true,
+      "role": "button",
+      "name": "Search",
+      "disabled": false,
+      "reached": true,
+      "focusVisible": true
+    }
+  ],
+  "verdict": "barriers",
+  "inconclusiveReasons": [],
+  "findings": [
+    {
+      "check": "captcha",
+      "rule": "captcha-with-audio",
+      "severity": "info",
+      "wcag": [
+        "1.1.1"
+      ],
+      "summary": "Image CAPTCHA with an audio option (\"listen captcha\") that the keyboard can reach. Its alt text is empty, so screen readers skip the image entirely.",
+      "target": "img",
+      "snippet": "<img src=\"data:image/jpg;base64…,undefined\" alt=\"\" width=\"190\" height=\"65\" style=\"border: 1px solid rgb(137, 137, 129);\">",
+      "details": {
+        "audio": {
+          "description": "listen captcha",
+          "focusable": true,
+          "exposed": true,
+          "snippet": "<i class=\"fa-solid fa-volume-high\" role=\"button\" tabindex=\"0\" aria-label=\"listen captcha\" style=\"margin-top: 5px; cursor: pointer; font-size: 20px; color: rgb(255, 165, 0);\" data-pahunch-critical=\"3\"></i>"
+        },
+        "imageAlt": ""
+      }
+    },
+    {
+      "check": "lang",
+      "rule": "lang-indic-unmarked",
+      "severity": "barrier",
+      "wcag": [
+        "3.1.2"
+      ],
+      "summary": "179 characters of Indic text are not marked with an Indic language; the page declares \"en\".",
+      "target": "span",
+      "snippet": "भारत निर्वाचन आयोग",
+      "details": {
+        "htmlLang": "en",
+        "indicUnmarked": 179,
+        "indicTotal": 179,
+        "samples": [
+          {
+            "text": "भारत निर्वाचन आयोग",
+            "lang": "en",
+            "where": "span"
+          },
+          {
+            "text": "मतदाता सेवा पोर्टल",
+            "lang": "en",
+            "where": "span"
+          },
+          {
+            "text": "ईपीआईसी द्वारा खोजें",
+            "lang": "en",
+            "where": "p.container-tab-active-epic"
+          },
+          {
+            "text": "विवरण द्वारा खोजें",
+            "lang": "en",
+            "where": "p.container-tab-inactive-details"
+          },
+          {
+            "text": "मोबाइल द्वारा खोजें",
+            "lang": "en",
+            "where": "p.container-tab-inactive-mobile"
+          }
+        ]
+      }
+    },
+    {
+      "check": "axe",
+      "rule": "axe/color-contrast",
+      "severity": "barrier",
+      "wcag": [
+        "1.4.3"
+      ],
+      "summary": "Elements must meet minimum color contrast ratio thresholds (3 elements).",
+      "target": ".search-details-container > div:nth-child(1) > p",
+      "snippet": "<p style=\"display: inline-block; position: relative; bottom: 13px; left: 10px; background-color: white; font-size: 16px; font-weight: 800; margin: 0px; color: rgb(221, 164, 67);\">EPIC DETAIL</p>",
+      "details": {
+        "impact": "serious",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/color-contrast?application=playwright",
+        "nodes": [
+          {
+            "target": ".search-details-container > div:nth-child(1) > p",
+            "html": "<p style=\"display: inline-block; position: relative; bottom: 13px; left: 10px; background-color: white; font-size: 16px; font-weight: 800; margin: 0px; color: rgb(221, 164, 67);\">EPIC DETAIL</p>",
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.21 (foreground color: #dda443, background color: #ffffff, font size: 12.0pt (16px), font weight: bold). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "target": "button[aria-label=\"Search\"]",
+            "html": "<button class=\"btn-active\" aria-label=\"Search\" style=\"background-color: rgb(221, 164, 67);\" data-pahunch-critical=\"4\"> SEARCH </button>",
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.21 (foreground color: #ffffff, background color: #dda443, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "target": "button[aria-label=\"Clear\"]",
+            "html": "<button class=\"btn-active\" aria-label=\"Clear\" style=\"background-color: rgb(221, 164, 67);\"> CLEAR </button>",
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.21 (foreground color: #ffffff, background color: #dda443, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+          }
+        ]
+      }
+    },
+    {
+      "check": "axe",
+      "rule": "axe/image-alt",
+      "severity": "barrier",
+      "wcag": [
+        "1.1.1"
+      ],
+      "summary": "Images must have alternative text (5 elements).",
+      "target": ".search-container-sub-logo > img",
+      "snippet": "<img src=\"/static/media/vsp.b1f54bb3e30d6d3ea8becff83ebb221a.svg\">",
+      "details": {
+        "impact": "critical",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/image-alt?application=playwright",
+        "nodes": [
+          {
+            "target": ".search-container-sub-logo > img",
+            "html": "<img src=\"/static/media/vsp.b1f54bb3e30d6d3ea8becff83ebb221a.svg\">",
+            "failureSummary": "Fix any of the following:\n  Element does not have an alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+          },
+          {
+            "target": "img[height=\"50\"]",
+            "html": "<img src=\"/static/media/searchRoll.1bc6b8dd9653eb34175d.png\" height=\"50\">",
+            "failureSummary": "Fix any of the following:\n  Element does not have an alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+          },
+          {
+            "target": ".container-tab-active-epic > img[height=\"30\"]",
+            "html": "<img src=\"data:image/png;base6...\" height=\"30\">",
+            "failureSummary": "Fix any of the following:\n  Element does not have an alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+          },
+          {
+            "target": ".container-tab-inactive-details > img[height=\"30\"]",
+            "html": "<img src=\"data:image/png;base6...\" height=\"30\">",
+            "failureSummary": "Fix any of the following:\n  Element does not have an alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+          },
+          {
+            "target": ".container-tab-inactive-mobile > img[height=\"30\"]",
+            "html": "<img src=\"data:image/png;base6...\" height=\"30\">",
+            "failureSummary": "Fix any of the following:\n  Element does not have an alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+          }
+        ]
+      }
+    },
+    {
+      "check": "axe",
+      "rule": "axe/label-content-name-mismatch",
+      "severity": "barrier",
+      "wcag": [
+        "2.5.3"
+      ],
+      "summary": "Elements must have their visible text as part of their accessible name (8 elements).",
+      "target": "button[aria-label=\"Change Word Spacing Normal\"]",
+      "snippet": "<button class=\"icon-btn\" aria-label=\"Change Word Spacing Normal\">AB</button>",
+      "details": {
+        "impact": "serious",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright",
+        "nodes": [
+          {
+            "target": "button[aria-label=\"Change Word Spacing Normal\"]",
+            "html": "<button class=\"icon-btn\" aria-label=\"Change Word Spacing Normal\">AB</button>",
+            "failureSummary": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+          },
+          {
+            "target": "button[aria-label=\"Change Word Spacing Wide\"]",
+            "html": "<button class=\"icon-btn\" aria-label=\"Change Word Spacing Wide\">A_B</button>",
+            "failureSummary": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+          },
+          {
+            "target": "button[aria-label=\"Change Word Spacing Too Wide\"]",
+            "html": "<button class=\"icon-btn\" aria-label=\"Change Word Spacing Too Wide\">A__B</button>",
+            "failureSummary": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+          },
+          {
+            "target": "button[aria-label=\"Change Font Size to Small\"]",
+            "html": "<button class=\"icon-btn\" aria-label=\"Change Font Size to Small\">A-</button>",
+            "failureSummary": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+          },
+          {
+            "target": "button[aria-label=\"Change Font Size to Large\"]",
+            "html": "<button class=\"icon-btn\" aria-label=\"Change Font Size to Large\">A+</button>",
+            "failureSummary": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+          }
+        ]
+      }
+    },
+    {
+      "check": "axe",
+      "rule": "axe/landmark-one-main",
+      "severity": "info",
+      "wcag": [],
+      "summary": "Document should have one main landmark (1 element).",
+      "target": "html",
+      "snippet": "<html lang=\"en\">",
+      "details": {
+        "impact": "moderate",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/landmark-one-main?application=playwright",
+        "nodes": [
+          {
+            "target": "html",
+            "html": "<html lang=\"en\">",
+            "failureSummary": "Fix all of the following:\n  Document does not have a main landmark"
+          }
+        ]
+      }
+    },
+    {
+      "check": "axe",
+      "rule": "axe/page-has-heading-one",
+      "severity": "info",
+      "wcag": [],
+      "summary": "Page should contain a level-one heading (1 element).",
+      "target": "html",
+      "snippet": "<html lang=\"en\">",
+      "details": {
+        "impact": "moderate",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/page-has-heading-one?application=playwright",
+        "nodes": [
+          {
+            "target": "html",
+            "html": "<html lang=\"en\">",
+            "failureSummary": "Fix all of the following:\n  Page must have a level-one heading"
+          }
+        ]
+      }
+    },
+    {
+      "check": "axe",
+      "rule": "axe/region",
+      "severity": "info",
+      "wcag": [],
+      "summary": "All page content should be contained by landmarks (8 elements).",
+      "target": ".divider:nth-child(2)",
+      "snippet": "<span class=\"divider\">|</span>",
+      "details": {
+        "impact": "moderate",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/region?application=playwright",
+        "nodes": [
+          {
+            "target": ".divider:nth-child(2)",
+            "html": "<span class=\"divider\">|</span>",
+            "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+          },
+          {
+            "target": ".divider:nth-child(6)",
+            "html": "<span class=\"divider\">|</span>",
+            "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+          },
+          {
+            "target": ".search-container-logo",
+            "html": "<div class=\"search-container-logo\">",
+            "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+          },
+          {
+            "target": ".search-container-main-header",
+            "html": "<div class=\"search-container-main-header\"><p align=\"center\" style=\"font-size: 24px; font-weight: 500;\"><img src=\"/static/media/searchRoll.1bc6b8dd9653eb34175d.png\" height=\"50\">Search in Electoral Roll</p></div>",
+            "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+          },
+          {
+            "target": ".search-details-main > div:nth-child(1)",
+            "html": "<div style=\"margin-right: 30px; width: 100%; display: flex; justify-content: center; flex-wrap: wrap;\">",
+            "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+          }
+        ]
+      }
+    }
+  ],
+  "counts": {
+    "blocker": 0,
+    "barrier": 4,
+    "info": 4
+  },
+  "evidence": {
+    "names": {
+      "controls": [
+        {
+          "index": 0,
+          "label": "EPIC number field",
+          "kind": "field",
+          "role": "textbox",
+          "name": "Enter EPIC Number",
+          "disabled": false,
+          "hidden": false,
+          "visible": true,
+          "snapshot": "- textbox \"Enter EPIC Number\":\n  - /placeholder: Your EPIC Number"
+        },
+        {
+          "index": 1,
+          "label": "State dropdown",
+          "kind": "select",
+          "role": "combobox",
+          "name": "Select State",
+          "disabled": false,
+          "hidden": false,
+          "visible": true,
+          "snapshot": "- combobox \"Select State\":\n  - option \"Select Your State\" [selected]\n  - option \"Andaman & Nicobar Islands\"\n  - option \"Andhra Pradesh\""
+        },
+        {
+          "index": 2,
+          "label": "CAPTCHA field",
+          "kind": "captcha-field",
+          "role": "textbox",
+          "name": "Enter Captcha",
+          "disabled": false,
+          "hidden": false,
+          "visible": true,
+          "snapshot": "- textbox \"Enter Captcha\":\n  - /placeholder: \"\""
+        },
+        {
+          "index": 3,
+          "label": "Listen-to-CAPTCHA icon",
+          "kind": "captcha-audio",
+          "role": "button",
+          "name": "listen captcha",
+          "disabled": false,
+          "hidden": false,
+          "visible": true,
+          "snapshot": "- button \"listen captcha\": "
+        },
+        {
+          "index": 4,
+          "label": "Search button",
+          "kind": "button",
+          "role": "button",
+          "name": "Search",
+          "disabled": false,
+          "hidden": false,
+          "visible": true,
+          "snapshot": "- button \"Search\": SEARCH"
+        }
+      ]
+    },
+    "captcha": {
+      "groups": [
+        {
+          "kind": "image",
+          "onPath": true,
+          "imageAlt": "",
+          "target": "img",
+          "inputTarget": "input[name=\"captcha\"]",
+          "audio": {
+            "description": "listen captcha",
+            "focusable": true,
+            "exposed": true,
+            "snippet": "<i class=\"fa-solid fa-volume-high\" role=\"button\" tabindex=\"0\" aria-label=\"listen captcha\" style=\"margin-top: 5px; cursor: pointer; font-size: 20px; color: rgb(255, 165, 0);\" data-pahunch-critical=\"3\"></i>"
+          },
+          "snippet": "<img src=\"data:image/jpg;base64…,undefined\" alt=\"\" width=\"190\" height=\"65\" style=\"border: 1px solid rgb(137, 137, 129);\">"
+        }
+      ]
+    },
+    "lang": {
+      "frames": [
+        {
+          "htmlLang": "en",
+          "indicTotal": 179,
+          "indicUnmarked": 179,
+          "latinAtRoot": 658,
+          "indicAtRoot": 179,
+          "samples": [
+            {
+              "text": "भारत निर्वाचन आयोग",
+              "lang": "en",
+              "where": "span"
+            },
+            {
+              "text": "मतदाता सेवा पोर्टल",
+              "lang": "en",
+              "where": "span"
+            },
+            {
+              "text": "ईपीआईसी द्वारा खोजें",
+              "lang": "en",
+              "where": "p.container-tab-active-epic"
+            },
+            {
+              "text": "विवरण द्वारा खोजें",
+              "lang": "en",
+              "where": "p.container-tab-inactive-details"
+            },
+            {
+              "text": "मोबाइल द्वारा खोजें",
+              "lang": "en",
+              "where": "p.container-tab-inactive-mobile"
+            }
+          ]
+        }
+      ]
+    },
+    "axe": {
+      "version": "4.14.1",
+      "violations": 6,
+      "incomplete": 1,
+      "passes": 31
+    },
+    "keyboard": {
+      "presses": 20,
+      "completedCycle": true,
+      "stopsSeen": 18,
+      "inModal": false,
+      "trap": null,
+      "controls": [
+        {
+          "index": 0,
+          "label": "EPIC number field",
+          "reached": true,
+          "focusVisible": true,
+          "firstStep": 12
+        },
+        {
+          "index": 1,
+          "label": "State dropdown",
+          "reached": true,
+          "focusVisible": true,
+          "firstStep": 13
+        },
+        {
+          "index": 2,
+          "label": "CAPTCHA field",
+          "reached": true,
+          "focusVisible": true,
+          "firstStep": 16
+        },
+        {
+          "index": 3,
+          "label": "Listen-to-CAPTCHA icon",
+          "reached": true,
+          "focusVisible": true,
+          "firstStep": 15
+        },
+        {
+          "index": 4,
+          "label": "Search button",
+          "reached": true,
+          "focusVisible": true,
+          "firstStep": 17
+        }
+      ],
+      "sequence": [
+        {
+          "step": 1,
+          "desc": "button \"Navigate to Homepage\"",
+          "focusVisible": true
+        },
+        {
+          "step": 2,
+          "desc": "button \"Change Word Spacing Normal\"",
+          "focusVisible": true
+        },
+        {
+          "step": 3,
+          "desc": "button \"Change Word Spacing Wide\"",
+          "focusVisible": true
+        },
+        {
+          "step": 4,
+          "desc": "button \"Change Word Spacing Too Wide\"",
+          "focusVisible": true
+        },
+        {
+          "step": 5,
+          "desc": "button \"Change Font Size to Small\"",
+          "focusVisible": true
+        },
+        {
+          "step": 6,
+          "desc": "button \"Change Font Size to Normal\"",
+          "focusVisible": true
+        },
+        {
+          "step": 7,
+          "desc": "button \"Change Font Size to Large\"",
+          "focusVisible": true
+        },
+        {
+          "step": 8,
+          "desc": "button#epic \"Search By EPIC\"",
+          "focusVisible": true
+        },
+        {
+          "step": 9,
+          "desc": "button#detail \"Search By Details\"",
+          "focusVisible": true
+        },
+        {
+          "step": 10,
+          "desc": "button#mobile \"Search By Mobile Number\"",
+          "focusVisible": true
+        },
+        {
+          "step": 11,
+          "desc": "select#KeyboardID \"Select Language\"",
+          "focusVisible": true
+        },
+        {
+          "step": 12,
+          "desc": "input#epicID \"Enter EPIC Number\"",
+          "focusVisible": true,
+          "critical": 0
+        },
+        {
+          "step": 13,
+          "desc": "select \"Select State\"",
+          "focusVisible": true,
+          "critical": 1
+        },
+        {
+          "step": 14,
+          "desc": "i \"Captcha Refresh\"",
+          "focusVisible": true
+        },
+        {
+          "step": 15,
+          "desc": "i \"listen captcha\"",
+          "focusVisible": true,
+          "critical": 3
+        },
+        {
+          "step": 16,
+          "desc": "input \"Enter Captcha\"",
+          "focusVisible": true,
+          "critical": 2
+        },
+        {
+          "step": 17,
+          "desc": "button \"Search\"",
+          "focusVisible": true,
+          "critical": 4
+        },
+        {
+          "step": 18,
+          "desc": "button \"Clear\"",
+          "focusVisible": true
+        }
+      ]
+    },
+    "pdf": {
+      "pdfs": []
+    }
+  },
+  "errors": []
+}

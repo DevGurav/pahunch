@@ -1,0 +1,265 @@
+{
+  "version": "4.14.1",
+  "violations": [
+    {
+      "id": "color-contrast",
+      "impact": "serious",
+      "help": "Elements must meet minimum color contrast ratio thresholds",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/color-contrast?application=playwright",
+      "tags": [
+        "cat.color",
+        "wcag2aa",
+        "wcag143",
+        "TTv5",
+        "TT13.c",
+        "EN-301-549",
+        "EN-9.1.4.3",
+        "ACT",
+        "RGAAv4",
+        "RGAA-3.2.1"
+      ],
+      "nodeCount": 3,
+      "nodes": [
+        {
+          "target": ".search-details-container > div:nth-child(1) > p",
+          "html": "<p style=\"display: inline-block; position: relative; bottom: 13px; left: 10px; background-color: white; font-size: 16px; font-weight: 800; margin: 0px; color: rgb(221, 164, 67);\">EPIC DETAIL</p>",
+          "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.21 (foreground color: #dda443, background color: #ffffff, font size: 12.0pt (16px), font weight: bold). Expected contrast ratio of 4.5:1"
+        },
+        {
+          "target": "button[aria-label=\"Search\"]",
+          "html": "<button class=\"btn-active\" aria-label=\"Search\" style=\"background-color: rgb(221, 164, 67);\" data-pahunch-critical=\"4\"> SEARCH </button>",
+          "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.21 (foreground color: #ffffff, background color: #dda443, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+        },
+        {
+          "target": "button[aria-label=\"Clear\"]",
+          "html": "<button class=\"btn-active\" aria-label=\"Clear\" style=\"background-color: rgb(221, 164, 67);\"> CLEAR </button>",
+          "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.21 (foreground color: #ffffff, background color: #dda443, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+        }
+      ]
+    },
+    {
+      "id": "image-alt",
+      "impact": "critical",
+      "help": "Images must have alternative text",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/image-alt?application=playwright",
+      "tags": [
+        "cat.text-alternatives",
+        "wcag2a",
+        "wcag111",
+        "section508",
+        "section508.22.a",
+        "TTv5",
+        "TT7.a",
+        "TT7.b",
+        "EN-301-549",
+        "EN-9.1.1.1",
+        "ACT",
+        "RGAAv4",
+        "RGAA-1.1.1"
+      ],
+      "nodeCount": 5,
+      "nodes": [
+        {
+          "target": ".search-container-sub-logo > img",
+          "html": "<img src=\"/static/media/vsp.b1f54bb3e30d6d3ea8becff83ebb221a.svg\">",
+          "failureSummary": "Fix any of the following:\n  Element does not have an alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+        },
+        {
+          "target": "img[height=\"50\"]",
+          "html": "<img src=\"/static/media/searchRoll.1bc6b8dd9653eb34175d.png\" height=\"50\">",
+          "failureSummary": "Fix any of the following:\n  Element does not have an alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+        },
+        {
+          "target": ".container-tab-active-epic > img[height=\"30\"]",
+          "html": "<img src=\"data:image/png;base6...\" height=\"30\">",
+          "failureSummary": "Fix any of the following:\n  Element does not have an alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+        },
+        {
+          "target": ".container-tab-inactive-details > img[height=\"30\"]",
+          "html": "<img src=\"data:image/png;base6...\" height=\"30\">",
+          "failureSummary": "Fix any of the following:\n  Element does not have an alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+        },
+        {
+          "target": ".container-tab-inactive-mobile > img[height=\"30\"]",
+          "html": "<img src=\"data:image/png;base6...\" height=\"30\">",
+          "failureSummary": "Fix any of the following:\n  Element does not have an alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+        }
+      ]
+    },
+    {
+      "id": "label-content-name-mismatch",
+      "impact": "serious",
+      "help": "Elements must have their visible text as part of their accessible name",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright",
+      "tags": [
+        "cat.semantics",
+        "wcag21a",
+        "wcag253",
+        "EN-301-549",
+        "EN-9.2.5.3",
+        "RGAAv4",
+        "RGAA-6.1.5"
+      ],
+      "nodeCount": 8,
+      "nodes": [
+        {
+          "target": "button[aria-label=\"Change Word Spacing Normal\"]",
+          "html": "<button class=\"icon-btn\" aria-label=\"Change Word Spacing Normal\">AB</button>",
+          "failureSummary": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+        },
+        {
+          "target": "button[aria-label=\"Change Word Spacing Wide\"]",
+          "html": "<button class=\"icon-btn\" aria-label=\"Change Word Spacing Wide\">A_B</button>",
+          "failureSummary": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+        },
+        {
+          "target": "button[aria-label=\"Change Word Spacing Too Wide\"]",
+          "html": "<button class=\"icon-btn\" aria-label=\"Change Word Spacing Too Wide\">A__B</button>",
+          "failureSummary": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+        },
+        {
+          "target": "button[aria-label=\"Change Font Size to Small\"]",
+          "html": "<button class=\"icon-btn\" aria-label=\"Change Font Size to Small\">A-</button>",
+          "failureSummary": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+        },
+        {
+          "target": "button[aria-label=\"Change Font Size to Large\"]",
+          "html": "<button class=\"icon-btn\" aria-label=\"Change Font Size to Large\">A+</button>",
+          "failureSummary": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+        },
+        {
+          "target": "#epic",
+          "html": "<button id=\"epic\" aria-label=\"Search By EPIC\" style=\"border-width: medium; border-style: none; border-color: currentcolor; border-image: none; background-color: white; padding: 5px 0px; width: 50%; align-content: center; font-weight: 800;\">",
+          "failureSummary": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+        },
+        {
+          "target": "#detail",
+          "html": "<button id=\"detail\" aria-label=\"Search By Details\" style=\"border-width: medium; border-style: none; border-color: currentcolor; border-image: none; background-color: white; padding: 5px 0px; width: 50%; align-content: center; font-weight: 500;\">",
+          "failureSummary": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+        },
+        {
+          "target": "#mobile",
+          "html": "<button id=\"mobile\" aria-label=\"Search By Mobile Number\" style=\"border-width: medium; border-style: none; border-color: currentcolor; border-image: none; background-color: white; padding: 5px 0px; width: 50%; align-content: center; font-weight: 500;\">",
+          "failureSummary": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+        }
+      ]
+    },
+    {
+      "id": "landmark-one-main",
+      "impact": "moderate",
+      "help": "Document should have one main landmark",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/landmark-one-main?application=playwright",
+      "tags": [
+        "cat.semantics",
+        "best-practice"
+      ],
+      "nodeCount": 1,
+      "nodes": [
+        {
+          "target": "html",
+          "html": "<html lang=\"en\">",
+          "failureSummary": "Fix all of the following:\n  Document does not have a main landmark"
+        }
+      ]
+    },
+    {
+      "id": "page-has-heading-one",
+      "impact": "moderate",
+      "help": "Page should contain a level-one heading",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/page-has-heading-one?application=playwright",
+      "tags": [
+        "cat.semantics",
+        "best-practice"
+      ],
+      "nodeCount": 1,
+      "nodes": [
+        {
+          "target": "html",
+          "html": "<html lang=\"en\">",
+          "failureSummary": "Fix all of the following:\n  Page must have a level-one heading"
+        }
+      ]
+    },
+    {
+      "id": "region",
+      "impact": "moderate",
+      "help": "All page content should be contained by landmarks",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/region?application=playwright",
+      "tags": [
+        "cat.keyboard",
+        "best-practice",
+        "RGAAv4",
+        "RGAA-9.2.1"
+      ],
+      "nodeCount": 8,
+      "nodes": [
+        {
+          "target": ".divider:nth-child(2)",
+          "html": "<span class=\"divider\">|</span>",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "target": ".divider:nth-child(6)",
+          "html": "<span class=\"divider\">|</span>",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "target": ".search-container-logo",
+          "html": "<div class=\"search-container-logo\">",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "target": ".search-container-main-header",
+          "html": "<div class=\"search-container-main-header\"><p align=\"center\" style=\"font-size: 24px; font-weight: 500;\"><img src=\"/static/media/searchRoll.1bc6b8dd9653eb34175d.png\" height=\"50\">Search in Electoral Roll</p></div>",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "target": ".search-details-main > div:nth-child(1)",
+          "html": "<div style=\"margin-right: 30px; width: 100%; display: flex; justify-content: center; flex-wrap: wrap;\">",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "target": ".search-details-container",
+          "html": "<div class=\"search-details-container\" style=\"margin-top: 20px; margin-bottom: 20px; background-color: rgba(0, 0, 0, 0);\">",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "target": ".captcha-div > div:nth-child(1) > div:nth-child(1)",
+          "html": "<div style=\"flex-direction: column;\"><p>Captcha Code <span style=\"color: red;\">*</span></p><img src=\"data:image/jpg;base64,undefined\" alt=\"\" width=\"190\" height=\"65\" style=\"border: 1px solid rgb(137, 137, 129);\"></div>",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "target": ".captcha-div > div:nth-child(2)",
+          "html": "<div style=\"margin-left: 30px;\">",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        }
+      ]
+    }
+  ],
+  "incomplete": [
+    {
+      "id": "label-content-name-mismatch",
+      "impact": "serious",
+      "help": "Elements must have their visible text as part of their accessible name",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright",
+      "tags": [
+        "cat.semantics",
+        "wcag21a",
+        "wcag253",
+        "EN-301-549",
+        "EN-9.2.5.3",
+        "RGAAv4",
+        "RGAA-6.1.5"
+      ],
+      "nodeCount": 1,
+      "nodes": [
+        {
+          "target": "button[aria-label=\"Change Font Size to Normal\"]",
+          "html": "<button class=\"icon-btn\" aria-label=\"Change Font Size to Normal\">A</button>",
+          "failureSummary": "Fix any of the following:\n  Unable to determine if the visible text is part of the accessible name"
+        }
+      ]
+    }
+  ],
+  "passes": 31
+}

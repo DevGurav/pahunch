@@ -1,0 +1,224 @@
+Aadhaar Logo, graphic
+RedLine, graphic
+LanguageSwitcher, graphic
+English Select type, button
+English Select type
+radio button, no name
+हिंदी Select type, button
+हिंदी Select type
+radio button, no name, checked
+বাংলা Select type, button
+বাংলা Select type
+radio button, no name
+ಕನ್ನಡ Select type, button
+ಕನ್ನಡ Select type
+radio button, no name
+ગુજરાતી Select type, button
+ગુજરાતી Select type
+radio button, no name
+മലയാളം Select type, button
+മലയാളം Select type
+radio button, no name
+मराठी Select type, button
+मराठी Select type
+radio button, no name
+ଓଡ଼ିଆ Select type, button
+ଓଡ଼ିଆ Select type
+radio button, no name
+ਪੰਜਾਬੀ Select type, button
+ਪੰਜਾਬੀ Select type
+radio button, no name
+தமிழ் Select type, button
+தமிழ் Select type
+radio button, no name
+తెలుగు Select type, button
+తెలుగు Select type
+radio button, no name
+اردو Select type, button
+اردو Select type
+radio button, no name
+button, no name
+graphic, no name
+region landmark, Notifications Alt+T
+graphic, no name
+This is a beta interface. All changes you make here will update your Aadhaar record.
+graphic, no name
+Uidai Logo, graphic
+Search services, edit
+button, no name
+graphic, no name
+English, button
+graphic, no name
+English
+graphic, no name
+Home, button
+Services, button
+Services
+graphic, no name
+Seva Kendra, button
+Guides, button
+Guides
+graphic, no name
+Switch back to legacy, button
+Switch back to legacy
+graphic, no name
+Support, button
+graphic, no name
+Login, button
+Welcome to myAadhaar What do you want to do today ?
+Search services, edit
+graphic, no name
+graphic, no name
+Update Services
+graphic, no name
+Get Aadhaar
+graphic, no name
+Keep Aadhaar Secure
+graphic, no name
+Plan Enrolment Find Services relevant to you
+graphic, no name
+graphic, no name
+I’m a Parent Aadhaar for babies, biometrics updates & more
+graphic, no name
+I’m a Senior Citizen Aadhaar for senior citizens
+graphic, no name
+I’m a Student Aadhaar for admissions & schooling needs
+graphic, no name
+I’m a Working Professional Aadhaar for working professionals
+graphic, no name
+I’m an Overseas Indian / NRI Aadhaar for overseas Indians and NRIs
+graphic, no name
+I’m Newly Married Aadhaar for newly wed couple
+graphic, no name
+Popular Aadhaar Services
+graphic, no name
+graphic, no name
+graphic, no name
+Download Aadhaar Download digitally signed and password protected electronic copy Mobile OTP is required
+graphic, no name
+graphic, no name
+Check Enrolment / Update Status Check the status of the Enrolment or Update request
+graphic, no name
+graphic, no name
+Check Aadhaar Status Validate the status of the Aadhaar
+graphic, no name
+graphic, no name
+Update Address Use your documents or family member’s Aadhaar Mobile OTP is required
+graphic, no name
+₹ 75 fee
+graphic, no name
+Check Bank Seeding Status Find your Bank Seeding Status Mobile OTP is required
+graphic, no name
+Update Services
+graphic, no name
+Update Address Use your documents or family member’s Aadhaar Mobile OTP is required
+graphic, no name
+₹ 75 fee
+graphic, no name
+Photo, Biometrics Update and more At Seva Kendra
+graphic, no name
+Charges applicable
+Check status Update Address
+graphic, no name
+Get Aadhaar
+graphic, no name
+Download Aadhaar Download digitally signed and password protected electronic copy Mobile OTP is required
+graphic, no name
+graphic, no name
+Order Aadhaar PVC Card Order a secure, wallet-sized Aadhaar PVC card Mobile OTP is required
+graphic, no name
+₹ 75 fee
+Check status Order Aadhaar PVC Card
+graphic, no name
+graphic, no name
+More You can do more with your Aadhaar Show all services
+graphic, no name
+Keep Aadhaar Secure
+graphic, no name
+Download Masked Aadhaar Download digitally signed and password protected electronic masked copy Mobile OTP is required
+graphic, no name
+graphic, no name
+Generate / Retrieve Virtual ID Generate 16 Digit Virtual ID(VID) pathed to your Aadhaar Mobile OTP is required
+graphic, no name
+graphic, no name
+Lock / Unlock Aadhaar Temporarily lock / unlock your Aadhaar Mobile OTP is required
+graphic, no name
+graphic, no name
+Lock / Unlock Biometrics Lock your fingerprints and iris data Mobile OTP is required
+graphic, no name
+What is Masked Aadhaar? Masked Aadhaar implies replacing of first 8 digits of Aadhaar number with “xxxx-xxxx” while only last 4 digits of the Aadhaar Number are visible., button, expanded
+What is Masked Aadhaar?
+region landmark, What is Masked Aadhaar?
+Masked Aadhaar implies replacing of first 8 digits of Aadhaar number with “xxxx-xxxx” while only last 4 digits of the Aadhaar Number are visible.
+What is Virtual ID (VID)?, button
+What is Aadhaar (UID) Lock & Unlock?, button
+What happens when Biometric is locked?, button
+What is Biometric Locking?, button
+Plan Enrolment
+graphic, no name
+Book an Appointment Book an Appointment for Enrolment or Update
+graphic, no name
+graphic, no name
+Locate Enrolment Centre Search and locate nearby Aadhaar Seva Kendras
+graphic, no name
+What is Aadhaar Seva Kendra (ASK)? What is Masked Aadhaar?, button, expanded
+What is Aadhaar Seva Kendra (ASK)?
+region landmark, What is Masked Aadhaar?
+'Aadhaar Seva Kendra' or ASK is a single-stop destination for all Aadhaar services in a comfortable air-conditioned facility. All ASKs are wheelchair friendly and have special provisions to service the elderly and specially abled. More info on ASKs is available here:
+uidai.gov.in, link
+.
+Where can I find the list of UIDAI ASKs (Aadhaar Seva Kendras)?, button
+What services I can avail from Aadhaar Seva Kendra?, button
+Check status
+graphic, no name
+Check Aadhaar PVC Card Order Status Check the status of the already ordered PVC card
+graphic, no name
+graphic, no name
+Check Aadhaar Status Validate the status of the Aadhaar
+graphic, no name
+graphic, no name
+Check Bank Seeding Status Find your Bank Seeding Status Mobile OTP is required
+graphic, no name
+graphic, no name
+Check Email / Mobile Link Check mobile and email link status with the Aadhaar Mobile OTP is required
+graphic, no name
+graphic, no name
+Check Enrolment / Update Status Check the status of the Enrolment or Update request
+graphic, no name
+graphic, no name
+Check Grievance / Feedback Status Check the status of the Grievance / Feedback
+graphic, no name
+complementary landmark
+Check all your Aadhaar services in one place
+Login, button
+Did you know ? Aadhaar authentication service processes billions of transactions every month.
+graphic, no name
+tip, graphic
+Keep your Aadhaar always handy Get the all new Aadhaar Mobile App
+Appstore link, link
+Appstore link, graphic
+Playstore link, link
+Playstore link, graphic
+graphic, no name
+Uidai Logo, graphic
+link, no name
+graphic, no name
+link, no name
+graphic, no name
+link, no name
+graphic, no name
+link, no name
+graphic, no name
+link, no name
+graphic, no name
+UIDAI Head Office Unique Identification Authority of India Bangla Sahib Road, Behind Kali Mandir, Gole Market, New Delhi - 110001 Regional and State Offices
+Delhi
+combo box, no name
+UIDAI Regional Office, Delhi Ground Floor, Supreme Court Metro Station, Pragati Maidan, New Delhi-110001 Contact Details
+graphic, no name
+Toll-free number 1947
+graphic, no name
+Email help@uidai.gov.in Copyright © 2026 Unique Identification Authority of India All Rights Reserved.
+Privacy Policy, button
+Terms of Service, button
+This website is optimised for the latest versions of Google Chrome, Mozilla Firefox, Microsoft Edge, and Apple Safari. Viewing this site in older or unsupported browsers may result in degraded functionality or visual inconsistencies.

@@ -1,0 +1,808 @@
+{
+  "schema": 1,
+  "portal": {
+    "id": "msedcl",
+    "name": "MSEDCL (Mahavitaran): view and pay electricity bill",
+    "owner": "Maharashtra State Electricity Distribution Co. Ltd.",
+    "jurisdiction": "Maharashtra",
+    "task": "View an electricity bill without logging in",
+    "notes": "A state-owned utility rather than a department, included because almost every household in Maharashtra uses it. The page is in Marathi."
+  },
+  "startedAt": "2026-11-24T13:38:00.633Z",
+  "finishedAt": "2026-11-24T13:38:15.930Z",
+  "tool": {
+    "name": "pahunch",
+    "version": "0.1.0",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/159.0.8154.6 Safari/537.36 pahunch/0.1.0 (+https://github.com/DevGurav/pahunch)",
+    "browser": "chromium 159.0.8154.6",
+    "axe": "4.14.1"
+  },
+  "pages": [
+    {
+      "requested": "https://wss.mahadiscom.in/wss/wss?uiActionName=getViewPayBill",
+      "finalUrl": "https://wss.mahadiscom.in/wss/wss?uiActionName=getViewPayBill",
+      "status": 200,
+      "title": "वीज देयक अवलोकन/भरणा"
+    }
+  ],
+  "robots": {
+    "robotsUrl": "https://wss.mahadiscom.in/robots.txt",
+    "status": 404,
+    "disallowed": false
+  },
+  "critical": [
+    {
+      "index": 0,
+      "label": "Consumer type dropdown",
+      "kind": "select",
+      "selector": "#consumerType",
+      "found": true,
+      "role": "combobox",
+      "name": "",
+      "disabled": false,
+      "reached": true,
+      "focusVisible": true
+    },
+    {
+      "index": 1,
+      "label": "Consumer number field",
+      "kind": "field",
+      "selector": "#consumerNo",
+      "found": true,
+      "role": "textbox",
+      "name": "",
+      "disabled": false,
+      "reached": true,
+      "focusVisible": true
+    },
+    {
+      "index": 2,
+      "label": "CAPTCHA field",
+      "kind": "captcha-field",
+      "selector": "#txtInput",
+      "found": true,
+      "role": "textbox",
+      "name": "",
+      "disabled": false,
+      "reached": true,
+      "focusVisible": true
+    },
+    {
+      "index": 3,
+      "label": "Submit button",
+      "kind": "button",
+      "selector": "#submitButton",
+      "found": true,
+      "role": "button",
+      "name": "माहिती नोंद करा",
+      "disabled": false,
+      "reached": true,
+      "focusVisible": true
+    }
+  ],
+  "verdict": "blocked",
+  "inconclusiveReasons": [],
+  "findings": [
+    {
+      "check": "names",
+      "rule": "name-missing",
+      "severity": "barrier",
+      "wcag": [
+        "4.1.2",
+        "1.3.1"
+      ],
+      "summary": "\"Consumer type dropdown\" is announced only as \"combo box\", with no name.",
+      "target": "Consumer type dropdown",
+      "snippet": "<select name=\"consumerType\" id=\"consumerType\" class=\"select_field\" onchange=\"onConsumerTypeChange(this)\" data-pahunch-critical=\"0\"> <option value=\"1\">LT Consumer</option> </select>"
+    },
+    {
+      "check": "names",
+      "rule": "name-missing",
+      "severity": "barrier",
+      "wcag": [
+        "4.1.2",
+        "1.3.1"
+      ],
+      "summary": "\"Consumer number field\" is announced only as \"edit\", with no name.",
+      "target": "Consumer number field",
+      "snippet": "<input type=\"text\" maxlength=\"12\" class=\"inp_field\" onkeypress=\"return IsNumeric(event);\" size=\"25\" id=\"consumerNo\" data-pahunch-critical=\"1\" style=\"\">"
+    },
+    {
+      "check": "names",
+      "rule": "name-missing",
+      "severity": "barrier",
+      "wcag": [
+        "4.1.2",
+        "1.3.1"
+      ],
+      "summary": "\"CAPTCHA field\" is announced only as \"edit\", with no name.",
+      "target": "CAPTCHA field",
+      "snippet": "<input type=\"text\" maxlength=\"6\" class=\"inp_field\" size=\"15\" id=\"txtInput\" autocomplete=\"off\" data-pahunch-critical=\"2\" style=\"\">"
+    },
+    {
+      "check": "captcha",
+      "rule": "captcha-image-only",
+      "severity": "blocker",
+      "wcag": [
+        "1.1.1"
+      ],
+      "summary": "The task needs this canvas CAPTCHA, and there is no audio or other non-visual option.",
+      "target": "canvas#captcha",
+      "snippet": "<canvas id=\"captcha\" width=\"100\" height=\"40\"></canvas>",
+      "details": {
+        "imageAlt": null,
+        "input": "input#txtInput"
+      }
+    },
+    {
+      "check": "lang",
+      "rule": "lang-indic-unmarked",
+      "severity": "barrier",
+      "wcag": [
+        "3.1.2"
+      ],
+      "summary": "1055 characters of Indic text are not marked with an Indic language; the page declares no language.",
+      "target": "span",
+      "snippet": "Language/भाषा",
+      "details": {
+        "htmlLang": "",
+        "indicUnmarked": 1055,
+        "indicTotal": 1055,
+        "samples": [
+          {
+            "text": "Language/भाषा",
+            "lang": "(none)",
+            "where": "span"
+          },
+          {
+            "text": "वेब स्वयंसेवा",
+            "lang": "(none)",
+            "where": "span#topnav_lblWebSelfService"
+          },
+          {
+            "text": "मुख्य पान",
+            "lang": "(none)",
+            "where": "a#topnav_PageNameLink1"
+          },
+          {
+            "text": "वीज देयक अवलोकन/भरणा",
+            "lang": "(none)",
+            "where": "a#topnav_PageNameLink2"
+          },
+          {
+            "text": "वीज देयक अवलोकन/भरणा",
+            "lang": "(none)",
+            "where": "label#topnav_lblPageHeaderName"
+          }
+        ]
+      }
+    },
+    {
+      "check": "axe",
+      "rule": "axe/heading-order",
+      "severity": "info",
+      "wcag": [],
+      "summary": "Heading levels should only increase by one (1 element).",
+      "target": "h4",
+      "snippet": "<h4><span id=\"Label1\">माझे देयक</span></h4>",
+      "details": {
+        "impact": "moderate",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/heading-order?application=playwright",
+        "nodes": [
+          {
+            "target": "h4",
+            "html": "<h4><span id=\"Label1\">माझे देयक</span></h4>",
+            "failureSummary": "Fix any of the following:\n  Heading order invalid"
+          }
+        ]
+      }
+    },
+    {
+      "check": "axe",
+      "rule": "axe/html-has-lang",
+      "severity": "barrier",
+      "wcag": [
+        "3.1.1"
+      ],
+      "summary": "<html> element must have a lang attribute (1 element).",
+      "target": "html",
+      "snippet": "<html xmlns=\"http://www.w3.org/1999/xhtml\">",
+      "details": {
+        "impact": "serious",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/html-has-lang?application=playwright",
+        "nodes": [
+          {
+            "target": "html",
+            "html": "<html xmlns=\"http://www.w3.org/1999/xhtml\">",
+            "failureSummary": "Fix any of the following:\n  The <html> element does not have a lang attribute"
+          }
+        ]
+      }
+    },
+    {
+      "check": "axe",
+      "rule": "axe/image-alt",
+      "severity": "barrier",
+      "wcag": [
+        "1.1.1"
+      ],
+      "summary": "Images must have alternative text (2 elements).",
+      "target": "img[src$=\"logo_billing.gif\"]",
+      "snippet": "<img src=\"images/logo_billing.gif\" width=\"195px\" height=\"85px\">",
+      "details": {
+        "impact": "critical",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/image-alt?application=playwright",
+        "nodes": [
+          {
+            "target": "img[src$=\"logo_billing.gif\"]",
+            "html": "<img src=\"images/logo_billing.gif\" width=\"195px\" height=\"85px\">",
+            "failureSummary": "Fix any of the following:\n  Element does not have an alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+          },
+          {
+            "target": "img[src$=\"new_banner_1.png\"]",
+            "html": "<img src=\"images/new_banner_1.png\">",
+            "failureSummary": "Fix any of the following:\n  Element does not have an alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+          }
+        ]
+      }
+    },
+    {
+      "check": "axe",
+      "rule": "axe/label",
+      "severity": "barrier",
+      "wcag": [
+        "4.1.2"
+      ],
+      "summary": "Form elements must have labels (2 elements).",
+      "target": "#consumerNo",
+      "snippet": "<input type=\"text\" maxlength=\"12\" class=\"inp_field\" onkeypress=\"return IsNumeric(event);\" size=\"25\" id=\"consumerNo\" data-pahunch-critical=\"1\" style=\"\">",
+      "details": {
+        "impact": "critical",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/label?application=playwright",
+        "nodes": [
+          {
+            "target": "#consumerNo",
+            "html": "<input type=\"text\" maxlength=\"12\" class=\"inp_field\" onkeypress=\"return IsNumeric(event);\" size=\"25\" id=\"consumerNo\" data-pahunch-critical=\"1\" style=\"\">",
+            "failureSummary": "Fix any of the following:\n  Element does not have an implicit (wrapped) <label>\n  Element does not have an explicit <label>\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element has no placeholder attribute\n  Element's default semantics were"
+          },
+          {
+            "target": "#txtInput",
+            "html": "<input type=\"text\" maxlength=\"6\" class=\"inp_field\" size=\"15\" id=\"txtInput\" autocomplete=\"off\" data-pahunch-critical=\"2\" style=\"\">",
+            "failureSummary": "Fix any of the following:\n  Element does not have an implicit (wrapped) <label>\n  Element does not have an explicit <label>\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element has no placeholder attribute\n  Element's default semantics were"
+          }
+        ]
+      }
+    },
+    {
+      "check": "axe",
+      "rule": "axe/landmark-one-main",
+      "severity": "info",
+      "wcag": [],
+      "summary": "Document should have one main landmark (1 element).",
+      "target": "html",
+      "snippet": "<html xmlns=\"http://www.w3.org/1999/xhtml\">",
+      "details": {
+        "impact": "moderate",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/landmark-one-main?application=playwright",
+        "nodes": [
+          {
+            "target": "html",
+            "html": "<html xmlns=\"http://www.w3.org/1999/xhtml\">",
+            "failureSummary": "Fix all of the following:\n  Document does not have a main landmark"
+          }
+        ]
+      }
+    },
+    {
+      "check": "axe",
+      "rule": "axe/region",
+      "severity": "info",
+      "wcag": [],
+      "summary": "All page content should be contained by landmarks (39 elements).",
+      "target": ".pre_header",
+      "snippet": "<div class=\"pre_header\">",
+      "details": {
+        "impact": "moderate",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/region?application=playwright",
+        "nodes": [
+          {
+            "target": ".pre_header",
+            "html": "<div class=\"pre_header\">",
+            "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+          },
+          {
+            "target": ".language_div",
+            "html": "<div class=\"language_div\"> <h3>&nbsp;<a id=\"topnav_hreflanguage\" class=\"menuanchorclass\" onmouseover=\"divMenu.show('sub_products', this, -45, 13)\" onmouseout=\"divMenu.hide('sub_products')\"><span>Language/भाषा</span></a>&nbsp;<label id=\"topnav_lblseparator1\"></label>&nbsp; </h3></div>",
+            "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+          },
+          {
+            "target": ".header > .left",
+            "html": "<div class=\"left\"> <h1><span id=\"topnav_lblWebSelfService\">वेब स्वयंसेवा</span></h1> </div>",
+            "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+          },
+          {
+            "target": ".header > .right",
+            "html": "<div class=\"right\">",
+            "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+          },
+          {
+            "target": "#leftnav_notloggedin > ul > li:nth-child(1)",
+            "html": "<li> <a href=\"/wss/wss?uiActionName=getHome\" id=\"leftnav_homePage\"><span id=\"leftnav_lblHome\">मुख्य पान</span></a> </li>",
+            "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+          }
+        ]
+      }
+    },
+    {
+      "check": "axe",
+      "rule": "axe/select-name",
+      "severity": "barrier",
+      "wcag": [
+        "4.1.2"
+      ],
+      "summary": "Select element must have an accessible name (1 element).",
+      "target": "#consumerType",
+      "snippet": "<select name=\"consumerType\" id=\"consumerType\" class=\"select_field\" onchange=\"onConsumerTypeChange(this)\" data-pahunch-critical=\"0\"> <option value=\"1\">LT Consumer</option> </select>",
+      "details": {
+        "impact": "critical",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/select-name?application=playwright",
+        "nodes": [
+          {
+            "target": "#consumerType",
+            "html": "<select name=\"consumerType\" id=\"consumerType\" class=\"select_field\" onchange=\"onConsumerTypeChange(this)\" data-pahunch-critical=\"0\"> <option value=\"1\">LT Consumer</option> </select>",
+            "failureSummary": "Fix any of the following:\n  Element does not have an implicit (wrapped) <label>\n  Element does not have an explicit <label>\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element's default semantics were not overridden with role=\"none\" or rol"
+          }
+        ]
+      }
+    },
+    {
+      "check": "pdf",
+      "rule": "pdf-untagged",
+      "severity": "info",
+      "wcag": [
+        "1.3.1"
+      ],
+      "summary": "The PDF has text but no tags.",
+      "target": "https://wss.mahadiscom.in/wss/images/SecurityDeposite_Estimation.pdf",
+      "details": {
+        "pages": 3
+      }
+    },
+    {
+      "check": "pdf",
+      "rule": "pdf-untagged",
+      "severity": "info",
+      "wcag": [
+        "1.3.1"
+      ],
+      "summary": "The PDF has text but no tags.",
+      "target": "https://wss.mahadiscom.in/wss/images/Enable_POPUP_Browser.pdf",
+      "details": {
+        "pages": 8
+      }
+    },
+    {
+      "check": "pdf",
+      "rule": "pdf-untagged",
+      "severity": "info",
+      "wcag": [
+        "1.3.1"
+      ],
+      "summary": "The PDF has text but no tags.",
+      "target": "https://wss.mahadiscom.in/wss/images/MSEDCL_Privacy_Policy_Terms_Service.pdf",
+      "details": {
+        "pages": 8
+      }
+    }
+  ],
+  "counts": {
+    "blocker": 1,
+    "barrier": 8,
+    "info": 6
+  },
+  "evidence": {
+    "names": {
+      "controls": [
+        {
+          "index": 0,
+          "label": "Consumer type dropdown",
+          "kind": "select",
+          "role": "combobox",
+          "name": "",
+          "disabled": false,
+          "hidden": false,
+          "visible": true,
+          "snapshot": "- combobox:\n  - option \"LT Consumer\" [selected]"
+        },
+        {
+          "index": 1,
+          "label": "Consumer number field",
+          "kind": "field",
+          "role": "textbox",
+          "name": "",
+          "disabled": false,
+          "hidden": false,
+          "visible": true,
+          "snapshot": "- textbox"
+        },
+        {
+          "index": 2,
+          "label": "CAPTCHA field",
+          "kind": "captcha-field",
+          "role": "textbox",
+          "name": "",
+          "disabled": false,
+          "hidden": false,
+          "visible": true,
+          "snapshot": "- textbox"
+        },
+        {
+          "index": 3,
+          "label": "Submit button",
+          "kind": "button",
+          "role": "button",
+          "name": "माहिती नोंद करा",
+          "disabled": false,
+          "hidden": false,
+          "visible": true,
+          "snapshot": "- button \"माहिती नोंद करा\":\n  - emphasis: माहिती नोंद करा"
+        }
+      ]
+    },
+    "captcha": {
+      "groups": [
+        {
+          "kind": "canvas",
+          "onPath": true,
+          "imageAlt": null,
+          "target": "canvas#captcha",
+          "inputTarget": "input#txtInput",
+          "audio": null,
+          "snippet": "<canvas id=\"captcha\" width=\"100\" height=\"40\"></canvas>"
+        }
+      ]
+    },
+    "lang": {
+      "frames": [
+        {
+          "htmlLang": "",
+          "indicTotal": 1055,
+          "indicUnmarked": 1055,
+          "latinAtRoot": 0,
+          "indicAtRoot": 0,
+          "samples": [
+            {
+              "text": "Language/भाषा",
+              "lang": "(none)",
+              "where": "span"
+            },
+            {
+              "text": "वेब स्वयंसेवा",
+              "lang": "(none)",
+              "where": "span#topnav_lblWebSelfService"
+            },
+            {
+              "text": "मुख्य पान",
+              "lang": "(none)",
+              "where": "a#topnav_PageNameLink1"
+            },
+            {
+              "text": "वीज देयक अवलोकन/भरणा",
+              "lang": "(none)",
+              "where": "a#topnav_PageNameLink2"
+            },
+            {
+              "text": "वीज देयक अवलोकन/भरणा",
+              "lang": "(none)",
+              "where": "label#topnav_lblPageHeaderName"
+            }
+          ]
+        }
+      ]
+    },
+    "axe": {
+      "version": "4.14.1",
+      "violations": 7,
+      "incomplete": 1,
+      "passes": 26
+    },
+    "keyboard": {
+      "presses": 46,
+      "completedCycle": true,
+      "stopsSeen": 44,
+      "inModal": false,
+      "trap": null,
+      "controls": [
+        {
+          "index": 0,
+          "label": "Consumer type dropdown",
+          "reached": true,
+          "focusVisible": true,
+          "firstStep": 26
+        },
+        {
+          "index": 1,
+          "label": "Consumer number field",
+          "reached": true,
+          "focusVisible": true,
+          "firstStep": 27
+        },
+        {
+          "index": 2,
+          "label": "CAPTCHA field",
+          "reached": true,
+          "focusVisible": true,
+          "firstStep": 29
+        },
+        {
+          "index": 3,
+          "label": "Submit button",
+          "reached": true,
+          "focusVisible": true,
+          "firstStep": 30
+        }
+      ],
+      "sequence": [
+        {
+          "step": 1,
+          "desc": "a#topnav_PageNameLink1 \"मुख्य पान\"",
+          "focusVisible": true
+        },
+        {
+          "step": 2,
+          "desc": "a#topnav_PageNameLink2 \"वीज देयक अवलोकन/भरणा\"",
+          "focusVisible": true
+        },
+        {
+          "step": 3,
+          "desc": "a#leftnav_homePage \"मुख्य पान\"",
+          "focusVisible": true
+        },
+        {
+          "step": 4,
+          "desc": "a#leftnav_createProfile \"नवीन सदस्य नोंदणी\"",
+          "focusVisible": true
+        },
+        {
+          "step": 5,
+          "desc": "a#leftnav_loginPage \"प्रवेश\"",
+          "focusVisible": true
+        },
+        {
+          "step": 6,
+          "desc": "a#leftnav_forgotLoginPassword \"प्रवेश नाम/परवली शब्द विस्मरण\"",
+          "focusVisible": true
+        },
+        {
+          "step": 7,
+          "desc": "a#leftnav_viewPayBill \"वीज देयक अवलोकन/भरणा\"",
+          "focusVisible": true
+        },
+        {
+          "step": 8,
+          "desc": "a#leftnav_PDAmnestyGuestuserlnk \"अभय योजना २०२६-२७\"",
+          "focusVisible": true
+        },
+        {
+          "step": 9,
+          "desc": "a#leftnav_consumptionCalcPage1 \"वीज वापर परिगणक\"",
+          "focusVisible": true
+        },
+        {
+          "step": 10,
+          "desc": "a#leftnav_energyBillcalcPage1 \"वीज देयक परिगणक\"",
+          "focusVisible": true
+        },
+        {
+          "step": 11,
+          "desc": "a#leftnav_newConnectionRequest1 \"नवीन जोडणीची मागणी\"",
+          "focusVisible": true
+        },
+        {
+          "step": 12,
+          "desc": "a#leftnav_AMISPRecharge \"Prepaid Meter Recharge\"",
+          "focusVisible": true
+        },
+        {
+          "step": 13,
+          "desc": "a#leftnav_SwagatCellComplaintslnk \"स्वागत सेल तक्रार नोंदणी\"",
+          "focusVisible": true
+        },
+        {
+          "step": 14,
+          "desc": "a#leftnav_complaintRegistrationlnk \"तक्रार नोंदवणे\"",
+          "focusVisible": true
+        },
+        {
+          "step": 15,
+          "desc": "a#leftnav_HTNewConnectionComplaintlnk \"ऑनलाइन अर्ज संबंधित तक्रार नोंदवणे\"",
+          "focusVisible": true
+        },
+        {
+          "step": 16,
+          "desc": "a#leftnav_securityDepositEstimatelnk \"सुरक्षा ठेव अंदाज\"",
+          "focusVisible": true
+        },
+        {
+          "step": 17,
+          "desc": "a#leftnav_trackComplaintStatuslnk \"तक्रारीची सद्यस्थिती\"",
+          "focusVisible": true
+        },
+        {
+          "step": 18,
+          "desc": "a#leftnav_submitReadinglnk \"रिडिंग पाठवा\"",
+          "focusVisible": true
+        },
+        {
+          "step": 19,
+          "desc": "a#leftnav_AGindexConsentGuestUserLnk \"कृषी इंडेक्स-संमती\"",
+          "focusVisible": true
+        },
+        {
+          "step": 20,
+          "desc": "a#leftnav_viewSolarConsumerlnk \"अक्षय ऊर्जा वापर पहा\"",
+          "focusVisible": true
+        },
+        {
+          "step": 21,
+          "desc": "a#leftnav_getAGPPConsentlnk \"पैसे भरून कृषि पंप प्रतीक्षा यादीमध्ये प\"",
+          "focusVisible": true
+        },
+        {
+          "step": 22,
+          "desc": "a#leftnav_OtherChargeslnk \"*इतर शुल्काचे ऑनलाइन देय\"",
+          "focusVisible": true
+        },
+        {
+          "step": 23,
+          "desc": "a#leftnav_update_mob_email_not_loglnl \"*मोबाइल नंबर, ई-मेल, आधार, टी.डी.एस आणि \"",
+          "focusVisible": true
+        },
+        {
+          "step": 24,
+          "desc": "a#lnklblEnablePOPup \"लेखी माहिती\"",
+          "focusVisible": true
+        },
+        {
+          "step": 25,
+          "desc": "a#lnklblEnablePOPupVideo \"व्हिडिओ\"",
+          "focusVisible": true
+        },
+        {
+          "step": 26,
+          "desc": "select#consumerType \"LT Consumer\"",
+          "focusVisible": true,
+          "critical": 0
+        },
+        {
+          "step": 27,
+          "desc": "input#consumerNo",
+          "focusVisible": true,
+          "critical": 1
+        },
+        {
+          "step": 28,
+          "desc": "button#btnCaptchaRefViewpaybill",
+          "focusVisible": true
+        },
+        {
+          "step": 29,
+          "desc": "input#txtInput",
+          "focusVisible": true,
+          "critical": 2
+        },
+        {
+          "step": 30,
+          "desc": "button#submitButton \"माहिती नोंद करा\"",
+          "focusVisible": true,
+          "critical": 3
+        },
+        {
+          "step": 31,
+          "desc": "button#clearButton \"रिक्त करा\"",
+          "focusVisible": true
+        },
+        {
+          "step": 32,
+          "desc": "a#footer_lnkAbtUS \"आमच्या विषयी\"",
+          "focusVisible": true
+        },
+        {
+          "step": 33,
+          "desc": "a#footer_lnkContactUS \"संपर्क करा\"",
+          "focusVisible": true
+        },
+        {
+          "step": 34,
+          "desc": "a#footer_lnkFAQ \"मनातले प्रश्न\"",
+          "focusVisible": true
+        },
+        {
+          "step": 35,
+          "desc": "a#footer_lnkhelp \"मदत\"",
+          "focusVisible": true
+        },
+        {
+          "step": 36,
+          "desc": "a \"सूचना व अटी\"",
+          "focusVisible": true
+        },
+        {
+          "step": 37,
+          "desc": "a#footer_lnkPrivacyPolicyFooter \"गुप्तता धोरण\"",
+          "focusVisible": true
+        },
+        {
+          "step": 38,
+          "desc": "a \"साइट मॅप\"",
+          "focusVisible": true
+        },
+        {
+          "step": 39,
+          "desc": "a#footer_lnkfacebook",
+          "focusVisible": true
+        },
+        {
+          "step": 40,
+          "desc": "a#footer_lnltweeter",
+          "focusVisible": true
+        },
+        {
+          "step": 41,
+          "desc": "a#footer_lnkYT",
+          "focusVisible": true
+        },
+        {
+          "step": 42,
+          "desc": "a#footer_lnkIG",
+          "focusVisible": true
+        },
+        {
+          "step": 43,
+          "desc": "a#footer_lnkwssHelpdesk \"customercare@mahadiscom.in\"",
+          "focusVisible": true
+        },
+        {
+          "step": 44,
+          "desc": "a#footer_lnkhelpDesk \"https://wss.mahadiscom.in/wss/wss?uiActi\"",
+          "focusVisible": true
+        }
+      ]
+    },
+    "pdf": {
+      "pdfs": [
+        {
+          "url": "https://wss.mahadiscom.in/wss/images/SecurityDeposite_Estimation.pdf",
+          "status": 200,
+          "result": "text",
+          "bytes": 544092,
+          "pages": 3,
+          "sampledPages": 3,
+          "textChars": 2705,
+          "tagged": false
+        },
+        {
+          "url": "https://wss.mahadiscom.in/wss/images/Enable_POPUP_Browser.pdf",
+          "status": 200,
+          "result": "text",
+          "bytes": 1108208,
+          "pages": 8,
+          "sampledPages": 5,
+          "textChars": 700,
+          "tagged": false
+        },
+        {
+          "url": "https://wss.mahadiscom.in/wss/images/MSEDCL_Privacy_Policy_Terms_Service.pdf",
+          "status": 200,
+          "result": "text",
+          "bytes": 63282,
+          "pages": 8,
+          "sampledPages": 5,
+          "textChars": 11985,
+          "tagged": false
+        }
+      ]
+    }
+  },
+  "errors": []
+}

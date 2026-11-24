@@ -1,0 +1,387 @@
+{
+  "schema": 1,
+  "portal": {
+    "id": "passport",
+    "name": "Passport Seva",
+    "owner": "Ministry of External Affairs",
+    "jurisdiction": "Central",
+    "task": "Reach the login form",
+    "notes": "The Login button on www.passportindia.gov.in/psp leads here. The password and any CAPTCHA appear only after Continue, which we do not press."
+  },
+  "startedAt": "2026-11-24T13:35:19.829Z",
+  "finishedAt": "2026-11-24T13:35:23.523Z",
+  "tool": {
+    "name": "pahunch",
+    "version": "0.1.0",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/159.0.8154.6 Safari/537.36 pahunch/0.1.0 (+https://github.com/DevGurav/pahunch)",
+    "browser": "chromium 159.0.8154.6",
+    "axe": "4.14.1"
+  },
+  "pages": [
+    {
+      "requested": "https://services1.passportindia.gov.in/forms/PreLogin",
+      "finalUrl": "https://services1.passportindia.gov.in/forms/PreLogin",
+      "status": 200,
+      "title": "PreLogin"
+    }
+  ],
+  "robots": {
+    "robotsUrl": "https://services1.passportindia.gov.in/robots.txt",
+    "status": 404,
+    "disallowed": false
+  },
+  "critical": [
+    {
+      "index": 0,
+      "label": "Login ID field",
+      "kind": "field",
+      "selector": "input[data-testid=\"text-input-outlined\"]",
+      "found": true,
+      "role": "textbox",
+      "name": "",
+      "disabled": false,
+      "reached": true,
+      "focusVisible": false
+    },
+    {
+      "index": 1,
+      "label": "Continue button",
+      "kind": "button",
+      "selector": "div[tabindex=\"0\"]:has-text(\"Continue\") >> nth=-1",
+      "found": true,
+      "role": "text",
+      "name": "",
+      "disabled": false,
+      "reached": true,
+      "focusVisible": true
+    }
+  ],
+  "verdict": "barriers",
+  "inconclusiveReasons": [],
+  "findings": [
+    {
+      "check": "names",
+      "rule": "name-missing",
+      "severity": "barrier",
+      "wcag": [
+        "4.1.2",
+        "1.3.1"
+      ],
+      "summary": "\"Login ID field\" is announced only as \"edit\", with no name.",
+      "target": "Login ID field",
+      "snippet": "<input maxlength=\"35\" autocomplete=\"none\" autocapitalize=\"sentences\" autocorrect=\"on\" dir=\"auto\" spellcheck=\"true\" type=\"text\" data-focusable=\"true\" class=\"css-11aywtz r-16y2uox r-1b43r93 r-crgep1 r-1mdbw0j r-779j7e r-1qzd3f0 r-184en5c\" data-testid=\"text-input-outlined\" value=\"\" style=\"color: rgb(0,"
+    },
+    {
+      "check": "names",
+      "rule": "role-missing",
+      "severity": "barrier",
+      "wcag": [
+        "4.1.2"
+      ],
+      "summary": "\"Continue button\" is announced as plain text (\"Continue\"), not as a button.",
+      "target": "Continue button",
+      "snippet": "<div data-focusable=\"true\" tabindex=\"0\" class=\"css-1dbjc4n r-1loqt21 r-q4m81j r-1otgn73 r-lrvibr\" style=\"background-image: linear-gradient(90deg, rgb(0, 125, 197) 0%, rgb(113, 89, 177) 100%); border-color: rgba(0, 12, 128, 0.5); border-radius: 5px; padding: 10px 30px;\" data-pahunch-critical=\"1\"><div"
+    },
+    {
+      "check": "axe",
+      "rule": "axe/aria-command-name",
+      "severity": "barrier",
+      "wcag": [
+        "4.1.2"
+      ],
+      "summary": "ARIA commands must have an accessible name (1 element).",
+      "target": ".css-18t94o4",
+      "snippet": "<div role=\"button\" data-focusable=\"true\" tabindex=\"0\" class=\"css-18t94o4 css-1dbjc4n r-1awozwy r-1loqt21 r-1777fci r-crgep1 r-1udh08x r-bnwqim\" style=\"border-radius: 18px; height: 36px; width: 36px;\">",
+      "details": {
+        "impact": "serious",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/aria-command-name?application=playwright",
+        "nodes": [
+          {
+            "target": ".css-18t94o4",
+            "html": "<div role=\"button\" data-focusable=\"true\" tabindex=\"0\" class=\"css-18t94o4 css-1dbjc4n r-1awozwy r-1loqt21 r-1777fci r-crgep1 r-1udh08x r-bnwqim\" style=\"border-radius: 18px; height: 36px; width: 36px;\">",
+            "failureSummary": "Fix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+          }
+        ]
+      }
+    },
+    {
+      "check": "axe",
+      "rule": "axe/html-has-lang",
+      "severity": "barrier",
+      "wcag": [
+        "3.1.1"
+      ],
+      "summary": "<html> element must have a lang attribute (1 element).",
+      "target": "html",
+      "snippet": "<html>",
+      "details": {
+        "impact": "serious",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/html-has-lang?application=playwright",
+        "nodes": [
+          {
+            "target": "html",
+            "html": "<html>",
+            "failureSummary": "Fix any of the following:\n  The <html> element does not have a lang attribute"
+          }
+        ]
+      }
+    },
+    {
+      "check": "axe",
+      "rule": "axe/label",
+      "severity": "barrier",
+      "wcag": [
+        "4.1.2"
+      ],
+      "summary": "Form elements must have labels (1 element).",
+      "target": "input",
+      "snippet": "<input maxlength=\"35\" autocomplete=\"none\" autocapitalize=\"sentences\" autocorrect=\"on\" dir=\"auto\" spellcheck=\"true\" type=\"text\" data-focusable=\"true\" class=\"css-11aywtz r-16y2uo...\" data-testid=\"text-input-outlined\" value=\"\" style=\"color: rgb(0, 0, 0);...\" data-pahunch-critica...=\"0\">",
+      "details": {
+        "impact": "critical",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/label?application=playwright",
+        "nodes": [
+          {
+            "target": "input",
+            "html": "<input maxlength=\"35\" autocomplete=\"none\" autocapitalize=\"sentences\" autocorrect=\"on\" dir=\"auto\" spellcheck=\"true\" type=\"text\" data-focusable=\"true\" class=\"css-11aywtz r-16y2uo...\" data-testid=\"text-input-outlined\" value=\"\" style=\"color: rgb(0, 0, 0);...\" data-pahunch-critica...=\"0\">",
+            "failureSummary": "Fix any of the following:\n  Element does not have an implicit (wrapped) <label>\n  Element does not have an explicit <label>\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element has no placeholder attribute\n  Element's default semantics were"
+          }
+        ]
+      }
+    },
+    {
+      "check": "axe",
+      "rule": "axe/landmark-one-main",
+      "severity": "info",
+      "wcag": [],
+      "summary": "Document should have one main landmark (1 element).",
+      "target": "html",
+      "snippet": "<html>",
+      "details": {
+        "impact": "moderate",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/landmark-one-main?application=playwright",
+        "nodes": [
+          {
+            "target": "html",
+            "html": "<html>",
+            "failureSummary": "Fix all of the following:\n  Document does not have a main landmark"
+          }
+        ]
+      }
+    },
+    {
+      "check": "axe",
+      "rule": "axe/page-has-heading-one",
+      "severity": "info",
+      "wcag": [],
+      "summary": "Page should contain a level-one heading (1 element).",
+      "target": "html",
+      "snippet": "<html>",
+      "details": {
+        "impact": "moderate",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/page-has-heading-one?application=playwright",
+        "nodes": [
+          {
+            "target": "html",
+            "html": "<html>",
+            "failureSummary": "Fix all of the following:\n  Page must have a level-one heading"
+          }
+        ]
+      }
+    },
+    {
+      "check": "axe",
+      "rule": "axe/region",
+      "severity": "info",
+      "wcag": [],
+      "summary": "All page content should be contained by landmarks (9 elements).",
+      "target": ".r-11wnrd2.r-eqz5dr.r-1pi2tsx > .r-18u37iz.r-1awozwy.r-1777fci",
+      "snippet": "<div class=\"css-1dbjc4n r-1awozwy r-18u37iz r-1777fci\" style=\"background-color: rgb(255, 242, 207); height: 25px;\">",
+      "details": {
+        "impact": "moderate",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/region?application=playwright",
+        "nodes": [
+          {
+            "target": ".r-11wnrd2.r-eqz5dr.r-1pi2tsx > .r-18u37iz.r-1awozwy.r-1777fci",
+            "html": "<div class=\"css-1dbjc4n r-1awozwy r-18u37iz r-1777fci\" style=\"background-color: rgb(255, 242, 207); height: 25px;\">",
+            "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+          },
+          {
+            "target": ".r-1xe1jjn",
+            "html": "<div class=\"css-1dbjc4n r-1awozwy r-1xe1jjn r-13qz1uu\">",
+            "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+          },
+          {
+            "target": ".r-1ye8kvj > .css-1dbjc4n > .r-13qz1uu.css-1dbjc4n",
+            "html": "<div class=\"css-1dbjc4n r-13qz1uu\" style=\"color: rgb(0, 0, 0); font-family: Arial; font-size: 20px; font-weight: 400; line-height: 44px;\">Login</div>",
+            "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+          },
+          {
+            "target": ".css-1dbjc4n:nth-child(3) > .r-18u37iz.css-1dbjc4n",
+            "html": "<div class=\"css-1dbjc4n r-18u37iz\"><div dir=\"auto\" class=\"css-901oao r-1b43r93\" style=\"color: rgb(0, 0, 0); font-family: Arial; font-weight: 400; line-height: 24px;\"> Login ID </div><div dir=\"auto\" class=\"css-901oao\" style=\"color: rgb(255, 0, 0);\">*</div></div>",
+            "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+          },
+          {
+            "target": ".r-1mdbw0j.css-1dbjc4n",
+            "html": "<div class=\"css-1dbjc4n r-1mdbw0j\" style=\"min-height: 64px; padding-top: 8px;\">",
+            "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+          }
+        ]
+      }
+    },
+    {
+      "check": "keyboard",
+      "rule": "keyboard-focus-invisible",
+      "severity": "barrier",
+      "wcag": [
+        "2.4.7"
+      ],
+      "summary": "No visible focus indicator on Login ID field.",
+      "target": "Login ID field",
+      "details": {
+        "controls": [
+          "Login ID field"
+        ]
+      }
+    }
+  ],
+  "counts": {
+    "blocker": 0,
+    "barrier": 6,
+    "info": 3
+  },
+  "evidence": {
+    "names": {
+      "controls": [
+        {
+          "index": 0,
+          "label": "Login ID field",
+          "kind": "field",
+          "role": "textbox",
+          "name": "",
+          "disabled": false,
+          "hidden": false,
+          "visible": true,
+          "snapshot": "- textbox"
+        },
+        {
+          "index": 1,
+          "label": "Continue button",
+          "kind": "button",
+          "role": "text",
+          "name": "",
+          "disabled": false,
+          "hidden": false,
+          "visible": true,
+          "snapshot": "- text: Continue"
+        }
+      ]
+    },
+    "captcha": {
+      "groups": []
+    },
+    "lang": {
+      "frames": [
+        {
+          "htmlLang": "",
+          "indicTotal": 0,
+          "indicUnmarked": 0,
+          "latinAtRoot": 0,
+          "indicAtRoot": 0,
+          "samples": []
+        }
+      ]
+    },
+    "axe": {
+      "version": "4.14.1",
+      "violations": 6,
+      "incomplete": 1,
+      "passes": 18
+    },
+    "keyboard": {
+      "presses": 13,
+      "completedCycle": true,
+      "stopsSeen": 11,
+      "inModal": false,
+      "trap": null,
+      "controls": [
+        {
+          "index": 0,
+          "label": "Login ID field",
+          "reached": true,
+          "focusVisible": false,
+          "firstStep": 6
+        },
+        {
+          "index": 1,
+          "label": "Continue button",
+          "reached": true,
+          "focusVisible": true,
+          "firstStep": 9
+        }
+      ],
+      "sequence": [
+        {
+          "step": 1,
+          "desc": "div \"A-\"",
+          "focusVisible": true
+        },
+        {
+          "step": 2,
+          "desc": "div \"A\"",
+          "focusVisible": true
+        },
+        {
+          "step": 3,
+          "desc": "div \"A+\"",
+          "focusVisible": true
+        },
+        {
+          "step": 4,
+          "desc": "div \"Hindi\"",
+          "focusVisible": true
+        },
+        {
+          "step": 5,
+          "desc": "div \"Passport Seva Ministry of External Affai\"",
+          "focusVisible": true
+        },
+        {
+          "step": 6,
+          "desc": "input",
+          "focusVisible": false,
+          "critical": 0
+        },
+        {
+          "step": 7,
+          "desc": "div",
+          "focusVisible": true
+        },
+        {
+          "step": 8,
+          "desc": "div \"Having Trouble Logging in ?\"",
+          "focusVisible": true
+        },
+        {
+          "step": 9,
+          "desc": "div \"Continue\"",
+          "focusVisible": true,
+          "critical": 1
+        },
+        {
+          "step": 10,
+          "desc": "div \"Register here\"",
+          "focusVisible": true
+        },
+        {
+          "step": 11,
+          "desc": "div",
+          "focusVisible": true
+        }
+      ]
+    },
+    "pdf": {
+      "pdfs": []
+    }
+  },
+  "errors": []
+}

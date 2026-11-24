@@ -1,0 +1,823 @@
+{
+  "schema": 1,
+  "portal": {
+    "id": "aadhaar",
+    "name": "myAadhaar",
+    "owner": "Unique Identification Authority of India",
+    "jurisdiction": "Central",
+    "task": "Reach the Login button on the myAadhaar home page",
+    "notes": "During discovery this address sometimes redirected to a beta site (myaadhaarbeta.uidai.gov.in) that was dimmed by an overlay on load. The audit checks whichever version the address serves; the page actually checked is listed below. The login form opens only after Login is pressed, which is out of scope."
+  },
+  "startedAt": "2026-11-24T13:40:52.453Z",
+  "finishedAt": "2026-11-24T13:41:02.633Z",
+  "tool": {
+    "name": "pahunch",
+    "version": "0.1.0",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/159.0.8154.6 Safari/537.36 pahunch/0.1.0 (+https://github.com/DevGurav/pahunch)",
+    "browser": "chromium 159.0.8154.6",
+    "axe": "4.14.1"
+  },
+  "pages": [
+    {
+      "requested": "https://myaadhaar.uidai.gov.in/",
+      "finalUrl": "https://myaadhaarbeta.uidai.gov.in/",
+      "status": 200,
+      "title": "myAadhaar - Unique Identification Authority of India | Government of India"
+    }
+  ],
+  "robots": {
+    "robotsUrl": "https://myaadhaar.uidai.gov.in/robots.txt",
+    "status": 200,
+    "disallowed": false
+  },
+  "critical": [
+    {
+      "index": 0,
+      "label": "Login button",
+      "kind": "button",
+      "selector": "button:has-text(\"Login\") >> visible=true",
+      "found": true,
+      "role": "button",
+      "name": "Login",
+      "disabled": false,
+      "reached": true,
+      "focusVisible": true
+    }
+  ],
+  "verdict": "barriers",
+  "inconclusiveReasons": [],
+  "findings": [
+    {
+      "check": "lang",
+      "rule": "lang-page-wrong",
+      "severity": "barrier",
+      "wcag": [
+        "3.1.1"
+      ],
+      "summary": "The page declares \"hi\" but its text is mostly English (3598 Latin letters, 0 Indic characters).",
+      "target": "html",
+      "details": {
+        "htmlLang": "hi",
+        "latinAtRoot": 3598,
+        "indicAtRoot": 0
+      }
+    },
+    {
+      "check": "axe",
+      "rule": "axe/button-name",
+      "severity": "barrier",
+      "wcag": [
+        "4.1.2"
+      ],
+      "summary": "Buttons must have discernible text (3 elements).",
+      "target": ".FODg5gKpqTHIgQvDgL1w",
+      "snippet": "<button class=\"FODg5gKpqTHIgQvDgL1w QC5BsywXLvzhyxSfS6QY\">",
+      "details": {
+        "impact": "critical",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/button-name?application=playwright",
+        "nodes": [
+          {
+            "target": ".FODg5gKpqTHIgQvDgL1w",
+            "html": "<button class=\"FODg5gKpqTHIgQvDgL1w QC5BsywXLvzhyxSfS6QY\">",
+            "failureSummary": "Fix any of the following:\n  Element does not have inner text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element does not have an implicit (wrapped) <label>\n  Element does not have an explicit <label>\n  El"
+          },
+          {
+            "target": ".EsThbUG09C_Nd1sqsX5F",
+            "html": "<button type=\"button\" class=\"EsThbUG09C_Nd1sqsX5F \">",
+            "failureSummary": "Fix any of the following:\n  Element does not have inner text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element does not have an implicit (wrapped) <label>\n  Element does not have an explicit <label>\n  El"
+          },
+          {
+            "target": ".ceJ9bxUQfMPRms7QyokA",
+            "html": "<button class=\"QP4gjezINDRaCeHhr8hX ceJ9bxUQfMPRms7QyokA\" tabindex=\"0\">",
+            "failureSummary": "Fix any of the following:\n  Element does not have inner text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element does not have an implicit (wrapped) <label>\n  Element does not have an explicit <label>\n  El"
+          }
+        ]
+      }
+    },
+    {
+      "check": "axe",
+      "rule": "axe/image-alt",
+      "severity": "barrier",
+      "wcag": [
+        "1.1.1"
+      ],
+      "summary": "Images must have alternative text (1 element).",
+      "target": ".IyghLaPeE7N04RaulRnJ",
+      "snippet": "<img src=\"/4b650fc00405b84de010.png\" class=\"IyghLaPeE7N04RaulRnJ\">",
+      "details": {
+        "impact": "critical",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/image-alt?application=playwright",
+        "nodes": [
+          {
+            "target": ".IyghLaPeE7N04RaulRnJ",
+            "html": "<img src=\"/4b650fc00405b84de010.png\" class=\"IyghLaPeE7N04RaulRnJ\">",
+            "failureSummary": "Fix any of the following:\n  Element does not have an alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+          }
+        ]
+      }
+    },
+    {
+      "check": "axe",
+      "rule": "axe/label",
+      "severity": "barrier",
+      "wcag": [
+        "4.1.2"
+      ],
+      "summary": "Form elements must have labels (13 elements).",
+      "target": "input[value=\"en_IN\"]",
+      "snippet": "<input type=\"radio\" name=\"language\" value=\"en_IN\" style=\"\">",
+      "details": {
+        "impact": "critical",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/label?application=playwright",
+        "nodes": [
+          {
+            "target": "input[value=\"en_IN\"]",
+            "html": "<input type=\"radio\" name=\"language\" value=\"en_IN\" style=\"\">",
+            "failureSummary": "Fix any of the following:\n  Element does not have an implicit (wrapped) <label>\n  Element does not have an explicit <label>\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element has no placeholder attribute\n  Element's default semantics were"
+          },
+          {
+            "target": "input[value=\"hi_IN\"]",
+            "html": "<input type=\"radio\" name=\"language\" value=\"hi_IN\" checked=\"\" style=\"\">",
+            "failureSummary": "Fix any of the following:\n  Element does not have an implicit (wrapped) <label>\n  Element does not have an explicit <label>\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element has no placeholder attribute\n  Element's default semantics were"
+          },
+          {
+            "target": "input[value=\"bn_IN\"]",
+            "html": "<input type=\"radio\" name=\"language\" value=\"bn_IN\" style=\"\">",
+            "failureSummary": "Fix any of the following:\n  Element does not have an implicit (wrapped) <label>\n  Element does not have an explicit <label>\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element has no placeholder attribute\n  Element's default semantics were"
+          },
+          {
+            "target": "input[value=\"kn_IN\"]",
+            "html": "<input type=\"radio\" name=\"language\" value=\"kn_IN\" style=\"\">",
+            "failureSummary": "Fix any of the following:\n  Element does not have an implicit (wrapped) <label>\n  Element does not have an explicit <label>\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element has no placeholder attribute\n  Element's default semantics were"
+          },
+          {
+            "target": "input[value=\"gu_IN\"]",
+            "html": "<input type=\"radio\" name=\"language\" value=\"gu_IN\" style=\"\">",
+            "failureSummary": "Fix any of the following:\n  Element does not have an implicit (wrapped) <label>\n  Element does not have an explicit <label>\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element has no placeholder attribute\n  Element's default semantics were"
+          }
+        ]
+      }
+    },
+    {
+      "check": "axe",
+      "rule": "axe/landmark-one-main",
+      "severity": "info",
+      "wcag": [],
+      "summary": "Document should have one main landmark (1 element).",
+      "target": "html",
+      "snippet": "<html lang=\"hi\" dir=\"ltr\">",
+      "details": {
+        "impact": "moderate",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/landmark-one-main?application=playwright",
+        "nodes": [
+          {
+            "target": "html",
+            "html": "<html lang=\"hi\" dir=\"ltr\">",
+            "failureSummary": "Fix all of the following:\n  Document does not have a main landmark"
+          }
+        ]
+      }
+    },
+    {
+      "check": "axe",
+      "rule": "axe/landmark-unique",
+      "severity": "info",
+      "wcag": [],
+      "summary": "Landmarks should have a unique role or role/label/title (i.e. accessible name) combination (1 element).",
+      "target": ".CsCOKJ5Tm3USqBWeKE3M > .SM4Ezc4QHgHFO5ZGz4pG.OhRHtglJRYcB8pr9Uu1U[aria-controls=\"faq-panel-0\"] > .FsciwW4NDsoEu7eKcTwM[role=\"region\"][aria-labelledby=\"faq-header-0\"]",
+      "snippet": "<div id=\"faq-panel-0\" role=\"region\" aria-labelledby=\"faq-header-0\" class=\"FsciwW4NDsoEu7eKcTwM kl1bskvGJ9Ue5IlFApZH\">Masked Aadhaar implies replacing of first 8 digits of Aadhaar number with “xxxx-xxxx” while only last 4 digits of the Aadhaar Number are visible.</div>",
+      "details": {
+        "impact": "moderate",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/landmark-unique?application=playwright",
+        "nodes": [
+          {
+            "target": ".CsCOKJ5Tm3USqBWeKE3M > .SM4Ezc4QHgHFO5ZGz4pG.OhRHtglJRYcB8pr9Uu1U[aria-controls=\"faq-panel-0\"] > .FsciwW4NDsoEu7eKcTwM[role=\"region\"][aria-labelledby=\"faq-header-0\"]",
+            "html": "<div id=\"faq-panel-0\" role=\"region\" aria-labelledby=\"faq-header-0\" class=\"FsciwW4NDsoEu7eKcTwM kl1bskvGJ9Ue5IlFApZH\">Masked Aadhaar implies replacing of first 8 digits of Aadhaar number with “xxxx-xxxx” while only last 4 digits of the Aadhaar Number are visible.</div>",
+            "failureSummary": "Fix any of the following:\n  The landmark must have a unique aria-label, aria-labelledby, or title to make landmarks distinguishable"
+          }
+        ]
+      }
+    },
+    {
+      "check": "axe",
+      "rule": "axe/link-name",
+      "severity": "barrier",
+      "wcag": [
+        "2.4.4",
+        "4.1.2"
+      ],
+      "summary": "Links must have discernible text (5 elements).",
+      "target": ".tFaHrTTANi7Dmv9Sznqa > a[rel=\"noopener noreferrer\"]:nth-child(1)",
+      "snippet": "<a href=\"https://www.facebook.com/AadhaarOfficial/\" target=\"_blank\" rel=\"noopener noreferrer\">",
+      "details": {
+        "impact": "serious",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/link-name?application=playwright",
+        "nodes": [
+          {
+            "target": ".tFaHrTTANi7Dmv9Sznqa > a[rel=\"noopener noreferrer\"]:nth-child(1)",
+            "html": "<a href=\"https://www.facebook.com/AadhaarOfficial/\" target=\"_blank\" rel=\"noopener noreferrer\">",
+            "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+          },
+          {
+            "target": "a[rel=\"noopener noreferrer\"]:nth-child(2)",
+            "html": "<a href=\"https://www.youtube.com/user/AadhaarUID\" target=\"_blank\" rel=\"noopener noreferrer\">",
+            "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+          },
+          {
+            "target": "a[href$=\"UIDAI\"]",
+            "html": "<a href=\"https://x.com/UIDAI\" target=\"_blank\" rel=\"noopener noreferrer\">",
+            "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+          },
+          {
+            "target": "a[rel=\"noopener noreferrer\"]:nth-child(4)",
+            "html": "<a href=\"https://www.instagram.com/aadhaar_official/?hl=en\" target=\"_blank\" rel=\"noopener noreferrer\">",
+            "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+          },
+          {
+            "target": "a[rel=\"noopener noreferrer\"]:nth-child(5)",
+            "html": "<a href=\"https://www.linkedin.com/company/unique-identification-authority-of-india-uidai-/posts/?feedView=all\" target=\"_blank\" rel=\"noopener noreferrer\">",
+            "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+          }
+        ]
+      }
+    },
+    {
+      "check": "axe",
+      "rule": "axe/nested-interactive",
+      "severity": "barrier",
+      "wcag": [
+        "4.1.2"
+      ],
+      "summary": "Interactive controls must not be nested (13 elements).",
+      "target": ".TSmvzKZtEbt6W3c7WMW6:nth-child(1)",
+      "snippet": "<button class=\"TSmvzKZtEbt6W3c7WMW6 \">",
+      "details": {
+        "impact": "serious",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/nested-interactive?application=playwright",
+        "nodes": [
+          {
+            "target": ".TSmvzKZtEbt6W3c7WMW6:nth-child(1)",
+            "html": "<button class=\"TSmvzKZtEbt6W3c7WMW6 \">",
+            "failureSummary": "Fix any of the following:\n  Element has focusable descendants. Move them outside of the element, or remove them."
+          },
+          {
+            "target": ".JmiLrEFyt0G7E50LSPrg",
+            "html": "<button class=\"TSmvzKZtEbt6W3c7WMW6 JmiLrEFyt0G7E50LSPrg\">",
+            "failureSummary": "Fix any of the following:\n  Element has focusable descendants. Move them outside of the element, or remove them."
+          },
+          {
+            "target": ".TSmvzKZtEbt6W3c7WMW6:nth-child(3)",
+            "html": "<button class=\"TSmvzKZtEbt6W3c7WMW6 \">",
+            "failureSummary": "Fix any of the following:\n  Element has focusable descendants. Move them outside of the element, or remove them."
+          },
+          {
+            "target": ".TSmvzKZtEbt6W3c7WMW6:nth-child(4)",
+            "html": "<button class=\"TSmvzKZtEbt6W3c7WMW6 \">",
+            "failureSummary": "Fix any of the following:\n  Element has focusable descendants. Move them outside of the element, or remove them."
+          },
+          {
+            "target": ".TSmvzKZtEbt6W3c7WMW6:nth-child(5)",
+            "html": "<button class=\"TSmvzKZtEbt6W3c7WMW6 \">",
+            "failureSummary": "Fix any of the following:\n  Element has focusable descendants. Move them outside of the element, or remove them."
+          }
+        ]
+      }
+    },
+    {
+      "check": "axe",
+      "rule": "axe/page-has-heading-one",
+      "severity": "info",
+      "wcag": [],
+      "summary": "Page should contain a level-one heading (1 element).",
+      "target": "html",
+      "snippet": "<html lang=\"hi\" dir=\"ltr\">",
+      "details": {
+        "impact": "moderate",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/page-has-heading-one?application=playwright",
+        "nodes": [
+          {
+            "target": "html",
+            "html": "<html lang=\"hi\" dir=\"ltr\">",
+            "failureSummary": "Fix all of the following:\n  Page must have a level-one heading"
+          }
+        ]
+      }
+    },
+    {
+      "check": "axe",
+      "rule": "axe/region",
+      "severity": "info",
+      "wcag": [],
+      "summary": "All page content should be contained by landmarks (63 elements).",
+      "target": ".u8okwqb86Jaf1pWKiQYy",
+      "snippet": "<div class=\"u8okwqb86Jaf1pWKiQYy\">",
+      "details": {
+        "impact": "moderate",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/region?application=playwright",
+        "nodes": [
+          {
+            "target": ".u8okwqb86Jaf1pWKiQYy",
+            "html": "<div class=\"u8okwqb86Jaf1pWKiQYy\">",
+            "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+          },
+          {
+            "target": ".PfCJM4UZdj2xjCsyjOZK",
+            "html": "<img src=\"/efc2ae12151977ee59de.png\" alt=\"Uidai Logo\" class=\"PfCJM4UZdj2xjCsyjOZK\" height=\"50\" width=\"400\">",
+            "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+          },
+          {
+            "target": ".sFNk7yb611WkDPWyxaNc",
+            "html": "<input class=\"sFNk7yb611WkDPWyxaNc \" inputmode=\"text\" name=\"preheader-search\" placeholder=\"Search services\" tabindex=\"-1\" readonly=\"\" value=\"\" style=\"\">",
+            "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+          },
+          {
+            "target": ".LTkVk56kgXALcNB2Se7U",
+            "html": "<div class=\"LTkVk56kgXALcNB2Se7U\"><div class=\" AH_O6o1JmAvT3snGPCwz DgzNsmgOxWx83DFB8Jzk\">Welcome to myAadhaar</div><div class=\"caMXIWjXtFlUkD88MEGo\">What do you want to do today ?</div></div>",
+            "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+          },
+          {
+            "target": ".Kqo_7UZBvLQmdtOMgvbO",
+            "html": "<input type=\"text\" placeholder=\"Search services\" class=\"Kqo_7UZBvLQmdtOMgvbO\" style=\"\">",
+            "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+          }
+        ]
+      }
+    }
+  ],
+  "counts": {
+    "blocker": 0,
+    "barrier": 6,
+    "info": 4
+  },
+  "evidence": {
+    "names": {
+      "controls": [
+        {
+          "index": 0,
+          "label": "Login button",
+          "kind": "button",
+          "role": "button",
+          "name": "Login",
+          "disabled": false,
+          "hidden": false,
+          "visible": true,
+          "snapshot": "- button \"Login\""
+        }
+      ]
+    },
+    "captcha": {
+      "groups": []
+    },
+    "lang": {
+      "frames": [
+        {
+          "htmlLang": "hi",
+          "indicTotal": 0,
+          "indicUnmarked": 0,
+          "latinAtRoot": 3598,
+          "indicAtRoot": 0,
+          "samples": []
+        }
+      ]
+    },
+    "axe": {
+      "version": "4.14.1",
+      "violations": 9,
+      "incomplete": 3,
+      "passes": 34
+    },
+    "keyboard": {
+      "presses": 84,
+      "completedCycle": true,
+      "stopsSeen": 82,
+      "inModal": false,
+      "trap": null,
+      "controls": [
+        {
+          "index": 0,
+          "label": "Login button",
+          "reached": true,
+          "focusVisible": true,
+          "firstStep": 82
+        }
+      ],
+      "sequence": [
+        {
+          "step": 1,
+          "desc": "div",
+          "focusVisible": true
+        },
+        {
+          "step": 2,
+          "desc": "div",
+          "focusVisible": true
+        },
+        {
+          "step": 3,
+          "desc": "div",
+          "focusVisible": true
+        },
+        {
+          "step": 4,
+          "desc": "div",
+          "focusVisible": true
+        },
+        {
+          "step": 5,
+          "desc": "div",
+          "focusVisible": true
+        },
+        {
+          "step": 6,
+          "desc": "div \"I’m a Parent Aadhaar for babies, biometr\"",
+          "focusVisible": true
+        },
+        {
+          "step": 7,
+          "desc": "div \"I’m a Senior Citizen Aadhaar for senior \"",
+          "focusVisible": true
+        },
+        {
+          "step": 8,
+          "desc": "div \"I’m a Student Aadhaar for admissions & s\"",
+          "focusVisible": true
+        },
+        {
+          "step": 9,
+          "desc": "div \"I’m a Working Professional Aadhaar for w\"",
+          "focusVisible": true
+        },
+        {
+          "step": 10,
+          "desc": "div \"I’m an Overseas Indian / NRI Aadhaar for\"",
+          "focusVisible": true
+        },
+        {
+          "step": 11,
+          "desc": "div \"I’m Newly Married Aadhaar for newly wed \"",
+          "focusVisible": true
+        },
+        {
+          "step": 12,
+          "desc": "div",
+          "focusVisible": true
+        },
+        {
+          "step": 13,
+          "desc": "div \"Download Aadhaar Download digitally sign\"",
+          "focusVisible": true
+        },
+        {
+          "step": 14,
+          "desc": "div \"Check Enrolment / Update Status Check th\"",
+          "focusVisible": true
+        },
+        {
+          "step": 15,
+          "desc": "div \"Check Aadhaar Status Validate the status\"",
+          "focusVisible": true
+        },
+        {
+          "step": 16,
+          "desc": "div \"Update Address Use your documents or fam\"",
+          "focusVisible": true
+        },
+        {
+          "step": 17,
+          "desc": "div \"Check Bank Seeding Status Find your Bank\"",
+          "focusVisible": true
+        },
+        {
+          "step": 18,
+          "desc": "div \"Update Address Use your documents or fam\"",
+          "focusVisible": true
+        },
+        {
+          "step": 19,
+          "desc": "div \"Photo, Biometrics Update and more At Sev\"",
+          "focusVisible": true
+        },
+        {
+          "step": 20,
+          "desc": "div \"Check status Update Address\"",
+          "focusVisible": true
+        },
+        {
+          "step": 21,
+          "desc": "div \"Download Aadhaar Download digitally sign\"",
+          "focusVisible": true
+        },
+        {
+          "step": 22,
+          "desc": "div \"Order Aadhaar PVC Card Order a secure, w\"",
+          "focusVisible": true
+        },
+        {
+          "step": 23,
+          "desc": "div \"Check status Order Aadhaar PVC Card\"",
+          "focusVisible": true
+        },
+        {
+          "step": 24,
+          "desc": "div \"More\"",
+          "focusVisible": true
+        },
+        {
+          "step": 25,
+          "desc": "div \"Show all services\"",
+          "focusVisible": true
+        },
+        {
+          "step": 26,
+          "desc": "div \"Download Masked Aadhaar Download digital\"",
+          "focusVisible": true
+        },
+        {
+          "step": 27,
+          "desc": "div \"Generate / Retrieve Virtual ID Generate \"",
+          "focusVisible": true
+        },
+        {
+          "step": 28,
+          "desc": "div \"Lock / Unlock Aadhaar Temporarily lock /\"",
+          "focusVisible": true
+        },
+        {
+          "step": 29,
+          "desc": "div \"Lock / Unlock Biometrics Lock your finge\"",
+          "focusVisible": true
+        },
+        {
+          "step": 30,
+          "desc": "div \"What is Masked Aadhaar? Masked Aadhaar i\"",
+          "focusVisible": true
+        },
+        {
+          "step": 31,
+          "desc": "div \"What is Virtual ID (VID)?\"",
+          "focusVisible": true
+        },
+        {
+          "step": 32,
+          "desc": "div \"What is Aadhaar (UID) Lock & Unlock?\"",
+          "focusVisible": true
+        },
+        {
+          "step": 33,
+          "desc": "div \"What happens when Biometric is locked?\"",
+          "focusVisible": true
+        },
+        {
+          "step": 34,
+          "desc": "div \"What is Biometric Locking?\"",
+          "focusVisible": true
+        },
+        {
+          "step": 35,
+          "desc": "div \"Book an Appointment Book an Appointment \"",
+          "focusVisible": true
+        },
+        {
+          "step": 36,
+          "desc": "div \"Locate Enrolment Centre Search and locat\"",
+          "focusVisible": true
+        },
+        {
+          "step": 37,
+          "desc": "div \"What is Aadhaar Seva Kendra (ASK)? 'Aadh\"",
+          "focusVisible": true
+        },
+        {
+          "step": 38,
+          "desc": "a \"uidai.gov.in\"",
+          "focusVisible": false
+        },
+        {
+          "step": 39,
+          "desc": "div \"Where can I find the list of UIDAI ASKs \"",
+          "focusVisible": true
+        },
+        {
+          "step": 40,
+          "desc": "div \"What services I can avail from Aadhaar S\"",
+          "focusVisible": true
+        },
+        {
+          "step": 41,
+          "desc": "div \"Check Aadhaar PVC Card Order Status Chec\"",
+          "focusVisible": true
+        },
+        {
+          "step": 42,
+          "desc": "div \"Check Aadhaar Status Validate the status\"",
+          "focusVisible": true
+        },
+        {
+          "step": 43,
+          "desc": "div \"Check Bank Seeding Status Find your Bank\"",
+          "focusVisible": true
+        },
+        {
+          "step": 44,
+          "desc": "div \"Check Email / Mobile Link Check mobile a\"",
+          "focusVisible": true
+        },
+        {
+          "step": 45,
+          "desc": "div \"Check Enrolment / Update Status Check th\"",
+          "focusVisible": true
+        },
+        {
+          "step": 46,
+          "desc": "div \"Check Grievance / Feedback Status Check \"",
+          "focusVisible": true
+        },
+        {
+          "step": 47,
+          "desc": "button \"Login\"",
+          "focusVisible": true
+        },
+        {
+          "step": 48,
+          "desc": "a",
+          "focusVisible": true
+        },
+        {
+          "step": 49,
+          "desc": "a",
+          "focusVisible": true
+        },
+        {
+          "step": 50,
+          "desc": "a",
+          "focusVisible": true
+        },
+        {
+          "step": 51,
+          "desc": "a",
+          "focusVisible": true
+        },
+        {
+          "step": 52,
+          "desc": "a",
+          "focusVisible": true
+        },
+        {
+          "step": 53,
+          "desc": "a",
+          "focusVisible": true
+        },
+        {
+          "step": 54,
+          "desc": "a",
+          "focusVisible": true
+        },
+        {
+          "step": 55,
+          "desc": "input#react-select-2-input",
+          "focusVisible": false
+        },
+        {
+          "step": 56,
+          "desc": "button \"Privacy Policy\"",
+          "focusVisible": false
+        },
+        {
+          "step": 57,
+          "desc": "button \"Terms Of Service\"",
+          "focusVisible": false
+        },
+        {
+          "step": 59,
+          "desc": "button \"Select type*\"",
+          "focusVisible": true
+        },
+        {
+          "step": 60,
+          "desc": "button \"Select type*\"",
+          "focusVisible": true
+        },
+        {
+          "step": 61,
+          "desc": "input \"hi_IN\"",
+          "focusVisible": true
+        },
+        {
+          "step": 62,
+          "desc": "button \"Select type*\"",
+          "focusVisible": true
+        },
+        {
+          "step": 63,
+          "desc": "button \"Select type*\"",
+          "focusVisible": true
+        },
+        {
+          "step": 64,
+          "desc": "button \"Select type*\"",
+          "focusVisible": true
+        },
+        {
+          "step": 65,
+          "desc": "button \"Select type*\"",
+          "focusVisible": true
+        },
+        {
+          "step": 66,
+          "desc": "button \"Select type*\"",
+          "focusVisible": true
+        },
+        {
+          "step": 67,
+          "desc": "button \"Select type*\"",
+          "focusVisible": true
+        },
+        {
+          "step": 68,
+          "desc": "button \"Select type*\"",
+          "focusVisible": true
+        },
+        {
+          "step": 69,
+          "desc": "button \"Select type*\"",
+          "focusVisible": true
+        },
+        {
+          "step": 70,
+          "desc": "button \"Select type*\"",
+          "focusVisible": true
+        },
+        {
+          "step": 71,
+          "desc": "button \"Select type*\"",
+          "focusVisible": true
+        },
+        {
+          "step": 72,
+          "desc": "button",
+          "focusVisible": true
+        },
+        {
+          "step": 73,
+          "desc": "div#beta-warning-toast \"This is a beta interface. All changes yo\"",
+          "focusVisible": true
+        },
+        {
+          "step": 74,
+          "desc": "button",
+          "focusVisible": true
+        },
+        {
+          "step": 75,
+          "desc": "button",
+          "focusVisible": true
+        },
+        {
+          "step": 76,
+          "desc": "div \"Home\"",
+          "focusVisible": true
+        },
+        {
+          "step": 77,
+          "desc": "div \"Services\"",
+          "focusVisible": true
+        },
+        {
+          "step": 78,
+          "desc": "div \"Seva Kendra\"",
+          "focusVisible": true
+        },
+        {
+          "step": 79,
+          "desc": "div \"Guides\"",
+          "focusVisible": true
+        },
+        {
+          "step": 80,
+          "desc": "button \"Switch back to legacy\"",
+          "focusVisible": true
+        },
+        {
+          "step": 81,
+          "desc": "button \"Support\"",
+          "focusVisible": true
+        },
+        {
+          "step": 82,
+          "desc": "button \"Login\"",
+          "focusVisible": true,
+          "critical": 0
+        },
+        {
+          "step": 83,
+          "desc": "input \"Search services\"",
+          "focusVisible": true
+        }
+      ]
+    },
+    "pdf": {
+      "pdfs": []
+    }
+  },
+  "errors": []
+}

@@ -1,0 +1,647 @@
+{
+  "schema": 1,
+  "portal": {
+    "id": "eshram",
+    "name": "e-Shram: self-registration",
+    "owner": "Ministry of Labour and Employment",
+    "jurisdiction": "Central",
+    "task": "Start registering as an unorganised worker"
+  },
+  "startedAt": "2026-11-24T13:36:52.866Z",
+  "finishedAt": "2026-11-24T13:36:56.481Z",
+  "tool": {
+    "name": "pahunch",
+    "version": "0.1.0",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/159.0.8154.6 Safari/537.36 pahunch/0.1.0 (+https://github.com/DevGurav/pahunch)",
+    "browser": "chromium 159.0.8154.6",
+    "axe": "4.14.1"
+  },
+  "pages": [
+    {
+      "requested": "https://register.eshram.gov.in/#/user/self",
+      "finalUrl": "https://register.eshram.gov.in/#/user/self",
+      "status": 200,
+      "title": "Home | eShram"
+    }
+  ],
+  "robots": {
+    "robotsUrl": "https://register.eshram.gov.in/robots.txt",
+    "status": 404,
+    "disallowed": false
+  },
+  "critical": [
+    {
+      "index": 0,
+      "label": "Mobile number field",
+      "kind": "field",
+      "selector": "#mobileNumber",
+      "found": true,
+      "role": "textbox",
+      "name": "Enter mobile Number (Aadhaar linked mobile number is preferred)",
+      "disabled": false,
+      "reached": true,
+      "focusVisible": true
+    },
+    {
+      "index": 1,
+      "label": "CAPTCHA field",
+      "kind": "captcha-field",
+      "selector": "#inputCaptcha",
+      "found": true,
+      "role": "textbox",
+      "name": "Enter Captcha",
+      "disabled": false,
+      "reached": true,
+      "focusVisible": true
+    },
+    {
+      "index": 2,
+      "label": "Send OTP button",
+      "kind": "button",
+      "selector": "input[type=\"submit\"][value=\"Send OTP\"]",
+      "found": true,
+      "role": "button",
+      "name": "Send OTP",
+      "disabled": true,
+      "reached": false,
+      "focusVisible": null
+    }
+  ],
+  "verdict": "blocked",
+  "inconclusiveReasons": [],
+  "findings": [
+    {
+      "check": "captcha",
+      "rule": "captcha-image-only",
+      "severity": "blocker",
+      "wcag": [
+        "1.1.1"
+      ],
+      "summary": "The task needs this image CAPTCHA, and there is no audio or other non-visual option.",
+      "target": "img.captchaImg",
+      "snippet": "<img _ngcontent-ng-c3472823434=\"\" alt=\"Captcha\" draggable=\"false\" class=\"captchaImg\" src=\"data:image/png;base64…,iVBORw0KGgoAAAANSUhEUgAAAHkAAAAkCAIAAAAiiAI3AAAJhklEQVR42u2a6W9NXRTGb8Q8xTwVMWtERIj5gyARhIghQkQkEhIRJGY11ktNpVo1llYnNbTmq6ihVFE1/0XvL3clK9vZ55x77um9fVXe/aHpPWftvdd+1lrPWmvfG/mVyvHjx4+DBw9",
+      "details": {
+        "imageAlt": "Captcha",
+        "input": "input#inputCaptcha"
+      }
+    },
+    {
+      "check": "lang",
+      "rule": "lang-indic-unmarked",
+      "severity": "info",
+      "wcag": [
+        "3.1.2"
+      ],
+      "summary": "9 characters of Indic text are not marked with an Indic language; the page declares \"en\".",
+      "target": "a",
+      "snippet": "भारत सरकार |",
+      "details": {
+        "htmlLang": "en",
+        "indicUnmarked": 9,
+        "indicTotal": 143,
+        "samples": [
+          {
+            "text": "भारत सरकार |",
+            "lang": "en",
+            "where": "a"
+          }
+        ]
+      }
+    },
+    {
+      "check": "axe",
+      "rule": "axe/aria-allowed-attr",
+      "severity": "barrier",
+      "wcag": [
+        "4.1.2"
+      ],
+      "summary": "Elements must only use supported ARIA attributes (1 element).",
+      "target": ".search-box",
+      "snippet": "<div _ngcontent-ng-c216618883=\"\" aria-haspopup=\"listbox\" class=\"search-box\" aria-expanded=\"false\">",
+      "details": {
+        "impact": "critical",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/aria-allowed-attr?application=playwright",
+        "nodes": [
+          {
+            "target": ".search-box",
+            "html": "<div _ngcontent-ng-c216618883=\"\" aria-haspopup=\"listbox\" class=\"search-box\" aria-expanded=\"false\">",
+            "failureSummary": "Fix all of the following:\n  ARIA attribute is not allowed: aria-expanded=\"false\""
+          }
+        ]
+      }
+    },
+    {
+      "check": "axe",
+      "rule": "axe/empty-heading",
+      "severity": "info",
+      "wcag": [],
+      "summary": "Headings should not be empty (1 element).",
+      "target": "h4",
+      "snippet": "<h4 _ngcontent-ng-c358800968=\"\" class=\"testReg\"></h4>",
+      "details": {
+        "impact": "minor",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/empty-heading?application=playwright",
+        "nodes": [
+          {
+            "target": "h4",
+            "html": "<h4 _ngcontent-ng-c358800968=\"\" class=\"testReg\"></h4>",
+            "failureSummary": "Fix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+          }
+        ]
+      }
+    },
+    {
+      "check": "axe",
+      "rule": "axe/label-content-name-mismatch",
+      "severity": "barrier",
+      "wcag": [
+        "2.5.3"
+      ],
+      "summary": "Elements must have their visible text as part of their accessible name (2 elements).",
+      "target": "#decfont",
+      "snippet": "<a _ngcontent-ng-c358800968=\"\" id=\"decfont\" tabindex=\"0\" role=\"button\" aria-label=\"Decrease Font Size\" class=\"local\" aria-pressed=\"false\"> A- </a>",
+      "details": {
+        "impact": "serious",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright",
+        "nodes": [
+          {
+            "target": "#decfont",
+            "html": "<a _ngcontent-ng-c358800968=\"\" id=\"decfont\" tabindex=\"0\" role=\"button\" aria-label=\"Decrease Font Size\" class=\"local\" aria-pressed=\"false\"> A- </a>",
+            "failureSummary": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+          },
+          {
+            "target": "#incfont",
+            "html": "<a _ngcontent-ng-c358800968=\"\" id=\"incfont\" tabindex=\"0\" role=\"button\" aria-label=\"Increase Font Size\" class=\"local\" aria-pressed=\"false\"> A+ </a>",
+            "failureSummary": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+          }
+        ]
+      }
+    },
+    {
+      "check": "axe",
+      "rule": "axe/page-has-heading-one",
+      "severity": "info",
+      "wcag": [],
+      "summary": "Page should contain a level-one heading (1 element).",
+      "target": "html",
+      "snippet": "<html lang=\"en\" data-beasties-container=\"\">",
+      "details": {
+        "impact": "moderate",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/page-has-heading-one?application=playwright",
+        "nodes": [
+          {
+            "target": "html",
+            "html": "<html lang=\"en\" data-beasties-container=\"\">",
+            "failureSummary": "Fix all of the following:\n  Page must have a level-one heading"
+          }
+        ]
+      }
+    },
+    {
+      "check": "axe",
+      "rule": "axe/select-name",
+      "severity": "barrier",
+      "wcag": [
+        "4.1.2"
+      ],
+      "summary": "Select element must have an accessible name (1 element).",
+      "target": "select",
+      "snippet": "<select _ngcontent-ng-c358800968=\"\">",
+      "details": {
+        "impact": "critical",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/select-name?application=playwright",
+        "nodes": [
+          {
+            "target": "select",
+            "html": "<select _ngcontent-ng-c358800968=\"\">",
+            "failureSummary": "Fix any of the following:\n  Element does not have an implicit (wrapped) <label>\n  Element does not have an explicit <label>\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element's default semantics were not overridden with role=\"none\" or rol"
+          }
+        ]
+      }
+    }
+  ],
+  "counts": {
+    "blocker": 1,
+    "barrier": 3,
+    "info": 3
+  },
+  "evidence": {
+    "names": {
+      "controls": [
+        {
+          "index": 0,
+          "label": "Mobile number field",
+          "kind": "field",
+          "role": "textbox",
+          "name": "Enter mobile Number (Aadhaar linked mobile number is preferred)",
+          "disabled": false,
+          "hidden": false,
+          "visible": true,
+          "snapshot": "- textbox \"Enter mobile Number (Aadhaar linked mobile number is preferred)\""
+        },
+        {
+          "index": 1,
+          "label": "CAPTCHA field",
+          "kind": "captcha-field",
+          "role": "textbox",
+          "name": "Enter Captcha",
+          "disabled": false,
+          "hidden": false,
+          "visible": true,
+          "snapshot": "- textbox \"Enter Captcha\""
+        },
+        {
+          "index": 2,
+          "label": "Send OTP button",
+          "kind": "button",
+          "role": "button",
+          "name": "Send OTP",
+          "disabled": true,
+          "hidden": false,
+          "visible": true,
+          "snapshot": "- button \"Send OTP\" [disabled]"
+        }
+      ]
+    },
+    "captcha": {
+      "groups": [
+        {
+          "kind": "image",
+          "onPath": true,
+          "imageAlt": "Captcha",
+          "target": "img.captchaImg",
+          "inputTarget": "input#inputCaptcha",
+          "audio": null,
+          "snippet": "<img _ngcontent-ng-c3472823434=\"\" alt=\"Captcha\" draggable=\"false\" class=\"captchaImg\" src=\"data:image/png;base64…,iVBORw0KGgoAAAANSUhEUgAAAHkAAAAkCAIAAAAiiAI3AAAJhklEQVR42u2a6W9NXRTGb8Q8xTwVMWtERIj5gyARhIghQkQkEhIRJGY11ktNpVo1llYnNbTmq6ihVFE1/0XvL3clK9vZ55x77um9fVXe/aHpPWftvdd+1lrPWmvfG/mVyvHjx4+DBw9"
+        }
+      ]
+    },
+    "lang": {
+      "frames": [
+        {
+          "htmlLang": "en",
+          "indicTotal": 143,
+          "indicUnmarked": 9,
+          "latinAtRoot": 934,
+          "indicAtRoot": 9,
+          "samples": [
+            {
+              "text": "भारत सरकार |",
+              "lang": "en",
+              "where": "a"
+            }
+          ]
+        }
+      ]
+    },
+    "axe": {
+      "version": "4.14.1",
+      "violations": 5,
+      "incomplete": 2,
+      "passes": 49
+    },
+    "keyboard": {
+      "presses": 63,
+      "completedCycle": true,
+      "stopsSeen": 61,
+      "inModal": false,
+      "trap": null,
+      "controls": [
+        {
+          "index": 0,
+          "label": "Mobile number field",
+          "reached": true,
+          "focusVisible": true,
+          "firstStep": 62
+        },
+        {
+          "index": 1,
+          "label": "CAPTCHA field",
+          "reached": true,
+          "focusVisible": true,
+          "firstStep": 2
+        },
+        {
+          "index": 2,
+          "label": "Send OTP button",
+          "reached": false,
+          "focusVisible": null,
+          "skipped": "disabled"
+        }
+      ],
+      "sequence": [
+        {
+          "step": 1,
+          "desc": "button \"Refresh Captcha\"",
+          "focusVisible": false
+        },
+        {
+          "step": 2,
+          "desc": "input#inputCaptcha",
+          "focusVisible": true,
+          "critical": 1
+        },
+        {
+          "step": 3,
+          "desc": "input#epfo_yes \"1\"",
+          "focusVisible": true
+        },
+        {
+          "step": 4,
+          "desc": "input#esic_yes \"1\"",
+          "focusVisible": true
+        },
+        {
+          "step": 5,
+          "desc": "button \"Click Here to open Platform Worker Regis\"",
+          "focusVisible": false
+        },
+        {
+          "step": 6,
+          "desc": "button \"Click Here to vist Digital seva opens in\"",
+          "focusVisible": false
+        },
+        {
+          "step": 7,
+          "desc": "button \"Click Here to vist myschemes\"",
+          "focusVisible": false
+        },
+        {
+          "step": 8,
+          "desc": "button \"Click Here to vist skill india opens in \"",
+          "focusVisible": false
+        },
+        {
+          "step": 9,
+          "desc": "button \"Click Here to vist National Career servi\"",
+          "focusVisible": false
+        },
+        {
+          "step": 10,
+          "desc": "button \"Click Here to vist Pradhan mantri sharam\"",
+          "focusVisible": false
+        },
+        {
+          "step": 11,
+          "desc": "a \"Click here to visitimage of National Inf\"",
+          "focusVisible": true
+        },
+        {
+          "step": 12,
+          "desc": "a \"Click here to visitimage of Unique Ident\"",
+          "focusVisible": true
+        },
+        {
+          "step": 13,
+          "desc": "a \"Click here to visitimage of Employees St\"",
+          "focusVisible": true
+        },
+        {
+          "step": 14,
+          "desc": "a \"Click here to visitimage of Common Servi\"",
+          "focusVisible": true
+        },
+        {
+          "step": 15,
+          "desc": "a \"Click here to visitimage of Department o\"",
+          "focusVisible": true
+        },
+        {
+          "step": 16,
+          "desc": "a \"Click here to visitimage of Digital Indi\"",
+          "focusVisible": true
+        },
+        {
+          "step": 17,
+          "desc": "a \"Click here to visitimage of Employees Pr\"",
+          "focusVisible": true
+        },
+        {
+          "step": 18,
+          "desc": "a \"Click here to visitimage of National Pen\"",
+          "focusVisible": true
+        },
+        {
+          "step": 19,
+          "desc": "a \"Click here to visitimage of Ministry of \"",
+          "focusVisible": true
+        },
+        {
+          "step": 20,
+          "desc": "a \"Click here to visitimage of National Inf\"",
+          "focusVisible": true
+        },
+        {
+          "step": 21,
+          "desc": "a \"Click here to visitimage of Unique Ident\"",
+          "focusVisible": true
+        },
+        {
+          "step": 22,
+          "desc": "a \"Click here to visitimage of Employees St\"",
+          "focusVisible": true
+        },
+        {
+          "step": 23,
+          "desc": "a \"Click here to visitimage of Common Servi\"",
+          "focusVisible": true
+        },
+        {
+          "step": 24,
+          "desc": "a \"Click here to visitimage of Department o\"",
+          "focusVisible": true
+        },
+        {
+          "step": 25,
+          "desc": "a \"Click here to visitimage of Digital Indi\"",
+          "focusVisible": true
+        },
+        {
+          "step": 26,
+          "desc": "a \"Click here to visitimage of Employees Pr\"",
+          "focusVisible": true
+        },
+        {
+          "step": 27,
+          "desc": "a \"Click here to visitimage of National Pen\"",
+          "focusVisible": true
+        },
+        {
+          "step": 28,
+          "desc": "a \"Click here to visitimage of Ministry of \"",
+          "focusVisible": true
+        },
+        {
+          "step": 29,
+          "desc": "a \"Click here to visitimage of National Inf\"",
+          "focusVisible": true
+        },
+        {
+          "step": 30,
+          "desc": "a \"Click here to visitimage of Unique Ident\"",
+          "focusVisible": true
+        },
+        {
+          "step": 31,
+          "desc": "a \"Click here to visitimage of Employees St\"",
+          "focusVisible": true
+        },
+        {
+          "step": 32,
+          "desc": "a \"Click here to visitimage of Common Servi\"",
+          "focusVisible": true
+        },
+        {
+          "step": 33,
+          "desc": "a \"Click here to visitimage of Department o\"",
+          "focusVisible": true
+        },
+        {
+          "step": 34,
+          "desc": "a \"Click here to visitimage of Digital Indi\"",
+          "focusVisible": true
+        },
+        {
+          "step": 35,
+          "desc": "a \"Click here to visitimage of Employees Pr\"",
+          "focusVisible": true
+        },
+        {
+          "step": 36,
+          "desc": "button \"Previous slide\"",
+          "focusVisible": false
+        },
+        {
+          "step": 37,
+          "desc": "button \"play slide\"",
+          "focusVisible": false
+        },
+        {
+          "step": 38,
+          "desc": "button \"pause slide\"",
+          "focusVisible": false
+        },
+        {
+          "step": 39,
+          "desc": "button \"Next slide\"",
+          "focusVisible": false
+        },
+        {
+          "step": 41,
+          "desc": "a \"भारत सरकार |\"",
+          "focusVisible": true
+        },
+        {
+          "step": 42,
+          "desc": "a \"Government of India website — opens in a\"",
+          "focusVisible": true
+        },
+        {
+          "step": 43,
+          "desc": "a \"Screen Reader Access\"",
+          "focusVisible": true
+        },
+        {
+          "step": 44,
+          "desc": "a \"Skip to main content\"",
+          "focusVisible": true
+        },
+        {
+          "step": 45,
+          "desc": "a#decfont \"Decrease Font Size\"",
+          "focusVisible": true
+        },
+        {
+          "step": 46,
+          "desc": "a#normal \"Default Font Size\"",
+          "focusVisible": true
+        },
+        {
+          "step": 47,
+          "desc": "a#incfont \"Increase Font Size\"",
+          "focusVisible": true
+        },
+        {
+          "step": 48,
+          "desc": "select \"English हिंदी ಕನ್ನಡ मराठी\"",
+          "focusVisible": true
+        },
+        {
+          "step": 49,
+          "desc": "img \"National Emblem of India\"",
+          "focusVisible": true
+        },
+        {
+          "step": 50,
+          "desc": "img \"eShram\"",
+          "focusVisible": true
+        },
+        {
+          "step": 51,
+          "desc": "a",
+          "focusVisible": true
+        },
+        {
+          "step": 52,
+          "desc": "img \"G 20\"",
+          "focusVisible": true
+        },
+        {
+          "step": 53,
+          "desc": "a \"Home\"",
+          "focusVisible": true
+        },
+        {
+          "step": 54,
+          "desc": "a \"Dashboard\"",
+          "focusVisible": true
+        },
+        {
+          "step": 55,
+          "desc": "a \"One Stop Solution\"",
+          "focusVisible": true
+        },
+        {
+          "step": 56,
+          "desc": "a \"State Login opens in a new tab\"",
+          "focusVisible": true
+        },
+        {
+          "step": 57,
+          "desc": "a \"CSC Locator opens in a new tab\"",
+          "focusVisible": true
+        },
+        {
+          "step": 58,
+          "desc": "a \"My Schemes\"",
+          "focusVisible": true
+        },
+        {
+          "step": 59,
+          "desc": "input#site-search-input \"Search pages\"",
+          "focusVisible": false
+        },
+        {
+          "step": 60,
+          "desc": "button \"Search page\"",
+          "focusVisible": false
+        },
+        {
+          "step": 61,
+          "desc": "div \"यदि आप एक प्लेटफॉर्म वर्कर हैं (ओला, उबर\"",
+          "focusVisible": true
+        },
+        {
+          "step": 62,
+          "desc": "input#mobileNumber",
+          "focusVisible": true,
+          "critical": 0
+        }
+      ]
+    },
+    "pdf": {
+      "pdfs": []
+    }
+  },
+  "errors": []
+}

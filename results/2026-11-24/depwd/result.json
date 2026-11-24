@@ -1,0 +1,1553 @@
+{
+  "schema": 1,
+  "portal": {
+    "id": "depwd",
+    "name": "Department of Empowerment of Persons with Disabilities",
+    "owner": "Ministry of Social Justice and Empowerment",
+    "jurisdiction": "Central",
+    "task": "Find the Public Grievance page from the home page",
+    "notes": "The department responsible for accessibility policy. Its default home page is in Hindi; this task uses the English one. The Public Grievance link sits in a drop-down sub-menu that is closed when the page loads."
+  },
+  "startedAt": "2026-11-24T13:35:05.962Z",
+  "finishedAt": "2026-11-24T13:35:16.984Z",
+  "tool": {
+    "name": "pahunch",
+    "version": "0.1.0",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/159.0.8154.6 Safari/537.36 pahunch/0.1.0 (+https://github.com/DevGurav/pahunch)",
+    "browser": "chromium 159.0.8154.6",
+    "axe": "4.14.1"
+  },
+  "pages": [
+    {
+      "requested": "https://depwd.gov.in/en/",
+      "finalUrl": "https://depwd.gov.in/en/",
+      "status": 200,
+      "title": "Department of Empowerment of Persons with Disabilities | India"
+    }
+  ],
+  "robots": {
+    "robotsUrl": "https://depwd.gov.in/robots.txt",
+    "status": 200,
+    "disallowed": false
+  },
+  "critical": [
+    {
+      "index": 0,
+      "label": "Public Grievance link",
+      "kind": "link",
+      "selector": "a[href*=\"public-grievance\"]",
+      "found": true,
+      "role": "",
+      "name": "",
+      "disabled": false,
+      "reached": false,
+      "focusVisible": null
+    }
+  ],
+  "verdict": "inconclusive",
+  "inconclusiveReasons": [
+    "\"Public Grievance link\" is inside a menu that opens with a button. The walk presses only Tab, so whether that button opens the menu from the keyboard was not tested."
+  ],
+  "findings": [
+    {
+      "check": "lang",
+      "rule": "lang-indic-unmarked",
+      "severity": "info",
+      "wcag": [
+        "3.1.2"
+      ],
+      "summary": "25 characters of Indic text are not marked with an Indic language; the page declares \"en\".",
+      "frameUrl": "https://www.instagram.com/p/Deg5SYdlFiV/embed/",
+      "target": "u",
+      "snippet": "टिप्पणी",
+      "details": {
+        "htmlLang": "en",
+        "indicUnmarked": 25,
+        "indicTotal": 25,
+        "samples": [
+          {
+            "text": "टिप्पणी",
+            "lang": "en",
+            "where": "u"
+          },
+          {
+            "text": "सामायिक करा",
+            "lang": "en",
+            "where": "u"
+          },
+          {
+            "text": "सेव्ह करा",
+            "lang": "en",
+            "where": "u"
+          }
+        ]
+      }
+    },
+    {
+      "check": "axe",
+      "rule": "axe/aria-allowed-attr",
+      "severity": "barrier",
+      "wcag": [
+        "4.1.2"
+      ],
+      "summary": "Elements must only use supported ARIA attributes (1 element).",
+      "target": "iframe[height=\"315\"] >> .ytmVideoInfoVideoTitle",
+      "snippet": "<a class=\"ytmVideoInfoVideoTitle\" aria-level=\"2\" href=\"https://www.youtube.com/watch?v=dbqnD1ZSOeY\"><span class=\"ytAttributedStringHost ytmVideoInfoLink ytAttributedStringWhiteSpaceNoWrap\" style=\"\">Themetic Session webinar, 06 April 2026</span></a>",
+      "details": {
+        "impact": "critical",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/aria-allowed-attr?application=playwright",
+        "nodes": [
+          {
+            "target": "iframe[height=\"315\"] >> .ytmVideoInfoVideoTitle",
+            "html": "<a class=\"ytmVideoInfoVideoTitle\" aria-level=\"2\" href=\"https://www.youtube.com/watch?v=dbqnD1ZSOeY\"><span class=\"ytAttributedStringHost ytmVideoInfoLink ytAttributedStringWhiteSpaceNoWrap\" style=\"\">Themetic Session webinar, 06 April 2026</span></a>",
+            "failureSummary": "Fix all of the following:\n  ARIA attribute is not allowed: aria-level=\"2\""
+          }
+        ]
+      }
+    },
+    {
+      "check": "axe",
+      "rule": "axe/aria-allowed-role",
+      "severity": "info",
+      "wcag": [],
+      "summary": "ARIA role should be appropriate for the element (4 elements).",
+      "target": ".persona-slider > .owl-nav > .owl-prev[role=\"presentation\"][type=\"button\"]",
+      "snippet": "<button type=\"button\" role=\"presentation\" class=\"owl-prev\"><span aria-label=\"Previous\">‹</span></button>",
+      "details": {
+        "impact": "minor",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/aria-allowed-role?application=playwright",
+        "nodes": [
+          {
+            "target": ".persona-slider > .owl-nav > .owl-prev[role=\"presentation\"][type=\"button\"]",
+            "html": "<button type=\"button\" role=\"presentation\" class=\"owl-prev\"><span aria-label=\"Previous\">‹</span></button>",
+            "failureSummary": "Fix any of the following:\n  ARIA role presentation is not allowed for given element"
+          },
+          {
+            "target": ".persona-slider > .owl-nav > .owl-next[role=\"presentation\"][type=\"button\"]",
+            "html": "<button type=\"button\" role=\"presentation\" class=\"owl-next\"><span aria-label=\"Next\">›</span></button>",
+            "failureSummary": "Fix any of the following:\n  ARIA role presentation is not allowed for given element"
+          },
+          {
+            "target": ".promotional-banner-slider > .owl-nav > .owl-prev[role=\"presentation\"][type=\"button\"]",
+            "html": "<button type=\"button\" role=\"presentation\" class=\"owl-prev\"><span aria-label=\"Previous\">‹</span></button>",
+            "failureSummary": "Fix any of the following:\n  ARIA role presentation is not allowed for given element"
+          },
+          {
+            "target": ".promotional-banner-slider > .owl-nav > .owl-next[role=\"presentation\"][type=\"button\"]",
+            "html": "<button type=\"button\" role=\"presentation\" class=\"owl-next\"><span aria-label=\"Next\">›</span></button>",
+            "failureSummary": "Fix any of the following:\n  ARIA role presentation is not allowed for given element"
+          }
+        ]
+      }
+    },
+    {
+      "check": "axe",
+      "rule": "axe/aria-hidden-focus",
+      "severity": "barrier",
+      "wcag": [
+        "4.1.2"
+      ],
+      "summary": "ARIA hidden element must not be focusable or contain focusable elements (2 elements).",
+      "target": ".clone.list-item[aria-hidden=\"true\"]:nth-child(1)",
+      "snippet": "<li class=\"list-item clone\" aria-hidden=\"true\" style=\"width: 1366px; margin-right: 0px; float: left; display: block;\">",
+      "details": {
+        "impact": "serious",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/aria-hidden-focus?application=playwright",
+        "nodes": [
+          {
+            "target": ".clone.list-item[aria-hidden=\"true\"]:nth-child(1)",
+            "html": "<li class=\"list-item clone\" aria-hidden=\"true\" style=\"width: 1366px; margin-right: 0px; float: left; display: block;\">",
+            "failureSummary": "Fix all of the following:\n  Focusable content should have tabindex=\"-1\", be removed from the DOM, or not be hidden with aria-hidden"
+          },
+          {
+            "target": ".apiBannerImage.clone.list-item",
+            "html": "<li class=\"list-item apiBannerImage clone\" style=\"width: 1366px; margin-right: 0px; float: left; display: block;\" aria-hidden=\"true\">",
+            "failureSummary": "Fix all of the following:\n  Focusable content should have tabindex=\"-1\", be removed from the DOM, or not be hidden with aria-hidden"
+          }
+        ]
+      }
+    },
+    {
+      "check": "axe",
+      "rule": "axe/aria-prohibited-attr",
+      "severity": "barrier",
+      "wcag": [
+        "4.1.2"
+      ],
+      "summary": "Elements must only use permitted ARIA attributes (2 elements).",
+      "target": "iframe[height=\"599\"] >> ._56_f",
+      "snippet": "<span class=\"_56_f _5dzy _5dz_ _3vjg\" aria-label=\"सत्यापित परिचय\"></span>",
+      "details": {
+        "impact": "serious",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/aria-prohibited-attr?application=playwright",
+        "nodes": [
+          {
+            "target": "iframe[height=\"599\"] >> ._56_f",
+            "html": "<span class=\"_56_f _5dzy _5dz_ _3vjg\" aria-label=\"सत्यापित परिचय\"></span>",
+            "failureSummary": "Fix all of the following:\n  aria-label attribute cannot be used on \"span\" elements with no valid role attribute."
+          },
+          {
+            "target": "iframe[height=\"315\"] >> #movie_player",
+            "html": "<div class=\"html5-video-player ytp-hide-controls ytp-exp-bottom-control-flexbox ytp-modern-caption ytp-livebadge-color unstarted-mode ytp-small-mode\" tabindex=\"\" id=\"movie_player\" data-version=\"/s/player/e279dc7e/player_embed.vflset/en_GB/base.js\" aria-label=\"YouTube Video Player\">",
+            "failureSummary": "Fix all of the following:\n  aria-label attribute cannot be used on \"div\" elements with no valid role attribute."
+          }
+        ]
+      }
+    },
+    {
+      "check": "axe",
+      "rule": "axe/aria-required-children",
+      "severity": "barrier",
+      "wcag": [
+        "1.3.1"
+      ],
+      "summary": "Certain ARIA roles must contain particular children (1 element).",
+      "target": "iframe[height=\"599\"] >> div[role=\"feed\"]",
+      "snippet": "<div role=\"feed\">",
+      "details": {
+        "impact": "critical",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/aria-required-children?application=playwright",
+        "nodes": [
+          {
+            "target": "iframe[height=\"599\"] >> div[role=\"feed\"]",
+            "html": "<div role=\"feed\">",
+            "failureSummary": "Fix any of the following:\n  Element has children which are not allowed: a, table, span[aria-label]"
+          }
+        ]
+      }
+    },
+    {
+      "check": "axe",
+      "rule": "axe/aria-required-parent",
+      "severity": "barrier",
+      "wcag": [
+        "1.3.1"
+      ],
+      "summary": "Certain ARIA roles must be contained by particular parents (2 elements).",
+      "target": ".resp-tab-item.resp-tab-active[aria-controls=\"hor_1_tab_item-0\"] > button[data-bs-target=\"#tab-document\"][aria-controls=\"tab-document\"][data-bs-toggle=\"tab\"]",
+      "snippet": "<button class=\"nav-link active\" id=\"document-tab\" data-bs-toggle=\"tab\" data-bs-target=\"#tab-document\" type=\"button\" role=\"tab\" aria-controls=\"tab-document\" aria-selected=\"true\">",
+      "details": {
+        "impact": "critical",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/aria-required-parent?application=playwright",
+        "nodes": [
+          {
+            "target": ".resp-tab-item.resp-tab-active[aria-controls=\"hor_1_tab_item-0\"] > button[data-bs-target=\"#tab-document\"][aria-controls=\"tab-document\"][data-bs-toggle=\"tab\"]",
+            "html": "<button class=\"nav-link active\" id=\"document-tab\" data-bs-toggle=\"tab\" data-bs-target=\"#tab-document\" type=\"button\" role=\"tab\" aria-controls=\"tab-document\" aria-selected=\"true\">",
+            "failureSummary": "Fix any of the following:\n  Required ARIA parent role not present: tablist"
+          },
+          {
+            "target": ".resp-tab-item.nav-item[aria-controls=\"hor_1_tab_item-1\"] > button[data-bs-target=\"#tab-scheme\"][aria-controls=\"tab-scheme\"][data-bs-toggle=\"tab\"]",
+            "html": "<button class=\"nav-link \" id=\"scheme-tab\" data-bs-toggle=\"tab\" data-bs-target=\"#tab-scheme\" type=\"button\" role=\"tab\" aria-controls=\"tab-scheme\" aria-selected=\"false\" tabindex=\"-1\">",
+            "failureSummary": "Fix any of the following:\n  Required ARIA parent role not present: tablist"
+          }
+        ]
+      }
+    },
+    {
+      "check": "axe",
+      "rule": "axe/button-name",
+      "severity": "barrier",
+      "wcag": [
+        "4.1.2"
+      ],
+      "summary": "Buttons must have discernible text (6 elements).",
+      "target": ".persona-slider > .owl-dots > .owl-dot.active[role=\"button\"]",
+      "snippet": "<button role=\"button\" class=\"owl-dot active\"><span></span></button>",
+      "details": {
+        "impact": "critical",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/button-name?application=playwright",
+        "nodes": [
+          {
+            "target": ".persona-slider > .owl-dots > .owl-dot.active[role=\"button\"]",
+            "html": "<button role=\"button\" class=\"owl-dot active\"><span></span></button>",
+            "failureSummary": "Fix any of the following:\n  Element does not have inner text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element does not have an implicit (wrapped) <label>\n  Element does not have an explicit <label>\n  El"
+          },
+          {
+            "target": ".persona-slider > .owl-dots > .owl-dot[role=\"button\"]:nth-child(2)",
+            "html": "<button role=\"button\" class=\"owl-dot\"><span></span></button>",
+            "failureSummary": "Fix any of the following:\n  Element does not have inner text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element does not have an implicit (wrapped) <label>\n  Element does not have an explicit <label>\n  El"
+          },
+          {
+            "target": "iframe[height=\"315\"] >> .ytmVideoInfoChannelAvatar",
+            "html": "<button class=\"ytmVideoInfoLink ytmVideoInfoChannelAvatar\"><img class=\"ytCoreImageHost ytmVideoInfoChannelLogo ytCoreImageFillParentHeight ytCoreImageFillParentWidth ytCoreImageContentModeScaleAspectFill\" alt=\"thumbnail-image\" style=\"background-color: transparent;\"></button>",
+            "failureSummary": "Fix any of the following:\n  Element does not have inner text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element does not have an implicit (wrapped) <label>\n  Element does not have an explicit <label>\n  El"
+          },
+          {
+            "target": ".promotional-banner-slider > .owl-dots > .owl-dot.active[role=\"button\"]",
+            "html": "<button role=\"button\" class=\"owl-dot active\"><span></span></button>",
+            "failureSummary": "Fix any of the following:\n  Element does not have inner text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element does not have an implicit (wrapped) <label>\n  Element does not have an explicit <label>\n  El"
+          },
+          {
+            "target": ".promotional-banner-slider > .owl-dots > .owl-dot[role=\"button\"]:nth-child(2)",
+            "html": "<button role=\"button\" class=\"owl-dot\"><span></span></button>",
+            "failureSummary": "Fix any of the following:\n  Element does not have inner text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element does not have an implicit (wrapped) <label>\n  Element does not have an explicit <label>\n  El"
+          }
+        ]
+      }
+    },
+    {
+      "check": "axe",
+      "rule": "axe/color-contrast",
+      "severity": "barrier",
+      "wcag": [
+        "1.4.3"
+      ],
+      "summary": "Elements must meet minimum color contrast ratio thresholds (4 elements).",
+      "target": ".flex-active-slide:nth-child(2) > .with-urlchange > .latest-news",
+      "snippet": "<span class=\"latest-news\">New</span>",
+      "details": {
+        "impact": "serious",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/color-contrast?application=playwright",
+        "nodes": [
+          {
+            "target": ".flex-active-slide:nth-child(2) > .with-urlchange > .latest-news",
+            "html": "<span class=\"latest-news\">New</span>",
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.99 (foreground color: #ffffff, background color: #ff0000, font size: 7.5pt (10px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "target": "iframe[height=\"599\"] >> ._2165",
+            "html": "<div class=\"_2pi4 _36iq _4lk2 _3xre _2165\" title=\"लाईक\"><i class=\"_3-8_ _2yf7 _5jp _2166 img sp_post-plugin sx_post-plugin_like-light\"></i><i class=\"_3-8_ _2yf7 _3wdt _2166 img sp_post-plugin sx_post-plugin_like\"></i>१४</div>",
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4 (foreground color: #7f7f7f, background color: #ffffff, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "target": "iframe[height=\"599\"] >> ._1p4p",
+            "html": "<div class=\"_2pi4 _36iq _4lk2 _3xre _1p4p\" title=\"टिप्पणी द्या\"><i class=\"_3-8_ _2yf7 _5jp _4mlr img sp_post-plugin sx_post-plugin_comment-light\"></i><i class=\"_3-8_ _2yf7 _3wdt _4mlr img sp_post-plugin sx_post-plugin_comment\"></i>टिप्पणी द्या</div>",
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4 (foreground color: #7f7f7f, background color: #ffffff, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "target": "iframe[height=\"720\"] >> a[data-testid=\"tweet-text-show-more-link\"] > span:nth-child(2)",
+            "html": "<span class=\"css-901oao css-16my406 r-poiln3 r-bcqeeo r-qvutc0\">Show more</span>",
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3 (foreground color: #1d9bf0, background color: #ffffff, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+          }
+        ]
+      }
+    },
+    {
+      "check": "axe",
+      "rule": "axe/frame-title",
+      "severity": "barrier",
+      "wcag": [
+        "4.1.2"
+      ],
+      "summary": "Frames must have an accessible name (2 elements).",
+      "target": "iframe[height=\"599\"]",
+      "snippet": "<iframe src=\"https://www.facebook...\" height=\"599\" allow=\"autoplay; clipboard-...\">",
+      "details": {
+        "impact": "serious",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/frame-title?application=playwright",
+        "nodes": [
+          {
+            "target": "iframe[height=\"599\"]",
+            "html": "<iframe src=\"https://www.facebook...\" height=\"599\" allow=\"autoplay; clipboard-...\">",
+            "failureSummary": "Fix any of the following:\n  Element has no title attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+          },
+          {
+            "target": "iframe[height=\"600\"]",
+            "html": "<iframe src=\"https://www.instagram.com/p/Deg5SYdlFiV/embed/\" height=\"600\"></iframe>",
+            "failureSummary": "Fix any of the following:\n  Element has no title attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+          }
+        ]
+      }
+    },
+    {
+      "check": "axe",
+      "rule": "axe/image-alt",
+      "severity": "barrier",
+      "wcag": [
+        "1.1.1"
+      ],
+      "summary": "Images must have alternative text (2 elements).",
+      "target": "iframe[height=\"600\"] >> .HoverCardPhotos > img:nth-child(1)",
+      "snippet": "<img src=\"https://instagram.fb...\" srcset=\"https://instagram.fb...\">",
+      "details": {
+        "impact": "critical",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/image-alt?application=playwright",
+        "nodes": [
+          {
+            "target": "iframe[height=\"600\"] >> .HoverCardPhotos > img:nth-child(1)",
+            "html": "<img src=\"https://instagram.fb...\" srcset=\"https://instagram.fb...\">",
+            "failureSummary": "Fix any of the following:\n  Element does not have an alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+          },
+          {
+            "target": "iframe[height=\"600\"] >> img:nth-child(2)",
+            "html": "<img src=\"https://instagram.fb...\" srcset=\"https://instagram.fb...\">",
+            "failureSummary": "Fix any of the following:\n  Element does not have an alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+          }
+        ]
+      }
+    },
+    {
+      "check": "axe",
+      "rule": "axe/link-name",
+      "severity": "barrier",
+      "wcag": [
+        "2.4.4",
+        "4.1.2"
+      ],
+      "summary": "Links must have discernible text (10 elements).",
+      "target": ".flex-direction-nav:nth-child(5) > .flex-nav-prev > .flex-prev[href=\"#\"]",
+      "snippet": "<a class=\"flex-prev\" href=\"#\"><span class=\"hide\">Previous</span></a>",
+      "details": {
+        "impact": "serious",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/link-name?application=playwright",
+        "nodes": [
+          {
+            "target": ".flex-direction-nav:nth-child(5) > .flex-nav-prev > .flex-prev[href=\"#\"]",
+            "html": "<a class=\"flex-prev\" href=\"#\"><span class=\"hide\">Previous</span></a>",
+            "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+          },
+          {
+            "target": ".flex-direction-nav:nth-child(5) > .flex-nav-next > .flex-next[href=\"#\"]",
+            "html": "<a class=\"flex-next\" href=\"#\"><span class=\"hide\">Next</span></a>",
+            "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+          },
+          {
+            "target": ".flex-pauseplay:nth-child(6) > .flex-pause[href=\"#\"]",
+            "html": "<a href=\"#\" class=\"flex-pause\"><span class=\"hide\">Pause</span></a>",
+            "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+          },
+          {
+            "target": "iframe[height=\"599\"] >> #u_0_0_be",
+            "html": "<a href=\"/DoEPWD/posts/1629212502578678?ref=embed_post\" target=\"_blank\" id=\"u_0_0_be\"></a>",
+            "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+          },
+          {
+            "target": "iframe[height=\"599\"] >> ._2l7q > a",
+            "html": "<a href=\"https://www.facebook.com/photo.php?fbid=1629208905912371&set=a.364231962410078&type=3&ref=embed_post\" target=\"_blank\">",
+            "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+          }
+        ]
+      }
+    },
+    {
+      "check": "axe",
+      "rule": "axe/nested-interactive",
+      "severity": "barrier",
+      "wcag": [
+        "4.1.2"
+      ],
+      "summary": "Interactive controls must not be nested (2 elements).",
+      "target": ".resp-tab-item.resp-tab-active[aria-controls=\"hor_1_tab_item-0\"]",
+      "snippet": "<li class=\"nav-item resp-tab-item hor_1 resp-tab-active\" role=\"tab\" aria-controls=\"hor_1_tab_item-0\" style=\"background-color: white; border-color: rgb(193, 193, 193);\" aria-selected=\"false\" tabindex=\"-1\">",
+      "details": {
+        "impact": "serious",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/nested-interactive?application=playwright",
+        "nodes": [
+          {
+            "target": ".resp-tab-item.resp-tab-active[aria-controls=\"hor_1_tab_item-0\"]",
+            "html": "<li class=\"nav-item resp-tab-item hor_1 resp-tab-active\" role=\"tab\" aria-controls=\"hor_1_tab_item-0\" style=\"background-color: white; border-color: rgb(193, 193, 193);\" aria-selected=\"false\" tabindex=\"-1\">",
+            "failureSummary": "Fix any of the following:\n  Element has focusable descendants. Move them outside of the element, or remove them."
+          },
+          {
+            "target": ".resp-tab-item.nav-item[aria-controls=\"hor_1_tab_item-1\"]",
+            "html": "<li class=\"nav-item resp-tab-item hor_1\" role=\"tab\" aria-controls=\"hor_1_tab_item-1\" style=\"background-color: rgb(245, 245, 245);\" aria-selected=\"false\" tabindex=\"-1\">",
+            "failureSummary": "Fix any of the following:\n  Using a negative tabindex on an element inside an interactive control does not prevent assistive technologies from focusing the element (even with aria-hidden=\"true\")"
+          }
+        ]
+      }
+    },
+    {
+      "check": "axe",
+      "rule": "axe/presentation-role-conflict",
+      "severity": "info",
+      "wcag": [],
+      "summary": "Elements marked as presentational should be consistently ignored (4 elements).",
+      "target": ".persona-slider > .owl-nav > .owl-prev[role=\"presentation\"][type=\"button\"]",
+      "snippet": "<button type=\"button\" role=\"presentation\" class=\"owl-prev\"><span aria-label=\"Previous\">‹</span></button>",
+      "details": {
+        "impact": "minor",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/presentation-role-conflict?application=playwright",
+        "nodes": [
+          {
+            "target": ".persona-slider > .owl-nav > .owl-prev[role=\"presentation\"][type=\"button\"]",
+            "html": "<button type=\"button\" role=\"presentation\" class=\"owl-prev\"><span aria-label=\"Previous\">‹</span></button>",
+            "failureSummary": "Fix all of the following:\n  Element is not focusable."
+          },
+          {
+            "target": ".persona-slider > .owl-nav > .owl-next[role=\"presentation\"][type=\"button\"]",
+            "html": "<button type=\"button\" role=\"presentation\" class=\"owl-next\"><span aria-label=\"Next\">›</span></button>",
+            "failureSummary": "Fix all of the following:\n  Element is not focusable."
+          },
+          {
+            "target": ".promotional-banner-slider > .owl-nav > .owl-prev[role=\"presentation\"][type=\"button\"]",
+            "html": "<button type=\"button\" role=\"presentation\" class=\"owl-prev\"><span aria-label=\"Previous\">‹</span></button>",
+            "failureSummary": "Fix all of the following:\n  Element is not focusable."
+          },
+          {
+            "target": ".promotional-banner-slider > .owl-nav > .owl-next[role=\"presentation\"][type=\"button\"]",
+            "html": "<button type=\"button\" role=\"presentation\" class=\"owl-next\"><span aria-label=\"Next\">›</span></button>",
+            "failureSummary": "Fix all of the following:\n  Element is not focusable."
+          }
+        ]
+      }
+    },
+    {
+      "check": "axe",
+      "rule": "axe/scrollable-region-focusable",
+      "severity": "barrier",
+      "wcag": [
+        "2.1.1",
+        "2.1.3"
+      ],
+      "summary": "Scrollable region must have keyboard access (3 elements).",
+      "target": ".col-lg-3.col-md-6:nth-child(2) > .mb-3.card",
+      "snippet": "<div class=\"card mb-3\">",
+      "details": {
+        "impact": "serious",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/scrollable-region-focusable?application=playwright",
+        "nodes": [
+          {
+            "target": ".col-lg-3.col-md-6:nth-child(2) > .mb-3.card",
+            "html": "<div class=\"card mb-3\">",
+            "failureSummary": "Fix any of the following:\n  Element should have focusable content\n  Element should be focusable"
+          },
+          {
+            "target": ".col-lg-3.col-md-6:nth-child(3) > .mb-3.card",
+            "html": "<div class=\"card mb-3\">",
+            "failureSummary": "Fix any of the following:\n  Element should have focusable content\n  Element should be focusable"
+          },
+          {
+            "target": ".col-lg-3.col-md-6:nth-child(5) > .mb-3.card",
+            "html": "<div class=\"card mb-3\"> <div class=\"Social-media-container\"> <h2>Instagram</h2> <iframe src=\"https://www.instagram.com/p/Deg5SYdlFiV/embed/\" height=\"600\"></iframe> </div> </div>",
+            "failureSummary": "Fix any of the following:\n  Element should have focusable content\n  Element should be focusable"
+          }
+        ]
+      }
+    }
+  ],
+  "counts": {
+    "blocker": 0,
+    "barrier": 12,
+    "info": 3
+  },
+  "evidence": {
+    "names": {
+      "controls": [
+        {
+          "index": 0,
+          "label": "Public Grievance link",
+          "kind": "link",
+          "role": "",
+          "name": "",
+          "disabled": false,
+          "hidden": true,
+          "visible": false,
+          "snapshot": ""
+        }
+      ]
+    },
+    "captcha": {
+      "groups": []
+    },
+    "lang": {
+      "frames": [
+        {
+          "htmlLang": "en-US",
+          "indicTotal": 0,
+          "indicUnmarked": 0,
+          "latinAtRoot": 4036,
+          "indicAtRoot": 0,
+          "samples": []
+        },
+        {
+          "htmlLang": "mr",
+          "indicTotal": 37,
+          "indicUnmarked": 0,
+          "latinAtRoot": 261,
+          "indicAtRoot": 37,
+          "samples": [],
+          "frameUrl": "https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2FDoEPWD%2Fposts%2Fpfbid035h27U7HK9mdBw6N9LuoSTo5zezEqEHKQ7hzhw1uksuivE8M1gRsArHyyXeZQL9FRl&show_text=true&width=500"
+        },
+        {
+          "htmlLang": "en",
+          "indicTotal": 0,
+          "indicUnmarked": 0,
+          "latinAtRoot": 61,
+          "indicAtRoot": 0,
+          "samples": [],
+          "frameUrl": "https://platform.twitter.com/embed/Tweet.html?dnt=false&embedId=twitter-widget-r3&frame=false&hideCard=false&hideThread=false&id=2110699009635717269"
+        },
+        {
+          "htmlLang": "en-IN",
+          "indicTotal": 0,
+          "indicUnmarked": 0,
+          "latinAtRoot": 49,
+          "indicAtRoot": 0,
+          "samples": [],
+          "frameUrl": "https://www.youtube.com/embed/dbqnD1ZSOeY?si=5BM59bNI-oJGgt7C"
+        },
+        {
+          "htmlLang": "en",
+          "indicTotal": 25,
+          "indicUnmarked": 25,
+          "latinAtRoot": 99,
+          "indicAtRoot": 25,
+          "samples": [
+            {
+              "text": "टिप्पणी",
+              "lang": "en",
+              "where": "u"
+            },
+            {
+              "text": "सामायिक करा",
+              "lang": "en",
+              "where": "u"
+            },
+            {
+              "text": "सेव्ह करा",
+              "lang": "en",
+              "where": "u"
+            }
+          ],
+          "frameUrl": "https://www.instagram.com/p/Deg5SYdlFiV/embed/"
+        }
+      ]
+    },
+    "axe": {
+      "version": "4.14.1",
+      "violations": 14,
+      "incomplete": 4,
+      "passes": 59
+    },
+    "keyboard": {
+      "presses": 178,
+      "completedCycle": true,
+      "stopsSeen": 173,
+      "inModal": false,
+      "trap": null,
+      "controls": [
+        {
+          "index": 0,
+          "label": "Public Grievance link",
+          "reached": false,
+          "focusVisible": null
+        }
+      ],
+      "sequence": [
+        {
+          "step": 1,
+          "desc": "a \"Government of India Department of Empowe\"",
+          "focusVisible": true
+        },
+        {
+          "step": 2,
+          "desc": "input#search",
+          "focusVisible": true
+        },
+        {
+          "step": 3,
+          "desc": "button \"Search\"",
+          "focusVisible": true
+        },
+        {
+          "step": 4,
+          "desc": "a",
+          "focusVisible": true
+        },
+        {
+          "step": 5,
+          "desc": "a",
+          "focusVisible": true
+        },
+        {
+          "step": 6,
+          "desc": "a \"Skip to main content\"",
+          "focusVisible": true
+        },
+        {
+          "step": 7,
+          "desc": "button#dropdownLanguage \"English - Selected\"",
+          "focusVisible": true
+        },
+        {
+          "step": 8,
+          "desc": "button#dropdownAccessibility \"Accessibility Panel\"",
+          "focusVisible": true
+        },
+        {
+          "step": 9,
+          "desc": "a \"Home\"",
+          "focusVisible": true
+        },
+        {
+          "step": 10,
+          "desc": "a \"Department\"",
+          "focusVisible": true
+        },
+        {
+          "step": 11,
+          "desc": "a \"Offerings\"",
+          "focusVisible": true
+        },
+        {
+          "step": 12,
+          "desc": "a \"Documents\"",
+          "focusVisible": true
+        },
+        {
+          "step": 13,
+          "desc": "a \"Media\"",
+          "focusVisible": true
+        },
+        {
+          "step": 14,
+          "desc": "a \"Connect\"",
+          "focusVisible": true
+        },
+        {
+          "step": 15,
+          "desc": "a",
+          "focusVisible": true
+        },
+        {
+          "step": 16,
+          "desc": "a",
+          "focusVisible": true
+        },
+        {
+          "step": 17,
+          "desc": "a",
+          "focusVisible": true
+        },
+        {
+          "step": 18,
+          "desc": "a",
+          "focusVisible": true
+        },
+        {
+          "step": 19,
+          "desc": "a",
+          "focusVisible": true
+        },
+        {
+          "step": 20,
+          "desc": "a",
+          "focusVisible": true
+        },
+        {
+          "step": 21,
+          "desc": "a",
+          "focusVisible": true
+        },
+        {
+          "step": 22,
+          "desc": "a",
+          "focusVisible": true
+        },
+        {
+          "step": 23,
+          "desc": "a \"Previous Slide\"",
+          "focusVisible": true
+        },
+        {
+          "step": 24,
+          "desc": "a \"Next Slide\"",
+          "focusVisible": true
+        },
+        {
+          "step": 25,
+          "desc": "a \"Play/Pause\"",
+          "focusVisible": true
+        },
+        {
+          "step": 26,
+          "desc": "a \"Previous Slide\"",
+          "focusVisible": true
+        },
+        {
+          "step": 27,
+          "desc": "a \"Next Slide\"",
+          "focusVisible": true
+        },
+        {
+          "step": 28,
+          "desc": "a \"Play/Pause\"",
+          "focusVisible": true
+        },
+        {
+          "step": 29,
+          "desc": "a \"List of Selected Awardees for the Nation\"",
+          "focusVisible": true
+        },
+        {
+          "step": 30,
+          "desc": "a \"Draft rules on Non-negotiable Accessibil\"",
+          "focusVisible": true
+        },
+        {
+          "step": 31,
+          "desc": "a",
+          "focusVisible": true
+        },
+        {
+          "step": 32,
+          "desc": "a",
+          "focusVisible": true
+        },
+        {
+          "step": 33,
+          "desc": "a",
+          "focusVisible": true
+        },
+        {
+          "step": 34,
+          "desc": "a \"VIEW EVENT\"",
+          "focusVisible": true
+        },
+        {
+          "step": 35,
+          "desc": "a \"Our Team\"",
+          "focusVisible": true
+        },
+        {
+          "step": 36,
+          "desc": "a \"Our Organisations\"",
+          "focusVisible": true
+        },
+        {
+          "step": 37,
+          "desc": "a \"Functions\"",
+          "focusVisible": true
+        },
+        {
+          "step": 38,
+          "desc": "a \"Dr. Virendra Kumar Union Minister of Soc\"",
+          "focusVisible": true
+        },
+        {
+          "step": 39,
+          "desc": "a \"Shri Ramdas Athawale Minister of State o\"",
+          "focusVisible": true
+        },
+        {
+          "step": 40,
+          "desc": "a \"Shri B. L. Verma Minister of State of So\"",
+          "focusVisible": true
+        },
+        {
+          "step": 41,
+          "desc": "button#document-tab \"Documents\"",
+          "focusVisible": true
+        },
+        {
+          "step": 42,
+          "desc": "a \"List of Selected Awardees for the Nation\"",
+          "focusVisible": true
+        },
+        {
+          "step": 43,
+          "desc": "a \"Minutes of the DDRS Screening Committee \"",
+          "focusVisible": true
+        },
+        {
+          "step": 44,
+          "desc": "a \"Circulation of Revised Cuidelines for Aw\"",
+          "focusVisible": true
+        },
+        {
+          "step": 45,
+          "desc": "a \"GUIDELINES FOR AWARENESS GENERATION AND \"",
+          "focusVisible": true
+        },
+        {
+          "step": 46,
+          "desc": "a \"Details about CDEIC as on date 30.09.202\"",
+          "focusVisible": true
+        },
+        {
+          "step": 47,
+          "desc": "a \"Third Party Audit Report of mandatory di\"",
+          "focusVisible": true
+        },
+        {
+          "step": 48,
+          "desc": "a \"VIEW MORE\"",
+          "focusVisible": true
+        },
+        {
+          "step": 49,
+          "desc": "a \"List of Selected Awardees for the Nation\"",
+          "focusVisible": true
+        },
+        {
+          "step": 50,
+          "desc": "a \"Inviting quotations for servicing and re\"",
+          "focusVisible": true
+        },
+        {
+          "step": 51,
+          "desc": "a \"Extension of submission of quotations fo\"",
+          "focusVisible": true
+        },
+        {
+          "step": 52,
+          "desc": "a \"Disposal of unserviceable or scrap items\"",
+          "focusVisible": true
+        },
+        {
+          "step": 53,
+          "desc": "a \"Draft rules on Non-negotiable Accessibil\"",
+          "focusVisible": true
+        },
+        {
+          "step": 54,
+          "desc": "a \"Engagement of Accountant in the Departme\"",
+          "focusVisible": true
+        },
+        {
+          "step": 55,
+          "desc": "a \"DEPwD’s clarification dated 22.09.2025 o\"",
+          "focusVisible": true
+        },
+        {
+          "step": 56,
+          "desc": "a \"Corrigendum to the vacany circular for t\"",
+          "focusVisible": true
+        },
+        {
+          "step": 57,
+          "desc": "a \"Advertisement for the post of Director(L\"",
+          "focusVisible": true
+        },
+        {
+          "step": 58,
+          "desc": "a \"Applications/nominations are invited for\"",
+          "focusVisible": true
+        },
+        {
+          "step": 59,
+          "desc": "a \"VIEW MORE\"",
+          "focusVisible": true
+        },
+        {
+          "step": 60,
+          "desc": "a \"Notifications Result for the Position of\"",
+          "focusVisible": true
+        },
+        {
+          "step": 61,
+          "desc": "a \"Guidelines Extension of abeyance of appl\"",
+          "focusVisible": true
+        },
+        {
+          "step": 62,
+          "desc": "a \"Notifications Notification in respect of\"",
+          "focusVisible": true
+        },
+        {
+          "step": 63,
+          "desc": "a \"Notifications Clarification regarding el\"",
+          "focusVisible": true
+        },
+        {
+          "step": 64,
+          "desc": "a \"FOR MEDIA\"",
+          "focusVisible": true
+        },
+        {
+          "step": 65,
+          "desc": "a \"NGO\"",
+          "focusVisible": true
+        },
+        {
+          "step": 66,
+          "desc": "a \"FOR MEDIA\"",
+          "focusVisible": true
+        },
+        {
+          "step": 67,
+          "desc": "a \"NGO\"",
+          "focusVisible": true
+        },
+        {
+          "step": 68,
+          "desc": "a \"FOR MEDIA\"",
+          "focusVisible": true
+        },
+        {
+          "step": 69,
+          "desc": "a \"NGO\"",
+          "focusVisible": true
+        },
+        {
+          "step": 70,
+          "desc": "button \"‹\"",
+          "focusVisible": true
+        },
+        {
+          "step": 71,
+          "desc": "button \"›\"",
+          "focusVisible": true
+        },
+        {
+          "step": 72,
+          "desc": "button",
+          "focusVisible": true
+        },
+        {
+          "step": 73,
+          "desc": "button",
+          "focusVisible": true
+        },
+        {
+          "step": 74,
+          "desc": "a \"Download Sugamya Bharat Android App\"",
+          "focusVisible": true
+        },
+        {
+          "step": 75,
+          "desc": "a \"Download Sugamya Bharat iOS App link\"",
+          "focusVisible": true
+        },
+        {
+          "step": 76,
+          "desc": "a \"District-Wise UDID Data\"",
+          "focusVisible": true
+        },
+        {
+          "step": 77,
+          "desc": "a \"National Scholarship Portal\"",
+          "focusVisible": true
+        },
+        {
+          "step": 78,
+          "desc": "a \"PM-DAKSH-DEPwD- Digital portal for Skill\"",
+          "focusVisible": true
+        },
+        {
+          "step": 79,
+          "desc": "a \"Rehabilitation Council Of India\"",
+          "focusVisible": true
+        },
+        {
+          "step": 80,
+          "desc": "a \"CCPD\"",
+          "focusVisible": true
+        },
+        {
+          "step": 81,
+          "desc": "a \"ALIMCO\"",
+          "focusVisible": true
+        },
+        {
+          "step": 82,
+          "desc": "a \"NDFDC\"",
+          "focusVisible": true
+        },
+        {
+          "step": 83,
+          "desc": "a \"ISLRTC Dictionary Web\"",
+          "focusVisible": true
+        },
+        {
+          "step": 84,
+          "desc": "a \"Indian Sign Language Dictionary publishe\"",
+          "focusVisible": true
+        },
+        {
+          "step": 85,
+          "desc": "a \"Smart Accessibility Tool for Your Websit\"",
+          "focusVisible": true
+        },
+        {
+          "step": 86,
+          "desc": "a#u_0_0_be",
+          "focusVisible": true,
+          "frameUrl": "https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2FDoEPWD%2Fposts%2Fpfbid035h27U7HK9mdBw6N9LuoSTo5zezEqEHKQ7hzhw1uksuivE8M1gRsArHyyXeZQL9FRl&show_text=true&width=500"
+        },
+        {
+          "step": 87,
+          "desc": "a",
+          "focusVisible": true,
+          "frameUrl": "https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2FDoEPWD%2Fposts%2Fpfbid035h27U7HK9mdBw6N9LuoSTo5zezEqEHKQ7hzhw1uksuivE8M1gRsArHyyXeZQL9FRl&show_text=true&width=500"
+        },
+        {
+          "step": 88,
+          "desc": "a \"महिन्याभरापूर्वी\"",
+          "focusVisible": true,
+          "frameUrl": "https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2FDoEPWD%2Fposts%2Fpfbid035h27U7HK9mdBw6N9LuoSTo5zezEqEHKQ7hzhw1uksuivE8M1gRsArHyyXeZQL9FRl&show_text=true&width=500"
+        },
+        {
+          "step": 89,
+          "desc": "a",
+          "focusVisible": true,
+          "frameUrl": "https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2FDoEPWD%2Fposts%2Fpfbid035h27U7HK9mdBw6N9LuoSTo5zezEqEHKQ7hzhw1uksuivE8M1gRsArHyyXeZQL9FRl&show_text=true&width=500"
+        },
+        {
+          "step": 90,
+          "desc": "a \"अधिक पहा\"",
+          "focusVisible": true,
+          "frameUrl": "https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2FDoEPWD%2Fposts%2Fpfbid035h27U7HK9mdBw6N9LuoSTo5zezEqEHKQ7hzhw1uksuivE8M1gRsArHyyXeZQL9FRl&show_text=true&width=500"
+        },
+        {
+          "step": 91,
+          "desc": "span#u_0_2_e2 \"१४\"",
+          "focusVisible": true,
+          "frameUrl": "https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2FDoEPWD%2Fposts%2Fpfbid035h27U7HK9mdBw6N9LuoSTo5zezEqEHKQ7hzhw1uksuivE8M1gRsArHyyXeZQL9FRl&show_text=true&width=500"
+        },
+        {
+          "step": 92,
+          "desc": "a \"टिप्पणी द्या\"",
+          "focusVisible": true,
+          "frameUrl": "https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2FDoEPWD%2Fposts%2Fpfbid035h27U7HK9mdBw6N9LuoSTo5zezEqEHKQ7hzhw1uksuivE8M1gRsArHyyXeZQL9FRl&show_text=true&width=500"
+        },
+        {
+          "step": 93,
+          "desc": "a#u_0_3_sZ \"२\"",
+          "focusVisible": true,
+          "frameUrl": "https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2FDoEPWD%2Fposts%2Fpfbid035h27U7HK9mdBw6N9LuoSTo5zezEqEHKQ7hzhw1uksuivE8M1gRsArHyyXeZQL9FRl&show_text=true&width=500"
+        },
+        {
+          "step": 94,
+          "desc": "article \"Divyang Empowerment @socialpwds · Follow\"",
+          "focusVisible": true,
+          "frameUrl": "https://platform.twitter.com/embed/Tweet.html?dnt=false&embedId=twitter-widget-r3&frame=false&hideCard=false&hideThread=false&id=2110699009635717269"
+        },
+        {
+          "step": 95,
+          "desc": "a \"Visit this post on X\"",
+          "focusVisible": true,
+          "frameUrl": "https://platform.twitter.com/embed/Tweet.html?dnt=false&embedId=twitter-widget-r3&frame=false&hideCard=false&hideThread=false&id=2110699009635717269"
+        },
+        {
+          "step": 96,
+          "desc": "a \"Divyang Empowerment\"",
+          "focusVisible": true,
+          "frameUrl": "https://platform.twitter.com/embed/Tweet.html?dnt=false&embedId=twitter-widget-r3&frame=false&hideCard=false&hideThread=false&id=2110699009635717269"
+        },
+        {
+          "step": 97,
+          "desc": "a \"Follow\"",
+          "focusVisible": true,
+          "frameUrl": "https://platform.twitter.com/embed/Tweet.html?dnt=false&embedId=twitter-widget-r3&frame=false&hideCard=false&hideThread=false&id=2110699009635717269"
+        },
+        {
+          "step": 98,
+          "desc": "a \"View on X\"",
+          "focusVisible": true,
+          "frameUrl": "https://platform.twitter.com/embed/Tweet.html?dnt=false&embedId=twitter-widget-r3&frame=false&hideCard=false&hideThread=false&id=2110699009635717269"
+        },
+        {
+          "step": 99,
+          "desc": "a \"Show more\"",
+          "focusVisible": true,
+          "frameUrl": "https://platform.twitter.com/embed/Tweet.html?dnt=false&embedId=twitter-widget-r3&frame=false&hideCard=false&hideThread=false&id=2110699009635717269"
+        },
+        {
+          "step": 100,
+          "desc": "a",
+          "focusVisible": true,
+          "frameUrl": "https://platform.twitter.com/embed/Tweet.html?dnt=false&embedId=twitter-widget-r3&frame=false&hideCard=false&hideThread=false&id=2110699009635717269"
+        },
+        {
+          "step": 101,
+          "desc": "a \"5:17 PM · Oct 15, 2026\"",
+          "focusVisible": true,
+          "frameUrl": "https://platform.twitter.com/embed/Tweet.html?dnt=false&embedId=twitter-widget-r3&frame=false&hideCard=false&hideThread=false&id=2110699009635717269"
+        },
+        {
+          "step": 102,
+          "desc": "a \"X Ads info and privacy\"",
+          "focusVisible": true,
+          "frameUrl": "https://platform.twitter.com/embed/Tweet.html?dnt=false&embedId=twitter-widget-r3&frame=false&hideCard=false&hideThread=false&id=2110699009635717269"
+        },
+        {
+          "step": 103,
+          "desc": "a \"Like. This post has 12 likes\"",
+          "focusVisible": true,
+          "frameUrl": "https://platform.twitter.com/embed/Tweet.html?dnt=false&embedId=twitter-widget-r3&frame=false&hideCard=false&hideThread=false&id=2110699009635717269"
+        },
+        {
+          "step": 104,
+          "desc": "a \"Reply to this post on X\"",
+          "focusVisible": true,
+          "frameUrl": "https://platform.twitter.com/embed/Tweet.html?dnt=false&embedId=twitter-widget-r3&frame=false&hideCard=false&hideThread=false&id=2110699009635717269"
+        },
+        {
+          "step": 105,
+          "desc": "div \"Copy link\"",
+          "focusVisible": true,
+          "frameUrl": "https://platform.twitter.com/embed/Tweet.html?dnt=false&embedId=twitter-widget-r3&frame=false&hideCard=false&hideThread=false&id=2110699009635717269"
+        },
+        {
+          "step": 106,
+          "desc": "a \"Read 1 reply\"",
+          "focusVisible": true,
+          "frameUrl": "https://platform.twitter.com/embed/Tweet.html?dnt=false&embedId=twitter-widget-r3&frame=false&hideCard=false&hideThread=false&id=2110699009635717269"
+        },
+        {
+          "step": 107,
+          "desc": "button \"Play video\"",
+          "focusVisible": true,
+          "frameUrl": "https://www.youtube.com/embed/dbqnD1ZSOeY?si=5BM59bNI-oJGgt7C"
+        },
+        {
+          "step": 108,
+          "desc": "button#player-controls-a11y-toggle \"Hide player controls\"",
+          "focusVisible": true,
+          "frameUrl": "https://www.youtube.com/embed/dbqnD1ZSOeY?si=5BM59bNI-oJGgt7C"
+        },
+        {
+          "step": 109,
+          "desc": "a \"Themetic Session webinar, 06 April 2026\"",
+          "focusVisible": true,
+          "frameUrl": "https://www.youtube.com/embed/dbqnD1ZSOeY?si=5BM59bNI-oJGgt7C"
+        },
+        {
+          "step": 110,
+          "desc": "a \"DEPwD\"",
+          "focusVisible": true,
+          "frameUrl": "https://www.youtube.com/embed/dbqnD1ZSOeY?si=5BM59bNI-oJGgt7C"
+        },
+        {
+          "step": 111,
+          "desc": "button",
+          "focusVisible": true,
+          "frameUrl": "https://www.youtube.com/embed/dbqnD1ZSOeY?si=5BM59bNI-oJGgt7C"
+        },
+        {
+          "step": 112,
+          "desc": "a",
+          "focusVisible": true,
+          "frameUrl": "https://www.instagram.com/p/Deg5SYdlFiV/embed/"
+        },
+        {
+          "step": 113,
+          "desc": "a \"depwd_goi\"",
+          "focusVisible": true,
+          "frameUrl": "https://www.instagram.com/p/Deg5SYdlFiV/embed/"
+        },
+        {
+          "step": 114,
+          "desc": "a \"View profile\"",
+          "focusVisible": true,
+          "frameUrl": "https://www.instagram.com/p/Deg5SYdlFiV/embed/"
+        },
+        {
+          "step": 115,
+          "desc": "a",
+          "focusVisible": true,
+          "frameUrl": "https://www.instagram.com/p/Deg5SYdlFiV/embed/"
+        },
+        {
+          "step": 116,
+          "desc": "a \"depwd_goi 925 posts · 5K followers\"",
+          "focusVisible": true,
+          "frameUrl": "https://www.instagram.com/p/Deg5SYdlFiV/embed/"
+        },
+        {
+          "step": 117,
+          "desc": "a \"View more on Instagram\"",
+          "focusVisible": true,
+          "frameUrl": "https://www.instagram.com/p/Deg5SYdlFiV/embed/"
+        },
+        {
+          "step": 118,
+          "desc": "a \"Like\"",
+          "focusVisible": true,
+          "frameUrl": "https://www.instagram.com/p/Deg5SYdlFiV/embed/"
+        },
+        {
+          "step": 119,
+          "desc": "a \"टिप्पणी\"",
+          "focusVisible": true,
+          "frameUrl": "https://www.instagram.com/p/Deg5SYdlFiV/embed/"
+        },
+        {
+          "step": 120,
+          "desc": "a \"सामायिक करा\"",
+          "focusVisible": true,
+          "frameUrl": "https://www.instagram.com/p/Deg5SYdlFiV/embed/"
+        },
+        {
+          "step": 121,
+          "desc": "a \"सेव्ह करा\"",
+          "focusVisible": true,
+          "frameUrl": "https://www.instagram.com/p/Deg5SYdlFiV/embed/"
+        },
+        {
+          "step": 122,
+          "desc": "a \"34 likes\"",
+          "focusVisible": true,
+          "frameUrl": "https://www.instagram.com/p/Deg5SYdlFiV/embed/"
+        },
+        {
+          "step": 123,
+          "desc": "a \"Add a comment...\"",
+          "focusVisible": true,
+          "frameUrl": "https://www.instagram.com/p/Deg5SYdlFiV/embed/"
+        },
+        {
+          "step": 124,
+          "desc": "a \"Instagram\"",
+          "focusVisible": true,
+          "frameUrl": "https://www.instagram.com/p/Deg5SYdlFiV/embed/"
+        },
+        {
+          "step": 125,
+          "desc": "button \"Take the Pledge\"",
+          "focusVisible": true
+        },
+        {
+          "step": 126,
+          "desc": "video",
+          "focusVisible": true
+        },
+        {
+          "step": 127,
+          "desc": "video",
+          "focusVisible": false
+        },
+        {
+          "step": 128,
+          "desc": "video",
+          "focusVisible": false
+        },
+        {
+          "step": 129,
+          "desc": "video",
+          "focusVisible": false
+        },
+        {
+          "step": 130,
+          "desc": "a",
+          "focusVisible": true
+        },
+        {
+          "step": 131,
+          "desc": "a",
+          "focusVisible": true
+        },
+        {
+          "step": 132,
+          "desc": "a",
+          "focusVisible": true
+        },
+        {
+          "step": 133,
+          "desc": "a",
+          "focusVisible": true
+        },
+        {
+          "step": 134,
+          "desc": "a",
+          "focusVisible": true
+        },
+        {
+          "step": 135,
+          "desc": "a",
+          "focusVisible": true
+        },
+        {
+          "step": 136,
+          "desc": "a",
+          "focusVisible": true
+        },
+        {
+          "step": 137,
+          "desc": "button \"‹\"",
+          "focusVisible": true
+        },
+        {
+          "step": 138,
+          "desc": "button \"›\"",
+          "focusVisible": true
+        },
+        {
+          "step": 139,
+          "desc": "button",
+          "focusVisible": true
+        },
+        {
+          "step": 140,
+          "desc": "button",
+          "focusVisible": true
+        },
+        {
+          "step": 141,
+          "desc": "button",
+          "focusVisible": true
+        },
+        {
+          "step": 142,
+          "desc": "button \"Pause slider\"",
+          "focusVisible": true
+        },
+        {
+          "step": 143,
+          "desc": "a \"Pt. Deendayal Upadhyaya National Institu\"",
+          "focusVisible": true
+        },
+        {
+          "step": 144,
+          "desc": "a \"National Divyangjan Finance and Developm\"",
+          "focusVisible": true
+        },
+        {
+          "step": 145,
+          "desc": "a \"Ali Yavar Jung National Institute of Spe\"",
+          "focusVisible": true
+        },
+        {
+          "step": 146,
+          "desc": "a \"National Institute for Empowerment of Pe\"",
+          "focusVisible": true
+        },
+        {
+          "step": 147,
+          "desc": "a \"भारतीय पुनर्वास परिषद (RCI)\"",
+          "focusVisible": true
+        },
+        {
+          "step": 148,
+          "desc": "a \"National INstitute of Mental Health Reha\"",
+          "focusVisible": true
+        },
+        {
+          "step": 149,
+          "desc": "a \"National Institute for Locomotor Disabil\"",
+          "focusVisible": true
+        },
+        {
+          "step": 150,
+          "desc": "a \"National Institute for the Empowerment o\"",
+          "focusVisible": true
+        },
+        {
+          "step": 151,
+          "desc": "a \"The National Trust\"",
+          "focusVisible": true
+        },
+        {
+          "step": 152,
+          "desc": "a \"Indian Sign Language Research And Traini\"",
+          "focusVisible": true
+        },
+        {
+          "step": 153,
+          "desc": "a \"Artificial Limbs Manufacturing Corporati\"",
+          "focusVisible": true
+        },
+        {
+          "step": 154,
+          "desc": "a \"Previous\"",
+          "focusVisible": true
+        },
+        {
+          "step": 155,
+          "desc": "a \"Next\"",
+          "focusVisible": true
+        },
+        {
+          "step": 156,
+          "desc": "a \"Pause\"",
+          "focusVisible": true
+        },
+        {
+          "step": 157,
+          "desc": "a \"Feedback\"",
+          "focusVisible": true
+        },
+        {
+          "step": 158,
+          "desc": "a \"Contact Us\"",
+          "focusVisible": true
+        },
+        {
+          "step": 159,
+          "desc": "a \"Website Policy\"",
+          "focusVisible": true
+        },
+        {
+          "step": 160,
+          "desc": "a \"Hyperlinking Policy\"",
+          "focusVisible": true
+        },
+        {
+          "step": 161,
+          "desc": "a \"Copyright Policy\"",
+          "focusVisible": true
+        },
+        {
+          "step": 162,
+          "desc": "a \"Privacy Policy\"",
+          "focusVisible": true
+        },
+        {
+          "step": 163,
+          "desc": "a \"Accessibility statement\"",
+          "focusVisible": true
+        },
+        {
+          "step": 164,
+          "desc": "a \"Terms & Condition\"",
+          "focusVisible": true
+        },
+        {
+          "step": 165,
+          "desc": "a \"Help\"",
+          "focusVisible": true
+        },
+        {
+          "step": 166,
+          "desc": "a \"Employee Corner\"",
+          "focusVisible": true
+        },
+        {
+          "step": 167,
+          "desc": "a \"Parliament Questions\"",
+          "focusVisible": true
+        },
+        {
+          "step": 168,
+          "desc": "a \"National Informatics Centre\"",
+          "focusVisible": true
+        },
+        {
+          "step": 169,
+          "desc": "a \"Ministry of Electronics & Information Te\"",
+          "focusVisible": true
+        },
+        {
+          "step": 170,
+          "desc": "a",
+          "focusVisible": true
+        },
+        {
+          "step": 171,
+          "desc": "a",
+          "focusVisible": true
+        },
+        {
+          "step": 172,
+          "desc": "a",
+          "focusVisible": true
+        },
+        {
+          "step": 173,
+          "desc": "a",
+          "focusVisible": true
+        },
+        {
+          "step": 174,
+          "desc": "a",
+          "focusVisible": true
+        },
+        {
+          "step": 175,
+          "desc": "a",
+          "focusVisible": true
+        },
+        {
+          "step": 176,
+          "desc": "button#gototop-btn \"Go to top\"",
+          "focusVisible": true
+        }
+      ]
+    },
+    "pdf": {
+      "pdfs": []
+    }
+  },
+  "errors": []
+}
