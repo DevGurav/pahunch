@@ -24,6 +24,12 @@ export interface Finding {
   details?: Record<string, unknown>;
 }
 
+/** What every check returns: its findings, plus the raw evidence they were drawn from. */
+export interface CheckResult<E> {
+  findings: Finding[];
+  evidence: E;
+}
+
 /**
  * Precedence, highest first: blocked > inconclusive > barriers > no-blockers-found.
  * "no-blockers-found" never means "accessible": automated checks see only part of the problems.
