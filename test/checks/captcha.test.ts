@@ -38,13 +38,19 @@ test('a focusable audio button makes it captcha-with-audio (info)', async () => 
   assert.equal(evidence.groups[0]?.audio?.focusable, true);
 });
 
-test('an audio icon the keyboard cannot reach is a barrier, not a pass', async () => {
+test('an audio icon that is neither focusable nor exposed is a blocker on the task path', async () => {
   await h.load('captcha-audio-icon.html', [{ label: 'CAPTCHA field', selector: 'input[name="captcha"]', kind: 'captcha-field' }]);
   const { findings, evidence } = await checkCaptcha(h.session.page);
   assert.deepEqual(rules(findings), ['captcha-audio-unreachable']);
-  assert.equal(findings[0]?.severity, 'barrier');
+  assert.equal(findings[0]?.severity, 'blocker');
   assert.equal(evidence.groups[0]?.audio?.focusable, false);
   assert.equal(evidence.groups[0]?.audio?.exposed, false);
+});
+
+test('the same icon off the task path is only a barrier', async () => {
+  await h.load('captcha-audio-icon.html');
+  const { findings } = await checkCaptcha(h.session.page);
+  assert.equal(findings[0]?.severity, 'barrier');
 });
 
 test('third-party, text, off-path and hidden CAPTCHAs are told apart', async () => {

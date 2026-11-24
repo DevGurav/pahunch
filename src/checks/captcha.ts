@@ -226,12 +226,20 @@ export async function checkCaptcha(page: Page): Promise<CheckResult<CaptchaEvide
           ),
         );
       } else if (!g.audio.focusable || !g.audio.exposed) {
+        // Neither focusable nor exposed: a blind user has no way to discover it, so on the task
+        // path it is no better than no audio option at all (docs/decisions/0006-*).
+        const hiddenFromAll = !g.audio.focusable && !g.audio.exposed;
+        const problem = hiddenFromAll
+          ? 'the Tab key cannot reach it and it is not exposed to screen readers as a button or link'
+          : !g.audio.focusable
+            ? 'the Tab key cannot reach it'
+            : 'it is not exposed as a button or link';
         findings.push(
-          finding(
-            'captcha-audio-unreachable',
-            `There is an audio option ("${g.audio.description}"), but ${!g.audio.focusable ? 'the Tab key cannot reach it' : 'it is not exposed as a button or link'}.`,
-            { ...where, details: { audio: g.audio, imageAlt: g.imageAlt } },
-          ),
+          finding('captcha-audio-unreachable', `There is an audio option ("${g.audio.description}"), but ${problem}.`, {
+            ...where,
+            severity: hiddenFromAll && g.onPath ? 'blocker' : 'barrier',
+            details: { audio: g.audio, imageAlt: g.imageAlt },
+          }),
         );
       } else {
         findings.push(

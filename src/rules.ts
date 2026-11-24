@@ -47,8 +47,8 @@ export const RULES: Record<RuleId, RuleInfo> = {
     check: 'captcha',
     severity: 'barrier',
     wcag: ['1.1.1', '2.1.1', '4.1.2'],
-    title: 'Audio CAPTCHA option that the keyboard cannot reach',
-    why: 'An audio option exists, but it is an icon that the Tab key skips and that is not exposed as a button. A screen-reader user may never find out it is there.',
+    title: 'Audio CAPTCHA option that keyboard or screen-reader users cannot reach',
+    why: 'An audio option exists for mouse users, but it is an icon that the Tab key skips or that is not exposed as a button. When it is both, a blind user has no way to find it, and the CAPTCHA is as closed to them as one with no audio at all.',
     fix: 'Make the audio option a <button> (or a link) with a clear name such as "Play audio CAPTCHA".',
   },
   'captcha-with-audio': {
