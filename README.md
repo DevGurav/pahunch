@@ -58,7 +58,7 @@ npm run report                                # build the report site into site/
 
 ## How it fits together
 
-```
+```text
 portal definition → browser session → checks → verdict → results/<date>/<portal>/ → report site
 ```
 

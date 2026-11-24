@@ -2,7 +2,7 @@
 
 Results are files, not a database. A run writes one folder per portal:
 
-```
+```text
 results/
   2026-11-24/
     passport/
