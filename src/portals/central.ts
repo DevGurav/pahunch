@@ -66,7 +66,7 @@ export const aadhaar: Portal = {
   task: 'Reach the Login button on the myAadhaar home page',
   steps: [{ kind: 'goto', url: 'https://myaadhaar.uidai.gov.in/' }],
   critical: [{ label: 'Login button', selector: 'button:has-text("Login") >> visible=true', kind: 'button' }],
-  notes: 'Redirects to myaadhaarbeta.uidai.gov.in. On load the page is dimmed and a click on Login was intercepted, so the login form itself is out of reach without interacting.',
+  notes: 'During discovery this address sometimes redirected to a beta site (myaadhaarbeta.uidai.gov.in) that was dimmed by an overlay on load. The audit checks whichever version the address serves; the page actually checked is listed below. The login form opens only after Login is pressed, which is out of scope.',
 };
 
 export const digilocker: Portal = {
