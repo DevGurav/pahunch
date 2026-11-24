@@ -96,6 +96,10 @@ th .owner { display: block; font-weight: 400; }
 .v-barriers { color: var(--barriers-fg); background: var(--barriers-bg); }
 .v-no-blockers-found { color: var(--clean-fg); background: var(--clean-bg); }
 
+.tally { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 0.5rem 1.25rem; }
+.tally li { white-space: nowrap; }
+.nowrap { white-space: nowrap; }
+
 .verdict-box { border: 1px solid var(--line); border-radius: 0.5rem; padding: 0.25rem 1rem; margin: 1rem 0; max-width: 52rem; }
 
 .table-wrap { overflow-x: auto; margin: 1rem 0; }

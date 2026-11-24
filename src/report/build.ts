@@ -27,6 +27,7 @@ const istDay = new Intl.DateTimeFormat('en-IN', { timeZone: 'Asia/Kolkata', day:
 const istTime = new Intl.DateTimeFormat('en-IN', { timeZone: 'Asia/Kolkata', dateStyle: 'medium', timeStyle: 'short' });
 
 const indicLang = (r: PortalResult): 'hi' | 'mr' => (r.portal.jurisdiction === 'Maharashtra' ? 'mr' : 'hi');
+const plural = (n: number, word: string, many = `${word}s`) => `${n} ${n === 1 ? word : many}`;
 const badge = (v: Verdict) => `<span class="verdict v-${v}">${esc(VERDICT_LABEL[v])}</span>`;
 const stripMarker = (html: string) => html.replace(/ data-pahunch-critical="\d+"/g, '');
 const yesNo = (value: boolean | null | undefined) => (value === true ? 'Yes' : value === false ? 'No' : 'Not checked');
@@ -140,7 +141,7 @@ ${transcriptLines
 <dt>Task</dt><dd>${esc(r.portal.task)}</dd>
 <dt>Page checked</dt><dd>${page ? `<a href="${esc(page.finalUrl)}">${esc(page.finalUrl)}</a>` : 'The page did not load'}</dd>
 <dt>Checked on</dt><dd>${esc(istTime.format(new Date(r.startedAt)))} IST</dd>
-<dt>Counts</dt><dd>${r.counts.blocker} blocker, ${r.counts.barrier} barrier, ${r.counts.info} other notes</dd>
+<dt>Counts</dt><dd>${plural(r.counts.blocker, 'blocker')}, ${plural(r.counts.barrier, 'barrier')}, ${plural(r.counts.info, 'other note')}</dd>
 </dl>
 ${r.portal.notes ? `<p class="note">${withLang(r.portal.notes, lang)}</p>` : ''}
 ${reasons}
@@ -178,13 +179,15 @@ function indexPage(results: readonly LoadedResult[], excluded: readonly Excluded
 
   const rows = sorted
     .map(({ result: r, date }) => {
-      return `<tr><th scope="row"><a href="portals/${esc(r.portal.id)}.html">${esc(r.portal.name)}</a><span class="owner">${esc(r.portal.owner)}</span></th><td>${esc(r.portal.task)}</td><td>${badge(r.verdict)}</td><td>${r.counts.blocker}</td><td>${r.counts.barrier}</td><td>${esc(date)}</td></tr>`;
+      return `<tr><th scope="row"><a href="portals/${esc(r.portal.id)}.html">${esc(r.portal.name)}</a><span class="owner">${esc(r.portal.owner)}</span></th><td>${esc(r.portal.task)}</td><td>${badge(r.verdict)}</td><td>${r.counts.blocker}</td><td>${r.counts.barrier}</td><td class="nowrap">${esc(date)}</td></tr>`;
     })
     .join('\n');
 
   const body = `<h1>Can a blind citizen use India’s government portals?</h1>
 <p class="lede">We took one everyday task on each of ${results.length} citizen-service portals, such as reaching the login form or searching a record, and checked ${esc(when)} whether a person using a screen reader would be stopped.</p>
-<p>${tally.map(([v, n]) => `${badge(v)} ${n}`).join(' &nbsp; ')}</p>
+<ul class="tally" aria-label="Verdicts at a glance">
+${tally.map(([v, n]) => `<li><strong>${n}</strong> ${badge(v)}</li>`).join('\n')}
+</ul>
 <p class="label">${esc(AUTOMATED_LABEL)} Automated checks find only part of the real problems, so “no blockers found” never means accessible. <a href="method.html">How we tested</a>.</p>
 <div class="table-wrap" role="region" aria-labelledby="scorecard-caption" tabindex="0">
 <table>
