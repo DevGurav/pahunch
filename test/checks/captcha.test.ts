@@ -53,6 +53,22 @@ test('the same icon off the task path is only a barrier', async () => {
   assert.equal(findings[0]?.severity, 'barrier');
 });
 
+test('an image nested deep under a captcha container, with an unreachable audio icon, is a blocker', async () => {
+  await h.load('captcha-nested.html', [{ label: 'CAPTCHA field', selector: 'input[name="captcha"]', kind: 'captcha-field' }]);
+  const { findings, evidence } = await checkCaptcha(h.session.page);
+  const nested = evidence.groups.find((g) => g.inputTarget === 'input[name="captcha"]');
+  assert.equal(nested?.kind, 'image');
+  assert.equal(nested?.audio?.focusable, false);
+  assert.ok(findings.some((f) => f.rule === 'captcha-audio-unreachable' && f.severity === 'blocker'));
+});
+
+test('a label that only says "captcha" is not mistaken for a readable text challenge', async () => {
+  await h.load('captcha-nested.html');
+  const { findings, evidence } = await checkCaptcha(h.session.page);
+  assert.ok(!findings.some((f) => f.rule === 'captcha-text'));
+  assert.equal(evidence.groups.find((g) => g.inputTarget === 'input#txtInput')?.kind, 'unknown');
+});
+
 test('third-party, text, off-path and hidden CAPTCHAs are told apart', async () => {
   await h.load('captcha-variants.html', [
     { label: 'Mobile field', selector: '#mobile', kind: 'field' },

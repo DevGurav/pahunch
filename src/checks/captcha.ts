@@ -35,8 +35,10 @@ export interface CaptchaEvidence {
  * alternative. Self-contained: no imports, no outer variables.
  */
 function detectCaptchas(criticalAttr: string): CaptchaGroup[] {
-  const PATTERN = /captch|capcha/i;
-  const FIELD_HINT = /captch|capcha|security code|verification code|characters|enter (the )?code/i;
+  const PATTERN = /captch|capcha|कॅप्चा|कैप्चा/i;
+  const FIELD_HINT = /captch|capcha|कॅप्चा|कैप्चा|security code|verification code|characters|enter (the )?code/i;
+  // A label such as "Captcha*" or "कॅप्चा*" names the challenge; it isn't a readable challenge itself.
+  const LABEL_ONLY = /^\W*(captcha|capcha|कॅप्चा|कैप्चा|security code|captcha code|enter captcha)\W*$/i;
   const AUDIO = /audio|listen|speak|speech|sound|ऑडियो|सुन/i;
   const NOT_AUDIO = /play ?store|google ?play|app ?store/i;
   const CONTROL_NOISE = /refresh|reload|loading|loader|spinner|audio|speaker|sound|listen/i;
@@ -111,8 +113,11 @@ function detectCaptchas(criticalAttr: string): CaptchaGroup[] {
     const r = el.getBoundingClientRect();
     if (r.width < 40 || r.height < 15) return false;
     const own = attrs(el);
-    const near = [el.parentElement, el.parentElement?.parentElement].map((p) => (p ? attrs(p) : '')).join(' ');
-    if (!PATTERN.test(own) && !PATTERN.test(near)) return false;
+    const ancestors: string[] = [];
+    for (let p = el.parentElement, i = 0; p && i < 4; p = p.parentElement, i++) ancestors.push(attrs(p));
+    // A short caption beside the image, e.g. <p>Captcha Code *</p>, also marks it.
+    const caption = el.parentElement?.textContent ?? '';
+    if (!PATTERN.test(own) && !PATTERN.test(ancestors.join(' ')) && !(caption.length <= 200 && PATTERN.test(caption))) return false;
     // A speaker or refresh icon inside a link or button is a control, not the challenge.
     const noise = ['id', 'class', 'src'].map((a) => el.getAttribute(a) ?? '').join(' ').replace(/captch\w*|capcha\w*/gi, '');
     if (actionable(el) && CONTROL_NOISE.test(noise)) return false;
@@ -178,12 +183,14 @@ function detectCaptchas(criticalAttr: string): CaptchaGroup[] {
   // CAPTCHA fields with no picture: a text challenge, or one we can't see.
   for (const input of Array.from(document.querySelectorAll(TEXT_INPUTS)).filter(visible)) {
     if (usedInputs.has(input) || !PATTERN.test(`${attrs(input)} ${labelText(input)}`)) continue;
-    const box = container(input);
+    // Text challenges often sit in another table row or column, so look a little wider than for images.
+    const box = input.closest('form') ?? input.parentElement?.parentElement?.parentElement ?? container(input);
     if (usedBoxes.has(box)) continue;
     usedBoxes.add(box);
-    const challenge = Array.from(box.querySelectorAll('span, div, label, p, b, strong')).find(
-      (el) => el !== input && PATTERN.test(attrs(el)) && visible(el) && ((el as HTMLElement).innerText ?? '').trim().length > 0,
-    );
+    const challenge = Array.from(box.querySelectorAll('span, div, label, p, b, strong')).find((el) => {
+      const text = ((el as HTMLElement).innerText ?? '').trim();
+      return el !== input && !el.contains(input) && PATTERN.test(attrs(el)) && visible(el) && text.length > 0 && !LABEL_ONLY.test(text);
+    });
     groups.push({
       kind: challenge ? 'text' : 'unknown',
       onPath: onPath(box, input),

@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><title>captcha image nested deep, label beside it (Voters' Services pattern)</title></head>
+<body>
+  <div class="search-form">
+    <input id="epicID" type="text" aria-label="Enter EPIC Number">
+    <div class="search-buttons">
+      <div>
+        <div class="captcha-div">
+          <div style="display: flex; align-items: center;">
+            <div style="flex-direction: column;">
+              <p>Captcha Code <span>*</span></p>
+              <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='80'/%3E">
+            </div>
+            <div>
+              <i class="fa fa-refresh" aria-label="Captcha Refresh" onclick="void 0"></i>
+              <i class="fa fa-volume-up" aria-label="listen captcha" onclick="void 0"></i>
+            </div>
+          </div>
+        </div>
+        <input name="captcha" type="text" aria-label="Enter Captcha">
+      </div>
+    </div>
+    <button type="button">SEARCH</button>
+  </div>
+
+  <table>
+    <tr><td><span id="lblCaptcha">कॅप्चा*</span></td><td><div class="captcha-box" style="width:20px;height:10px"></div></td></tr>
+    <tr><td>Captcha</td><td><input id="txtInput" name="captcha2" type="text"></td></tr>
+  </table>
+</body>
+</html>
