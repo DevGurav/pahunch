@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><title>third-party, text, off-path and hidden captchas</title></head>
+<body>
+  <form id="signup">
+    <label for="mobile">Mobile</label> <input id="mobile" type="tel">
+    <div class="g-recaptcha" data-sitekey="test-key" style="width:300px;height:80px"></div>
+    <button type="button" id="continue">Continue</button>
+  </form>
+
+  <form id="bill">
+    <label for="consumerNo">Consumer number</label> <input id="consumerNo" type="text">
+    <span id="lblCaptcha">7 + 3 =</span>
+    <label for="txtInput">Answer</label> <input id="txtInput" name="captcha" type="text">
+  </form>
+
+  <form id="feedback">
+    <label for="comment">Feedback</label> <textarea id="comment"></textarea>
+    <img id="feedbackCaptcha" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='40'/%3E" alt="captcha">
+    <input id="feedbackCaptchaInput" name="captcha" type="text" aria-label="Captcha">
+  </form>
+
+  <form id="wizard-step-2" style="display:none">
+    <img class="captcha" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='40'/%3E" alt="">
+    <input class="captcha" type="text">
+  </form>
+</body>
+</html>

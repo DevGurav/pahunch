@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><title>image captcha with audio button</title></head>
+<body>
+  <form>
+    <label for="Captcha">Security code</label> <input id="Captcha" type="text">
+    <div class="captcha-row">
+      <img id="CaptchaImage" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='40'/%3E" alt="Captcha">
+      <button type="button" id="btnCaptchaAudio" title="Speech aloud"><i class="fa fa-volume-up" id="audioIcon"></i></button>
+      <audio id="captchaAudio"></audio>
+    </div>
+    <button type="submit" id="btnSubmit">Login</button>
+  </form>
+</body>
+</html>
