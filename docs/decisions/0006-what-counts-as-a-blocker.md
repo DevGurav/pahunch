@@ -51,6 +51,15 @@ a keyboard walk that ran out of presses, or a critical control whose selector ma
 - A future round with real screen-reader runs (roadmap Phase 5) may show that some barriers stop
   people in practice. That evidence would justify superseding this record.
 
+## Correction (2026-11-24, after the first full audit)
+
+The Context above describes the Voters' Services audio icon as unfocusable and without a role. That
+came from reading the discover output, which doesn't print `role` or `tabindex`. The saved page shows
+`<i role="button" tabindex="0" aria-label="listen captcha">`, which is focusable and exposed, and the
+captcha check correctly reports it as an audio option that can be reached. The decision itself is
+unchanged: an audio option that really is neither focusable nor exposed still counts as no option.
+That pattern is kept in the test fixtures.
+
 ## Alternatives considered
 
 - **Keep `name-missing` as a blocker.** It's simpler, but it overclaims for fields with adjacent

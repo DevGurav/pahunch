@@ -21,12 +21,16 @@ basic level.
 | --- | --- | --- |
 | Image plus a real audio **link**, and an `alt` that explains | eCourts case status | "Enter the characters shown in the image, or select the audio, graphic … Play CAPTCHA Audio, link". There's a way through. |
 | Image plus a real audio **button** | CPGRAMS sign-in | The button is reachable with Tab. There's a way through. |
-| Image plus an audio **icon** (`<i aria-label="listen captcha">`) | Voters' Services electoral search | The icon can't be focused and isn't in the accessibility tree. Mouse users get audio; keyboard and screen-reader users never find it. |
+| Image plus an audio **icon** that is made a button (`<i role="button" tabindex="0" aria-label="listen captcha">`) | Voters' Services electoral search | The icon is focusable and announced as "listen captcha, button". There's a way through. A real `<button>` would be simpler, but this works. |
 | Image with `alt=""` | MahaDBT, RTI Online | `alt=""` means "decorative, skip me", so the screen reader is silent and the user lands on an unexplained text box. |
 | Image, no audio at all | Aaple Sarkar | No way through without sighted help. |
 
-The third row is the subtle one. The option *exists*, so a sighted tester ticks the box, but it
-exists only for people who use a mouse.
+The subtle case isn't in the table, because no portal here does it: an audio icon with only an
+`aria-label` and a click handler (`<i aria-label="listen captcha" onclick="…">`). The option exists,
+so a sighted tester ticks the box, but the icon can't be focused, and with no role its label is
+ignored. It exists only for people who use a mouse. Voters' Services avoids this by adding
+`role="button"` and `tabindex="0"`. The test fixture `captcha-audio-icon.html` keeps the bad version
+so the check keeps catching it.
 
 ## How pahunch decides (`src/checks/captcha.ts`)
 

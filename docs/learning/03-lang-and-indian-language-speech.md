@@ -17,8 +17,14 @@ If Devanagari text sits under `lang="en"`, or under no `lang` at all, the Englis
 can't pronounce. Depending on the engine, it may garble it, spell out character names one by one,
 or skip it. None of these is "reading it".
 
-The reverse also happens. The myAadhaar beta declares `<html lang="hi">` on a page written in
-English, so a screen reader would read every English word with Hindi pronunciation rules.
+The reverse also happens. During discovery, the myAadhaar beta site declared `<html lang="hi">` on a
+page written in English, so a screen reader would read every English word with Hindi pronunciation
+rules.
+
+A third way to get it wrong is to use a `lang` value that isn't a language code. The regular
+myAadhaar site's language list writes `<li lang="हिंदी">हिंदी</li>` and `<li lang="বাংলা">বাংলা</li>`.
+Those are display names, but `lang` needs a code (`hi`, `bn`), so a screen reader can't use them to
+choose a voice.
 
 ## Two rules in `src/checks/lang.ts`
 
@@ -35,9 +41,10 @@ The check accepts any Indic language code for Indic text. It doesn't try to tell
 (both use Devanagari), because a Hindi voice reading Marathi is understandable, while an English
 voice reading either is not.
 
-## Seen during discovery
+## Seen on the portals
 
 - **MSEDCL's bill page:** written in Marathi with no `lang` anywhere.
+- **myAadhaar's language list:** `lang` attributes that hold display names instead of codes.
 - **DEPwD's Hindi home page:** marked `lang="hi-IN"`, which is correct.
 - **Many English pages:** an unmarked "हिन्दी" link in the header. Minor (info), but it's the first
   thing a Hindi speaker looks for.
