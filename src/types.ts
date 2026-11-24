@@ -28,6 +28,8 @@ export interface Finding {
 export interface CheckResult<E> {
   findings: Finding[];
   evidence: E;
+  /** Parts of the task this check could not decide; any entry makes the verdict at best inconclusive. */
+  inconclusive?: string[];
 }
 
 /**

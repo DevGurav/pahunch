@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><title>keyboard: trap</title></head>
+<body>
+  <label for="a">First</label> <input id="a" type="text">
+  <label for="b">Second</label> <input id="b" type="text">
+  <button type="button" id="go">Login</button>
+  <script>
+    // A badly written "auto-advance" widget: Tab from #b always jumps back to #a.
+    document.getElementById('b').addEventListener('keydown', (e) => {
+      if (e.key === 'Tab') { e.preventDefault(); document.getElementById('a').focus(); }
+    });
+  </script>
+</body>
+</html>
