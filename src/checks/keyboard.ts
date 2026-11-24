@@ -111,6 +111,24 @@ function readFocus(criticalAttr: string): FocusRead | null {
   };
 }
 
+/**
+ * Runs on an unreached control. Is it on screen at all, and if not, does the menu hiding it have
+ * a disclosure toggle (aria-controls, aria-expanded or aria-haspopup) that Enter would open?
+ */
+function menuContext(el: Element): { visible: boolean; disclosure: boolean } {
+  const he = el as HTMLElement;
+  const visible = typeof he.checkVisibility === 'function' ? he.checkVisibility({ checkVisibilityCSS: true }) : true;
+  let disclosure = false;
+  if (!visible) {
+    for (let node = el.parentElement, i = 0; node && i < 6 && !disclosure; node = node.parentElement, i++) {
+      if (node.id && document.querySelector(`[aria-controls~="${CSS.escape(node.id)}"]`)) disclosure = true;
+      const owner = node.parentElement;
+      if (owner?.querySelector(':scope > [aria-expanded], :scope > [aria-haspopup]:not([aria-haspopup="false"])')) disclosure = true;
+    }
+  }
+  return { visible, disclosure };
+}
+
 type Focused = FocusRead & { key: string; frameUrl?: string };
 
 async function readFocusEverywhere(page: Page): Promise<Focused | 'end'> {
@@ -240,13 +258,21 @@ export async function checkKeyboard(page: Page, controls: readonly ResolvedContr
     for (const c of unreached) {
       const locator = await locateCritical(page, c.index);
       const snippet = await locator?.evaluate((el) => el.outerHTML.replace(/\s+/g, ' ').slice(0, 300)).catch(() => undefined);
-      findings.push(
-        finding('keyboard-unreachable', `"${c.label}" was never reached in a full pass through the page (${descByKey.size} Tab stops).`, {
-          target: c.label,
-          ...(snippet ? { snippet } : {}),
-          ...(c.frameUrl ? { frameUrl: c.frameUrl } : {}),
-        }),
-      );
+      const context = (await locator?.evaluate(menuContext).catch(() => undefined)) ?? { visible: true, disclosure: false };
+      const where = { target: c.label, ...(snippet ? { snippet } : {}), ...(c.frameUrl ? { frameUrl: c.frameUrl } : {}) };
+      if (context.visible) {
+        findings.push(finding('keyboard-unreachable', `"${c.label}" was never reached in a full pass through the page (${descByKey.size} Tab stops).`, where));
+      } else if (context.disclosure) {
+        // A menu opened by a button needs Enter or Space, which the walk never presses.
+        inconclusive.push(`"${c.label}" is inside a menu that opens with a button. The walk presses only Tab, so whether that button opens the menu from the keyboard was not tested.`);
+      } else {
+        findings.push(
+          finding('keyboard-unreachable', `"${c.label}" is inside a menu that Tab never opened. It appears to open only on mouse hover, which keyboard users cannot do.`, {
+            ...where,
+            severity: 'barrier',
+          }),
+        );
+      }
     }
   } else if (unreached.length > 0) {
     inconclusive.push(`The keyboard walk stopped after ${presses} presses without going round the whole page, before reaching ${names(unreached)}.`);

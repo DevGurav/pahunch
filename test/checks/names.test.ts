@@ -52,6 +52,13 @@ test('evidence records role and name as the browser computes them', async () => 
   assert.equal(get('Not on the page'), undefined, 'controls that were not found are left to the audit');
 });
 
+test('a link inside a closed menu is not reported as hidden from screen readers', async () => {
+  const resolved = await h.load('menu-hover.html', [{ label: 'Public Grievance link', selector: 'a[href*="public-grievance"]', kind: 'link' }]);
+  const { findings, evidence } = await checkNames(h.session.page, resolved);
+  assert.deepEqual(findings, []);
+  assert.equal(evidence.controls[0]?.visible, false);
+});
+
 test('a meaningless name is reported with what is actually announced', async () => {
   const resolved = await h.load('names-mixed.html', controls);
   const { findings } = await checkNames(h.session.page, resolved);

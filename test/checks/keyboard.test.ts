@@ -67,6 +67,33 @@ test('focus held inside an open modal is not a trap; the task is inconclusive in
   assert.match(inconclusive?.[0] ?? '', /dialog/);
 });
 
+const grievance = [{ label: 'Public Grievance link', selector: 'a[href*="public-grievance"]', kind: 'link' as const }];
+
+test('a link in a hover-only menu is a barrier, not a blocker', async () => {
+  const resolved = await h.load('menu-hover.html', grievance);
+  const { findings, inconclusive } = await checkKeyboard(h.session.page, resolved);
+  assert.deepEqual(
+    findings.map((f) => [f.rule, f.severity]),
+    [['keyboard-unreachable', 'barrier']],
+  );
+  assert.match(findings[0]?.summary ?? '', /hover/);
+  assert.deepEqual(inconclusive, []);
+});
+
+test('a link in a menu that opens on keyboard focus is reached', async () => {
+  const resolved = await h.load('menu-focus.html', grievance);
+  const { findings, evidence } = await checkKeyboard(h.session.page, resolved);
+  assert.equal(evidence.controls[0]?.reached, true);
+  assert.deepEqual(findings, []);
+});
+
+test('a link behind a disclosure button is inconclusive: the walk only presses Tab', async () => {
+  const resolved = await h.load('menu-button.html', grievance);
+  const { findings, inconclusive } = await checkKeyboard(h.session.page, resolved);
+  assert.deepEqual(findings, []);
+  assert.match(inconclusive?.[0] ?? '', /button/);
+});
+
 test('controls inside an iframe are followed', async () => {
   const resolved = await h.load('critical.html', [{ label: 'Inner field', selector: '#inner', kind: 'field' }]);
   const { findings, evidence } = await checkKeyboard(h.session.page, resolved);

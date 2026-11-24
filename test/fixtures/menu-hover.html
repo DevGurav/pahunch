@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><title>sub-menu that opens only on mouse hover</title>
+<style>.sub-menu { display: none; } li:hover > .sub-menu { display: block; }</style>
+</head>
+<body>
+  <nav aria-label="Main">
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#services">Services</a>
+        <ul class="sub-menu"><li><a href="/public-grievance/">Public Grievance</a></li></ul>
+      </li>
+    </ul>
+  </nav>
+  <main><h1>Department</h1></main>
+</body>
+</html>

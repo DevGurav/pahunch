@@ -13,7 +13,10 @@ export interface ControlName {
   role: string;
   name: string;
   disabled: boolean;
+  /** Not in the accessibility tree. */
   hidden: boolean;
+  /** Shown on screen. A control in a closed menu is neither visible nor in the tree, and that is fine. */
+  visible: boolean;
   /** First lines of the control's aria snapshot, kept as evidence. */
   snapshot: string;
 }
@@ -82,10 +85,13 @@ export async function checkNames(page: Page, controls: readonly ResolvedControl[
       name: first?.name ?? '',
       disabled: await locator.isDisabled({ timeout: 2_000 }).catch(() => false),
       hidden: snapshot === '',
+      visible: await locator.isVisible().catch(() => false),
       snapshot: snapshot.split('\n').slice(0, 4).join('\n'),
     };
     evidence.push(entry);
     if (control.kind === 'captcha-audio') continue;
+    // Out of the tree because it isn't shown yet (a closed menu): the keyboard check judges whether it can be opened.
+    if (entry.hidden && !entry.visible) continue;
 
     const html = await locator.evaluate((el) => el.outerHTML.replace(/\s+/g, ' ').slice(0, 300)).catch(() => undefined);
     const where = { target: control.label, ...(html ? { snippet: html } : {}), ...(control.frameUrl ? { frameUrl: control.frameUrl } : {}) };

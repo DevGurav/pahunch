@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><title>sub-menu behind a disclosure button</title></head>
+<body>
+  <nav aria-label="Main">
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li>
+        <button type="button" aria-expanded="false" aria-controls="services-menu" id="services-btn">Services</button>
+        <ul id="services-menu" hidden><li><a href="/public-grievance/">Public Grievance</a></li></ul>
+      </li>
+    </ul>
+  </nav>
+  <main><h1>Department</h1></main>
+  <script>
+    const btn = document.getElementById('services-btn');
+    btn.addEventListener('click', () => {
+      const open = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!open));
+      document.getElementById('services-menu').hidden = open;
+    });
+  </script>
+</body>
+</html>
